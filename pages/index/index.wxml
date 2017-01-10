@@ -44,7 +44,7 @@
 </view>
 
 <!--内容列表-->
-<navigator url="/pages/news/detail">
+<navigator url="/pages/resoude/resoude">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
@@ -61,7 +61,7 @@
     </view>
 </navigator>
 
-<navigator url="/pages/news/detail">
+<navigator url="/pages/resoude/resoude">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://01.imgmini.eastday.com/mobile/20161124/20161124193413_e4233fb5205fa00d4711b05555a4ab3e_2_mwpm_03200403.jpeg"></image>

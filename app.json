@@ -1,8 +1,9 @@
 {
     "pages": [
-     "pages/user/user",
+     "pages/screen/screen",
      "pages/index/index",
-     "pages/resoude/resoude"
+     "pages/resoude/resoude",
+     "pages/user/user"
     ],
     "window": {
         "backgroundTextStyle": "light",
