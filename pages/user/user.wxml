@@ -1,0 +1,60 @@
+<!--pages/myroom/myroom.wxml-->
+<view class="container1">
+    <view class="user-top">
+        <view class="head">
+            <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
+        </view>
+        <view >
+                <text class="liulan">留言</text>   
+                <view class="headnum">6</view>        
+        </view>
+        <view class="headname">
+            {{userInfo.nickName}}
+        </view>
+        <view class="headcity">
+          dong2264563539
+        </view>
+        <view class="headinfo">
+           <view class="headtext">
+                我的资源
+           </view> 
+           <view class="add-resou">
+           +创建资源
+           </view>
+        </view>
+    </view>
+    <view class="bottom_menu1">
+        <view class="bottom_menu">
+            <view class="menu">
+                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+                <view class="bottom_text">
+                    我的任务
+                </view>
+            </view>
+        </view>
+        <view class="bottom_menu">
+            <view class="menu">
+                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+                <view class="bottom_text">
+                    业务技能
+                </view>
+            </view>
+        </view>
+        <view class="bottom_menu">
+            <view class="menu">
+                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+                <view class="bottom_text">
+                    我的案列
+                </view>
+            </view>
+        </view>
+        <view class="bottom_menu">
+            <view class="menu">
+                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+                <view class="bottom_text">
+                    资料设置
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

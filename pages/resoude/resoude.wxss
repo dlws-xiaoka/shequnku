@@ -1,0 +1,81 @@
+/* pages/myroom/myroom.wxss */
+.container1 {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.head{
+    text-align:center;
+    margin-top: 30rpx;
+}
+.headimg{
+    height: 125rpx;
+    width: 135rpx;
+}
+.liulan{
+    margin-right: 27%;
+    display: inline;
+    border:1px solid #000;
+    float: right;
+    margin-top: -120rpx;
+    font-size: 15px;
+}
+.headnum{
+    margin-right: 23%;
+    display: inline;
+    border:1px solid red;
+    float: right;
+    margin-top: -150rpx;
+    border-radius:50%;
+    font-size: 30rpx;
+    background: red;
+}
+.headname{
+    text-align:center;
+    margin-top: 20rpx;
+}
+.headcity{
+    text-align:center;
+    margin-top: 20rpx;
+}
+.headinfo{
+    margin: 20rpx 20rpx 20rpx 50rpx;
+    border-top:1px solid #000;
+    /*margin-top: 20rpx;
+    margin-left: 50rpx;
+    margin-right: 20rpx;*/
+}
+.headtext{
+    margin-top: 20rpx; 
+    font-size: 15px;
+}
+.bottom_menu1{
+    border-top:1px solid #eee;
+}
+.bottom_menu{
+    margin-top: 4rpx;
+    border-bottom:1rpx solid #eee;
+}
+.bottom_img{
+    margin-left: 20rpx;
+    height: 100rpx;
+    width: 110rpx;
+    margin-top: 10rpx;
+}
+.menu{
+  display: flex;
+ height: 120rpx;  
+}
+.bottom_text{
+    font-size: 15px;
+    line-height:120rpx;
+    height: 120rpx;
+    margin-left: 5px;
+}
+
+.user-top{
+  height:30%; 
+ 
+}
