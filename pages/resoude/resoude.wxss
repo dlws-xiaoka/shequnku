@@ -14,42 +14,26 @@
     height: 125rpx;
     width: 135rpx;
 }
-.liulan{
-    margin-right: 27%;
-    display: inline;
-    border:1px solid #000;
-    float: right;
-    margin-top: -120rpx;
-    font-size: 15px;
-}
-.headnum{
-    margin-right: 23%;
-    display: inline;
-    border:1px solid red;
-    float: right;
-    margin-top: -150rpx;
-    border-radius:50%;
-    font-size: 30rpx;
-    background: red;
-}
 .headname{
     text-align:center;
     margin-top: 20rpx;
+    font-weight:800;
+    font-size: 15px;
 }
 .headcity{
     text-align:center;
     margin-top: 20rpx;
+    font-size: 15px;
 }
 .headinfo{
-    margin: 20rpx 20rpx 20rpx 50rpx;
-    border-top:1px solid #000;
-    /*margin-top: 20rpx;
-    margin-left: 50rpx;
-    margin-right: 20rpx;*/
+     margin: 20rpx 20rpx ;
+    border-top:1px solid #7B7B7B;
+    border-bottom:1px solid #7B7B7B;
+    display: flex;
 }
 .headtext{
-    margin-top: 20rpx; 
     font-size: 15px;
+    margin-bottom: 5px;
 }
 .bottom_menu1{
     border-top:1px solid #eee;
@@ -74,8 +58,23 @@
     height: 120rpx;
     margin-left: 5px;
 }
-
 .user-top{
   height:30%; 
- 
+}
+.business{
+font-size: 15px;
+margin:5px 5px 5px 10px; 
+border-bottom: 1rpx solid #7B7B7B; 
+}
+.res-img{
+    border-bottom:  1rpx solid #eee; 
+}
+.article-img{
+    width:200rpx;
+    height: 150rpx;
+    margin-left:15px;
+    margin-bottom: 5px;
+}
+.res-content{
+    font-size: 15px;
 }

@@ -78,61 +78,7 @@ line-height: 30px;
 }
 
 
-.article__item {
-display:flex;
-padding:30rpx;
-align-items:center;
-border-bottom:1rpx solid #eee;
-position:relative;
-padding-bottom:20rpx;
 
-}
-
-.article__thumb {
-width:4.7rem;
-height:4rem;
-margin-right:0.6rem;
-}
-.article__image{
-  width:4.7rem;
-  height: 4rem;
-}
-.article__info {
-flex:1;
-width:100%;
-overflow:hidden;
-
-}
-.article__title {
-font-weight:400;
-font-size:26rpx;
-text-overflow:ellipsis;
-white-space:nowrap;
-display:block;
-width:100%;
-margin-bottom:20rpx;
-
-}
-.article__desc {
-color:	#5B5B5B;
-font-size:24rpx;
-line-height:1.2;
-width:100%;
-}
-.article__descs{
-color:#999;
-font-size:24rpx;
-line-height:1.2;
-width:100%; 
-margin-top: 4px; 
-}
-.article__time {
-margin-right:10rpx;
-}
-.article__schol{
-   margin-bottom:20rpx;
-   line-height:1.2;
-}
 .active{
     color: 	#8E8E8E
 }

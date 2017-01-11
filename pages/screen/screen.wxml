@@ -1,0 +1,23 @@
+<!--pages/down/down.wxml-->
+<dl class="menu">
+    <dt data-index="0" bindtap="tapMainMenu">选择省</dt>
+    <dd class="{{subMenuDisplay[0]}}">
+        <ul>
+            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">安徽</li>
+            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">黑龙江</li>
+            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">江苏</li>
+            <li class="{{subMenuHighLight[0][4]}}" data-index="0-3" bindtap="tapSubMenu">北京</li>
+            <li class="{{subMenuHighLight[0][5]}}" data-index="0-4" bindtap="tapSubMenu">上海</li> 
+            <li class="{{subMenuHighLight[0][6]}}" data-index="0-5" bindtap="tapSubMenu">广东</li>
+        </ul>
+    </dd>
+    
+    <dt data-index="1" bindtap="tapMainMenu">选择市</dt>
+    <dd class="{{subMenuDisplay[1]}}">
+        <ul>
+            <li class="{{subMenuHighLight[1][0]}}" style="margin-left:50%;" data-index="1-0" bindtap="tapSubMenu">哈尔滨</li>
+            <li class="{{subMenuHighLight[1][1]}}" style="margin-left:50%;" data-index="1-1" bindtap="tapSubMenu">大庆</li>
+        </ul>
+    </dd>
+    
+</dl>

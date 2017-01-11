@@ -40,5 +40,10 @@ Page({
     this.setData({
       currentShai: e.currentTarget.id
     });
+    if(e.currentTarget.id==1){
+     wx.navigateTo({
+            url:'/pages/screen/screen'
+        })
+    }
   }
 })
