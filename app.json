@@ -1,7 +1,9 @@
 {
     "pages": [
-
      "pages/index/index",
+     "pages/dataone/dataone",   
+     "pages/choosetype/choosetype",
+     "pages/login/login",
      "pages/information/information",
      "pages/user/user",
      "pages/example/example",
