@@ -4,10 +4,10 @@
         <view class="head">
             <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
         </view>
-        <view >
+        <navigator  url="/pages/wordlist/wordlist" >
                 <text class="liulan">留言</text>   
                 <view class="headnum">6</view>        
-        </view>
+        </navigator>
         <view class="headname">
             {{userInfo.nickName}}
         </view>
@@ -18,43 +18,60 @@
            <view class="headtext">
                 我的资源
            </view> 
-           <view class="add-resou">
+           <view class="add-resou" blintap="addsource">
            +创建资源
            </view>
         </view>
     </view>
-    <view class="bottom_menu1">
-        <view class="bottom_menu">
-            <view class="menu">
-                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-                <view class="bottom_text">
-                    我的任务
-                </view>
-            </view>
+   
+<navigator url="/pages/news/detail">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
         </view>
-        <view class="bottom_menu">
-            <view class="menu">
-                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-                <view class="bottom_text">
-                    业务技能
-                </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
             </view>
-        </view>
-        <view class="bottom_menu">
-            <view class="menu">
-                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-                <view class="bottom_text">
-                    我的案列
-                </view>
-            </view>
-        </view>
-        <view class="bottom_menu">
-            <view class="menu">
-                <image class="bottom_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-                <view class="bottom_text">
-                    资料设置
-                </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
             </view>
         </view>
     </view>
+</navigator>
+
+<navigator url="/pages/news/detail">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">清华大学</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator url="/pages/news/detail">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">清华大学</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+
 </view>

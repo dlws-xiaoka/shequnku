@@ -1,0 +1,154 @@
+<!--pages/wordinfo/wordinfo.wxml-->
+<view class="infolist">
+<view class="scrollwechat">
+<scroll-view scroll-y="true" class="wordslist">
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+    <view class="article__item">
+        <view class="article__thumb">
+        <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+        <view class="article__desc">
+            <text class="article__title">西南大学seve社团</text>
+            <view class="article__time">
+                <text>2017年1月10日14:33:31</text>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="a_con">响应式和移动优先”的设计理念，可以确保无论使用什么设备都可以正常访问你的网站。</view>
+  </navigator>
+
+</scroll-view>
+</view>
+
+ <!--提交框-->
+  <view  class="footer">
+      <view  class="footinput">
+        <view class="input"><input bindfocus="bindfocus" bindblur='bindblur' placeholder="StringStringStringString" type="text" /></view>
+      </view>
+      <view  class="foodsend">
+        <view class="send">发送</view>
+      </view>
+  </view>
+
+</view>

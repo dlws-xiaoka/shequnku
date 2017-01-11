@@ -1,0 +1,35 @@
+/* pages/example/example.wxss */
+.for_example{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.for_first{
+    margin-left: 10rpx;
+    border-bottom: 1rpx solid #eee;
+}
+.for_title{
+    margin: 20rpx 20rpx 0 20rpx;
+    border: 1rpx solid #eee;
+}
+.for_content{
+    margin: 20rpx 20rpx 0 20rpx;
+    font-size: 30rpx;
+}
+.for_read{
+    float: right;
+}
+.for_contentinfo{
+    margin: 35rpx;
+}
+.for_info{
+    word-break:break-all;
+}
+.for_img{
+    height: 240prx;
+    width: 100%;
+}

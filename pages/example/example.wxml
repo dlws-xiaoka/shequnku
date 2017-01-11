@@ -1,0 +1,25 @@
+<!--pages/example/example.wxml-->
+<scroll-view scroll-y="true" class="for_example">
+<view class="for_first">
+    <text>• 微信群—骑行爱好者微信群—案例：</text>
+</view>
+<view class="for_title">
+    <input placeholder="动态的内容标题" value="这里取title的值"/>
+</view>
+<view class="for_content">
+    <text class="for_time">2017年1月10日18:34:56</text>
+    <text class="for_read">浏览50</text>
+</view>
+<view class="for_contentinfo">
+    <text class="for_info">
+    在说到这个问题的时候，也许有人会问CSS中不是有vertical-align属性来设置垂直居中的吗？即使是某些浏览器不支持我只需做少许的CSS Hack技术就可以啊！所以在这里我还要啰嗦两句，CSS中的确是有vertical-align属性，但是它只对(X)HTML元素中拥有valign特性的元素才生效，例如表格元素中的等，而像这样的元素是没有valign特性的，因此使用vertical-align对它们不起作用。
+    </text>
+    <image class="for_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+    <image class="for_img" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+</view>
+
+
+
+
+
+</scroll-view>

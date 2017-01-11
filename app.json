@@ -1,7 +1,11 @@
 {
     "pages": [
-     "pages/user/user",
      "pages/index/index",
+     "pages/information/information",
+     "pages/user/user",
+     "pages/example/example",
+     "pages/wordlist/wordlist",
+     "pages/wordinfo/wordinfo",
      "pages/resoude/resoude"
     ],
     "window": {

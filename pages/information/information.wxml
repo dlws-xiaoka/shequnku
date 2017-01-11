@@ -1,0 +1,48 @@
+<!--pages/information/information.wxml-->
+<view class="container1">
+    <view class="scrollwechat">
+        <view class="infolist">
+            <view class="head">
+                <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
+            </view>
+            <view class="headinfo">
+                <text class="headtext">
+                    社团名称：中国人的地质大学
+                </text> 
+            </view>
+            <view class="headinfo">
+                <text class="headtext">
+                    中国地质大学
+                </text> 
+            </view>
+            <view class="choose_city">
+                <text class="choose_sheng">
+                    河北省
+                </text>
+                 <text class="choose_shi">
+                    秦皇岛市
+                </text>
+            </view>
+            <view class="headphone">
+                <text class="headtext"> 手机号:</text>              
+                <input class="headtext" placeholder="请输入电话号码"  value="6666" />
+            </view>
+            <view class="bootinfo">
+                <text class="headtext">
+                    简介:
+                </text> 
+            </view>
+            
+        </view>
+    <!--提交框-->
+        <scroll-view scroll-y="true" class="footer">
+            <view  class="footinput">
+                <scroll-view scroll-y="true" class="input">
+                    <input bindfocus="bindfocus" bindblur='bindblur' placeholder="Strin" type="text" />
+                </scroll-view>
+            </view>
+        </scroll-view> 
+    </view> 
+
+</view>
+
