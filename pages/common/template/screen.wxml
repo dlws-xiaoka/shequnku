@@ -1,11 +1,19 @@
-<!--pages/down/down.wxml-->
+<!--筛选页面模板-->
+<!--
+id:news.news_id,
+title:news.news_title,
+data:news.news_date,
+parise:news.news_praise_count,
+commont:news.news_comment_count,
+summary:news.news_summary,
+icons:news.news_icon,
+style:news.news_style
+-->
 
-<import src="../common/template/screen.wxml"/>
-
-
- <block>
+<!--社团模式-->
+<template name="flag0">
     <dl class="menu">
-        <dt data-index="0" bindtap="tapMainMenu">选择省</dt>
+        <dt data-index="0" bindtap="tapMainMenu">{{currentNavtab==0 ? '选择省' : currentNavtab}}</dt>
         <dd class="{{subMenuDisplay[0]}}">
             <ul>
                 <li class="{{currentNavtab==1? 'highlight' : ''}}" data-index="1" bindtap="tapSubMenu">黑龙江</li>
@@ -16,25 +24,17 @@
             </ul>
         </dd>
         
-        <dt data-index="1" bindtap="tapMainMenu">选择市</dt>
+        <dt data-index="1" bindtap="tapMainMenu">{{city==0 ? '选择市' : city}}</dt>
         <dd class="{{subMenuDisplay[1]}}">
             <ul>
-                <li class="{{city==1? 'highlight' : ''}}" style="margin-left:50%;" data-index="1" bindtap="tapCity">哈尔滨</li>
+                <li class="{{city==1? 'highlight' : ''}}" style="margin-left:50%;" data-index="1" bindtap="tapCity">哈尔滨{{city}}</li>
                 <li class="{{city==2? 'highlight' : ''}}" style="margin-left:50%;" data-index="2" bindtap="tapCity">大庆</li>
             </ul>
         </dd>
     </dl>
+</template>
 
-    <!--输入院校-->
-    <view class="res-school {{SchollDisplay}}">
-        <view class="res-schoold active"  id="1" bindtap="chooseTree">
-            黑龙江大学
-        </view>
-        <view class="res-schoold" id="2" bindtap="chooseTree">
-            哈尔滨理工大学大学
-        </view>
-        <view class="res-schoold" id="3" bindtap="chooseTree">
-            哈尔滨工业大学
-        </view>
-    </view>
- </block>
+<!--微信模式-->
+<template name="flag1">
+    
+</template>

@@ -1,0 +1,14 @@
+<view class="shol-flex">
+<view class="nav_left">
+        <view class="nav_left_items active" data-id="1" data-index="0" bindtap="chooseClass">一级分类</view>
+        <view class="nav_left_items " data-id="1" data-index="0" bindtap="chooseClass">二级分类</view>
+        <view class="nav_left_items " data-id="1" data-index="0" bindtap="chooseClass">三级分类</view>
+</view>
+
+        <view class="nav_right">
+                <view class="nav_rights">
+                一级分类一ooooo
+                
+                </view>
+        </view>
+</view>

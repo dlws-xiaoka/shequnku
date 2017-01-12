@@ -2,12 +2,12 @@
 function initSubMenuDisplay() {
     return ['hidden', 'hidden', 'hidden'];
 }
+
 Page({
     data:{
         subMenuDisplay:initSubMenuDisplay(),
         currentNavtab:"0",
-        city:"0",
-        SchollDisplay:'hidden'
+        city:"0"
     },
     tapMainMenu: function(e) {
 //        获取当前显示的一级菜单标识
@@ -17,7 +17,7 @@ Page({
 //        如果目前是显示则隐藏，反之亦反之。同时要隐藏其他的菜单
         if(this.data.subMenuDisplay[index] == 'hidden') {
             newSubMenuDisplay[index] = 'show';
-        }else{
+        } else {
             newSubMenuDisplay[index] = 'hidden';
         }
         // 设置为新的数组
@@ -34,26 +34,12 @@ Page({
         this.setData({
           currentNavtab: e.currentTarget.dataset.index
         });
-        //隐藏大学
-        this.setData({
-             SchollDisplay: 'hidden'
-        });
         
     },
     tapCity:function(e){
         this.setData({
           city: e.currentTarget.dataset.index
         });
-
-        //重新设置是否显示
-        this.setData({
-            SchollDisplay: 'show'
-        });
-    },
-    chooseTree:function(e){
-         wx.navigateTo({
-            url:'/pages/schoolTree/schoolTree'
-        })
     }
     
 })

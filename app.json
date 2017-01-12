@@ -1,5 +1,6 @@
 {
     "pages": [
+     "pages/schoolTree/schoolTree",
      "pages/screen/screen",
      "pages/index/index",
      "pages/resoude/resoude",
