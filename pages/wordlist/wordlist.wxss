@@ -1,0 +1,47 @@
+/* pages/wordlist/wordlist.wxss */
+.article__item{
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+  padding-bottom: 40rpx;
+}
+.article__thumb{
+  width:3.2rem;
+  height: 3rem;
+
+}
+.article__image{
+  width:3.2rem;
+  height: 3rem;
+}
+.article__info{
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+.article__desc{
+  font-size: 30rpx;
+  line-height: 1.2rem;
+  width: 100%;
+}
+.article__source{
+  color:#d81e06;
+  border:1rpx solid #d81e06;
+  padding: 2rpx 10rpx;
+  border-radius: 4rpx;
+  font-size:20rpx;
+  margin-right: 20rpx;
+}
+
+.article__title{
+  margin-left: 10rpx;
+}
+.article__time{
+  float: right;
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+  font-weight: 500;
+}

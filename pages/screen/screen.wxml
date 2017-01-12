@@ -1,7 +1,4 @@
-<!--pages/down/down.wxml-->
-
-<import src="../common/template/screen.wxml"/>
-
+<!--pages/screen/screen.wxml-->
 
  <block>
     <dl class="menu">

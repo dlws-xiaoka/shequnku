@@ -1,0 +1,31 @@
+<!--pages/dataone/dataone.wxml-->
+<view class="ctype">
+    <view class="form_con">
+        <view class="headtitle">
+            <image src="/image/xx.png" class="headimg"></image>
+            <input class="headtext" placeholder="请输入社团名称"/>
+        </view>
+        <view class="headtitle">
+            <image src="/image/xx.png" class="headimg"></image>
+            <text class="headtext">选择院校</text>
+        </view>
+        <view class="headtitle">
+            <image src="/image/xx.png" class="headimg"></image>
+            <text class="headtext">选择省市</text>
+        </view>
+        <view class="headtitle">
+            <image src="/image/xx.png" class="headimg"></image>
+            <input class="headtext" placeholder="请输入手机号"/>
+        </view>
+    </view>
+    <!--简介框-->
+        <view  class="footer">
+            <view  class="footinput">
+                <view  class="input">
+                    <textarea  style='overflow-y: hidden;height:200px' placeholder="请输入简介"/>
+                    <!--<input bindfocus="bindfocus" bindblur='bindblur' placeholder="请输入简介" type="text" />-->
+                </view>
+            </view>
+        </view> 
+        <button class="btnsubmit">提交</button>
+</view>

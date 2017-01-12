@@ -1,10 +1,17 @@
 {
     "pages": [
-     "pages/schoolTree/schoolTree",
-     "pages/screen/screen",
      "pages/index/index",
-     "pages/resoude/resoude",
-     "pages/user/user"
+     "pages/screen/screen",
+     "pages/schoolTree/schoolTree",
+     "pages/user/user",
+     "pages/dataone/dataone",   
+     "pages/choosetype/choosetype",
+     "pages/login/login",
+     "pages/information/information",
+     "pages/example/example",
+     "pages/wordlist/wordlist",
+     "pages/wordinfo/wordinfo",
+     "pages/resoude/resoude"
     ],
     "window": {
         "backgroundTextStyle": "light",

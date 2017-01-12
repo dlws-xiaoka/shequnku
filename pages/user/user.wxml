@@ -4,10 +4,10 @@
         <view class="head">
             <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
         </view>
-        <view >
+        <navigator  url="/pages/wordlist/wordlist" >
                 <text class="liulan">留言</text>   
                 <view class="headnum">6</view>        
-        </view>
+        </navigator>
         <view class="headname">
             {{userInfo.nickName}}
         </view>
