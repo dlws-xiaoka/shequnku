@@ -1,17 +1,23 @@
 {
     "pages": [
      "pages/index/index",
+     "pages/resoude/resoude",
      "pages/screen/screen",
+     "pages/search/search",
      "pages/schoolTree/schoolTree",
      "pages/user/user",
      "pages/dataone/dataone",   
      "pages/choosetype/choosetype",
+     "pages/example/example",
      "pages/login/login",
      "pages/information/information",
-     "pages/example/example",
      "pages/wordlist/wordlist",
      "pages/wordinfo/wordinfo",
-     "pages/resoude/resoude"
+     "pages/resourdtal/resourdtal",
+     "pages/bueSkill/bueSkill",
+     "pages/myCase/myCase",
+     "pages/myCaseAdd/myCaseAdd"
+
     ],
     "window": {
         "backgroundTextStyle": "light",

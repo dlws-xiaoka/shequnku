@@ -10,11 +10,13 @@
                     社团名称：中国人的地质大学
                 </text> 
             </view>
-            <view class="headinfo">
-                <text class="headtext">
-                    中国地质大学
-                </text> 
-            </view>
+            <block wx:if="{{flag==1}}">
+                <view class="headinfo">
+                    <text class="headtext">
+                        中国地质大学
+                    </text> 
+                </view>
+            </block>
             <view class="choose_city">
                 <text class="choose_sheng">
                     河北省

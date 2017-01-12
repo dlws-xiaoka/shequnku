@@ -7,8 +7,8 @@
     <view class="num">5</view>
     <view class="num">4</view>
     <view class="num">1</view>
-    <view class="img-search">
-    <image class="img-size" src="/image/search.png"></image>
+    <view bindtap="search" class="img-search">
+        <image class="img-size" src="/image/search.png"></image>
     </view>
 </view>
 <!--轮播图-->

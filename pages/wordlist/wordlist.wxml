@@ -1,119 +1,72 @@
 <!--pages/wordlist/wordlist.wxml-->
 <scroll-view scroll-y="true">
-  <navigator class="article__item" url="/pages/wordinfo/wordinfo">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+  <navigator class="wordt__item" url="/pages/wordinfo/wordinfo">
+    <view class="wordt__thumb">
+      <image class="wordt__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
     </view>
-    <view class="article__info">
-      <view class="article__desc">
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
+    <view class="wordt__info">
+      <view class="wordt__desc">
+        <text class="wordt__title">西南大学seve社团</text>
+        <view class="wordt__time">
           <text>2017年1月10日14:33:31</text>
         </view>
       </view>
     </view>
   </navigator>
 
-  <navigator class="article__item" url="/pages/wordinfo/wordinfo">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+ <navigator class="wordt__item" url="/pages/wordinfo/wordinfo">
+    <view class="wordt__thumb">
+      <image class="wordt__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
     </view>
-    <view class="article__info">
-      <view class="article__desc">
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
+    <view class="wordt__info">
+      <view class="wordt__desc">
+        <text class="wordt__title">西南大学seve社团</text>
+        <view class="wordt__time">
           <text>2017年1月10日14:33:31</text>
         </view>
       </view>
     </view>
   </navigator>
 
-  <navigator class="article__item" url="/pages/wordinfo/wordinfo">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+ <navigator class="wordt__item" url="/pages/wordinfo/wordinfo">
+    <view class="wordt__thumb">
+      <image class="wordt__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
     </view>
-    <view class="article__info">
-      <view class="article__desc">
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
+    <view class="wordt__info">
+      <view class="wordt__desc">
+        <text class="wordt__title">西南大学seve社团</text>
+        <view class="wordt__time">
           <text>2017年1月10日14:33:31</text>
         </view>
       </view>
     </view>
   </navigator>
   
-  <view class="article__item">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+ <navigator class="wordt__item" url="/pages/wordinfo/wordinfo">
+    <view class="wordt__thumb">
+      <image class="wordt__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
     </view>
-    <view class="article__info">
-      <view class="article__desc">
-      <!--  <text class="article__source">7</text>  -->
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
+    <view class="wordt__info">
+      <view class="wordt__desc">
+        <text class="wordt__title">西南大学seve社团</text>
+        <view class="wordt__time">
           <text>2017年1月10日14:33:31</text>
         </view>
       </view>
     </view>
-  </view>
+  </navigator>
 
-  <view class="article__item">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
+  <navigator class="wordt__item" url="/pages/wordinfo/wordinfo">
+    <view class="wordt__thumb">
+      <image class="wordt__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
     </view>
-    <view class="article__info">
-      <view class="article__desc">
-      <!--  <text class="article__source">7</text>  -->
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
+    <view class="wordt__info">
+      <view class="wordt__desc">
+        <text class="wordt__title">西南大学seve社团</text>
+        <view class="wordt__time">
           <text>2017年1月10日14:33:31</text>
         </view>
       </view>
     </view>
-  </view>
-
-  <view class="article__item">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-    </view>
-    <view class="article__info">
-      <view class="article__desc">
-      <!--  <text class="article__source">7</text>  -->
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
-          <text>2017年1月10日14:33:31</text>
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class="article__item">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-    </view>
-    <view class="article__info">
-      <view class="article__desc">
-      <!--  <text class="article__source">7</text>  -->
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
-          <text>2017年1月10日14:33:31</text>
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class="article__item">
-    <view class="article__thumb">
-      <image class="article__image" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>
-    </view>
-    <view class="article__info">
-      <view class="article__desc">
-      <!--  <text class="article__source">7</text>  -->
-        <text class="article__title">西南大学seve社团</text>
-        <view class="article__time">
-          <text>2017年1月10日14:33:31</text>
-        </view>
-      </view>
-    </view>
-  </view>
+  </navigator>
 </scroll-view>

@@ -21,6 +21,11 @@ Page({
       url: '../logs/logs'
     })
   },
+   search: function() {
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
   onLoad: function () {
     var that = this
     //调用应用实例的方法获取全局数据

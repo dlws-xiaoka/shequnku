@@ -18,13 +18,13 @@
            <view class="headtext">
                 我的资源
            </view> 
-           <view class="add-resou" blintap="addsource">
+           <view bindtap="addsource" class="add-resou">
            +创建资源
            </view>
         </view>
     </view>
    
-<navigator url="/pages/news/detail">
+<navigator url="/pages/resourdtal/resourdtal">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
@@ -41,23 +41,23 @@
     </view>
 </navigator>
 
-<navigator url="/pages/news/detail">
+<navigator url="/pages/resourdtal/resourdtal">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
         </view>
         <view class="article__info">
-            <view class="article__title">清华大学</view>
+            <view class="article__title">微信群名称</view>
             <view class="article__desc">
-                <text class="article__time">学校名称</text>
+                <text class="article__time">类别</text>
             </view>
-            <view class="article__descs">
+           <view class="article__descs">
                 <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
             </view>
         </view>
     </view>
 </navigator>
-<navigator url="/pages/news/detail">
+<navigator url="/pages/resourdtal/resourdtal">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
