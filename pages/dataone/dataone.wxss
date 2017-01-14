@@ -1,126 +1,95 @@
 /* pages/dataone/dataone.wxss */
 
-page {
-  height: 95%;
-  width: 100%;
-}
-
-.ctype {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+view,text,image{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "微软雅黑";
 }
-
-.form_con {
-  max-height: 50%;
-}
-
-.headtitle {
-  padding: 20rpx;
-  margin-left: 20rpx;
-  min-height: 75rpx;
-  display: flex;
-}
-
-.headimg {
-  width: 50rpx;
-  height: 50rpx;
-  display: flex;
-}
-
-.headtext {
-  width: 85%;
-  height: 70rpx;
-  display: inline-block;
-  margin-left: 20rpx;
-  border-top: 1px solid black;
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid black;
-  border-right: 1px solid #eee;
-}
-
-.btnsubmit {
-  margin-top: 20rpx;
-  width: 30%;
-  height: 100rpx;
-}
-
-.footer {
-  border-top: 1px solid black;
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid black;
-  border-right: 1px solid #eee;
-  margin-top: -50rpx;
-  margin-left: 13.8%;
-  width: 80%;
-  height: 40%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.footinput {
-  flex: 1;
-  height: 100%;
+.top{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 20rpx;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f2f2f2;
 }
-
-.input {
+.content_wrapper{
+  width: 100%;
+  height: 100vh;
+  background:#f7f7f7;
+}
+.content{
+  width: 95.3125vw;
+  overflow:hidden;
+  clear:both;
+  margin: 0 auto;
+  background:#fff;
+}
+.content_detail{
+  width: 100vw;
+  overflow:hidden;
+  clear:both;
+  font-size:4.0625vw;
+ border-bottom: 1px solid #e6e6e6;
+}
+.content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT{
+  float: left;
+}
+.content_name1{
+   color:#333;
+   margin: 15px 0;
+   font-weight: 600;
+}
+.content_name2{
+  text-align:right;
+  color:#999;
+  margin: 15px 0 15px 24.2666%;
+  
+}
+@media only screen and (min-width: 414px) and (max-width: 640px) {
+	.content_name2{
+  margin: 15px 0 15px 28.4666%;
+ 
+}
+}
+.content_nameCity{
+  color:#999;
+  margin: 15px 0 15px 45.28125%;
+}
+.content_nameP{
+  color:#999;
+  margin: 15px 0 15px 49.09375%;
+}
+.content_nameT{
+  color:#999;
+  margin: 15px 0 15px 48.625%;
+}
+.content_nameJ{
+  width: 45.5vw;
+  color:#999;
+  margin: 15px 0 15px 33.625%;
+}
+.content_pic{
+  width: 3.875vw;
+  height: 3.4375vw;
+  margin: 15px 15px 15px 10px;
+}
+.photo{
   width: 100%;
   height: 100%;
-  border: 1px solid #ccc;
-  word-break: break-all;
+  background-size: cover;
 }
+.foot_button{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  font-size: 5.625vw;
+  text-align: center;
+  background: #13b1a3;
+  color: #fff;
 
-textarea {
-  overflow:scroll;
-  overflow-x:hidden; 
-  overflow-y:true; 
-  display: block;
-  height: 100rpx;
- /* text-overflow: clip;*/
- /* overflow: hidden;*/
-  white-space: nowrap;
-  font-family: UICTFontTextStyleBody;
-/*  min-height: 12.4rem;*/
-  word-break: break-all;
 }
-
-.footadd image {
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.footaddbox {
-  height: 200rpx;
-}
-
-.footaddbox ul {
-  display: flex;
-  height: 100%;
-  flex-direction: row;
-}
-
-.footaddbox ul li {
-  flex: 1;
-  height: 100%;
-  font-size: 12px;
-  color: #9a9a9a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footaddimg {
-  border: 1px solid #ccc;
-  border-radius: 20rpx;
-  margin: 10rpx;
-  padding: 30rpx;
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
 }

@@ -1,10 +1,13 @@
 // pages/choosetype/choosetype.js
 Page({
-  data:{},
-  NexStep:function(e){
-    wx.navigateTo({
-      url: '../dataone/dataone'
-    })
+  data:{
+    backGroud:""
+  },
+  
+  changeBack: function(e){
+    this.setData({
+      backGroud :"bg_active"
+    });
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数

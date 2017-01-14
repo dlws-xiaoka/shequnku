@@ -1,39 +1,33 @@
 {
     "pages": [
      "pages/index/index",
+     "pages/information/information",
+    "pages/user/user",
      "pages/resoude/resoude",
-     "pages/screen/screen",
-     "pages/search/search",
-     "pages/schoolTree/schoolTree",
-     "pages/user/user",
+     "pages/example/example",
      "pages/dataone/dataone",   
      "pages/choosetype/choosetype",
-     "pages/example/example",
-     "pages/login/login",
-     "pages/information/information",
-     "pages/wordlist/wordlist",
      "pages/wordinfo/wordinfo",
-     "pages/resourdtal/resourdtal",
-     "pages/bueSkill/bueSkill",
-     "pages/myCase/myCase",
-     "pages/myCaseAdd/myCaseAdd"
-
+     "pages/wordlist/wordlist",
+     "pages/login/login",
+     
+     "pages/screen/screen"
     ],
     "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "社群库",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "#fff"
     },
     "tabBar": {
         "color": "#333",
-        "selectedColor": "#d81e06",
+        "selectedColor": "#02DF82",
         "borderStyle": "white",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#fff",
         "list": [{
             "pagePath": "pages/index/index",
             "iconPath": "image/index.png",
-            "selectedIconPath": "image/indexs.png",
+            "selectedIconPath": "image/indexs.png",       
             "text": "首页"
         }, {
             "pagePath": "pages/user/user",

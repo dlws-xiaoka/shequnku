@@ -53,19 +53,3 @@
 .menu li.highlight{
     background-color: lawngreen;
 }
-
-.res-school{
-    margin-top: 50px;
-}
-.res-schoold{
-    width: 98%;
-    height: 20px;
-    font-size: 16px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    margin-top:2px;
-}
-
- .active{
-    color:#8E8E8E;
-}

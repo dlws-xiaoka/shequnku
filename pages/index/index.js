@@ -13,17 +13,19 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
-    feed_length: 0
+    feed_length: 0,
+    movies:[  
+          {url:'http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg'} ,  
+          {url:'http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg'} ,  
+          {url:'http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg'} ,  
+          {url:'http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg'}   
+          ]
+
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
-    })
-  },
-   search: function() {
-    wx.navigateTo({
-      url: '../search/search'
     })
   },
   onLoad: function () {

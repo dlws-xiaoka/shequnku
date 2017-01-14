@@ -3,9 +3,43 @@ var $vm = getApp()
 Page({
   data:{
     text:"Page user",
-    userInfo: {}
+    userInfo: {},
+    userListInfo: [ 
+      {
+      
+        text: '消息通知',
+        isunread: false,
+        unreadNum: 2
+      }, 
+      {
+      
+        text: '活动',
+        isunread: false,
+        unreadNum: 2
+      }, 
+      {
+     
+        text: '商城',
+        isunread: true,
+        unreadNum: '特卖,电影'
+      }, 
+      {
+     
+        text: '京东特卖',
+        isunread: false,
+        unreadNum: 1
+      }, 
+      {
+
+        text: '我要爆料'
+      }, 
+      {
+      
+        text: '反馈'
+      }]
+
+
   },
-  
    onLoad: function () {
     console.log('onLoad')
     var that = this
@@ -28,10 +62,5 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  },
-   addsource(event){
-     wx.navigateTo({
-      url: '../choosetype/choosetype'
-    })
-   }
+  }
 })

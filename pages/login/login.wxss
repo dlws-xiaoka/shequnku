@@ -14,9 +14,12 @@
 .headimg{
     height: 250rpx;
     width: 230rpx;
+    border-radius: 100%;
 }
 .btn{
     margin-top: 20%;
     width: 30%;
     height: 100rpx;
+    background:#13b1a3;
+    color: #fff;
 }

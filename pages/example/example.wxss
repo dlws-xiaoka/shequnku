@@ -1,35 +1,82 @@
 /* pages/example/example.wxss */
-.for_example{
+.title_wraper{
+	width: 90.625%;
+	margin:0  auto;
+	overflow: hidden;
+	clear: both;
+	border-bottom: 1px solid #ccc;
+}
+.title{
+    font-size: 5.0625vw;
+	color: #000;
+	font-weight: 600;
+	margin-top: 30px;
+	text-align:center;
+    display: block;
+}
+.new_text{
+	text-align:center;
+	overflow:hidden;
+	clear:both;
+}
+.watch{
+  width: 4.4375vw;
+  height: 4.4375vw;
+   display: block;
+	float: left;
+	margin: 13px 0 10px 17.1725%;
+}
+.eye{
+  width: 4.4375vw;
+   height: 4.4375vw;
+   display: block;
+	float: left;
+	margin-top:14px;
+}
+.pic{
+    width: 100%;
     height: 100%;
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-    /*align-items: center;*/
-    justify-content: space-between;
-    box-sizing: border-box;
+    background-size: cover;
 }
-.for_first{
-    margin-left: 10rpx;
-    border-bottom: 1rpx solid #eee;
+.time{
+    margin: 15px 5px 10px;
+    display: block;
+	float: left;
+	font-size: 3.5vw;
+	color: #666;
 }
-.for_title{
-    margin: 20rpx 20rpx 0 20rpx;
-    border: 1rpx solid #eee;
+.num{
+    display: block;
+	float: left;
+	font-size: 3.5vw;
+	color: #666;
+  margin: 15px 4px 0 8px;
 }
-.for_content{
-    margin: 20rpx 20rpx 0 20rpx;
-    font-size: 30rpx;
+@media only screen and (min-width: 375px) and (max-width:414px) {
+	.watch{
+	margin-left: 22.5725%;
 }
-.for_read{
-    float: right;
 }
-.for_contentinfo{
-    margin: 35rpx;
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+	.watch{
+	margin-left: 28.5725%;
 }
-.for_info{
-    word-break:break-all;
 }
-.for_img{
-    height: 240prx;
-    width: 100%;
+.new_pic{
+    width: 76.5625%;
+	margin: 15px auto;
+    overflow: hidden;
+    clear: both;
+}
+.picture{
+    widows: 100%;
+    background-size: cover;
+}
+.new_content{
+	width: 90.625%;
+	margin: 0 auto;
+}
+.new_detail{
+	color: #000;
+	font-size: 3.125vw;
 }
