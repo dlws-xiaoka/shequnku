@@ -1,16 +1,21 @@
 {
     "pages": [
+     "pages/dataone/dataone",   
+     "pages/myCase/myCase",
      "pages/index/index",
+    "pages/resourdtal/resourdtal",
+    "pages/schoolTree/schoolTree",
+     "pages/choosetype/choosetype",
+    "pages/myCaseAdd/myCaseAdd",
+     "pages/resoude/resoude",
+    "pages/bueSkill/bueSkill",
+     "pages/search/search",
      "pages/information/information",
     "pages/user/user",
-     "pages/resoude/resoude",
      "pages/example/example",
-     "pages/dataone/dataone",   
-     "pages/choosetype/choosetype",
      "pages/wordinfo/wordinfo",
      "pages/wordlist/wordlist",
      "pages/login/login",
-     
      "pages/screen/screen"
     ],
     "window": {

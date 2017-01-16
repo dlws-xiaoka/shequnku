@@ -1,51 +1,72 @@
-.container1 {
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-} 
+.user-top{
+ width: 100vw;
+ overflow: hidden; 
+ background: #13b1a3;
+ border-bottom: 1px solid #e6e6e6;
+}
 .head{
-    text-align:center;
-    margin-top: 30rpx;
+    margin-top: 30px;
+    margin-left: 37.5vw;
+    width: 25vw;
+    height: 25vw;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    
 }
 .headimg{
-    height: 125rpx;
-    width: 135rpx;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
 }
 .headname{
-    text-align:center;
-    margin-top: 20rpx;
+   width: 100vw;
+   font-size: 4.6875vw;
+   color: #fff;
+   font-weight: 600;
+   justify-content:center;
+   padding-top: 15px;
+   display: flex;
 }
 .headcity{
+    font-size: 4.0625vw;
+    color:#fff;
+    font-weight: 500;
     text-align:center;
-    margin-top: 20rpx;
+    margin: 5px 0 15px 0;
 }
-.headinfo{
-    margin: 20rpx 20rpx ;
-    border-top:1px solid #7B7B7B;
-    border-bottom:1px solid #eee;
-    display: flex;
+.information{
+    margin: 0 15px 15px 15px;
+    color:#fff;
+    font-size: 4.0625vw;
+    float: left;
 }
-.add-resou{
-    height: 25px;
-    line-height:25px;   
-     overflow:hidden;  
-    margin-left: 170px;
-    font-size: 14px;
-    border: 2px solid #eee;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius:25%;
-
+.resourdtal_content{
+    width: 100vw;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid #e6e6e6;
+    background: #fff;
 }
-.headtext{
-    margin-top: 20rpx; 
-    font-size: 15px;
+.resourdtal_left,.resourdtal__title,.resourdtal_pic{
+    float: left;
 }
-
-
-.user-top{
-  height:30%; 
- 
+.resourdtal_left{
+    width: 9.25vw;
+    height: 9.25vw;
+    margin: 15px 10px 15px 15px;
+}
+.resourdtal__title{
+    font-size: 4.0375vw;
+    color: #333;
+    margin: 20px 0;
+    font-weight: 600;
+}
+.resourdtal_pic{
+    width: 2.1875vw;
+    height: 3.75vw;
+    margin: 20px 15px 20px 55vw;
+}
+page{
+    background: #f7f7f7;
 }

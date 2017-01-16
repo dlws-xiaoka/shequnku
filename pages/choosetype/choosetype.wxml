@@ -1,31 +1,4 @@
-<!--pages/choosetype/choosetype.wxml-->
-<!--<view class="ctype">
-<view class="headtitle">
-    <image src="/image/xx.png" class="headimg"></image>
-    <text class="headtext">选择添加类型</text>
-</view>
-<view class="section10">
-    <view class="flex-wrp1p" style="flex-direction:column;">
-        <view class="flex-wrp1p" style="flex-direction:row;">
-            <view class="flex-item61">
-            社团             
-            </view>
-            <view class="flex-item61">
-              微信公众号
-            </view>
-            <view class="flex-item61">
-              微信群
-            </view>
-        </view>
-        <view>
-           <view class="flex-item62">
-              QQ群
-            </view> 
-        </view>
-    </view>
-</view>
-<button class="btnnext">下一步</button>
-</view>-->
+
 <view class="ctt_choose">
   <view class="flex-wrp1p">
             <view class="flex-item61 {{backGroud}}" bindtap="changeBack">

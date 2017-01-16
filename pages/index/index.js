@@ -13,6 +13,7 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
+    flag:false,
     feed_length: 0,
     movies:[  
           {url:'http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg'} ,  

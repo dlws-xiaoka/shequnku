@@ -3,7 +3,13 @@ var $vm = getApp()
 Page({
   data:{
     text:"Page user",
-    userInfo: {}
+    userInfo: {},
+    changeColor:function(e){
+      this.setdata({
+        background:"13b1a3"
+      })
+    }
+    
   },
   
    onLoad: function () {

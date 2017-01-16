@@ -46,6 +46,9 @@
             </view>
         </view>
     </view>
-    <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+    <navigator url="/pages/schoolTree/schoolTree">
+       <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 提交    </button>
+    </navigator>
+    
 </view>

@@ -1,1 +1,10 @@
-这是添加案列页面
+<view class="title">
+  <input placeholder="输入标题" />
+</view>
+<view class="content">
+   <textarea placeholder="输入内容"/>
+</view>
+<view class="add_photo">
+   <image class="camera" src="/image/camera.png"></image>
+   <image src="/image/add_pic.png"></image>
+</view>
