@@ -1,19 +1,23 @@
 {
     "pages": [
-     "pages/choosetype/choosetype",
-     "pages/index/index",
+      "pages/index/index",
+     "pages/dataone/dataone",   
+     "pages/myCase/myCase",
+    "pages/resourdtal/resourdtal",
+    "pages/myCaseAdd/myCaseAdd",
+     "pages/resoude/resoude",
+    "pages/bueSkill/bueSkill",
+     "pages/search/search",
      "pages/example/example",
+     "pages/choosetype/choosetype",
      "pages/screen/screen",
      "pages/schoolTree/schoolTree",
-     "pages/information/information",
-     "pages/dataone/dataone",   
+     "pages/information/information",   
      "pages/wordinfo/wordinfo",
-     "pages/resoude/resoude",
-     "pages/search/search",
      "pages/user/user",
      "pages/login/login",
-     "pages/wordlist/wordlist",
-     "pages/resourdtal/resourdtal"
+     "pages/screen/screen",
+     "pages/wordlist/wordlist"
    
     ],
     "window": {

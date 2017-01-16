@@ -1,50 +1,44 @@
-var $vm = getApp()
+var app = getApp()
 
 Page({
   data:{
     text:"Page user",
     userInfo: {},
-    userListInfo: [ 
-      {
-      
-        text: '消息通知',
-        isunread: false,
-        unreadNum: 2
-      }, 
-      {
-      
-        text: '活动',
-        isunread: false,
-        unreadNum: 2
-      }, 
-      {
-     
-        text: '商城',
-        isunread: true,
-        unreadNum: '特卖,电影'
-      }, 
-      {
-     
-        text: '京东特卖',
-        isunread: false,
-        unreadNum: 1
-      }, 
-      {
-
-        text: '我要爆料'
-      }, 
-      {
-      
-        text: '反馈'
-      }]
-
-
+    userListInfo: [ ],
+    leaveCount:"",
+    wxname:"",
+    headImgUrl:"",
+    resourceList:""
   },
    onLoad: function () {
-    console.log('onLoad')
-    var that = this
+    var that = this;
+    var remoteAddress = app.remoteAddress();
+
+     wx.request({
+        url: remoteAddress+"xcxIndex/getLeaveCountUserInfo.html", //仅为示例，并非真实的接口地址
+        data:{openId:123},
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+          that.setData({
+            leaveCount:res.data.data.leaveCount,
+            wxname:res.data.data.wxname,
+            headImgUrl:res.data.data.headImgUrl
+          })
+          wx.request({
+            url: remoteAddress+"xcxIndex/getMyResource.html",
+            data: {},
+            success: function(res){
+              that.setData({
+               resourceList:res.data.data.resourceList
+               })
+            },  
+          })
+        }
+      }),
     //调用应用实例的方法获取全局数据
-    $vm.getUserInfo(function(userInfo){
+    app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
         userInfo:userInfo
