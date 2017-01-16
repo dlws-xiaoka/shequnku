@@ -29,7 +29,6 @@ App({
     userInfo:null
   },
 
-
   remoteAddress: function(){
     return "http://192.168.15.103/:8080/";
   },
@@ -38,7 +37,7 @@ App({
   },
 
   remoteAddress:function(){
-    return "http://192.168.15.99:8080";
+    return "http://192.168.15.99:8080/";//wxl
   },
   //统一请求入口，需传入请求地址：url，请求参数：data
   getData:function(url,data){

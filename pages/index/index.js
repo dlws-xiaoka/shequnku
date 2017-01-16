@@ -32,7 +32,7 @@ Page({
     var sysurl = app.remoteAddress();
     
     wx.request({
-            url: sysurl+'/dlws-xiaoka-shequnku/xcxIndex/indexData.html', 
+            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/indexData.html', 
             data: {},
             method: 'GET',
             success: function(res){ 
@@ -43,7 +43,7 @@ Page({
                   movies: res.data.data.bannerList,
                 })     
                 wx.request({
-                  url: sysurl + '/dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html',
+                  url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html',
                   data: { id: 1},
                   method: 'GET',
                   success: function (res) {
@@ -79,7 +79,7 @@ Page({
     var id = e.currentTarget.dataset.id
     var sysurl = app.remoteAddress();
     wx.request({
-            url: sysurl+'/dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html', 
+            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html', 
             data: {id:id},  
             method: 'GET',   
             success: function(res){   
