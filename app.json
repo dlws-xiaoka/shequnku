@@ -1,6 +1,7 @@
 {
     "pages": [
      "pages/index/index",
+     "pages/choosetype/choosetype",
      "pages/dataone/dataone",   
      "pages/myCase/myCase",
     "pages/resourdtal/resourdtal",
@@ -8,9 +9,8 @@
      "pages/resoude/resoude",
     "pages/bueSkill/bueSkill",
      "pages/search/search",
+
      "pages/example/example",
-     "pages/choosetype/choosetype",
-     "pages/screen/screen",
      "pages/schoolTree/schoolTree",
      "pages/information/information",   
      "pages/wordinfo/wordinfo",
