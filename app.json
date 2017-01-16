@@ -1,6 +1,6 @@
 {
     "pages": [
-      "pages/index/index",
+     "pages/index/index",
      "pages/dataone/dataone",   
      "pages/myCase/myCase",
     "pages/resourdtal/resourdtal",
@@ -16,9 +16,7 @@
      "pages/wordinfo/wordinfo",
      "pages/user/user",
      "pages/login/login",
-     "pages/screen/screen",
      "pages/wordlist/wordlist"
-   
     ],
     "window": {
         "backgroundTextStyle": "dark",

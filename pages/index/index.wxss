@@ -23,7 +23,7 @@ view,text{
 }
 .num{
     font-size:4.6875vw;
-   width: 5vw;
+   width: 12vw;
    height: 7.097vw;
    background: #13b1a3; 
     text-align: center;

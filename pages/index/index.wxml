@@ -3,29 +3,15 @@
 <!--搜索-->
 <view class="search">
     <view class="search-font">已入驻</view>
-    <view class="num num_border">8</view>
-    <view class="num">5</view>
+    <view class="num num_border">8541</view>
+    <!--<view class="num">5</view>
     <view class="num">4</view>
-    <view class="num">1</view>
+    <view class="num">1</view>-->
     <view class="search_font">资源数</view>
-    <view class="img-search">
-    <image class="img-size" src="/image/search.png"></image>
-    </view>
+    <navigator class="img-search" url="/pages/search/search">         
+       <image class="img-size" src="/image/search.png"></image>
+    </navigator>
 </view>
-<!--轮播图-->
-<!--<swiper class="swiper__container"  indicator-dots="true" autoplay="true" interval="3000" duration="500">
-   
-      <swiper-item  wx:key="id">
-            <view class="swiper__content">
-                <image src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg" class="swiper__item" mode="aspectFill"  />
-                <view class="swiper__desc">
-                    <text class="swiper__text">科比</text>
-                    <text class="swiper__id">[1/4]</text>
-                </view>
-            </view>
-      </swiper-item>
-  
-</swiper>-->
 <swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
    <block wx:for="{{movies}}" wx:for-index="index">  
     <swiper-item>  

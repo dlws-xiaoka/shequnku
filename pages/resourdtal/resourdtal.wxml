@@ -1,53 +1,51 @@
 <!--pages/myroom/myroom.wxml-->
-<view class="container1">
-    <view class="user-top">
+ <view class="user-top">
+
         <view class="head">
-            <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
+            <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
-       
         <view class="headname">
-            社团名称
+           社团名称
         </view>
         <view class="headcity">
-          城市|所属大学名称
+         城市名称  学校名称
         </view>
-        <view class="headinfo">
-           <view class="headtext">
-                简介： 西南民族大学校园官方论坛——非梦社区（028uu.com）...
-           </view> 
-        </view>
-    </view>
-   
+        <text class="information">这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以</text>
+</view>
 <navigator url="/pages/bueSkill/bueSkill">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+    <view class="resourdtal_content">
+        <view class="resourdtal_left">
+            <image class="photo" src="/image/ablity.png"></image>
         </view>
-        <view class="article__info">
-            <view class="article__title">业务技能</view>
+      
+            <view class="resourdtal__title">业务技能</view>
+       <view class="resourdtal_pic">
+          <image class="photo" src="/image/more.png"></image>
         </view>
     </view>
 </navigator>
 
 <navigator url="/pages/myCase/myCase">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+    <view class="resourdtal_content">
+        <view class="resourdtal_left">
+            <image class="photo" src="/image/anli.png"></image>
         </view>
-        <view class="article__info">
-            <view class="article__title">我的案列</view>
-        </view>
+            <view class="resourdtal__title">我的案列</view> 
+         <view class="resourdtal_pic">
+            <image class="photo" src="/image/more.png"></image>
+        </view>         
     </view>
 </navigator>
 <navigator url="/pages/information/information">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+    <view class="resourdtal_content">
+        <view class="resourdtal_left">
+            <image class="photo" src="/image/person.png"></image>
         </view>
-        <view class="article__info">
-            <view class="article__title">资料设置</view>
+            <view class="resourdtal__title">资料设置</view>
+       
+        <view class="resourdtal_pic">
+          <image class="photo" src="/image/more.png"></image>
         </view>
     </view>
 </navigator>
 
-</view>

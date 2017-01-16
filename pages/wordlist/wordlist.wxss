@@ -21,6 +21,11 @@
   width: 72.6875vw;
   overflow: hidden;
 }
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+	.message{
+    width: 70.6875vw;
+  }
+}
 .items{
   margin: 17px 0;
   color: #999;

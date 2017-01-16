@@ -2,6 +2,10 @@
 view,text,image{
   font-family: "微软雅黑";
 }
+view,text,image,input{
+  margin: 0;
+  padding: 0;
+}
 .container {
   height: 100%;
   display: flex;

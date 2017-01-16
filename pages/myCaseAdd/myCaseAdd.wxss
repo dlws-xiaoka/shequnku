@@ -1,0 +1,40 @@
+page{
+    background: #f2f2f2;
+}
+.title,.content{
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+}
+.title{
+    margin: 10px 0;
+}
+input{
+    color: #808080;
+    font-size: 4.375vw;
+    margin: 10px 0 16px 15px;
+}
+textarea{
+   color: #808080;
+    font-size: 4.375vw;
+    margin: 10px 0 16px 15px;
+}
+.add_photo{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 10px 0;
+}
+image{
+    width: 29.0625vw;
+    height: 29.0625vw;
+    background-size: cover;
+    float: left;
+    margin: 15px 0;
+}
+.camera{
+    margin: 15px 5px 15px 10px;
+}

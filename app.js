@@ -28,11 +28,22 @@ App({
   globalData:{
     userInfo:null
   },
+
   remoteAddress: function(){
     return "http://192.168.15.103/:8080/";
   },
   getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
     var remoteAddress  = "http://localhost:8080/";
+
+  //统一请求入口，需传入请求地址：url，请求参数：data
+  getData:function(url,data){
+    var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
+
+    //未来会在此处做缓存
+    //缓存开始
+    // 1.通过url为key 从store中get，如果有就返回，如果没有继续
+
+    //缓存结束
     wx.request({
         url: remoteAddress+url, //仅为示例，并非真实的接口地址
         data:data,
