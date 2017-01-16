@@ -214,3 +214,8 @@ word-break:break-all;
   line-height: 50rpx;
   border: 1px solid #efeff4;
 }
+.picker_provence{
+  width: 100%;
+  text-align: center;
+  line-height: 41px;
+}

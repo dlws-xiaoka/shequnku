@@ -17,13 +17,29 @@
                     </text> 
                 </view>
             </block>
+
+            <block wx:if="{{flag==2}}">
+                <view class="headinfo">
+                 <picker bindchange="handleWeiChatPickerChange" value="{{WeiWeiChatIndex}}" range="{{WeiWeiChatArray}}">
+  <view class="picker_text">
+      选择微信号分类：{{WeiWeiChatArray[WeiWeiChatIndex]}}
+  </view>
+</picker>    
+                </view>
+            </block>
             <view class="choose_city">
-                <text class="choose_sheng">
-                    河北省
-                </text>
-                 <text class="choose_shi">
-                    秦皇岛市
-                </text>
+
+            <picker class="picker_provence" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
+      {{locationArray[locationIndex]}}
+</picker>  
+               
+
+                 
+            <picker class="choose_shi" bindchange="handleCityPickerChange" value="{{cityIndex}}" range="{{cityArray}}">
+      {{cityArray[cityIndex]}}
+</picker>  
+           
+
             </view>
             <view class="headphone">
                 <text class="headtext"> 手机号:</text>              
