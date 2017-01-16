@@ -1,1 +1,48 @@
-这是业务技能
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+<view class="bueSkill_bottom">
+   <text class="txt">确定</text>
+</view>

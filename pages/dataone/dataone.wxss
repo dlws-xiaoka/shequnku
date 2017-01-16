@@ -93,3 +93,8 @@ view,text,image{
 .button-hover {
   background-color: red;
 }
+navigator{
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+}

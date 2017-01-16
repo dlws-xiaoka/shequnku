@@ -1,0 +1,53 @@
+page{
+    background: #f6f5fa;
+}
+.sorting{
+    width: 93.75vw;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 3px solid #e6e6e6;
+}
+.title{
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+}
+text,.sort_pic{
+    float: left;
+}
+text{
+    color: #666;
+    font-size: 4.0625vw;
+    margin: 15px 0 15px;
+}
+.sort_pic{
+    width:4.9vw;
+    height:4.875vw;
+    margin:13px 0 18px 10px;
+
+}
+.genre{
+    float: left;
+	padding:7px ;
+	background: #fff;
+	margin: 0 10px 15px 0;
+	border-radius: 20px;
+    color: #b3b3b3;
+    border: 1px solid #dcdcdc;
+}
+.bueSkill_bottom{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    background: #13b1a3;
+    
+}
+.txt{
+    font-size: 4.0625vw;
+    margin: 15px 45.9375vw;
+    color: #fff;
+}

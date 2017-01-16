@@ -2,19 +2,22 @@
     "pages": [
      "pages/index/index",
      "pages/choosetype/choosetype",
-     "pages/example/example",
-     "pages/screen/screen",
-     "pages/schoolTree/schoolTree",
-     "pages/information/information",
      "pages/dataone/dataone",   
-     "pages/wordinfo/wordinfo",
+     "pages/myCase/myCase",
+    "pages/resourdtal/resourdtal",
+    "pages/myCaseAdd/myCaseAdd",
      "pages/resoude/resoude",
+    "pages/bueSkill/bueSkill",
      "pages/search/search",
+
+     "pages/example/example",
+     "pages/schoolTree/schoolTree",
+     "pages/information/information",   
+     "pages/wordinfo/wordinfo",
      "pages/user/user",
      "pages/login/login",
-     "pages/wordlist/wordlist",
-     "pages/resourdtal/resourdtal"
-   
+     "pages/screen/screen",
+     "pages/wordlist/wordlist"
     ],
     "window": {
         "backgroundTextStyle": "dark",

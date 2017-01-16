@@ -13,6 +13,7 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
+    flag:false,
     feed_length: 0,
     movies:[],
     peopleNum:{},//入驻人数，页面需要改

@@ -1,7 +1,80 @@
-.cas-add{
-    border: 1px solid #eee;
-    margin-left: 100px;
-    font-size: 15px;
-    width: 100px;
-    color: burlywood;
+page{
+    background: #e6e6e6;
+}
+.myCase_top{
+    display:flex;
+    background-color: #fff;
+    color:#13b1a3;
+    overflow: hidden;
+    clear:both;
+    border-bottom: 1px solid #c2c0c1;
+}
+.myCase-font,.myCaseh_font{
+     font-size: 4.6875vw; 
+     font-weight: 600;
+}
+.myCase-font{
+    margin:30rpx 20rpx 30rpx 22.5vw;
+}
+.myCase_font{
+     margin: 30rpx 0 30rpx 10rpx;
+}
+.num{
+    font-size:4.6875vw;
+   width: 9vw;
+   height: 7.097vw;
+   background: #13b1a3; 
+    text-align: center;
+    margin: 25rpx 10rpx 22rpx 0;
+    color: #fff;
+    line-height: 7.097vw;
+}
+.img-search{
+    width: 8.25vw;
+    height: 8.25vw;
+    margin: 10px 10px 10px 20.125%;
+}
+.case{
+    width: 90.625vw;
+    margin: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    clear: both;
+}
+.title,.pic_box{
+    margin: 15px 10px;
+    width: 84.375vw;
+    overflow: hidden;
+    clear: both;
+}
+.left{
+    float: left;
+    color:#000;
+    font-weight: 600;
+    font-size: 4.0625vw;
+}
+.content_right{
+  width: 3.875vw;
+  height: 5.4375vw;
+  float: right;
+}
+.production{
+    margin: 0 10px;
+    width: 84.375vw;
+    overflow: hidden;
+    color:#b4b4b4;
+    font-size:3.75vw;
+    
+}
+.pic_box{
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+}
+.photo_box{
+    width: 25.9375vw;
+    height: 25.9375vw;
+    flex-grow: 0;
 }
