@@ -1,7 +1,7 @@
 {
     "pages": [
-     "pages/choosetype/choosetype",
      "pages/index/index",
+     "pages/choosetype/choosetype",
      "pages/example/example",
      "pages/screen/screen",
      "pages/schoolTree/schoolTree",

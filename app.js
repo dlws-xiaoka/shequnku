@@ -28,7 +28,8 @@ App({
   globalData:{
     userInfo:null
   },
-  getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
+  //统一请求入口，需传入请求地址：url，请求参数：data
+  getData:function(url,data){
     var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
     wx.request({
         url: remoteAddress+url, //仅为示例，并非真实的接口地址
