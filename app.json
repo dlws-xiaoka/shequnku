@@ -1,22 +1,23 @@
 {
     "pages": [
+     "pages/index/index",
      "pages/dataone/dataone",   
      "pages/myCase/myCase",
-     "pages/index/index",
     "pages/resourdtal/resourdtal",
-    "pages/schoolTree/schoolTree",
-     "pages/choosetype/choosetype",
     "pages/myCaseAdd/myCaseAdd",
      "pages/resoude/resoude",
     "pages/bueSkill/bueSkill",
      "pages/search/search",
-     "pages/information/information",
-    "pages/user/user",
      "pages/example/example",
+     "pages/choosetype/choosetype",
+     "pages/screen/screen",
+     "pages/schoolTree/schoolTree",
+     "pages/information/information",   
      "pages/wordinfo/wordinfo",
-     "pages/wordlist/wordlist",
+     "pages/user/user",
      "pages/login/login",
-     "pages/screen/screen"
+     "pages/screen/screen",
+     "pages/wordlist/wordlist"
     ],
     "window": {
         "backgroundTextStyle": "dark",

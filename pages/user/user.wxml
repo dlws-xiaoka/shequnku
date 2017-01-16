@@ -30,7 +30,7 @@
         </view>
     </view>
    
-<navigator class="navigator_content" url="/pages/news/detail">
+<navigator class="navigator_content" url="/pages/resourdtal/resourdtal">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>

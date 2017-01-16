@@ -1,7 +1,7 @@
 
 <view class="ctt_choose">
   <view class="flex-wrp1p">
-            <view class="flex-item61 {{backGroud}}" bindtap="changeBack">
+            <view class="flex-item61 {{backGroud}}" bindtap="changeBack" id="1">
             社团             
             </view>
 </view>

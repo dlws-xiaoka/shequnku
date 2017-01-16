@@ -53,5 +53,6 @@ Page({
             url:'/pages/screen/screen'
         })
     }
-  }
+  },
+  
 })
