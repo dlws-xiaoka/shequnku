@@ -28,8 +28,11 @@ App({
   globalData:{
     userInfo:null
   },
+  remoteAddress:function(){
+    return "http://192.168.15.99:8080";
+  },
   getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
-    var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
+    var remoteAddress  = "http://localhost:8080/dlws-xiaoka-shequnku";
     wx.request({
         url: remoteAddress+url, //仅为示例，并非真实的接口地址
         data:data,
