@@ -3,12 +3,42 @@ var $vm = getApp()
 Page({
   data:{
     text:"Page user",
-    userInfo: {}
-  },
-   mesageList:function(e){
-     wx.navigateTo({
-            url:'/pages/wordlist/wordlist'
-        })  
+    userInfo: {},
+    userListInfo: [ 
+      {
+      
+        text: '消息通知',
+        isunread: false,
+        unreadNum: 2
+      }, 
+      {
+      
+        text: '活动',
+        isunread: false,
+        unreadNum: 2
+      }, 
+      {
+     
+        text: '商城',
+        isunread: true,
+        unreadNum: '特卖,电影'
+      }, 
+      {
+     
+        text: '京东特卖',
+        isunread: false,
+        unreadNum: 1
+      }, 
+      {
+
+        text: '我要爆料'
+      }, 
+      {
+      
+        text: '反馈'
+      }]
+
+
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数

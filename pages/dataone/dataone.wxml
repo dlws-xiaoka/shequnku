@@ -1,31 +1,51 @@
 <!--pages/dataone/dataone.wxml-->
-<view class="ctype">
-    <view class="form_con">
-        <view class="headtitle">
-            <image src="/image/xx.png" class="headimg"></image>
-            <input class="headtext" placeholder="请输入社团名称"/>
+<view class="top"></view>
+<view class="content_wrapper">
+    <view class="content">
+        <view class="content_detail">
+            <text class="content_name1">社团名称</text>
+            <!--<text class="content_name2">校咖</text>-->
+            <input class="input content_name2" name="userName" placeholder="请输入社团名称"
+             bindinput="userNameInput"/>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
         </view>
-        <view class="headtitle">
-            <image src="/image/xx.png" class="headimg"></image>
-            <text class="headtext">选择院校</text>
+         <view class="content_detail">
+            <text class="content_name1">院校名称</text>
+            <text class="content_nameCity">北京清华大学</text>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
         </view>
-        <view class="headtitle">
-            <image src="/image/xx.png" class="headimg"></image>
-            <text class="headtext">选择省市</text>
+         <view class="content_detail">
+            <text class="content_name1">地址</text>
+            <text class="content_nameP">河北省 石家庄市</text>
+            <!--<picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
+             <view class="picker_text">
+     {{locationArray[locationIndex]}}
+  </view>
+</picker>-->
+
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
         </view>
-        <view class="headtitle">
-            <image src="/image/xx.png" class="headimg"></image>
-            <input class="headtext" placeholder="请输入手机号"/>
+         <view class="content_detail">
+            <text class="content_name1">手机号</text>
+            <text class="content_nameT">15036218756</text>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+         <view class="content_detail">
+            <text class="content_name1">简介</text>
+            <text class="content_nameJ">北京校咖网络邮件工资哼哼是否会回复</text>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
         </view>
     </view>
-    <!--简介框-->
-        <view  class="footer">
-            <view  class="footinput">
-                <view  class="input">
-                    <textarea  style='overflow-y: hidden;height:200px' placeholder="请输入简介"/>
-                    <!--<input bindfocus="bindfocus" bindblur='bindblur' placeholder="请输入简介" type="text" />-->
-                </view>
-            </view>
-        </view> 
-        <button class="btnsubmit">提交</button>
+    <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 提交    </button>
 </view>

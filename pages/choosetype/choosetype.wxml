@@ -1,5 +1,5 @@
 <!--pages/choosetype/choosetype.wxml-->
-<view class="ctype">
+<!--<view class="ctype">
 <view class="headtitle">
     <image src="/image/xx.png" class="headimg"></image>
     <text class="headtext">选择添加类型</text>
@@ -24,5 +24,34 @@
         </view>
     </view>
 </view>
-<button bindtap="NexStep" class="btnnext">下一步</button>
+<button class="btnnext">下一步</button>
+</view>-->
+<view class="ctt_choose">
+  <view class="flex-wrp1p">
+            <view class="flex-item61 {{backGroud}}" bindtap="changeBack" id="1">
+            社团             
+            </view>
 </view>
+  <view class="flex-wrp1p">          
+            <view class="flex-item61">
+              微信公众号
+            </view>
+</view>
+   <view class="flex-wrp1p">            
+            <view class="flex-item61">
+              微信群
+            </view>
+</view>
+ <view class="flex-wrp1p">                  
+           <view class="flex-item61">
+              QQ群
+            </view> 
+ </view>
+ </view>
+ <navigator url="/pages/dataone/dataone">
+    <view class="ctt_bottom">
+      <view class="bottom_font">下一步</view>
+    </view>
+ </navigator>
+ 
+

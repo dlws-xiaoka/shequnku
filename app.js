@@ -1,5 +1,6 @@
 //app.js
 App({
+  
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
@@ -26,5 +27,19 @@ App({
   },
   globalData:{
     userInfo:null
+  },
+  getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
+    var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
+    wx.request({
+        url: remoteAddress+url, //仅为示例，并非真实的接口地址
+        data:data,
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+          console.info(res);
+          return res;
+        }
+      })
   }
 })

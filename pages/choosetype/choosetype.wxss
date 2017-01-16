@@ -1,5 +1,5 @@
 /* pages/choosetype/choosetype.wxss */
-.ctype{
+/*.ctype{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -23,9 +23,7 @@
     margin-top:10%;
     width:100%;
 }
-.flex-wrp1p{
-    display:flex;
-}
+
 .flex-item61{
     margin: 10rpx;
     padding: 20rpx;
@@ -49,10 +47,48 @@
     justify-content: center;
     align-items: center;    
     font-size: 35rpx;
-}
+}*/
 
-.btnnext{
+/*.btnnext{
     margin-top: 40%;
     width: 30%;
     height: 100rpx;
+}*/
+
+.ctt_choose{
+    width: 100vw;
+    margin:15px 0 0 17px;
+}
+.flex-wrp1p{
+    display:flex;
+    width: 42.8125vw;
+    height:42.8125vw;
+    background:#13b1a3;
+    margin: 0 15px 15px 0;
+    float: left;
+}
+.flex-item61{
+    width: 100vw;
+    font-size: 4.0625vw;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 60px;
+    color:#fff;
+     text-align: center;
+}
+.ctt_bottom{
+    width: 100vw;
+    background: #13b1a3;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.bottom_font{
+    width: 100vw;
+    text-align: center;
+    color: #fff;
+    margin: 14px 0;
+}
+.bg_active{
+    background: #e76049;
 }

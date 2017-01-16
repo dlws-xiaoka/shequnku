@@ -1,4 +1,7 @@
 /**app.wxss**/
+view,text,image{
+  font-family: "微软雅黑";
+}
 .container {
   height: 100%;
   display: flex;
@@ -8,17 +11,18 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
-
-
-.article__item {
-display:flex;
-padding:30rpx;
-align-items:center;
-border-bottom:1rpx solid #eee;
-position:relative;
-padding-bottom:20rpx;
-
+/*内容列表*/
+.navigator_content{
+   width:90.625vw;
+   margin:0 auto;
+   height:auto;
+   border-bottom: 1px solid #e6e6e6;
 }
+.article__item {
+    display:flex;
+    padding: 30rpx 0;
+
+ }
 
 .article__thumb {
 width:4.7rem;
@@ -42,11 +46,13 @@ text-overflow:ellipsis;
 white-space:nowrap;
 display:block;
 width:100%;
-margin-bottom:20rpx;
+margin-bottom:12rpx;
+color:#333;
+font-weight:600;
 
 }
 .article__desc {
-color:	#5B5B5B;
+color:	#333;
 font-size:24rpx;
 line-height:1.2;
 width:100%;
@@ -65,8 +71,7 @@ margin-right:10rpx;
    margin-bottom:20rpx;
    line-height:1.2;
 }
-
-
+/*内容列表结束*/
 .headnum{
     height: 15px;
     width: 15px;
@@ -88,61 +93,70 @@ margin-right:10rpx;
     margin-top: -120rpx;
     font-size: 14px;
 }
-
-
-
-/* screen.css*/
-.menu {
-     display: block;
-    height: 38px;
+/*类似ul,li的样式公用*/
+.content_wrapper{
+  width: 100%;
+  height: 100vh;
+  background:#f7f7f7;
 }
-
-/*一级菜单*/
-.menu dt {
-    font-size: 15px;
-    float: left;
-    /*hack*/
-    width: 49%;
-    height: 38px;
-    border-right: 1px solid #d2d2d2;
-    border-bottom: 1px solid #d2d2d2;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #5a5a5a;
-    line-height: 38px;
+.content{
+  width: 95.3125vw;
+  overflow:hidden;
+  clear:both;
+  margin: 0 auto;
+  background:#fff;
 }
-
-/*二级菜单外部容器样式*/
-.menu dd{
-    position: absolute;
-    width: 100%;
-    /*hack*/
-    top:39px;
-    left:0;
-    z-index:999;
+.content_detail{
+  width: 100vw;
+  overflow:hidden;
+  clear:both;
+  font-size:4.0625vw;
+ border-bottom: 1px solid #e6e6e6;
 }
-
-/*二级菜单普通样式*/
-.menu li{
-    font-size: 14px;
-    line-height: 34px;
-    color: #575757;
-    height: 34px;
-    width: 45%;
-    display: block;
-    padding-left: 8px;
-    background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
+.content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT{
+  float: left;
 }
-/* 显示与隐藏 */
-.show {
-    display: block;
+.content_name1{
+   color:#333;
+   margin: 15px 0;
+   font-weight: 600;
 }
-
-.hidden {
-    display: none;
+.content_name2{
+  text-align:right;
+  color:#999;
+  margin: 15px 0 15px 24.2666%;
+  
 }
-/*二级菜单高亮样式*/
-.menu li.highlight{
-    background-color: lawngreen;
+@media only screen and (min-width: 414px) and (max-width: 640px) {
+	.content_name2{
+  margin: 15px 0 15px 28.4666%;
+ 
+}
+}
+.content_nameCity{
+  color:#999;
+  margin: 15px 0 15px 45.28125%;
+}
+.content_nameP{
+  color:#999;
+  margin: 15px 0 15px 49.09375%;
+}
+.content_nameT{
+  color:#999;
+  margin: 15px 0 15px 48.625%;
+}
+.content_nameJ{
+  width: 45.5vw;
+  color:#999;
+  margin: 15px 0 15px 33.625%;
+}
+.content_pic{
+  width: 3.875vw;
+  height: 3.4375vw;
+  margin: 15px 15px 15px 10px;
+}
+.photo{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }

@@ -1,221 +1,43 @@
 /* pages/information/information.wxss */
-page{
-    height: 100%;
-    width: 100%;
-}
-.container1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;  
-  height: 100%;
-  width: 100%;
- /* align-items: center;*/
-} 
-.scrollwechat {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  height: 100%;
-}
-.choose_city{
-    display: flex;
-    width: 100%;
-    border: 1px solid #eee;
-    line-height: 40rpx;
-    height: 12%;
-}
-.choose_sheng{
-    display: flex;
-    width: 50%;
-    border-right: 1px solid #eee;
-    margin-left: 11%;
-}
-.choose_shi{
-    display: flex;
-    width: 50%;
-    margin-left: 11%;
-}
-.infolist{
-    height: 70%;
-}
-.head{
-    text-align:center;
-    margin-top: 30rpx;
-    height: 20%;
-}
-.headimg{
-    height: 150rpx;
-    width: 135rpx;
-}
-.headphone{
-    display: flex;
-    margin: 30rpx 20rpx 20rpx 30rpx;
-    border-bottom:1px solid #eee;
-    height: 10%;
-}
 
-.headname{
-    text-align:center;
-    margin-top: 20rpx;
-}
-.headcity{
-    text-align:center;
-    margin-top: 20rpx;
-}
-.headinfo{
-    margin: 20rpx 20rpx 20rpx 30rpx;
-    border-top:1px solid #eee;
-    height: 10%;
-}
-.bootinfo{
-    margin: 20rpx 20rpx 20rpx 30rpx;
-    height: 10%;
-}
-.headtext{
-    margin-top: 20rpx; 
-}
-.bottom_menu1{
-    border-top:1px solid #000;
-}
-.bottom_menu{
-    margin-top: 4rpx;
-    border-top:1px solid #000;
-}
-.bottom_img{
-    margin-left: 20rpx;
-    height: 130rpx;
-    width: 115rpx;
-    margin-top: 20rpx;
-}
-.menu{
+.head{
+    margin-top: 30px;
+    margin-left: 37.5vw;
+    width: 25vw;
+    height: 25vw;
+    border: 2px solid #fff;
+    border-radius: 100%;
     
 }
-.bottom_text{
-    display: inline;
-    float: right;
-    margin-top:80rpx; 
-    margin-right: 58%;
+.headimg{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
 }
-
-
-.footer {
-  width: 96%;
-  height: 30%;
-  padding: 0 0 1% 2%;
-/*  display: flex;*/
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-/*  background: #efeff4;*/
-
+.headname{
+   width: 100vw;
+   font-size: 4.6875vw;
+   color: #fff;
+   font-weight: 600;
+   justify-content:center;
+   padding-top: 15px;
+   display: flex;
 }
-
-.footinput {
-  flex: 1;
-  height: 98%;
+.headcity{
+    font-size: 4.0625vw;
+    color:#fff;
+    font-weight: 600;
+    text-align:center;
+    margin: 5px 0 15px 0;
+}
+.user-top{
+ width: 100vw;
+ overflow: hidden; 
+ background: #13b1a3;
+}
+.top{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input {
-display:block;
-height:1.4rem;
-text-overflow:clip;
-overflow:hidden;
-white-space:nowrap;
-font-family:UICTFontTextStyleBody;
-min-height:1.4rem;
-word-break:break-all;
-
-}
-
-.input {
-  width: 100%;
-  height: 98%;
- /* padding: 10rpx 4rpx;*/
-  border: 1px solid #ccc;
-  border-radius: 10rpx;
-}
-.foodsend {
-  width: 100rpx;
-  height: 80rpx;
-  display: flex;
-  margin: 10rpx;
-   background: #17af0f;
-   border-radius: 10rpx;
-  justify-content: center;
-  align-items: center;
-}
-.send{
-  font-size: 14px;
-  color: #fff;
-}
-.footadd {
-  width: 100rpx;
-  height: 100rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.addbroder {
-  padding: 10rpx;
-  border: 1px solid #ccc;
-  border-radius: 100rpx;
-}
-
-.footadd image {
-  width: 50rpx;
-  height: 50rpx;
-}
-.footaddbox{
-  height: 200rpx;
-  
-}
-.footaddbox ul{
-  display: flex;
-  height: 100%;
-  flex-direction: row;
- 
-}
-.footaddbox ul li{
-  flex: 1;
-  height: 100%;
-  font-size: 12px;
-  color: #9a9a9a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.footaddimg{
-  border: 1px solid #ccc;
-  border-radius: 20rpx;
-  margin: 10rpx;
-  padding: 30rpx;
-}
-.footaddtext{
-  border: 1px solid #ccc;
-  border-radius: 20rpx;
-  margin: 10rpx;
-  padding: 30rpx;
-}
-.footaddbox ul li image{
-  width: 60rpx;
-  height: 60rpx;
-}
-.tellinput{
-  height: 50rpx;
-  line-height: 50rpx;
-  border: 1px solid #efeff4;
-}
-.picker_provence{
-  width: 100%;
-  text-align: center;
-  line-height: 41px;
+  height: 20rpx;
+  background: #f2f2f2;
 }

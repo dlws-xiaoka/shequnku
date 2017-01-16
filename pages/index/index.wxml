@@ -2,17 +2,19 @@
 
 <!--搜索-->
 <view class="search">
-    <view class="search-font">已驻入资源:</view>
-    <view class="num">8</view>
+    <view class="search-font">已入驻</view>
+    <view class="num num_border">8</view>
     <view class="num">5</view>
     <view class="num">4</view>
     <view class="num">1</view>
-    <view bindtap="search" class="img-search">
-        <image class="img-size" src="/image/search.png"></image>
+    <view class="search_font">资源数</view>
+    <view class="img-search">
+    <image class="img-size" src="/image/search.png"></image>
     </view>
 </view>
 <!--轮播图-->
-<swiper class="swiper__container"  indicator-dots="{{ false }}" autoplay="true" interval="3000">
+<!--<swiper class="swiper__container"  indicator-dots="true" autoplay="true" interval="3000" duration="500">
+   
       <swiper-item  wx:key="id">
             <view class="swiper__content">
                 <image src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg" class="swiper__item" mode="aspectFill"  />
@@ -22,29 +24,32 @@
                 </view>
             </view>
       </swiper-item>
-</swiper>
-
-
+  
+</swiper>-->
+<swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
+   <block wx:for="{{movies}}" wx:for-index="index">  
+    <swiper-item>  
+     <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>  
+    </swiper-item>  
+   </block>  
+  </swiper>
 <!--tab按钮-->
 <view class="top-tab flex-wrp flex-tab " >
   <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
-    {{itemName}}
+   <view>{{itemName}}</view>
   </view>
 </view>
-
-
 <!--全部，筛选按钮-->
 <view class="flex-wrp vi-screnk">
   <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchSha">
-    全部
+   <text>全部</text>
   </view>
   <view id="1" class="screenk {{currentShai==1? 'active' : ''}}" bindtap="switchSha">
-    筛选
+    <text>筛选</text>
   </view>
 </view>
-
 <!--内容列表-->
-<navigator url="/pages/resoude/resoude">
+<navigator class="navigator_content" url="/pages/resoude/resoude">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
@@ -61,7 +66,8 @@
     </view>
 </navigator>
 
-<navigator url="/pages/resoude/resoude">
+<scroll-view>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://01.imgmini.eastday.com/mobile/20161124/20161124193413_e4233fb5205fa00d4711b05555a4ab3e_2_mwpm_03200403.jpeg"></image>
@@ -72,13 +78,13 @@
                 <text class="article__time">学校名称</text>
             </view>
             <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
             </view>
         </view>
     </view>
 </navigator>
 
-<navigator url="/pages/news/detail">
+<navigator class="navigator_content" url="/pages/news/detail">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://01.imgmini.eastday.com/mobile/20161124/20161124193413_e4233fb5205fa00d4711b05555a4ab3e_2_mwpm_03200403.jpeg"></image>
@@ -94,3 +100,4 @@
         </view>
     </view>
 </navigator>
+</scroll-view>

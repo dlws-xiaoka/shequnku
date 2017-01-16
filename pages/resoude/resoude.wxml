@@ -1,50 +1,80 @@
 <!--pages/myroom/myroom.wxml-->
-<view class="container1">
-    <view class="user-top">
+<view class="user-top">
+<navigator url="/pages/example/example">
         <view class="head">
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
-        <view bindtap="mesageList">
-                <text class="liulan">留言</text>   
-                <view class="headnum">10</view>        
-        </view>
         <view class="headname">
-            中国人民大学创新创业社团
+           社团名称
         </view>
         <view class="headcity">
-            城市|所属大学名称
+         城市名称  学校名称
         </view>
-        <view class="headinfo">
-           <text class="headtext">
-                简介： 西南民族大学校园官方论坛——非梦社区（028uu.com）...
-           </text> 
+        <text class="information">这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以</text>
+</navigator>
+<navigator url="/pages/wordinfo/wordinfo">
+        <view class="word">
+          <text class="liu">给我留言</text>
         </view>
-                     
-        <view class="business">
-           <view class="">
-               1、 业务技能:
-           </view> 
-           <view class="">
-               2、 注册推广:
-           </view> 
-           <view class="">
-               3、 活动场地:
-           </view>
-        </view>
+</navigator>
     </view>
-    
-    <view class="res-case">
-    案列：
-        <view class="res-title">
-            标题标题标题标题
-        </view>
-        <view class="res-content">
-        内容内容内容内容
-        </view>
-        <view class="res-img">
-            <image src="http://www.wudingfadian.com/tupian/13/oeemzdpmtl496067.jpg" class="article-img"></image>
-            <image src="http://meinv.ratoo.net/uploads/allimg/150128/6-15012Q14153.jpg" class="article-img"></image>
-            <image src="http://img.idol001.com/origin/2016/12/04/2104614771cd13fa0513dff56457abba1480839328.jpg" class="article-img"></image>
-        </view>
-    </view>
+<view class="ability">业务技能</view>
+<view class="line"></view>
+<view class="service">
+   <view class="service_content">
+     <text class="num">1.</text>
+     <text class="name">我是校咖</text>
+   </view>
+    <view class="service_content">
+     <text class="num">2.</text>
+     <text class="name">我是校咖</text>
+   </view>
+    <view class="service_content">
+     <text class="num">3.</text>
+     <text class="name">我是校咖</text>
+   </view>
+</view>
+<view class="bian"></view>
+<view class="ability">案例</view>
+<view class="line"></view>
+<!--案例部分-->
+<view class="case">
+   <view class="title">
+     <view class="left">我想发到空间</view>
+     <view class="content_right">
+              <image src="/image/more.png" class="photo"></image>
+     </view>
+   </view>
+   <view class="production">改法束带结发河水不犯井水给皮肤对就点开复苏发不了后付费客来福</view>
+   <view class="pic_box">
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+   </view>
+</view>
+<view class="case">
+   <view class="title">
+     <view class="left">我想发到空间</view>
+     <view class="content_right">
+              <image src="/image/more.png" class="photo"></image>
+     </view>
+   </view>
+   <view class="production">改法束带结发河水不犯井水给皮肤对就点开复苏发不了后付费客来福</view>
+   <view class="pic_box">
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+      <view class="photo_box">
+         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+      </view>
+   </view>
 </view>

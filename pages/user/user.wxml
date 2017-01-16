@@ -1,30 +1,36 @@
 <!--pages/myroom/myroom.wxml-->
 <view class="container1">
     <view class="user-top">
+        <view class="re">
+          <navigator url="/pages/choosetype/choosetype">
+            <view class="resource">
+                <image src="/image/ziyuan.png"/>          
+            </view>
+          </navigator>  
+            <text class="resource_add">添加资源</text>
+        </view>  
         <view class="head">
             <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
         </view>
-        <navigator  url="/pages/wordlist/wordlist" >
-                <text class="liulan">留言</text>   
-                <view class="headnum">6</view>        
-        </navigator>
+        
+            <view class="re">
+            <navigator url="/pages/wordlist/wordlist">
+            <view class="resource word">
+                <image src="/image/word.png"/>          
+            </view>
+             </navigator>  
+            <text class="resource_add">留言板</text>
+        </view>  
+            
         <view class="headname">
             {{userInfo.nickName}}
         </view>
         <view class="headcity">
           dong2264563539
         </view>
-        <view class="headinfo">
-           <view class="headtext">
-                我的资源
-           </view> 
-           <view bindtap="addsource" class="add-resou">
-           +创建资源
-           </view>
-        </view>
     </view>
    
-<navigator url="/pages/resourdtal/resourdtal">
+<navigator class="navigator_content" url="/pages/resourdtal/resourdtal">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
@@ -41,23 +47,7 @@
     </view>
 </navigator>
 
-<navigator url="/pages/resourdtal/resourdtal">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">微信群名称</view>
-            <view class="article__desc">
-                <text class="article__time">类别</text>
-            </view>
-           <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-</navigator>
-<navigator url="/pages/resourdtal/resourdtal">
+<navigator class="navigator_content" url="/pages/news/detail">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
@@ -73,5 +63,36 @@
         </view>
     </view>
 </navigator>
-
+<navigator class="navigator_content" url="/pages/news/detail">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">清华大学</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/news/detail">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">清华大学</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
 </view>
