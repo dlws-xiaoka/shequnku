@@ -1,4 +1,4 @@
-<header class="search_top">
+<view class="search_top">
 			<view class="search_container">
 				<input class="inp" type="search" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
 				<view class="search_content">
@@ -6,4 +6,4 @@
 				</view>
 			</view>
             <view class="cancel">取消</view>
-		</header>
+		</view>

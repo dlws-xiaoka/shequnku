@@ -1,13 +1,13 @@
 {
     "pages": [
-     "pages/index/index",
+     "pages/resoude/resoude",
      "pages/dataone/dataone",   
+     "pages/index/index",
+     "pages/search/search",
      "pages/myCase/myCase",
     "pages/resourdtal/resourdtal",
     "pages/myCaseAdd/myCaseAdd",
-     "pages/resoude/resoude",
     "pages/bueSkill/bueSkill",
-     "pages/search/search",
      "pages/example/example",
      "pages/choosetype/choosetype",
      "pages/screen/screen",

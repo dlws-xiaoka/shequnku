@@ -9,10 +9,10 @@
 }
 
 .search_container{
-	
 	width: 82.8125vw;
 	overflow: hidden;
     clear: both;
+    background: #fff;
 	margin-left: 10px;
 	margin-bottom:7px ;
 	margin-top: 7px;
@@ -46,4 +46,5 @@
     float: right;
     font-size: 4.0375vw;
     margin: 15px 10px 0 0;
+    color: #fff;
 }
