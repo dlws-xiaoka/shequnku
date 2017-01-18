@@ -3,7 +3,8 @@ var $vm = getApp()
 Page({
   data:{
     text:"Page user",
-    userInfo: {}
+    userInfo: {},
+    datasource:[]
   },
   
    onLoad: function () {

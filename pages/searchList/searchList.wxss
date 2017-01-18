@@ -1,0 +1,25 @@
+/* pages/searchList/searchList.wxss */
+.important_search{
+    width: 100vw;
+    overflow: hidden;
+    clear: both;
+}
+.item{
+    overflow: hidden;
+     border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+}
+text{
+    font-size: 4.0375vw;
+    color:#333;
+    font-weight: 500;
+    margin: 15px 0 15px 10px;
+}
+.important_pic{
+    width: 4.375vw;
+    height: 4.375vw;
+    background-size: cover;
+    margin: 15px 10px 15px 0;
+}

@@ -39,17 +39,17 @@
     margin: 0 15px;
     color:#fff;
     font-size: 4.0625vw;
-    float: left;
+    /*float: left;*/
 }
 .word{
-   margin: 15px 0;
+   margin: 15px 34.375vw;
    border: 1px solid #fff;
    border-radius: 20px;
-   margin-left: 35.507%;
-   float: left;
+   /*margin-left: 35.507%;*/
+   /*float: left;*/
 }
 .liu{
-     margin: 5px 18px;
+     margin: 5px 22px;
      color: #fff;
      font-size: 4.0625vw;
 }

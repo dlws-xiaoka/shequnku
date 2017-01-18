@@ -1,11 +1,35 @@
 <!--pages/dataone/dataone.wxml-->
+<view class="dataone_container">
 <view class="top"></view>
 <view class="content_wrapper">
     <view class="content">
         <view class="content_detail">
             <text class="content_name1">社团名称</text>
-            <!--<text class="content_name2">校咖</text>-->
             <input class="input content_name2" name="userName" placeholder="请输入社团名称"
+             bindinput="userNameInput"/>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+        <view class="content_detail">
+            <text class="content_name1">微信群名称</text>
+            <input class="input content_W" name="userName" placeholder="请输入微信群名称"
+             bindinput="userNameInput"/>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+         <view class="content_detail">
+            <text class="content_name1">QQ群名称</text>
+            <input class="input content_Q" name="userName" placeholder="请输入QQ群名称"
+             bindinput="userNameInput"/>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+         <view class="content_detail">
+            <text class="content_name1">公众号名称</text>
+            <input class="input content_G" name="userName" placeholder="请输入公众号名称"
              bindinput="userNameInput"/>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
@@ -13,42 +37,126 @@
         </view>
          <view class="content_detail">
             <text class="content_name1">院校名称</text>
-            <text class="content_nameCity">北京清华大学</text>
+            <input class="content_nameCity" placeholder="北京清华大学"/>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
         </view>
          <view class="content_detail">
-            <text class="content_name1">地址</text>
-            <text class="content_nameP">河北省 石家庄市</text>
-            <!--<picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
+            <text class="content_name1">选择省</text>
+            <picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
              <view class="picker_text">
-     {{locationArray[locationIndex]}}
-  </view>
-</picker>-->
-
+                55555 {{locationArray[locationIndex]}}
+             </view>
+            </picker>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
+           <!--<view class="input content_nameP">
+            <input class="choose_city" placeholder="选择" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
         </view>
+        <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+        <view wx:if="{{condition}}" class="citypicker">
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange" class="citybody">
+            <view class="cityheader">
+            <view bindtap="open" class="city-cancel">取消</view>
+            <view bindtap="open" class="city-true">确定</view>
+            </view>
+            <picker-view-column>
+            <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>-->
+        </view>
+        <view class="content_detail">
+            <text class="content_name1">选择市</text>
+            <picker class="content_nameP" bindchange="handleLocationPickerChange2" value="{{locationIndex2}}" range="{{locationArray2}}">
+             <view class="picker_text">
+                55555 {{locationArray2[locationIndex2]}}
+             </view>
+            </picker>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+            </view>
          <view class="content_detail">
             <text class="content_name1">手机号</text>
-            <text class="content_nameT">15036218756</text>
+            <input class="content_nameT" placeholder="15036685623"/>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
         </view>
          <view class="content_detail">
             <text class="content_name1">简介</text>
-            <text class="content_nameJ">北京校咖网络邮件工资哼哼是否会回复</text>
+            <textarea class="content_nameJ" placeholder="请输入简介"/>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
         </view>
     </view>
-    <navigator url="/pages/schoolTree/schoolTree">
-       <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 提交    </button>
-    </navigator>
-    
 </view>
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+          
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text>一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <block wx:if="{{true}}" class="genre_container" >
+            <view class="genre" bindtap="changeColor">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二级分类</view>
+            <view class="genre">二三级分类</view>
+            <view class="genre">二级分类</view>
+        </block>
+</view>
+</view>
+   
+       <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover">完成    </button>
+ 
+    
+
