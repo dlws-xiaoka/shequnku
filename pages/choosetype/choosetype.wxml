@@ -1,27 +1,15 @@
 
 <view class="ctt_choose">
+
+ <block  wx:for="{{userTypeList}}">
   <view class="flex-wrp1p">
-            <view class="flex-item61 {{backGroud}}" bindtap="changeBack" id="1">
-            社团             
+            <view class="flex-item61" bindtap="changeBack" data-index="0" id="{{item.id}}">
+            {{item.typeName}}             
             </view>
+  </view>
+</block>
 </view>
-  <view class="flex-wrp1p">          
-            <view class="flex-item61">
-              微信公众号
-            </view>
-</view>
-   <view class="flex-wrp1p">            
-            <view class="flex-item61">
-              微信群
-            </view>
-</view>
- <view class="flex-wrp1p">                  
-           <view class="flex-item61">
-              QQ群
-            </view> 
- </view>
- </view>
- <navigator url="/pages/dataone/dataone">
+ <navigator url="/pages/dataone/dataone?usertypeId={{id}}">
     <view class="ctt_bottom">
       <view class="bottom_font">下一步</view>
     </view>

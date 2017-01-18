@@ -1,4 +1,6 @@
 // pages/dataone/dataone.js
+var app = getApp()
+
 Page({
   data:{
      setDisabled: function(e) {
@@ -16,22 +18,35 @@ Page({
       loading: !this.data.loading
     })
   },
-     locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东']
+     locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
+     usertypeId:"",
+     inputValue:"",
+     schoolName:""
+
   },
   locationIndex: 2,
   handleLocationPickerChange(e) {
-    if (this.data.languageIndex || e.detail.value) {
-      this.showLoadingToast();
+    if (this.data.locationIndex || e.detail.value) {
       this.setData({
         locationIndex: e.detail.value
       });
-      this._initData();
-      this.fetchUsersData(this._reloadUrl());
     }
   },
-
+   userNameInput:function(e){
+    this.setData({
+      inputValue:e.detail.value
+    })
+  },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+   this.setData({
+      usertypeId:options.usertypeId,
+      
+    }) 
+  },
+  formsubmit:function(e){
+    this.setData({
+      schoolName:e.detail.value.schoolName
+    })
   },
   onReady:function(){
     // 页面渲染完成

@@ -1,6 +1,59 @@
 //index.js
+
+var page=0;
+var page_size=5;
+var userType=""
 //获取应用实例
 var app = getApp()
+var sysurl = app.remoteAddressdxf();
+var GetList = function(that){
+  that.setData({
+    hidden:false
+  });
+  wx.request({
+    url: sysurl + 'xcxIndex/indexData.html',
+    data: {},
+    method: 'GET',
+    success: function (res) {
+      console.info(res);
+      that.setData({
+        navTab: res.data.data.categoryList,
+        peopleNum: res.data.data.peopleNumMap,
+        movies: res.data.data.bannerList,
+      })
+      if(userType==""){
+      userType=res.data.data.categoryList[0].id;
+      }else if(userType=='all'){
+        userType="";
+      }
+      wx.request({
+        url: sysurl + 'xcxIndex/querySpaceInfoByCategory.html',
+        data: { userTypeId: userType,
+        start:page
+        },
+        method: 'GET',
+        success: function (res) {
+          var datasourceL = that.data.datasource;
+          if(page<res.data.data.po.absolutePage){
+            for(var i=0;i<res.data.data.po.datasource.length;i++){
+            datasourceL.push(res.data.data.po.datasource[i]);
+            }
+            that.setData({
+              datasource: datasourceL,
+            })
+          }
+            that.setData({
+              hidden:true
+            })
+
+        }
+      })
+    }
+  })
+}
+
+
+
 Page({
   data: {
     motto: 'Hello World',
@@ -17,7 +70,12 @@ Page({
     feed_length: 0,
     movies:[],
     peopleNum:{},//入驻人数，页面需要改
-    datasource:[]
+    datasource:[],
+    hidden:true,
+        list:[],
+        scrollTop : 0,
+        scrollHeight:0,
+        userTypeId:""
   },
   //事件处理函数
   bindViewTap: function() {
@@ -26,48 +84,22 @@ Page({
     })
   },
   onLoad: function () {
+    var that = this;
+     wx.getSystemInfo({
+     success:function(res){
+       console.info(res.windowHeight);
+       that.setData({
+         scrollHeight:res.windowHeight
+       });
+     }
+   });
 
-
-    var that = this
-    var sysurl = app.remoteAddress();
-    
-    wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/indexData.html', 
-            data: {},
-            method: 'GET',
-            success: function(res){ 
-            console.info(res); 
-                that.setData({
-                  navTab: res.data.data.categoryList,
-                  peopleNum: res.data.data.peopleNumMap,
-                  movies: res.data.data.bannerList,
-                })     
-                wx.request({
-                  url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html',
-                  data: { id: 1},
-                  method: 'GET',
-                  success: function (res) {
-                    console.info(res);
-                    that.setData({
-                      datasource: res.data.data.po.datasource,
-                    })
-                  }
-                })        
-            }
-    })
-
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
   },
    switchTab: function(e){
      console.info(e); 
     this.setData({
-      currentNavtab: e.currentTarget.dataset.idx
+      currentNavtab: e.currentTarget.dataset.idx,
+      datasource:[]
     });
     this.reswitch(e)
   },
@@ -77,21 +109,38 @@ Page({
     console.log(e)
     var that=this
     var id = e.currentTarget.dataset.id
-    var sysurl = app.remoteAddress();
-    wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/querySpaceInfoByCategory.html', 
-            data: {id:id},  
-            method: 'GET',   
-            success: function(res){   
-            console.info(res); 
-                that.setData({                
-                  datasource: res.data.data.po.datasource,                                
-                })             
-            }
-    })
-
+    userType=id;
+    page=0;
+    GetList(that);
   },
-  switchSha:function(e){
+ 
+  onShow: function () {
+    //  在页面展示之后先获取一次数据
+    var that = this;
+    GetList(that);
+  },
+  bindDownLoad: function () {
+    //  该方法绑定了页面滑动到底部的事件
+    var that = this;
+    page++;
+    GetList(that);
+  },
+  scroll: function (event) {
+    //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+    this.setData({
+      scrollTop: event.detail.scrollTop
+    });
+  },
+  switchAll:function(e){
+    var that=this;
+    page=0;
+    userType="all"
+    this.setData({
+      datasource:[]
+    });
+    GetList(that);
+  },
+   switchSha:function(e){
     this.setData({
       currentShai: e.currentTarget.id
     });
@@ -101,6 +150,5 @@ Page({
             url:'/pages/screen/screen'
         })
     }
-  },
-  
+  }
 })

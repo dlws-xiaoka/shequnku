@@ -1,10 +1,11 @@
 {
     "pages": [
      "pages/index/index",
-     "pages/choosetype/choosetype",
      "pages/dataone/dataone",   
-     "pages/myCase/myCase",
+     "pages/wordlist/wordlist",
+     "pages/choosetype/choosetype",
     "pages/resourdtal/resourdtal",
+     "pages/myCase/myCase",
     "pages/myCaseAdd/myCaseAdd",
      "pages/resoude/resoude",
     "pages/bueSkill/bueSkill",
@@ -15,8 +16,7 @@
      "pages/information/information",   
      "pages/wordinfo/wordinfo",
      "pages/user/user",
-     "pages/login/login",
-     "pages/wordlist/wordlist"
+     "pages/login/login"
     ],
     "window": {
         "backgroundTextStyle": "dark",
