@@ -12,7 +12,15 @@ Page({
      locationArray2:['信阳市','保定市','合肥市','南阳市'],
      locationArray3:['社团','微信群','公众号','QQ群'],
      locationArray4:['清华大学','北京大学','湖南大学','河南大学','内蒙古呼和浩特大学'],
-     locationArray5:['类别1','泪别2','类别3','类别4','类别5']
+     locationArray5:['类别1','泪别2','类别3','类别4','类别5'],
+     items: [
+      {value: '一级分类'},
+      {value: '二级分类', checked: 'true'},
+      {value: '二三级分类'},
+      {value: '分类'},
+      {value: '英国'},
+      {value: '法国'},
+    ]
   },
   locationIndex: 2,
   locationIndex2: 1,

@@ -27,15 +27,6 @@ text{
     margin:13px 0 18px 10px;
 
 }
-.genre{
-    float: left;
-	padding:7px ;
-	background: #fff;
-	margin: 0 10px 15px 0;
-	border-radius: 20px;
-    color: #b3b3b3;
-    border: 1px solid #dcdcdc;
-}
 .bueSkill_bottom{
     width: 100%;
     overflow: hidden;
@@ -50,4 +41,20 @@ text{
     font-size: 4.0625vw;
     margin: 15px 45.9375vw;
     color: #fff;
+}
+/*复选框的样式*/
+checkbox-group{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row wrap;
+
+}
+.wx-checkbox-input-checked::before{
+  color: #13b1a3;
+}
+.checkbox{
+  font-size: 3.864vw;
+  margin: 15px;
+  color:#333;
 }

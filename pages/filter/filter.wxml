@@ -7,7 +7,7 @@
             <text class="content_name1">选择省</text>
             <picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
              <view class="picker_text">
-                {{locationArray[locationIndex]}}
+               222 {{locationArray[locationIndex]}}
              </view>
             </picker>
             <view class="content_pic">
@@ -18,7 +18,7 @@
             <text class="content_name1">选择市</text>
             <picker class="content_nameP" bindchange="handleLocationPickerChange2" value="{{locationIndex2}}" range="{{locationArray2}}">
              <view class="picker_text">
-                {{locationArray2[locationIndex2]}}
+                222{{locationArray2[locationIndex2]}}
              </view>
             </picker>
             <view class="content_pic">
@@ -27,7 +27,11 @@
             </view>
          <view class="content_detailSchool">
             <text class="content_name1">院校名称</text>
-            <input class="content_nameCity" placeholder="北京清华大学"/>
+            <picker class="content_nameCity" bindchange="chooseSchool" value="{{locationIndex3}}" range="{{locationArray3}}">
+             <view class="picker_Stext">
+                222{{locationArray3[locationIndex3]}}
+             </view>
+            </picker>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
@@ -45,15 +49,11 @@
         <image class="photo" src="/image/down.png" ></image>
         </view>
     </view>
-        <block wx:if="{{true}}" class="genre_container" >
-            <view class="genre" bindtap="changeColor">二级分类</view>
-          
-            <view class="genre">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二三级分类</view>
-            <view class="genre">二级分类</view>
-        </block>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
 </view>
 <view class="sorting">
     <view class="title">
@@ -62,13 +62,11 @@
         <image class="photo" src="/image/down.png" ></image>
         </view>
     </view>
-        <block wx:if="{{true}}" class="genre_container" >
-            <view class="genre" bindtap="changeColor">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二三级分类</view>
-            <view class="genre">二级分类</view>
-        </block>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
 </view>
 <view class="sorting">
     <view class="title">
@@ -77,13 +75,11 @@
         <image class="photo" src="/image/down.png" ></image>
         </view>
     </view>
-        <block wx:if="{{true}}" class="genre_container" >
-            <view class="genre" bindtap="changeColor">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二级分类</view>
-            <view class="genre">二三级分类</view>
-            <view class="genre">二级分类</view>
-        </block>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
 </view>
 </view>
    

@@ -76,10 +76,28 @@ Page({
   //   })
   // },
      locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
-      locationArray2:['信阳市','保定市','合肥市','南阳市']
+      locationArray2:['信阳市','保定市','合肥市','南阳市'],
+      locationArray3:['清华大学','北京大学','安徽大学','暨南大学'],
+      items: [
+      {value: '一级分类'},
+      {value: '二级分类', checked: 'true'},
+      {value: '二三级分类'},
+      {value: '分类'},
+      {value: '英国'},
+      {value: '法国'},
+    ]
   },
   locationIndex: 2,
   locationIndex2: 1,
+  locationIndex2: 1,
+  chooseSchool(e){
+    if (this.data.locationIndex3|| e.detail.value) {
+
+      this.setData({
+        locationIndex3: e.detail.value
+      });
+    }
+  },
   handleLocationPickerChange(e) {
     if (this.data.locationIndex || e.detail.value) {
 

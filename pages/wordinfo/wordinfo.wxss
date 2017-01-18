@@ -52,6 +52,11 @@ width:100%;
   overflow: hidden;
   border-bottom: 1px solid #d9dadc;
 }
+@media only screen and (min-width: 320px) and (max-width: 370px) {
+	.message{
+    width: 70.6875vw;
+  }
+}
 .items{
   margin: 17px 0;
   color: #999;
