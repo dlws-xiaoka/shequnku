@@ -2,7 +2,7 @@
 <view class="container1">
     <view class="user-top">
         <view class="re">
-          <navigator url="/pages/choosetype/choosetype">
+          <navigator url="/pages/dataone/dataone">
             <view class="resource">
                 <image src="/image/ziyuan.png"/>          
             </view>

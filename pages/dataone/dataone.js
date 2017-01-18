@@ -1,201 +1,186 @@
 // pages/dataone/dataone.js
-<<<<<<< HEAD
-var app = getApp()
-
-=======
 //获取应用实例
 var tcity = require("../../utils/city.js");
-
 var app = getApp()
->>>>>>> eff8b9093d58857e3a9c4c16678c8e537f41cfbc
+var remoteAddress = app.remoteAddressdxf();
+var TypeIdArray = "";
+var provincedan = "";
+var cityIdArr = "";
+var schooIdArr = "";
+var schIdArr=""
 Page({
-  data:{
-     setDisabled: function(e) {
-    this.setData({
-      disabled: !this.data.disabled
-    })
+  data: {
+    locationArray2: ['信阳市', '保定市', '合肥市', '南阳市'],
+    userTypeArray: "",
+    typeIndex: 0,
+    TypeIdArray: "",
+    provinceList: '',
+    ProvenIndex: 0,
+    cityList: '',
+    cityIndex: 0,
+    schoolList: '',
+    schIndex:0,
+    schArrId:''
   },
-  provinces: [],
-    province: "",
-    citys: [],
-    city: "",
-    countys: [],
-    county: '',
-    value: [0, 0, 0],
-    values: [0, 0, 0],
-    condition: false,
-  setPlain: function(e) {
-    this.setData({
-      plain: !this.data.plain
-    })
-  },
-  setLoading: function(e) {
-    this.setData({
-      loading: !this.data.loading
-    })
-  },
-     locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
-<<<<<<< HEAD
-     usertypeId:"",
-     inputValue:"",
-     schoolName:""
 
-=======
-      locationArray2:['信阳市','保定市','合肥市','南阳市']
->>>>>>> eff8b9093d58857e3a9c4c16678c8e537f41cfbc
-  },
-  locationIndex: 2,
-  locationIndex2: 1,
-  handleLocationPickerChange(e) {
-    if (this.data.locationIndex || e.detail.value) {
-<<<<<<< HEAD
-=======
-
->>>>>>> eff8b9093d58857e3a9c4c16678c8e537f41cfbc
-      this.setData({
-        locationIndex: e.detail.value
-      });
-    }
-  },
-<<<<<<< HEAD
-   userNameInput:function(e){
-    this.setData({
-      inputValue:e.detail.value
-    })
-  },
-  onLoad:function(options){
-   this.setData({
-      usertypeId:options.usertypeId,
-      
-    }) 
-  },
-  formsubmit:function(e){
-    this.setData({
-      schoolName:e.detail.value.schoolName
-    })
-=======
   handleLocationPickerChange2(e) {
     if (this.data.locationIndex2 || e.detail.value) {
-
       this.setData({
         locationIndex2: e.detail.value
       });
     }
   },
- bindChange: function(e) {
-    //console.log(e);
-    var val = e.detail.value
-    var t = this.data.values;
-    var cityData = this.data.cityData;
-    
-    if(val[0] != t[0]){
-      console.log('province no ');
-      const citys = [];
-      const countys = [];
-
-      for (let i = 0 ; i < cityData[val[0]].sub.length; i++) {
-        citys.push(cityData[val[0]].sub[i].name)
-      }
-      for (let i = 0 ; i < cityData[val[0]].sub[0].sub.length; i++) {
-        countys.push(cityData[val[0]].sub[0].sub[i].name)
-      }
-
+  changeUserType(e) {
+    if (this.data.typeIndex || e.detail.value) {
+      var typeIndex = e.detail.value
       this.setData({
-        province: this.data.provinces[val[0]],
-        city: cityData[val[0]].sub[0].name,
-        citys:citys,
-        county: cityData[val[0]].sub[0].sub[0].name,
-        countys:countys,
-        values: val,
-        value:[val[0],0,0]
-      })
-      
-      return;
+        typeIndex: e.detail.value,
+        TypeIdArray: TypeIdArray[typeIndex]
+      });
     }
-    if(val[1] != t[1]){
-      console.log('city no');
-      const countys = [];
-
-      for (let i = 0 ; i < cityData[val[0]].sub[val[1]].sub.length; i++) {
-        countys.push(cityData[val[0]].sub[val[1]].sub[i].name)
-      }
-      
-      this.setData({
-        city: this.data.citys[val[1]],
-        county: cityData[val[0]].sub[val[1]].sub[0].name,
-        countys:countys,
-        values: val,
-        value:[val[0],val[1],0]
-      })
-      return;
-    }
-    if(val[2] != t[2]){
-      console.log('county no');
-      this.setData({
-        county: this.data.countys[val[2]],
-        values: val
-      })
-      return;
-    }
-    
-
   },
-   open:function(){
-    this.setData({
-      condition:!this.data.condition
+  changeProven(e) {
+    var that = this;
+    if (this.data.ProvenIndex || e.detail.value) {
+      var ProvenIndex = e.detail.value
+      this.setData({
+        ProvenIndex: e.detail.value,
+      });
+      var provinceb = provincedan[ProvenIndex];
+      //根据省选择市
+      wx.request({
+        url: remoteAddress + '/xcxIndex/getCityListByprovince.html',
+        data: { province: provinceb },
+        method: 'GET',
+        success: function (res) {
+          var cityArr = res.data.data.cityList;
+          var rescityArr = new Array();
+          var cityArrId = new Array();
+          for (var i = 0; i < cityArr.length; i++) {
+            rescityArr.push(cityArr[i].cityName);
+            cityArrId.push(cityArr[i].id);
+          }
+          cityIdArr = cityArrId;
+          that.setData({
+            cityList: rescityArr
+          })
+        }
+      })
+
+    }
+  },
+  changeCity(e) {
+    var that = this;
+    if (this.data.cityIndex || e.detail.value) {
+      var cityId = "";
+      var cityIndex = e.detail.value
+      this.setData({
+        cityIndex: e.detail.value,
+        TypeIdArray: TypeIdArray[cityIndex]
+      });
+    }
+    cityId = cityIdArr[cityIndex];
+    //根据市选择学校
+    wx.request({
+      url: remoteAddress + '/xcxIndex/getSchoolListByCityId.html',
+      data: { cityId: cityId },
+      method: 'GET',
+      success: function (res) {
+        var schooArr = res.data.data.schoolList;
+        var reschollArr = new Array();
+        var schollArrId = new Array();
+        for (var i = 0; i < schooArr.length; i++) {
+          reschollArr.push(schooArr[i].schoolName);
+          schollArrId.push(schooArr[i].id);
+        }
+        schooIdArr = schollArrId;
+        that.setData({
+          schoolList: reschollArr
+        })
+      }
     })
+  },
+  changeSchool(e) {
+    var that = this;
+    if (this.data.schIndex || e.detail.value) {
+      var cityId = "";
+      var schIndex = e.detail.value
+      this.setData({
+        schIndex: e.detail.value,
+        schArrId: schIdArr[schIndex]
+      });
+    }
   },
   onLoad: function () {
-    console.log("onLoad");
     var that = this;
-    
-    tcity.init(that);
+    wx.request({
+      url: remoteAddress + "xcxIndex/getUserType.html",
+      data: { openId: 123 },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        wx.request({
+          url: remoteAddress + '/xcxIndex/getProvince.html',
+          data: {},
+          method: 'GET',
+          success: function (res) {
+            console.info(res);
+            var proArr = res.data.data.provinceList;
+            var resproArr = new Array();
+            for (var i = 0; i < proArr.length; i++) {
+              resproArr.push(proArr[i].province);
+            }
 
-    var cityData = that.data.cityData;
+            that.setData({
+              provinceList: resproArr
+            })
+            provincedan = resproArr;
+          }
+        })
 
-    
-    const provinces = [];
-    const citys = [];
-    const countys = [];
+        var tempArr = res.data.data.userTypeList;
+        var resArr = new Array();
+        var resArrId = new Array();
+        for (var i = 0; i < tempArr.length; i++) {
+          resArr.push(tempArr[i].typeName);
+          resArrId.push(tempArr[i].id);
+        }
 
-    for(let i=0;i<cityData.length;i++){
-      provinces.push(cityData[i].name);
-    }
-    console.log('省份完成');
-    for (let i = 0 ; i < cityData[0].sub.length; i++) {
-      citys.push(cityData[0].sub[i].name)
-    }
-    console.log('city完成');
-    for (let i = 0 ; i < cityData[0].sub[0].sub.length; i++) {
-      countys.push(cityData[0].sub[0].sub[i].name)
-    }
-
-    that.setData({
-      'provinces': provinces,
-      'citys':citys,
-      'countys':countys,
-      'province':cityData[0].name,
-      'city':cityData[0].sub[0].name,
-      'county':cityData[0].sub[0].sub[0].name
+        that.setData({
+          userTypeArray: resArr,
+          TypeIdArray: resArrId[0]
+        })
+        TypeIdArray = resArrId;
+      }
     })
-    console.log('初始化完成');
-
-
->>>>>>> eff8b9093d58857e3a9c4c16678c8e537f41cfbc
   },
 
 
-
-  onReady:function(){
+  selectProven: function (e) {
+    var that = this;
+    wx.request({
+      url: remoteAddress + '/xcxIndex/getProvince.html',
+      data: {},
+      method: 'GET',
+      success: function (res) {
+        console.info(res);
+        that.setData({
+          provenceList: res.data.data.provenceList,
+        })
+      }
+    })
+  },
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })
