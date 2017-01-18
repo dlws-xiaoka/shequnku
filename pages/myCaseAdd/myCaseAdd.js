@@ -1,5 +1,5 @@
 var $vm = getApp()
-var sysurl = $vm.remoteAddress();
+var sysurl = $vm.remoteAddressdxf();
 var msgtitle = "";
 var msgcontant = "";
 var spaceId = "";
@@ -8,32 +8,6 @@ var imgStr = "";
 var tempFilePaths = "";
 var imgUrl = "";
 
-
-
-/*
-function addCase(that){
-  wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/addCase.html', 
-            data: {
-              spaceId:spaceId,
-              title:msgtitle,
-              caseContent:msgcontant,
-              browseNum:browseNum,
-              openId:openId,
-              imgStr:imgStr
-            },  
-            method: 'GET',   
-            success: function(res){
-            console.info(res);
-            var list=that.data.leaveList;
-            var data=res.data.data.messageMap;
-            list.push(data);
-              that.setData({
-                leaveList: list
-              })
-            }
-    })
-}*/
 
 Page({
   data: {
@@ -90,9 +64,8 @@ Page({
       method: 'GET',
       success: function (res) {
         console.info(res);
-        that.setData({
-          caseNumber: res.data.caseNumber,
-          caseList: res.data.caseList,
+        wx.redirectTo({
+          url: '../myCase/myCase'
         })
       }
     })
@@ -134,39 +107,13 @@ Page({
     // 页面关闭
     var that = this
 
-    //var id=options.id;
-    /*spaceId = 1;
-    openId = 456;
-    var imgStr = imgUrl;
-    var browseNum = 0;
-    wx.request({
-      url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/addCase.html',
-      data: {
-        spaceId: spaceId,
-        title: msgtitle,
-        caseContent: msgcontant,
-        browseNum: browseNum,
-        openId: openId,
-        imgStr: imgStr
-
-      },
-      method: 'GET',
-      success: function (res) {
-        console.info(res);
-        that.setData({
-          caseNumber: res.data.caseNumber,
-          caseList: res.data.caseList,
-        })
-      }
-    })*/
-    //   addCase(that);
   },
   bindimg: function (e) {
 
     var that = this;
     console.log(e)
     wx.chooseImage({
-      count: 3, // 默认9
+      count: 3, // 最多上传照片个数--默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -203,33 +150,8 @@ Page({
 
           }
         })
-        // }
-
-
-
-
-
       }
     })
-  }/*, 
-  uploadPic:function(fileUrl){
-
-       wx.uploadFile({
-            contentType: "multipart/form-data",
-            url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
-            filePath: fileUrl,//要上传文件资源的路径
-            name: 'pic',
-            success: function (res) {
-              var data = res.data;
-              var obj = JSON.parse(data);
-              imgUrl = obj.data.path;
-              
-              return imgUrl;
-              //console.log(allimg)
-              //do something
-            }
-          })
-
-  }*/
+  }
 
 })

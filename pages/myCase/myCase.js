@@ -10,7 +10,7 @@ Page({
    onLoad: function (options) {
     console.log('onLoad')
     var that = this
-    var sysurl = $vm.remoteAddress();
+    var sysurl = $vm.remoteAddressdxf();
     var id=options.id;
     var spaceId=1;
     wx.request({

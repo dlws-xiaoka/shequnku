@@ -8,20 +8,18 @@
 <view class="add_photo">
    <image class="camera" src="/image/camera.png"></image>
    <image src="/image/add_pic.png"  bindtap='bindimg'></image>
-</view>
-<view wx:for="{{allimg}}" wx:for-item="itimg" >
-  <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>
-</view>
-<button bindtap="modalTap">确定</button>
-</form>
-<!--
-<view class="page">
-    <view class="page__bd">
-        <modal title="是否创建案例！" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one" data-tid="{{gametask.id}}">
-        </modal>
-       <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
-            <view> 新案例</view>
-            <view> 领取成功！</view>
-        </modal>
+   <!--单张图片使用-->
+   <view wx:for="{{allimg}}" wx:for-item="itimg" >
+        <image style="margin-left:10rpx;height:108px;width:80prx;" src="{{itimg}}"></image>
     </view>
+</view>
+<!-- 多张使用
+<view  class="add_photo" wx:for="{{allimg}}" wx:for-item="itimg" >
+  <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>
 </view>-->
+    <view  class="footer">      
+        <view  class="foodsend">
+            <view class="send" bindtap='modalTap'>确定</view>
+        </view>
+    </view>
+</form>

@@ -11,7 +11,7 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     var that = this
-    var sysurl = app.remoteAddress();
+    var sysurl = app.remoteAddressdxf();
     console.log(options)
     var id=options.id;
     var spaceId=3;

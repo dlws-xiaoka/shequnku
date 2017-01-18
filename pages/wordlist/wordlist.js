@@ -8,7 +8,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
 
     var that = this
-    var sysurl = app.remoteAddress();
+    var sysurl = app.remoteAddressdxf();
     console.log(options)
   //  var resourceId = 1;
     var openId = 'oHxmUjg-f-LLWn7ppSHUQIKMzXoA';
