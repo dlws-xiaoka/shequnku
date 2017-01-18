@@ -2,6 +2,7 @@ var page=0;
 var page_size=5;
 
 var app = getApp()
+var $vm = getApp()
 var remoteAddress = app.remoteAddressdxf();
 
 var GetList = function(that){

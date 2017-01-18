@@ -3,7 +3,7 @@
     <view class="myCase-font">已发布</view>
     <view class="num num_border">{{caseNumber.caseCount}}</view>
     <!--<view class="num">2</view>-->
-    <view class="myCase_font">案例数</view>
+    <view class="myCase_font">个案例</view>
     <navigator class="img-search" url="/pages/myCaseAdd/myCaseAdd">         
        <image class="photo" src="/image/add.png"></image>
     </navigator>
