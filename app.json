@@ -1,12 +1,12 @@
 {
     "pages": [
+     "pages/dataone/dataone",   
     "pages/filter/filter",
      "pages/search/search",
      "pages/index/index",
      "pages/resoude/resoude",
      "pages/user/user",
     "pages/searchList/searchList",
-     "pages/dataone/dataone",   
      "pages/index/index",
      "pages/choosetype/choosetype",
      "pages/myCase/myCase",

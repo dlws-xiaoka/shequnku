@@ -6,6 +6,7 @@ view,text,image{
   box-sizing: border-box;
   font-family: "微软雅黑";
 }
+
 .top{
   width: 100%;
   height: 20rpx;
@@ -72,6 +73,14 @@ view,text,image{
 text-align:right;
 
 }
+.picker_choose{
+   width:69.975vw;
+text-align:right;
+}
+.picker_wx{
+   width:65.975vw;
+text-align:right;
+}
 .choose_city{
   text-align: right;
 }
@@ -110,6 +119,9 @@ text-align:right;
   color: #fff;
   flex-grow: 0;
   overflow: visible;
+}
+button::after{
+  border: none;
 }
 /** 修改button默认的点击态样式类**/
 .button-hover {

@@ -1,8 +1,21 @@
 <!--pages/dataone/dataone.wxml-->
+
 <view class="dataone_container">
+<!--社团名称以及省市部分-->
 <view class="top"></view>
 <view class="content_wrapper">
     <view class="content">
+        <view class="content_detail">
+            <text class="content_name1">类别选择</text>
+            <picker class="content_nameP" bindchange="changeChoose" value="{{locationIndex3}}" range="{{locationArray3}}">
+             <view class="picker_choose">
+                55555 {{locationArray3[locationIndex3]}}
+             </view>
+            </picker>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
         <view class="content_detail">
             <text class="content_name1">社团名称</text>
             <input class="input content_name2" name="userName" placeholder="请输入社团名称"
@@ -15,6 +28,17 @@
             <text class="content_name1">微信群名称</text>
             <input class="input content_W" name="userName" placeholder="请输入微信群名称"
              bindinput="userNameInput"/>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+         <view class="content_detail">
+            <text class="content_name1">微信群分类</text>
+             <picker class="content_nameP" bindchange="wxChoose" value="{{locationIndex5}}" range="{{locationArray5}}">
+             <view class="picker_wx">
+                55555 {{locationArray5[locationIndex5]}}
+             </view>
+            </picker>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
@@ -37,7 +61,12 @@
         </view>
          <view class="content_detail">
             <text class="content_name1">院校名称</text>
-            <input class="content_nameCity" placeholder="北京清华大学"/>
+            <!--<input class="content_nameCity" placeholder="北京清华大学"/>-->
+            <picker class="content_nameCity" bindchange="chooseSchool" value="{{locationIndex4}}" range="{{locationArray4}}">
+             <view class="picker_choose">
+                55555 {{locationArray4[locationIndex4]}}
+             </view>
+            </picker>
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
