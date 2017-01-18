@@ -23,7 +23,7 @@
 </view>
 <!--全部，筛选按钮-->
 <view class="flex-wrp vi-screnk">
-  <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchSha">
+  <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchAll">
    <text>全部</text>
   </view>
   <view id="1" class="screenk {{currentShai==1? 'active' : ''}}" bindtap="switchSha">
@@ -32,6 +32,8 @@
 </view>
 <!--内容列表-->
 
+<scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" style="height:500px;"
+            class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
     <view class="navigator_content" wx:for="{{datasource}}">
         <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
             <view class="article__thumb">
@@ -48,7 +50,7 @@
             </view>
         </navigator>
     </view>
-
+</scroll-view>
 <!--
 <scroll-view>
 <navigator class="navigator_content" url="/pages/resoude/resoude">
@@ -85,3 +87,9 @@
     </view>
 </navigator>
 </scroll-view>-->
+
+<view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+    </loading>
+</view>

@@ -2,7 +2,7 @@
 <view class="container1">
     <view class="user-top">
         <view class="re">
-          <navigator url="/pages/choosetype/choosetype">
+          <navigator url="/pages/dataone/dataone">
             <view class="resource">
                 <image src="/image/ziyuan.png"/>          
             </view>
@@ -10,7 +10,7 @@
             <text class="resource_add">添加资源</text>
         </view>  
         <view class="head">
-            <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
+            <image  class="headimg" src="{{headImgUrl}}"></image>       
         </view>
         
             <view class="re">
@@ -23,30 +23,31 @@
         </view>  
             
         <view class="headname">
-            {{userInfo.nickName}}
+            {{wxname}}
         </view>
         <view class="headcity">
-          {{userInfo.city}}
+          {{leaveCount}}
         </view>
     </view>
    
-<navigator class="navigator_content" url="/pages/resourdtal/resourdtal">
+  <block wx:for="{{resourceList}}">
+<navigator class="navigator_content" url="/pages/resourdtal/resourdtal?id={{item.id}}">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
         </view>
         <view class="article__info">
-            <view class="article__title">社团名称</view>
+            <view class="article__title">{{item.schoolName}}</view>
             <view class="article__desc">
-                <text class="article__time">学校名称</text>
+                <text class="article__time">{{childCategoryName}}</text>
             </view>
             <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
+                <text class="article__schol">{{item.remark}}</text>
             </view>
         </view>
     </view>
 </navigator>
-
+</block>
 <navigator class="navigator_content" url="/pages/news/detail">
     <view class="article__item">
         <view class="article__thumb">

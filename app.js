@@ -28,6 +28,14 @@ App({
   globalData:{
     userInfo:null
   },
+
+  remoteAddressdxf: function(){
+    return "http://192.168.15.103:8080/";
+  },
+  getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
+    var remoteAddress  = "http://localhost:8080/";
+  },
+
   remoteAddress:function(){
     return "http://192.168.15.99:8080/";//wxl
   },
@@ -47,7 +55,6 @@ App({
             'content-type': 'application/json'
         },
         success: function(res) {
-          console.info(res);
           return res;
         }
       })

@@ -28,7 +28,7 @@
             </view>
         </view>            
          <view class="content_detail">
-            <text class="content_name1">地址</text>
+            <text class="content_name1">地88址</text>
             <text class="content_nameP">河北省 石家庄市</text>          
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>

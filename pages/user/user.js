@@ -1,44 +1,57 @@
-var $vm = getApp()
+var page=0;
+var page_size=5;
+
+var app = getApp()
+var remoteAddress = app.remoteAddressdxf();
+
+var GetList = function(that){
+  that.setData({
+    hidden:false
+  });
+  
+  
+  wx.request({
+    url: remoteAddress + "xcxIndex/getLeaveCountUserInfo.html",
+    data: { openId: 123 },
+    header: {
+      'content-type': 'application/json'
+    },
+    success: function (res) {
+      that.setData({
+        leaveCount: res.data.data.leaveCount,
+        wxname: res.data.data.wxname,
+        headImgUrl: res.data.data.headImgUrl
+      })
+      wx.request({
+        url: remoteAddress + "xcxIndex/getMyResource.html",
+        data: {page:page,page_size:page_size},
+        success: function (res) {
+          that.setData({
+            resourceList: res.data.data.resourceList
+          })
+
+          page++;
+          that.setData({
+            hidden:true
+          });
+        },
+      })
+    }
+  })
+}
 
 Page({
   data:{
     text:"Page user",
     userInfo: {},
-    userListInfo: [ 
-      {
-      
-        text: '消息通知',
-        isunread: false,
-        unreadNum: 2
-      }, 
-      {
-      
-        text: '活动',
-        isunread: false,
-        unreadNum: 2
-      }, 
-      {
-     
-        text: '商城',
-        isunread: true,
-        unreadNum: '特卖,电影'
-      }, 
-      {
-     
-        text: '京东特卖',
-        isunread: false,
-        unreadNum: 1
-      }, 
-      {
-
-        text: '我要爆料'
-      }, 
-      {
-      
-        text: '反馈'
-      }]
-
-
+    userListInfo: [ ],
+    leaveCount:"",
+    wxname:"",
+    headImgUrl:"",
+    resourceList:"",
+    hidden:true,
+    scrollTop : 0,
+    scrollHeight:0,
   },
    onLoad: function () {
     console.log('onLoad')
@@ -57,7 +70,36 @@ Page({
   },
   onShow:function(){
     // 页面显示
+
+  var that = this;
+   wx.getSystemInfo({
+     success:function(res){
+       console.info(res.windowHeight);
+       that.setData({
+         scrollHeight:res.windowHeight
+       });
+     }
+   });
   },
+   onReady: function () {
+     // 页面渲染完成
+   },
+   onShow: function () {
+     //  在页面展示之后先获取一次数据
+     var that = this;
+     GetList(that);
+   },
+   bindDownLoad: function () {
+     //  该方法绑定了页面滑动到底部的事件
+     var that = this;
+     GetList(that);
+   },
+   scroll: function (event) {
+     //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+     this.setData({
+       scrollTop: event.detail.scrollTop
+     });
+   },
   onHide:function(){
     // 页面隐藏
   },

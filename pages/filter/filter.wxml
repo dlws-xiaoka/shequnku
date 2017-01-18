@@ -1,0 +1,88 @@
+<!--pages/filter/filter.wxml-->
+<view class="dataone_container">
+<view class="top"></view>
+<view class="content_wrapper">
+    <view class="content">
+       <view class="content_detail">
+            <text class="content_name1">选择省</text>
+            <picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
+             <view class="picker_text">
+               222 {{locationArray[locationIndex]}}
+             </view>
+            </picker>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>           
+        </view>
+        <view class="content_detail">
+            <text class="content_name1">选择市</text>
+            <picker class="content_nameP" bindchange="handleLocationPickerChange2" value="{{locationIndex2}}" range="{{locationArray2}}">
+             <view class="picker_text">
+                222{{locationArray2[locationIndex2]}}
+             </view>
+            </picker>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+            </view>
+         <view class="content_detailSchool">
+            <text class="content_name1">院校名称</text>
+            <picker class="content_nameCity" bindchange="chooseSchool" value="{{locationIndex3}}" range="{{locationArray3}}">
+             <view class="picker_Stext">
+                222{{locationArray3[locationIndex3]}}
+             </view>
+            </picker>
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="top"></view>
+<view class="style">
+    <text class="choose">选择以下业务类型</text>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text class="classify">一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text class="classify">一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
+</view>
+<view class="sorting">
+    <view class="title">
+        <text class="classify">一级分类</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}">
+                    <checkbox checked="{{item.checked}}" />{{item.value}}
+                </label>
+         </checkbox-group>
+</view>
+</view>
+   
+       <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover">完成    </button>
+ 

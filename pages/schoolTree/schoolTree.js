@@ -3,7 +3,15 @@ var $vm = getApp()
 Page({
   data:{
     text:"Page user",
-    userInfo: {}
+    userInfo: {},
+    items: [
+      {value: '一级分类'},
+      {value: '二级分类', checked: 'true'},
+      {value: '二三级分类'},
+      {value: '分类'},
+      {value: '英国'},
+      {value: '法国'},
+    ]
   },
    addsource(event){
      
