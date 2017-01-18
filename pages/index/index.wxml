@@ -1,12 +1,8 @@
 <!--index.wxml-->
-
 <!--搜索-->
 <view class="search">
     <view class="search-font">已入驻</view>
-    <view class="num num_border">8541</view>
-    <!--<view class="num">5</view>
-    <view class="num">4</view>
-    <view class="num">1</view>-->
+    <view class="num num_border">{{peopleNum.peopleNum}}</view>
     <view class="search_font">资源数</view>
     <navigator class="img-search" url="/pages/search/search">         
        <image class="img-size" src="/image/search.png"></image>

@@ -46,6 +46,7 @@ Page({
     //调用应用实例的方法获取全局数据
     $vm.getUserInfo(function(userInfo){
       //更新数据
+      console.log(userInfo)
       that.setData({
         userInfo:userInfo
       })

@@ -14,7 +14,7 @@
         </view>
         
             <view class="re">
-            <navigator url="/pages/wordlist/wordlist">
+            <navigator url="/pages/wordlist/wordlist"><!-- 加一个openId的参数 -->
             <view class="resource word">
                 <image src="/image/word.png"/>          
             </view>
@@ -26,7 +26,7 @@
             {{userInfo.nickName}}
         </view>
         <view class="headcity">
-          dong2264563539
+          {{userInfo.city}}
         </view>
     </view>
    

@@ -1,13 +1,30 @@
 
 <view class="myCase_top">
     <view class="myCase-font">已发布</view>
-    <view class="num num_border">12</view>
+    <view class="num num_border">{{caseNumber.caseCount}}</view>
     <!--<view class="num">2</view>-->
     <view class="myCase_font">案例数</view>
     <navigator class="img-search" url="/pages/myCaseAdd/myCaseAdd">         
        <image class="photo" src="/image/add.png"></image>
     </navigator>
 </view>
+<view class="case" wx:for="{{caseList}}">
+ <navigator  url="/pages/example/example?id={{item.id}}">
+   <view class="title">
+     <view class="left">{{item.title}}</view>
+     <view class="content_right">
+              <image src="/image/more.png" class="photo"></image>
+     </view>
+   </view>
+   <view class="production">{{item.caseContent}}</view>
+   <view class="pic_box">
+      <view class="photo_box" wx:for="{{item.imgList}}" wx:for-item="itemName">
+         <image src="{{itemName.imgUrl}}" class="photo"></image>
+      </view>
+   </view>
+ </navigator>  
+</view>
+<!--
 <view class="case">
    <view class="title">
      <view class="left">我想发到空间</view>
@@ -67,25 +84,5 @@
          <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
       </view>
    </view>
-</view>
-<view class="case">
-   <view class="title">
-     <view class="left">我想发到空间</view>
-     <view class="content_right">
-              <image src="/image/more.png" class="photo"></image>
-     </view>
-   </view>
-   <view class="production">改法束带结发河水不犯井水给皮肤对就点开复苏发不了后付费客来福</view>
-   <view class="pic_box">
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-   </view>
-</view>
+</view>-->
 

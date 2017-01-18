@@ -3,16 +3,30 @@
         <view class="head">
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
-        <view class="headname">
-           社团名称
+        <!--<view class="headname">
+             <input placeholder="社团名称" value="" /> 
         </view>
         <view class="headcity">
-         学校名称
-        </view>
+            <input placeholder="学校名称" value="" /> 
+        </view>-->
 </view>
 <view class="top"></view>
 <view class="content_wrapper">
-    <view class="content">             
+    <view class="content"> 
+    <view class="content_detail">
+            <text class="content_name1">社团名称</text>
+            <text class="content_nameP">石家庄市</text>          
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>
+        <view class="content_detail">
+            <text class="content_name1">学校名称</text>
+            <text class="content_nameP">河北省</text>          
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+        </view>            
          <view class="content_detail">
             <text class="content_name1">地址</text>
             <text class="content_nameP">河北省 石家庄市</text>          

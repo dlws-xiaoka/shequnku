@@ -1,10 +1,27 @@
+<form>
 <view class="title">
-  <input placeholder="输入标题" />
+  <input placeholder="请输入标题(至少5个字符)"  bindinput='bindtitle'/>
 </view>
 <view class="content">
-   <textarea placeholder="输入内容"/>
+   <textarea placeholder="请输入内容(至少5个字符)"  bindinput='bindcontant'/>
 </view>
 <view class="add_photo">
    <image class="camera" src="/image/camera.png"></image>
-   <image src="/image/add_pic.png"></image>
+   <image src="/image/add_pic.png"  bindtap='bindimg'></image>
 </view>
+<view wx:for="{{allimg}}" wx:for-item="itimg" >
+  <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>
+</view>
+<button bindtap="modalTap">确定</button>
+</form>
+<!--
+<view class="page">
+    <view class="page__bd">
+        <modal title="是否创建案例！" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one" data-tid="{{gametask.id}}">
+        </modal>
+       <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+            <view> 新案例</view>
+            <view> 领取成功！</view>
+        </modal>
+    </view>
+</view>-->
