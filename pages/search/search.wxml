@@ -1,4 +1,4 @@
-<header class="search_top">
+<view class="search_top">
 			<view class="search_container">
 				<input class="inp" type="search" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
 				<view class="search_content">
@@ -6,4 +6,113 @@
 				</view>
 			</view>
             <view class="cancel">取消</view>
-		</header>
+		</view>
+<!--搜索框结束-->
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>
+<navigator class="navigator_content" url="/pages/resoude/resoude">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" 
+
+src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title">社团名称</view>
+            <view class="article__desc">
+                <text class="article__time">学校名称</text>
+            </view>
+            <view class="article__descs">
+                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简简介介学校简介</text>
+            </view>
+        </view>
+    </view>
+</navigator>

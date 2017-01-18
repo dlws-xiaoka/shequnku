@@ -10,7 +10,7 @@
         <view class="headcity">
          城市名称  学校名称
         </view>
-        <text class="information">这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以</text>
+        <text class="information">简介：</text>
 </navigator>
 <navigator url="/pages/wordinfo/wordinfo">
         <view class="word">

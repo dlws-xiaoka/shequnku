@@ -99,7 +99,7 @@ margin-right:10rpx;
 /*类似ul,li的样式公用*/
 .content_wrapper{
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
   background:#f7f7f7;
 }
 .content{
@@ -134,7 +134,7 @@ margin-right:10rpx;
 	.content_name2{
   margin: 15px 0 15px 28.4666%;
  
-}
+  }
 }
 .content_nameCity{
   color:#999;
@@ -156,6 +156,7 @@ margin-right:10rpx;
 .content_pic{
   width: 3.875vw;
   height: 3.4375vw;
+
   margin: 15px 15px 15px 10px;
 }
 .photo{
@@ -163,3 +164,56 @@ margin-right:10rpx;
   height: 100%;
   background-size: cover;
 }
+/*搜索框样式开始*/
+.search_top{
+	width: 100%;
+	min-height: 45px;
+	overflow: hidden;
+    clear: both;
+
+	border-bottom: 1px solid #ccc;
+    background:#13b1a3;
+}
+
+.search_container{
+	background: #fff;
+	width: 82.8125vw;
+	overflow: hidden;
+    clear: both;
+	margin-left: 10px;
+	margin-bottom:7px ;
+	margin-top: 7px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    float: left;
+}
+.inp{
+	display: block;
+    width: 78.4375vw;
+    height: auto;
+    padding: 7px 0;
+    border: 0;
+    font-size: 3.75vw;
+    float: right;
+    text-indent: 2px;
+}
+.search_content{
+	width: 4.375vw;
+    height: 4.375vw;
+	margin-bottom:7px ;
+    margin-top: 8px;
+	float: left;
+}
+.search_img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.cancel{
+    float: right;
+    font-size: 4.0375vw;
+    margin: 15px 10px 0 0;
+    color: #fff;
+}
+
+/*搜索狂样式结束*/

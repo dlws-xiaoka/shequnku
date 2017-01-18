@@ -1,0 +1,29 @@
+<!--pages/searchList/searchList.wxml-->
+<view class="search_top">
+			<view class="search_container">
+				<input class="inp" type="search" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
+				<view class="search_content">
+					<image class="search_img" src="/image/search_blue.png"></image>
+				</view>
+			</view>
+            <view class="cancel">取消</view>
+		</view>
+<!--搜索框结束-->
+<view class="important_search">
+        <view class="item">
+            <text>搜索校咖计划社团</text>
+            <image class="important_pic" src="/image/jia.png"></image>
+        </view>
+		 <view class="item">
+            <text>搜索校咖计划社团</text>
+            <image class="important_pic" src="/image/jia.png"></image>
+        </view>
+         <view class="item">
+            <text>搜索校咖计划社团</text>
+            <image class="important_pic" src="/image/jia.png"></image>
+        </view>
+         <view class="item">
+            <text>搜索校咖计划社团</text>
+            <image class="important_pic" src="/image/jia.png"></image>
+        </view>		
+</view>
