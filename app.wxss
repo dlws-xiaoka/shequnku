@@ -44,7 +44,6 @@ overflow:hidden;
 
 }
 .article__title {
-font-weight:400;
 font-size:26rpx;
 text-overflow:ellipsis;
 white-space:nowrap;

@@ -1,5 +1,6 @@
 // pages/dataone/dataone.js
 //获取应用实例
+var app = getApp()
 Page({
   data:{
      setDisabled: function(e) {
@@ -19,7 +20,7 @@ Page({
   locationIndex4:2,
   locationIndex5:3,
   changeChoose(e){
-    if (this.data.locationIndex3|| e.detail.value) {
+    if (this.data.locationIndex3 || e.detail.value) {
 
       this.setData({
         locationIndex3: e.detail.value
@@ -27,14 +28,13 @@ Page({
     }
   },
   wxChoose(e){
-    if (this.data.locationIndex5|| e.detail.value) {
+    if (this.data.locationIndex5 || e.detail.value) {
 
       this.setData({
         locationIndex5: e.detail.value
       });
     }
   },
-  
   handleLocationPickerChange(e) {
     if (this.data.locationIndex || e.detail.value) {
 

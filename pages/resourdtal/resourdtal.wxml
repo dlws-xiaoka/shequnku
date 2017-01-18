@@ -5,12 +5,12 @@
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
         <view class="headname">
-           社团名称
+           {{spaceName}}
         </view>
         <view class="headcity">
-         城市名称  学校名称
+         城市名称  {{schoolName}}
         </view>
-        <text class="information">这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以这是一所充满文化气息的大学干啥读后感被警方就可以</text>
+        <text class="information">{{remark}}</text>
 </view>
 <navigator url="/pages/bueSkill/bueSkill">
     <view class="resourdtal_content">
