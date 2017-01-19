@@ -7,8 +7,8 @@ var openId = "";
 var imgStr = "";
 var tempFilePaths = "";
 var imgUrl = "";
-
-
+var idx = 0;
+var uploadPics = "";
 Page({
   data: {
     text: "Page user",
@@ -42,23 +42,23 @@ Page({
       return;
     }
     //表单校验-图片
-    if (imgStr.length < 1) {
+    if (uploadPics.length < 1) {
       wx.showToast({
-        title: '图片不为空',
+        title: '图片不能为空',
         icon: 'fail',
         duration: 2000
       })
       return;
     }
     wx.request({
-      url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/addCase.html',
+      url: sysurl + 'xcxIndex/addCase.html',
       data: {
         spaceId: spaceId,
         title: msgtitle,
         caseContent: msgcontant,
         browseNum: browseNum,
         openId: openId,
-        imgStr: imgStr
+        imgStr: uploadPics
 
       },
       method: 'GET',
@@ -108,8 +108,29 @@ Page({
     var that = this
 
   },
-  bindimg: function (e) {
+  myTest: function () {
 
+    wx.chooseImage({
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: sysurl+'xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success: function (res) {
+            var data = res.data
+            //do something
+          }
+        })
+      }
+    })
+
+
+  },
+  bindimg: function (e) {
     var that = this;
     console.log(e)
     wx.chooseImage({
@@ -133,25 +154,32 @@ Page({
         //获取路径
         //var imgAll = new Array();
         //for (var i = 0; i < tempFilePaths.length; i++) {
-        wx.uploadFile({
-          contentType: "multipart/form-data",
-          url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],//要上传文件资源的路径
-          name: 'pic',
-          formData: {
-            'user': 'test'
-          },
-          success: function (res) {
-            var data = res.data;
-            var obj = JSON.parse(data);
-            imgUrl = obj.data.path;
-            //imgAll.push(imgUrl[i]);
-            console.log(imgUrl);
+        that.uploadCaseImg(idx, that);
+      }
+    })
 
-          }
-        })
+  },
+  uploadCaseImg: function (idx, that) {
+    console.log(sysurl + 'xcxIndex/uploadImg.html');
+    wx.uploadFile({
+      contentType: "multipart/form-data",
+      url: sysurl+'xcxIndex/uploadImg.html', 
+      filePath: tempFilePaths[idx],//要上传文件资源的路径
+      name: 'pic',
+      success: function (res) {
+        var data = res.data;
+        var obj = JSON.parse(data);
+        imgUrl = obj.data.path;
+        uploadPics += imgUrl + ",";
+        //imgAll.push(imgUrl[i]);
+        idx++;
+        if (idx < tempFilePaths.length) {
+          that.uploadCaseImg(idx, that);
+        }
+        console.log(imgUrl);
       }
     })
   }
+
 
 })

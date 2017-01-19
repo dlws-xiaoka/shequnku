@@ -1,11 +1,10 @@
 {
     "pages": [
+        "pages/index/index",
         "pages/user/user",
         "pages/information/information",
-        "pages/index/index",
         "pages/resourdtal/resourdtal",
         "pages/bueSkill/bueSkill",
-        "pages/dataone/dataone",
         "pages/choosetype/choosetype",
         "pages/searchList/searchList",
         "pages/dataone/dataone",

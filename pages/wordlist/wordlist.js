@@ -10,25 +10,35 @@ Page({
     var that = this
     var sysurl = app.remoteAddressdxf();
     console.log(options)
-  //  var resourceId = 1;
-    var openId = 'oHxmUjg-f-LLWn7ppSHUQIKMzXoA';
-    wx.request({
-      url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/getLeaveMessageList.html',
-      data: {
-      //  resourceId: resourceId,
-        openId: openId
-      },
-      method: 'GET',
-      success: function (res) {
-        console.info(res);
-        that.setData({
-          leaveMessList: res.data.data.leaveMessList,
-        })
-      }
-    })
+    //  var resourceId = 1;
+    // var openId = 'oHxmUjg-f-LLWn7ppSHUQIKMzXoA';
+
+    var openId = app.getSysOpenId();
 
 
-   // getLeaveMessageList
+    if (null != openId && undefined != openId) {
+      wx.request({
+        url: sysurl + 'xcxIndex/getLeaveMessageList.html',
+        data: {
+          //  resourceId: resourceId,
+          openId: openId
+        },
+        method: 'GET',
+        success: function (res) {
+          console.info(res);
+          that.setData({
+            leaveMessList: res.data.data.leaveMessList,
+          })
+        }
+      })
+    }else{
+      console.log("open is not find");
+    }
+
+
+
+
+    // getLeaveMessageList
 
   },
   onReady: function () {

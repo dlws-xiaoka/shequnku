@@ -11,7 +11,7 @@ Page({
     console.log(options)
     var id=options.id;
     wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/getCaseDetailInfo.html', 
+            url: sysurl+'xcxIndex/getCaseDetailInfo.html', 
             data: {
               id:id,
             },  

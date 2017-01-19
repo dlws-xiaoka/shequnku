@@ -1,5 +1,6 @@
 // pages/information/information.js
 var app = getApp()
+var openId="";
 var remoteAddress = app.remoteAddressdxf();
 var userTypeId = "";
 var id = "";
@@ -147,6 +148,8 @@ Page({
     }
   },
   onLoad: function (options) {
+    openId = app.getSysOpenId();
+    console.info(openId);
     var that = this;
     userTypeId = options.userTypeId;
     id = options.id;
@@ -154,7 +157,7 @@ Page({
     wx.request({
       url: remoteAddress + "xcxIndex/toUpdateResourceData.html", //仅为示例，并非真实的接口地址
       data: {
-        openId: 123,
+        openId: openId,
         pId:  options.userTypeId,  
         id: options.id
       },
