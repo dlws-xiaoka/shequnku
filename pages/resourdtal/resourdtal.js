@@ -12,7 +12,8 @@ Page({
     spaceName:"",
     schoolName:"",
     remark:"",
-    spaceId:""
+    spaceId:"",
+    resouId:""
   },
   
    onLoad: function (option) {
@@ -25,6 +26,8 @@ Page({
     //传递spaceId
     that.setData({
         spaceId:spaceId,
+        userTypeId:option.userTypeId,
+        id: option.id
       })
 
 
@@ -32,7 +35,7 @@ Page({
     $vm.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        userInfo:userInfo,
+        userInfo:userInfo
       })
     }),
 

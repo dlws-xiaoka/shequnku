@@ -1,22 +1,18 @@
 <form class="page__bd" bindsubmit="formSubmit">
-<block wx:for="{{businessAllCategoryList}}" wx:for-index="idx">
-
-  <view class="sorting">
-    <view class="title">
+  <block wx:for="{{businessAllCategoryList}}" wx:for-index="idx">
+    <view class="sorting">
+      <view class="title">
         <text>{{item.categoryName}}</text>
         <view class="sort_pic">
-        <image class="photo" src="/image/down.png" ></image>
+          <image class="photo" src="/image/down.png"></image>
         </view>
+      </view>
+      <checkbox-group bindchange="checkboxChange" name="cbxgroup_{{idx}}">
+        <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items">
+          <checkbox value="{{items.id}}" /> {{items.categoryName}}
+        </label>
+      </checkbox-group>
     </view>
-        <checkbox-group   bindchange="checkboxChange" name="cbxgroup_{{idx}}">
-                <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items">
-                
-                        <checkbox value="{{items.id}}" />{{items.categoryName}}
-                
-                </label>
-         </checkbox-group>
-  </view>
-
-</block>
- <button  class="foot_button" form-type="submit">提交</button>
+  </block>
+  <button class="foot_button" form-type="submit">提交</button>
 </form>
