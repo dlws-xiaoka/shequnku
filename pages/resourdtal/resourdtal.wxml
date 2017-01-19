@@ -25,7 +25,7 @@
     </view>
 </navigator>
 
-<navigator url="/pages/myCase/myCase">
+<navigator url="/pages/myCase/myCase?spaceId={{spaceId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/anli.png"></image>

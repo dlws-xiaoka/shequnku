@@ -1,26 +1,27 @@
 var $vm = getApp()
+var openId=$vm.getSysOpenId();
+
 var sysurl = $vm.remoteAddressdxf();
 var msgtitle = "";
 var msgcontant = "";
 var spaceId = "";
-var openId = "";
 var imgStr = "";
 var tempFilePaths = "";
 var imgUrl = "";
 var idx = 0;
-var uploadPics = "";
+var uploadPics = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1794894692,1423685501&fm=116&gp=0.jpg";
 Page({
   data: {
     text: "Page user",
     userInfo: {},
-    allimg: {}
+    allimg: {},
+    spaceId:{}
   },
   //弹出确认框  
   modalTap: function (e) {
     var that = this
-    //var id=options.id;
-    spaceId = 1;
-    openId = 456;
+    spaceId=e.currentTarget.dataset.spaceid;
+    console.log(e)
     var imgStr = imgUrl;
     var browseNum = 0;
     //表单校验-标题
@@ -42,14 +43,14 @@ Page({
       return;
     }
     //表单校验-图片
-    if (uploadPics.length < 1) {
+   /* if (uploadPics.length < 1) {
       wx.showToast({
         title: '图片不能为空',
         icon: 'fail',
         duration: 2000
       })
-      return;
-    }
+     // return;
+    }*/
     wx.request({
       url: sysurl + 'xcxIndex/addCase.html',
       data: {
@@ -65,15 +66,20 @@ Page({
       success: function (res) {
         console.info(res);
         wx.redirectTo({
-          url: '../myCase/myCase'
+          url: '../myCase/myCase?spaceId='+spaceId
         })
       }
     })
   },
 
-  onLoad: function () {
+  onLoad: function (e) {
     console.log('onLoad')
+    openId = $vm.getSysOpenId();
+    spaceId =e.spaceId
     var that = this
+    that.setData({
+        spaceId: spaceId
+      })
     //调用应用实例的方法获取全局数据
     $vm.getUserInfo(function (userInfo) {
       //更新数据

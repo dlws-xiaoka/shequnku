@@ -5,10 +5,10 @@
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
         <view class="headname">
-           社团名称{{userInfo.spaceName}}
+           {{userInfo.spaceName}}
         </view>
         <view class="headcity">
-         城市名称  学校名称{{userInfo.schoolName}}
+         {{userInfo.cityName}}|{{userInfo.schoolName}}
         </view>
         <text class="information">简介:{{userInfo.remark}}</text>
 </navigator>

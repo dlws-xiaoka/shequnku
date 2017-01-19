@@ -1,26 +1,22 @@
 // pages/wordlist/wordlist.js
 var app = getApp()
+var openId=app.getSysOpenId();
 Page({
   data: {
     leaveMessList: {}
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-
+    openId = app.getSysOpenId();
     var that = this
     var sysurl = app.remoteAddressdxf();
     console.log(options)
-    //  var resourceId = 1;
-    // var openId = 'oHxmUjg-f-LLWn7ppSHUQIKMzXoA';
 
-    var openId = app.getSysOpenId();
-
-
+    console.log('我的还是我的'+openId)
     if (null != openId && undefined != openId) {
       wx.request({
         url: sysurl + 'xcxIndex/getLeaveMessageList.html',
         data: {
-          //  resourceId: resourceId,
           openId: openId
         },
         method: 'GET',

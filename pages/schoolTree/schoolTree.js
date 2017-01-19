@@ -1,4 +1,5 @@
 var $vm = getApp()
+var openId=$vm.getSysOpenId();
 
 Page({
   data:{

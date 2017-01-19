@@ -1,5 +1,6 @@
 // pages/choosetype/choosetype.js
 var app = getApp();
+var openId=app.getSysOpenId();
 
 function  backcolor(){
   return ["hidden","hidden","hidden"]

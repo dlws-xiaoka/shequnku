@@ -18,9 +18,9 @@
   <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>
 </view>-->
     <view  class="footer">      
-        <view><button bindtap="modalTap">确定</button></view>
-      <!--  <view  class="foodsend">
-            <view class="send" bindtap='modalTap'>确定</view>
+        <button bindtap="modalTap" data-spaceId="{{spaceId}}">确定</button>
+    <!--  <view  class="foodsend">
+            <view class="send" bindtap='modalTap' data-Id="{{spaceId}}">确定2</view>
         </view>-->
 
     </view>

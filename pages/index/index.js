@@ -5,6 +5,8 @@ var page_size=5;
 var userType=""
 //获取应用实例
 var app = getApp()
+var openId=app.getSysOpenId();
+
 var sysurl = app.remoteAddressdxf();
 var GetList = function(that){
   that.setData({

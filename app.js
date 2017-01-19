@@ -8,6 +8,8 @@ App({
     wx.setStorageSync('logs', logs)
     this.getUserInfo();
   },
+  sysOpenId: '101',
+  sysNickName:"我",
   getUserInfo: function (cb) {
     var that = this;
     var remoteAddress = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
@@ -19,8 +21,11 @@ App({
       openId = wx.getStorage({
         key: 'openId',
         success: function (res) {
-          console.log(res.data);
-          openId = res.data;
+          console.log("缓存中数据" + res.data);
+          if (undefined != res.data) {
+            openId = res.data;
+            that.sysOpenId = openId;
+          }
           return res.data;
         }
       })
@@ -36,6 +41,7 @@ App({
               },
               success: function (res) {
                 openId = res.data.data.openId;
+                that.sysOpenId = openId;
                 wx.setStorage({
                   key: "openId",
                   data: openId
@@ -45,7 +51,8 @@ App({
             })
             wx.getUserInfo({
               success: function (res) {
-                var userInfo = res.userInfo
+                var userInfo = res.userInfo;
+                that.sysNickName=res.userInfo.nickName;
                 wx.request({
                   url: remoteAddress + "weixin/addUserInfo.html",
                   data: { openId: openId, name: res.userInfo.nickName, sex: res.userInfo.gender, province: res.userInfo.province, city: res.userInfo.city, headImgUrl: res.userInfo.avatarUrl, country: res.userInfo.country },
@@ -72,17 +79,22 @@ App({
     userInfo: null
   },
   getSysOpenId: function () {
-    wx.getStorage({
-      key: 'openId',
-      success: function (res) {
-        console.log("sys open is="+res.data);
-        return res.data;
-      }
-    })
+    // wx.getStorage({
+    //   key: 'openId',
+    //   success: function (res) {
+    //     console.log("sys open is="+res.data);
+    //     return res.data;
+    //   }
+    // })
+    var that = this;
+    console.log("返回openid" + that.sysOpenId);
+    return that.sysOpenId;
 
   },
   remoteAddressdxf: function () {
+    //部署环境使用
     return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    //本地环境使用
     // return "http://192.168.56.1:8080/dlws-xiaoka-shequnku/";
   }
 })
