@@ -1,5 +1,8 @@
 {
     "pages": [
+
+
+
         "pages/index/index",
         "pages/choosetype/choosetype",
         "pages/searchList/searchList",

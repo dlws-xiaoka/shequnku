@@ -1,6 +1,6 @@
 // pages/wordinfo/wordinfo.js
 var app = getApp();
-var sysurl = app.remoteAddressdxf();
+var sysurl = app.remoteAddress();
 var message="";
 var spaceId="";
 var pId="";

@@ -7,8 +7,8 @@ var openId = "";
 var imgStr = "";
 var tempFilePaths = "";
 var imgUrl = "";
-
-
+var idx = 0;
+var uploadPics = "";
 Page({
   data: {
     text: "Page user",
@@ -58,7 +58,7 @@ Page({
         caseContent: msgcontant,
         browseNum: browseNum,
         openId: openId,
-        imgStr: imgStr
+        imgStr: uploadPics
 
       },
       method: 'GET',
@@ -109,7 +109,6 @@ Page({
 
   },
   bindimg: function (e) {
-
     var that = this;
     console.log(e)
     wx.chooseImage({
@@ -133,25 +132,34 @@ Page({
         //获取路径
         //var imgAll = new Array();
         //for (var i = 0; i < tempFilePaths.length; i++) {
-        wx.uploadFile({
-          contentType: "multipart/form-data",
-          url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],//要上传文件资源的路径
-          name: 'pic',
-          formData: {
-            'user': 'test'
-          },
-          success: function (res) {
-            var data = res.data;
-            var obj = JSON.parse(data);
-            imgUrl = obj.data.path;
-            //imgAll.push(imgUrl[i]);
-            console.log(imgUrl);
-
-          }
-        })
+        that.uploadCaseImg(idx,that);
+      }
+    })
+    
+  },
+   uploadCaseImg: function (idx,that) {
+    wx.uploadFile({
+      contentType: "multipart/form-data",
+      url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
+      filePath: tempFilePaths[idx],//要上传文件资源的路径
+      name: 'pic',
+      formData: {
+        'user': 'test'
+      },
+      success: function (res) {
+        var data = res.data;
+        var obj = JSON.parse(data);
+        imgUrl = obj.data.path;
+        uploadPics+=imgUrl+",";
+        //imgAll.push(imgUrl[i]);
+        idx++;
+        if (idx < tempFilePaths.length) {
+          that.uploadCaseImg(idx,that);
+        }
+        console.log(imgUrl);
       }
     })
   }
+
 
 })
