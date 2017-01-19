@@ -1,4 +1,5 @@
 var app = getApp()
+var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 var bussiLength = 0;
 var id=0;
@@ -15,6 +16,7 @@ Page({
 
   onLoad: function (e) {
     var that = this
+    openId = app.getSysOpenId();
     id=e.id;
     //一级分类
     wx.request({

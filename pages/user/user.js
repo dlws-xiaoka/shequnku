@@ -2,7 +2,6 @@ var page = 0;
 var page_size = 5;
 
 var app = getApp()
-var $vm = getApp()
 var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 
@@ -26,7 +25,7 @@ var GetList = function (that) {
       })
       wx.request({
         url: remoteAddress + "xcxIndex/getMyResource.html",
-        data: { page: page, page_size: page_size },
+        data: {openId:openId},
         success: function (res) {
           console.log(res)
           that.setData({
@@ -58,34 +57,6 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
-    // var that = this
-    // //调用应用实例的方法获取全局数据
-    // $vm.getUserInfo(function(userInfo){
-    //   //更新数据
-    //   console.log(userInfo)
-    //   that.setData({
-    //     userInfo:userInfo
-    //   })
-    // })
-
-    openId = app.getSysOpenId();
-
-  },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
-
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        console.info(res.windowHeight);
-        that.setData({
-          scrollHeight: res.windowHeight
-        });
-      }
-    });
   },
   onReady: function () {
     // 页面渲染完成
@@ -93,6 +64,7 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    openId = app.getSysOpenId();
     GetList(that);
   },
   bindDownLoad: function () {
