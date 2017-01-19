@@ -1,13 +1,14 @@
 {
     "pages": [
+        "pages/user/user",
         "pages/index/index",
+        "pages/dataone/dataone",
         "pages/choosetype/choosetype",
         "pages/searchList/searchList",
         "pages/dataone/dataone",
         "pages/schoolTree/schoolTree",
         "pages/filter/filter",
         "pages/information/information",
-        "pages/dataone/dataone",
         "pages/myCase/myCase",
         "pages/resourdtal/resourdtal",
         "pages/myCaseAdd/myCaseAdd",
@@ -16,7 +17,6 @@
         "pages/search/search",
         "pages/example/example",
         "pages/wordinfo/wordinfo",
-        "pages/user/user",
         "pages/login/login",
         "pages/wordlist/wordlist"
     ],
