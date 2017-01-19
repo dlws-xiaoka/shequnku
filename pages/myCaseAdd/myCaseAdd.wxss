@@ -1,8 +1,11 @@
 page{
+    min-height: 100%;
+    width: 100%;
     background: #f2f2f2;
 }
 .title,.content{
     width: 100%;
+    min-height: 100%;
     overflow: hidden;
     border: 1px solid #e6e6e6;
     background: #fff;
@@ -37,4 +40,116 @@ image{
 }
 .camera{
     margin: 15px 5px 15px 10px;
+}
+.footer {
+  width: 77.34375%;
+  height: 100rpx;
+  padding:2% 11.328%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #f2f2f2;
+}
+.input {
+  width: 100%;
+  height: 60rpx;
+  padding: 10rpx 4rpx;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.input_font{
+  font-size: 4.0625vw;
+  color: #ccc;
+}
+.foodsend {
+  width: 120rpx;
+  height: 80rpx;
+  display: flex;
+  margin: 10rpx;
+   background: #13b1a3;
+   border-radius: 8rpx;
+  justify-content: center;
+  align-items: center;
+}
+.footinput {
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: 60rpx;
+  padding: 10rpx 4rpx;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+}
+
+.send{
+  font-size: 14px;
+  color: #fff;
+}
+.footadd {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addbroder {
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 100rpx;
+}
+
+.footadd image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.footaddbox{
+  height: 200rpx;
+  
+}
+.footaddbox ul{
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+ 
+}
+.footaddbox ul li{
+  flex: 1;
+  height: 100%;
+  font-size: 12px;
+  color: #9a9a9a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footaddimg{
+  border: 1px solid #ccc;
+  border-radius: 20rpx;
+  margin: 10rpx;
+  padding: 30rpx;
+}
+.footaddtext{
+  border: 1px solid #ccc;
+  border-radius: 20rpx;
+  margin: 10rpx;
+  padding: 30rpx;
+}
+.footaddbox ul li image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.tellinput{
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #efeff4;
 }

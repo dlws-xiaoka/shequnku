@@ -14,7 +14,7 @@
         </view>
         
             <view class="re">
-            <navigator url="/pages/wordlist/wordlist">
+            <navigator url="/pages/wordlist/wordlist"><!-- 加一个openId的参数 -->
             <view class="resource word">
                 <image src="/image/word.png"/>          
             </view>
