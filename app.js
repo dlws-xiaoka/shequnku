@@ -6,23 +6,66 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    this.getUserInfo();
   },
   getUserInfo:function(cb){
-    var that = this
+    var that = this;
+    var remoteAddress  = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    var openId = "";
     if(this.globalData.userInfo){
       typeof cb == "function" && cb(this.globalData.userInfo)
     }else{
       //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
+      openId = wx.getStorage({
+        key: 'openId',
+        success: function(res) {
+            console.log(res.data);
+            openId=res.data;
+            return res.data;
+        } 
+      })
+      if(typeof(openId)=="undefined"){
+        wx.login({
+          success: function (res) {
+            res.code;
+            wx.request({
+              url:remoteAddress+"weixin/getOpenidSessionKeyByCode.html",
+              data:{code:res.code},
+              header: {
+                  'content-type': 'application/json'
+              },
+              success: function(res) {
+                openId = res.data.data.openId;
+                wx.setStorage({
+                  key:"openId",
+                  data:openId
+                });
+                return res;
+              }
+            })
+            wx.getUserInfo({
+              success: function (res) {
+                var userInfo = res.userInfo
+                wx.request({
+                  url:remoteAddress+"weixin/addUserInfo.html",
+                  data:{openId:openId,name:res.userInfo.nickName,sex:res.userInfo.gender,province:res.userInfo.province,city:res.userInfo.city,headImgUrl:res.userInfo.avatarUrl,country:res.userInfo.country},
+                  header: {
+                      'content-type': 'application/json'
+                  },
+                  success: function(res) {
+                    return res;
+                  }
+                })
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
+              }
+            })
+          }
+        })
+      }else{
+        console.log(openId);
+      }
+      
     }
   },
   globalData:{
@@ -30,18 +73,18 @@ App({
   },
 
   remoteAddressdxf: function(){
-    return "http://192.168.15.103:8080/";
+    return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
   },
   getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
-    var remoteAddress  = "http://localhost:8080/";
+    var remoteAddress  = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
   },
 
   remoteAddress:function(){
-    return "http://192.168.15.99:8080/";//wxl
+    return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";//wxl
   },
   //统一请求入口，需传入请求地址：url，请求参数：data
   getData:function(url,data){
-    var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
+    var remoteAddress  = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
 
     //未来会在此处做缓存
     //缓存开始
