@@ -23,10 +23,7 @@
         </view>  
             
         <view class="headname">
-            微信名称:{{wxname}}
-        </view>
-        <view class="headcity">
-          微信号:{{leaveCount}}
+            {{wxname}}
         </view>
     </view>
    

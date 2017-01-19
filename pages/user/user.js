@@ -18,7 +18,7 @@ var GetList = function (that) {
       'content-type': 'application/json'
     },
     success: function (res) {
-      console.log(res)
+      console.log(res)    
       that.setData({
         leaveCount: res.data.data.leaveCount,
         wxname: res.data.data.wxname,

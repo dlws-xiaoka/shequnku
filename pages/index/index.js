@@ -35,6 +35,7 @@ var GetList = function(that){
         },
         method: 'GET',
         success: function (res) {
+          console.log(res)
           var datasourceL = that.data.datasource;
           if(page<res.data.data.po.absolutePage){
             for(var i=0;i<res.data.data.po.datasource.length;i++){
