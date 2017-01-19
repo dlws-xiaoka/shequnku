@@ -55,7 +55,7 @@ App({
                 var userInfo = res.userInfo;
                 that.sysNickName=res.userInfo.nickName;
                 that.sysHeadImgUrl=res.userInfo.headImgUrl;
-                
+
                 wx.request({
                   url: remoteAddress + "weixin/addUserInfo.html",
                   data: { openId: openId, name: res.userInfo.nickName, sex: res.userInfo.gender, province: res.userInfo.province, city: res.userInfo.city, headImgUrl: res.userInfo.avatarUrl, country: res.userInfo.country },

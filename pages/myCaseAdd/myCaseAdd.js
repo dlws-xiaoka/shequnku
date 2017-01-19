@@ -9,7 +9,7 @@ var imgStr = "";
 var tempFilePaths = "";
 var imgUrl = "";
 var idx = 0;
-var uploadPics = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1794894692,1423685501&fm=116&gp=0.jpg";
+var uploadPics = "";
 Page({
   data: {
     text: "Page user",

@@ -15,12 +15,12 @@ Page({
     var sysurl = app.remoteAddressdxf();
     console.log(options)
     var id=options.id;
-    var spaceId=3;
+    //var spaceId=3;
     wx.request({
             url: sysurl+'xcxIndex/spaceDetailInfo.html', 
             data: {
               id:id,
-              spaceId:spaceId
+             // spaceId:spaceId
             },  
             method: 'GET',   
             success: function(res){   

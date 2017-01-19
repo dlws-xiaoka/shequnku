@@ -1,6 +1,7 @@
 // pages/wordinfo/wordinfo.js
 var app = getApp();
 var openId = app.getSysOpenId();
+var cusOpenId = "";
 
 var sysurl = app.remoteAddressdxf();
 var message = "";
@@ -12,7 +13,7 @@ function addMesage(that) {
   if (message.length < 3) {
     wx.showToast({
       title: '内容长度不得少于3个字符',
-      icon: 'fail',
+      icon: 'loading',
       duration: 2000
     })
     return;
@@ -59,6 +60,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     var that = this
     openId = app.getSysOpenId();
+    cusOpenId = options.cusOpenId;
     console.log(options)
     // openId=options.openId;
     spaceId = options.spaceId;
@@ -67,7 +69,8 @@ Page({
       url: sysurl + 'xcxIndex/getLeaveComment.html',
       data: {
         spaceId: spaceId,
-        openId: openId
+        openId: openId,
+        cusOpenId:cusOpenId
       },
       method: 'GET',
       success: function (res) {
