@@ -1,4 +1,6 @@
 var $vm = getApp()
+var resouId="";
+var userTypeId="";
 Page({
   data:{
     text:"Page user",
@@ -9,11 +11,13 @@ Page({
     userTypeId:"",
     spaceName:"",
     schoolName:"",
-    remark:""
+    remark:"",
+    resouId:""
   },
   
    onLoad: function (option) {
-
+    resouId=option.id;
+    userTypeId=option.userTypeId;
     var remoteAddress = $vm.remoteAddressdxf();
     var that = this
     //调用应用实例的方法获取全局数据
@@ -21,6 +25,8 @@ Page({
       //更新数据
       that.setData({
         userInfo:userInfo,
+        resouId:option.id,
+        userTypeId:option.userTypeId
       })
     }),
 

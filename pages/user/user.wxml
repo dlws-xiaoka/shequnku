@@ -31,7 +31,7 @@
     </view>
    
   <block wx:for="{{resourceList}}">
-<navigator class="navigator_content" url="/pages/resourdtal/resourdtal?id={{item.id}}">
+<navigator class="navigator_content" url="/pages/resourdtal/resourdtal?id={{item.id}}&userTypeId={{item.userTypeId}}">
     <view class="article__item">
         <view class="article__thumb">
             <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>

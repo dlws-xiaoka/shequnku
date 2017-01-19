@@ -142,7 +142,9 @@ margin-right:10rpx;
 }
 .content_nameP{
   color:#999;
-  margin: 15px 0 15px 49.09375%;
+margin:15px 0 15px 20.09375%;
+text-align:right;
+
 }
 .content_nameT{
   color:#999;

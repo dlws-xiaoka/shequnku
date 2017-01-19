@@ -131,14 +131,7 @@
         </view>
       </block>
 
-      <!-- <view class="content_detail">
-            <text class="content_name1">公众号名称</text>
-            <input class="input content_G" name="userName" placeholder="请输入公众号名称"
-             bindinput="userNameInput"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>-->
+  
       <view class="content_detail">
         <text class="content_name1">手机号</text>
         <input name="phone" value="" class="content_nameT" placeholder="请输入手机号" />
