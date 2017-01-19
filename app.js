@@ -30,18 +30,18 @@ App({
   },
 
   remoteAddressdxf: function(){
-    return "http://192.168.15.103:8080/";
+    return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
   },
   getData:function(url,data){//统一请求入口，需传入请求地址：url，请求参数：data
-    var remoteAddress  = "http://localhost:8080/";
+    var remoteAddress  = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
   },
 
   remoteAddress:function(){
-    return "http://192.168.15.99:8080/";//wxl
+    return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";//wxl
   },
   //统一请求入口，需传入请求地址：url，请求参数：data
   getData:function(url,data){
-    var remoteAddress  = "http://localhost:8080/xxxxxxxx/";
+    var remoteAddress  = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
 
     //未来会在此处做缓存
     //缓存开始
