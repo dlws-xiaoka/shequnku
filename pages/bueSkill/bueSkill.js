@@ -3,6 +3,7 @@ var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 var bussiLength = 0;
 var id=0;
+var userTypeId=0;
 Page({
   data: {
     changeColor: function (e) {
@@ -65,7 +66,7 @@ Page({
       method: 'GET',
       success: function (res) {
         wx.redirectTo({
-          url: '../resourdtal/resourdtal?id='+id
+          url: "../resourdtal/resourdtal?id="+id+"&userTypeId="+userTypeId
         })
       }
     })

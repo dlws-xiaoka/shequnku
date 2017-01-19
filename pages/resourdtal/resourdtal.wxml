@@ -12,7 +12,7 @@
         </view>
         <text class="information">简介:{{remark}}</text>
 </view>
-<navigator url="/pages/bueSkill/bueSkill?id={{id}}">
+<navigator url="/pages/bueSkill/bueSkill?id={{id}}&userTypeId={{userTypeId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/ablity.png"></image>
