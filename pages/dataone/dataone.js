@@ -3,7 +3,7 @@
 var tcity = require("../../utils/city.js");
 var app = getApp()
 var remoteAddress = app.remoteAddressdxf();
-var TypeIdArray = "";
+var TypeIdArray = "";//所有一级分类 不可以改变这个值
 var provincedan = "";//所有省
 var provinceSin = "";//传后台的省
 var cityIdArr = "";
@@ -16,9 +16,10 @@ var childcategoryId = 0;
 var wxNumber = "";//微信号
 var chidCaIdArr = "";//所有的微信号子分类Id
 var chidCaId = "";//传后台的子分类Id
+
+
 Page({
   data: {
-    locationArray2: ['信阳市', '保定市', '合肥市', '南阳市'],
     userTypeArray: "",
     typeIndex: 0,
     TypeIdArray: "",
@@ -32,10 +33,54 @@ Page({
     schArrId: '',
     businessCategoryList: '',
     childCategoryList: '',
-    chidCatIndex: 0,//传后台的子分类Id
-    chidCaId: ''
-  },
+    chidCatIndex: 0,
+    chidCaId: '',
 
+  },
+  //表单提交按钮
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+
+    this.setData({
+      allValue: e.detail.value
+    })
+    var arr = e.detail.value;
+    var cbxgroupArr = "";
+
+    for (var i = 0; i < bussiLength; i++) {
+      var temId = "cbxgroup_" + i;
+
+      if (arr[temId].length > 0) {
+        cbxgroupArr += arr[temId] + ",";
+      }
+
+    }
+    cbxgroupArr = cbxgroupArr.substr(0, cbxgroupArr.length - 1);
+
+
+    wx.request({
+      url: remoteAddress + '/xcxIndex/addResource.html',
+      data: {
+        openId: 123,
+        userTypeId: arr.userType,
+        schoolId: arr.schoolId != undefined ? arr.schoolId : 0,
+        schoolName: schName,
+        provinceName: provinceSin,
+        phone:arr.phone!= undefined ? arr.phone : '',
+        remark: arr.remark,
+        spaceName: arr.spaceName!= undefined ? arr.spaceName : '',
+        businessId: cbxgroupArr,
+        childcategoryId: childcategoryId != undefined ? childcategoryId : 0,
+        wxNumber: arr.wxNumber!= undefined ? arr.wxNumber : ''
+      },
+      method: 'GET',
+      success: function (res) {
+        wx.switchTab({
+          url: '../user/user'
+        })
+      }
+    })
+  },
   changeUserType(e) {
     var that = this;
     if (this.data.typeIndex || e.detail.value) {
@@ -44,18 +89,17 @@ Page({
         typeIndex: e.detail.value,
         TypeIdArray: TypeIdArray[typeIndex]
       });
-      TypeIdArray = TypeIdArray[typeIndex];
+     // TypeIdArray = TypeIdArray[typeIndex];
     }
     wx.request({
       url: remoteAddress + '/xcxIndex/getChildCategoryList.html',
-      data: { pId: TypeIdArray },
+      data: { pId: TypeIdArray[typeIndex] },
       method: 'GET',
       success: function (res) {
         var chidList = res.data.data.childCategoryList;
         var chidCaArr = new Array();//子分类名称
         chidCaIdArr = new Array();//子分类Id
         if (chidList) {
-
           for (var i = 0; i < chidList.length; i++) {
             chidCaArr.push(chidList[i].childCategoryName);
             chidCaIdArr.push(chidList[i].id);
@@ -158,6 +202,7 @@ Page({
 
     }
   },
+
   onLoad: function () {
     var that = this;
     wx.request({
@@ -231,50 +276,7 @@ Page({
       }
     })
   },
-  //表单提交按钮
-  formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    this.setData({
-      allValue: e.detail.value
-    })
-    var arr = e.detail.value;
-    var cbxgroupArr = "";
 
-    for (var i = 0; i < bussiLength; i++) {
-      var temId = "cbxgroup_" + i;
-
-      if (arr[temId].length > 0) {
-        cbxgroupArr += arr[temId] + ",";
-      }
-
-    }
-    cbxgroupArr = cbxgroupArr.substr(0, cbxgroupArr.length - 1);
-
-
-    wx.request({
-      url: remoteAddress + '/xcxIndex/addResource.html',
-      data: {
-        openId: 123,
-        userTypeId: arr.userType,
-        schoolId: arr.schoolId != undefined ? arr.schoolId : 0,
-        schoolName: schName,
-        provinceName: provinceSin,
-        phone: arr.phone,
-        remark: arr.remark,
-        spaceName: arr.spaceName,
-        businessId: cbxgroupArr,
-        childcategoryId: childcategoryId != undefined ? childcategoryId: 0,
-        wxNumber: wxNumber
-      },
-      method: 'GET',
-      success: function (res) {
-         wx.redirectTo({
-            url:'../user/user'
-        })
-      }
-    })
-
-  },
   onReady: function () {
     // 页面渲染完成
   },

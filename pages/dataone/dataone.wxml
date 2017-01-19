@@ -1,6 +1,6 @@
 
 <!--pages/dataone/dataone.wxml-->
-<form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+<form class="page__bd" bindsubmit="formSubmit">
 <view class="dataone_container">
 
   <!--社团名称以及省市部分-->
@@ -64,21 +64,21 @@
       <block wx:if="{{typeIndex==1}}">
         <view class="content_detail">
           <text class="content_name1">微信号</text>
-          <input class="input content_W" name="userName" placeholder="请输入微信号" bindinput="userNameInput" />
+          <input class="input content_W" name="wxNumber" placeholder="请输入微信号" bindinput="userNameInput" />
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
         <view class="content_detail">
           <text class="content_name1">微信名称</text>
-          <input class="input content_W" name="userName" placeholder="请输入微信名称" bindinput="userNameInput" />
+          <input class="input content_W" name="spaceName" placeholder="请输入微信名称" bindinput="userNameInput" />
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
         <view class="content_detail">
           <text class="content_name1">微信类别</text>
-          <picker  name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{childcategoryId}}" range="{{childCategoryList}}">
+          <picker  name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
             <view class="picker_wx">
             {{childCategoryList[chidCatIndex]}}
             </view>
@@ -93,16 +93,16 @@
       <block wx:if="{{typeIndex==2}}">
         <view class="content_detail">
           <text class="content_name1">微信群名称</text>
-          <input class="input content_W" name="userName" placeholder="请输入微信群名称" bindinput="userNameInput" />
+          <input class="input content_W" name="spaceName" placeholder="请输入微信群名称" bindinput="userNameInput" />
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
         <view class="content_detail">
           <text class="content_name1">微信群类别</text>
-          <picker class="content_nameP" bindchange="wxChoose" value="{{locationIndex5}}" range="{{locationArray5}}">
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
             <view class="picker_wx">
-              55555 {{locationArray5[locationIndex5]}}
+              {{childCategoryList[chidCatIndex]}}
             </view>
           </picker>
           <view class="content_pic">
@@ -113,16 +113,16 @@
       <block wx:if="{{typeIndex==3}}">
         <view class="content_detail">
           <text class="content_name1">QQ群名称</text>
-          <input class="input content_Q" name="userName" placeholder="请输入QQ群名称" bindinput="userNameInput" />
+          <input class="input content_Q" name="spaceName" placeholder="请输入QQ群名称" bindinput="userNameInput" />
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
         <view class="content_detail">
           <text class="content_name1">QQ群类别</text>
-          <picker class="content_nameP" bindchange="wxChoose" value="{{locationIndex5}}" range="{{locationArray5}}">
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
             <view class="picker_wx">
-              55555 {{locationArray5[locationIndex5]}}
+              {{childCategoryList[chidCatIndex]}}
             </view>
           </picker>
           <view class="content_pic">
@@ -175,10 +175,10 @@
 </block>
 
 </view>
- <button form-type="submit">Submit提交</button>
-     <navigator url="/pages/user/user">
+ <button  class="foot_button" form-type="submit">提交</button>
+     <!--<navigator url="/pages/user/user">
        <button class="foot_button" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}"  hover-class="other-button-hover" >完成             </button>
-     </navigator>
+     </navigator>-->
 </form>
     
