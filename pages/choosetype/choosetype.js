@@ -36,7 +36,7 @@ Page({
     var sysurl = app.remoteAddressdxf();
     
     wx.request({
-            url: sysurl+'/xcxIndex/getUserType.html', 
+            url: sysurl+'xcxIndex/getUserType.html', 
             data: {},
             method: 'GET',
             success: function(res){ 
