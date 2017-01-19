@@ -59,7 +59,7 @@ Page({
 
 
     wx.request({
-      url: remoteAddress + '/xcxIndex/addResource.html',
+      url: remoteAddress + 'xcxIndex/addResource.html',
       data: {
         openId: 123,
         userTypeId: arr.userType,
@@ -92,7 +92,7 @@ Page({
      // TypeIdArray = TypeIdArray[typeIndex];
     }
     wx.request({
-      url: remoteAddress + '/xcxIndex/getChildCategoryList.html',
+      url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
       data: { pId: TypeIdArray[typeIndex] },
       method: 'GET',
       success: function (res) {
@@ -137,7 +137,7 @@ Page({
       provinceSin = provinceb;
       //根据省选择市
       wx.request({
-        url: remoteAddress + '/xcxIndex/getCityListByprovince.html',
+        url: remoteAddress + 'xcxIndex/getCityListByprovince.html',
         data: { province: provinceb },
         method: 'GET',
         success: function (res) {
@@ -168,7 +168,7 @@ Page({
     cityId = cityIdArr[cityIndex];
     //根据市选择学校
     wx.request({
-      url: remoteAddress + '/xcxIndex/getSchoolListByCityId.html',
+      url: remoteAddress + 'xcxIndex/getSchoolListByCityId.html',
       data: { cityId: cityId },
       method: 'GET',
       success: function (res) {
@@ -213,7 +213,7 @@ Page({
       },
       success: function (res) {
         wx.request({
-          url: remoteAddress + '/xcxIndex/getProvince.html',
+          url: remoteAddress + 'xcxIndex/getProvince.html',
           data: {},
           method: 'GET',
           success: function (res) {
@@ -231,7 +231,7 @@ Page({
 
             //一级分类
             wx.request({
-              url: remoteAddress + '/xcxIndex/getBusinessList.html',
+              url: remoteAddress + 'xcxIndex/getBusinessList.html',
               data: {},
               method: 'GET',
               success: function (res) {
@@ -265,7 +265,7 @@ Page({
   selectProven: function (e) {
     var that = this;
     wx.request({
-      url: remoteAddress + '/xcxIndex/getProvince.html',
+      url: remoteAddress + 'xcxIndex/getProvince.html',
       data: {},
       method: 'GET',
       success: function (res) {

@@ -18,8 +18,10 @@
   <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>
 </view>-->
     <view  class="footer">      
-        <view  class="foodsend">
+        <view><button bindtap="modalTap">确定</button></view>
+      <!--  <view  class="foodsend">
             <view class="send" bindtap='modalTap'>确定</view>
-        </view>
+        </view>-->
+
     </view>
 </form>

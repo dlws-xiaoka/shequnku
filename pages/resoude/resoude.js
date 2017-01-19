@@ -16,7 +16,7 @@ Page({
     var id=options.id;
     var spaceId=3;
     wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/spaceDetailInfo.html', 
+            url: sysurl+'xcxIndex/spaceDetailInfo.html', 
             data: {
               id:id,
               spaceId:spaceId

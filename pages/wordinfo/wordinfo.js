@@ -1,6 +1,6 @@
 // pages/wordinfo/wordinfo.js
 var app = getApp();
-var sysurl = app.remoteAddress();
+var sysurl = app.remoteAddressdxf();
 var message="";
 var spaceId="";
 var pId="";
@@ -17,7 +17,7 @@ function addMesage(that){
       return;
   }
   wx.request({
-            url: sysurl+'dlws-xiaoka-shequnku/xcxIndex/sendMessage.html', 
+            url: sysurl+'xcxIndex/sendMessage.html', 
             data: {
               pId:pId,
               spaceId:spaceId,
@@ -51,7 +51,7 @@ Page({
     spaceId = options.spaceId;
     pId = options.pId;
     wx.request({
-      url: sysurl + 'dlws-xiaoka-shequnku/xcxIndex/getLeaveComment.html',
+      url: sysurl + 'xcxIndex/getLeaveComment.html',
       data: {
         spaceId:spaceId,
         openId: openId
@@ -97,17 +97,10 @@ Page({
   },
   send:function(e){
     var that = this
-    var sysurl = app.remoteAddress(); 
+    var sysurl = app.remoteAddressdxf(); 
     pId=pId;
     spaceId=spaceId;
     message=message;
-
-
-    console.info(message)
-    console.info(spaceId)
-    console.info(pId)
-    console.info(openId)
-
     addMesage(that);
    
   }
