@@ -70,6 +70,11 @@ Page({
         })
       }
     })
+
+    //重置变量
+     uploadPics = "";
+     msgtitle="";
+     msgcontant=""
   },
 
   onLoad: function (e) {
@@ -182,7 +187,7 @@ Page({
         if (idx < tempFilePaths.length) {
           that.uploadCaseImg(idx, that);
         }
-        console.log(imgUrl);
+        console.log('woshinidada'+uploadPics);
       }
     })
   }
