@@ -12,7 +12,7 @@
         </view>
         <text class="information">简介:{{remark}}</text>
 </view>
-<navigator url="/pages/bueSkill/bueSkill?id={{resouId}}">
+<navigator url="/pages/bueSkill/bueSkill?id={{id}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/ablity.png"></image>
@@ -36,7 +36,7 @@
         </view>         
     </view>
 </navigator>
-<navigator url="/pages/information/information?id={{resouId}}&userTypeId={{userTypeId}}">
+<navigator url="/pages/information/information?id={{id}}&userTypeId={{userTypeId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/person.png"></image>

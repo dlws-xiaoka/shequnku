@@ -64,8 +64,8 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        wx.navigateTo({
-          url: '../resourdtal/resourdtal?id'+id
+        wx.redirectTo({
+          url: '../resourdtal/resourdtal?id='+id
         })
       }
     })

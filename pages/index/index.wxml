@@ -4,9 +4,9 @@
     <view class="search-font">已入驻</view>
     <view class="num num_border">{{peopleNum.peopleNum}}</view>
     <view class="search_font">资源数</view>
-    <navigator class="img-search" url="/pages/search/search">         
+   <!-- <navigator class="img-search" url="/pages/search/search">         
        <image class="img-size" src="/image/search.png"></image>
-    </navigator>
+    </navigator>-->
 </view>
 <swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
    <block wx:for="{{movies}}" wx:for-index="index">  

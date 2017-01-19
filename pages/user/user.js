@@ -9,7 +9,7 @@ var GetList = function (that) {
   that.setData({
     hidden: false
   });
-  console.log('GetList'+openId)
+  console.log('GetList' + openId)
   wx.request({
     url: remoteAddress + "xcxIndex/getLeaveCountUserInfo.html",
     data: { openId: openId },
@@ -25,7 +25,7 @@ var GetList = function (that) {
       })
       wx.request({
         url: remoteAddress + "xcxIndex/getMyResource.html",
-        data: {openId:openId},
+        data: { openId: openId },
         success: function (res) {
           console.log(res)
           that.setData({
@@ -49,21 +49,36 @@ Page({
     userListInfo: [],
     leaveCount: "",
     wxname: "",
-    headImgUrl: "",
     resourceList: "",
     hidden: true,
     scrollTop: 0,
     scrollHeight: 0,
+    sysNickName: ""
   },
   onLoad: function () {
     console.log('onLoad')
   },
   onReady: function () {
     // 页面渲染完成
+    console.log('onReady')
+
+
   },
   onShow: function () {
     //  在页面展示之后先获取一次数据
+     console.log('onShow')
     var that = this;
+    that.setData({
+      sysNickName: app.sysNickName
+    })
+
+     app.getUserInfo(function(userInfo){
+      //更新数据
+      that.setData({
+        userInfo:userInfo
+      })
+    })
+
     openId = app.getSysOpenId();
     GetList(that);
   },
