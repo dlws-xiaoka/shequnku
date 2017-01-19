@@ -1,25 +1,26 @@
 {
     "pages": [
-    "pages/searchList/searchList",
-     "pages/search/search",
-     "pages/dataone/dataone", 
-     "pages/schoolTree/schoolTree",
-     "pages/index/index",
-    "pages/filter/filter",
-    "pages/bueSkill/bueSkill",
-     "pages/information/information",   
-     "pages/index/index",
-     "pages/resoude/resoude",
-     "pages/dataone/dataone",
-     "pages/myCase/myCase",
-    "pages/resourdtal/resourdtal",
-    "pages/myCaseAdd/myCaseAdd",
-     "pages/example/example",
-     "pages/wordinfo/wordinfo",
-     "pages/user/user",
-     "pages/login/login",
-     "pages/wordlist/wordlist"
-
+        "pages/index/index",
+       
+       
+       
+        "pages/searchList/searchList",
+        "pages/search/search",
+        "pages/dataone/dataone",
+        "pages/schoolTree/schoolTree",
+        "pages/filter/filter",
+        "pages/bueSkill/bueSkill",
+        "pages/information/information",
+        "pages/resoude/resoude",
+       
+        "pages/myCase/myCase",
+        "pages/resourdtal/resourdtal",
+        "pages/myCaseAdd/myCaseAdd",
+        "pages/example/example",
+        "pages/wordinfo/wordinfo",
+        "pages/user/user",
+        "pages/login/login",
+        "pages/wordlist/wordlist"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -32,17 +33,20 @@
         "selectedColor": "#02DF82",
         "borderStyle": "white",
         "backgroundColor": "#fff",
-        "list": [{
-            "pagePath": "pages/index/index",
-            "iconPath": "image/index.png",
-            "selectedIconPath": "image/indexs.png",       
-            "text": "首页"
-        }, {
-            "pagePath": "pages/user/user",
-            "iconPath": "image/space.png",
-            "selectedIconPath": "image/spaces.png",
-            "text": "我的空间"
-        }]
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "image/index.png",
+                "selectedIconPath": "image/indexs.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "image/space.png",
+                "selectedIconPath": "image/spaces.png",
+                "text": "我的空间"
+            }
+        ]
     },
-    "debug":true
+    "debug": true
 }
