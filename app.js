@@ -93,8 +93,8 @@ App({
   },
   remoteAddressdxf: function () {
     //部署环境使用
-    return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    //return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
     //本地环境使用
-    // return "http://192.168.56.1:8080/dlws-xiaoka-shequnku/";
+     return "http://192.168.15.103:8080/";
   }
 })
