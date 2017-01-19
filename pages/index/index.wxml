@@ -37,7 +37,7 @@
     <view class="navigator_content" wx:for="{{datasource}}">
         <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
             <view class="article__thumb">
-                <image class="article__image" src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+                <image class="article__image" src="{{item.headImgUrl}}"></image>
             </view>
             <view class="article__info">
                 <view class="article__title">{{item.spaceName}}</view>
