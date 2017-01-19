@@ -2,6 +2,7 @@ var page=0;
 var page_size=5;
 
 var app = getApp()
+var $vm = getApp()
 var remoteAddress = app.remoteAddressdxf();
 
 var GetList = function(that){
@@ -54,6 +55,23 @@ Page({
     scrollHeight:0,
   },
    onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    $vm.getUserInfo(function(userInfo){
+      //更新数据
+      console.log(userInfo)
+      that.setData({
+        userInfo:userInfo
+      })
+    })
+  },
+  onReady:function(){
+    // 页面渲染完成
+  },
+  onShow:function(){
+    // 页面显示
+
   var that = this;
    wx.getSystemInfo({
      success:function(res){
