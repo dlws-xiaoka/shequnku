@@ -4,21 +4,20 @@ Page({
   data:{
     text:"Page user",
     userInfo: {},
-    schoolId:"",
-    schoolName:"",
-    userTypeId:"",
-    spaceName:"",
-    provinceName:"",
-    phone:"",
-    remark:"",
-    wxNumber:"",
-    childcategoryId:""
+    items: [
+      {value: '一级分类'},
+      {value: '二级分类', checked: 'true'},
+      {value: '二三级分类'},
+      {value: '分类'},
+      {value: '英国'},
+      {value: '法国'},
+    ]
   },
    addsource(event){
      
    },
-   onLoad: function (option) {
-    var remoteAddress = app.remoteAddressdxf();
+   onLoad: function () {
+    console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
     $vm.getUserInfo(function(userInfo){
@@ -26,30 +25,7 @@ Page({
       that.setData({
         userInfo:userInfo
       })
-    }),
-      that.setData({
-        schoolId:"",
-        schoolName:"",
-        userTypeId:"",
-        spaceName:"",
-        provinceName:"",
-        phone:"",
-        remark:"",
-        wxNumber:"",
-        childcategoryId:""
-        })
-     wx.request({
-        url: remoteAddress+"xcxIndex/addResource.html", 
-        data:{openId:123},
-        header: {
-            'content-type': 'application/json'
-        },
-        success: function(res) {
-          that.setData({
-            leaveCount:res.data.data.leaveCount,
-          })
-        }
-      })
+    })
   },
   onReady:function(){
     // 页面渲染完成

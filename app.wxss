@@ -212,7 +212,7 @@ margin-right:10rpx;
 .cancel{
     float: right;
     font-size: 4.0375vw;
-    margin: 15px 10px 0 0;
+    margin: 15px 15px 0 0;
     color: #fff;
 }
 

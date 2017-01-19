@@ -1,5 +1,6 @@
 
 <!--pages/dataone/dataone.wxml-->
+<form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
 <view class="dataone_container">
 
   <!--社团名称以及省市部分-->
@@ -8,7 +9,7 @@
     <view class="content">
       <view class="content_detail">
         <text class="content_name1">类别选择</text>
-        <picker class="content_nameP" bindchange="changeUserType" value="{{typeIndex}}" range="{{userTypeArray}}">
+        <picker  name="userType" class="content_nameP" bindchange="changeUserType" value="{{TypeIdArray}}" range="{{userTypeArray}}">
           <view class="picker_choose" id="{{TypeIdArray}}">
             {{userTypeArray[typeIndex]}}
           </view>
@@ -20,14 +21,14 @@
       <block wx:if="{{typeIndex==0}}">
         <view class="content_detail">
           <text class="content_name1">社团名称</text>
-          <input class="input content_name2" name="userName" placeholder="请输入社团名称" bindinput="userNameInput" />
+          <input class="input content_name2" name="spaceName" value="" placeholder="请输入社团名称" bindinput="userNameInput" />
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
         <view class="content_detail">
           <text class="content_name1">选择省</text>
-          <picker class="content_nameP"  bindchange="changeProven" value="{{ProvenIndex}}" range="{{provinceList}}">
+          <picker name="provinceName" class="content_nameP"  bindchange="changeProven" value="{{provinceSin}}" range="{{provinceList}}">
             <view class="picker_text">
             {{provinceList[ProvenIndex]}}
             </view>
@@ -38,7 +39,7 @@
         </view>
         <view class="content_detail">
           <text class="content_name1">选择市</text>
-          <picker class="content_nameP" bindchange="changeCity" value="{{cityIndex}}" range="{{cityList}}">
+          <picker name="city" class="content_nameP" bindchange="changeCity" value="{{cityId}}" range="{{cityList}}">
             <view class="picker_text">
                {{cityList[cityIndex]}}
             </view>
@@ -49,11 +50,9 @@
         </view>
         <view class="content_detail">
           <text class="content_name1">院校名称</text>
-
-          <!--<input class="content_nameCity" placeholder="北京清华大学"/>-->
-          <picker class="content_nameCity" bindchange="chooseSchool" value="{{cityIndex}}" range="{{schoolList}}">
+          <picker name="schoolId" class="content_nameCity" bindchange="changeSchool" value="{{schArrId}}" range="{{schoolList}}">
             <view class="picker_choose">
-              {{schoolList[cityIndex]}}
+              {{schoolList[schIndex]}}
             </view>
           </picker>
           <view class="content_pic">
@@ -79,9 +78,9 @@
         </view>
         <view class="content_detail">
           <text class="content_name1">微信类别</text>
-          <picker class="content_nameP" bindchange="wxChoose" value="{{locationIndex5}}" range="{{locationArray5}}">
+          <picker  name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{childcategoryId}}" range="{{childCategoryList}}">
             <view class="picker_wx">
-              55555 {{locationArray5[locationIndex5]}}
+            {{childCategoryList[chidCatIndex]}}
             </view>
           </picker>
           <view class="content_pic">
@@ -142,65 +141,44 @@
         </view>-->
       <view class="content_detail">
         <text class="content_name1">手机号</text>
-        <input class="content_nameT" placeholder="请输入手机号" />
+        <input name="phone" value="" class="content_nameT" placeholder="请输入手机号" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>
       </view>
       <view class="content_detail">
         <text class="content_name1">简介</text>
-        <textarea class="content_nameJ" placeholder="请输入简介" />
+        <textarea name="remark" value="" class="content_nameJ" placeholder="请输入简介" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>
       </view>
     </view>
   </view>
+
+
+
+<block wx:for="{{businessCategoryList}}" wx:for-index="idx">
   <view class="sorting">
     <view class="title">
-      <text>一级分类</text>
-      <view class="sort_pic">
-        <image class="photo" src="/image/down.png"></image>
-      </view>
+        <text>{{item.categoryName}}</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
     </view>
-    <block wx:if="{{true}}" class="genre_container">
-      <view class="genre" bindtap="changeColor">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二三级分类</view>
-      <view class="genre">二级分类</view>
-    </block>
+        <checkbox-group   bindchange="checkboxChange" name="cbxgroup_{{idx}}">
+                <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items">
+                    <checkbox value="{{items.id}}"/>{{items.categoryName}}
+                </label>
+         </checkbox-group>
   </view>
-  <view class="sorting">
-    <view class="title">
-      <text>一级分类</text>
-      <view class="sort_pic">
-        <image class="photo" src="/image/down.png"></image>
-      </view>
-    </view>
-    <block wx:if="{{true}}" class="genre_container">
-      <view class="genre" bindtap="changeColor">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二三级分类</view>
-      <view class="genre">二级分类</view>
-    </block>
-  </view>
-  <view class="sorting">
-    <view class="title">
-      <text>一级分类</text>
-      <view class="sort_pic">
-        <image class="photo" src="/image/down.png"></image>
-      </view>
-    </view>
-    <block wx:if="{{true}}" class="genre_container">
-      <view class="genre" bindtap="changeColor">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二级分类</view>
-      <view class="genre">二三级分类</view>
-      <view class="genre">二级分类</view>
-    </block>
-  </view>
+</block>
+
 </view>
-<button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover">完成 </button>
+ <button form-type="submit">Submit提交</button>
+     <navigator url="/pages/user/user">
+       <button class="foot_button" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}"  hover-class="other-button-hover" >完成             </button>
+     </navigator>
+</form>
+    

@@ -1,4 +1,5 @@
 /* pages/searchList/searchList.wxss */
+@import "../wxSearch/wxSearch.wxss"
 .important_search{
     width: 100vw;
     overflow: hidden;

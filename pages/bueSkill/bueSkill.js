@@ -8,8 +8,15 @@ Page({
       this.setdata({
         background:"13b1a3"
       })
-    }
-    
+    },
+    items: [
+      {value: '一级分类'},
+      {value: '二级分类', checked: 'true'},
+      {value: '二三级分类'},
+      {value: '分类'},
+      {value: '英国'},
+      {value: '法国'},
+    ]
   },
   
    onLoad: function () {

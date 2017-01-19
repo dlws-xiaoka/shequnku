@@ -1,1 +1,181 @@
 /* pages/filter/filter.wxss */
+.top{
+  width: 100%;
+  height: 20rpx;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  background: #f2f2f2;
+}
+.content_wrapper{
+  width: 100%;
+  background:#f7f7f7;
+}
+.content{
+  width: 95.3125vw;
+  overflow:hidden;
+  clear:both;
+  margin: 0 auto;
+  background:#fff;
+}
+.content_detail{
+  width: 100vw;
+  overflow:hidden;
+  clear:both;
+  font-size:4.0625vw;
+ border-bottom: 1px solid #e6e6e6;
+}
+.content_detailSchool{
+  width: 100vw;
+  overflow:hidden;
+  clear:both;
+  font-size:4.0625vw;
+}
+.content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT,.content_W,.content_G,.content_Q{
+  float: left;
+}
+.content_name1{
+   color:#333;
+   margin: 15px 0;
+   font-weight: 600;
+}
+.content_name2{
+  width: 69.925vw;
+  text-align:right;
+  color:#999;
+  margin: 15px 0 15px 0;
+}
+.content_nameCity{
+  width: 69.6vw;
+  color:#999;
+  margin: 15px 0 15px 0;
+  text-align: right;
+}
+.content_nameP{
+  color:#999;
+  margin: 15px 0 15px 0;
+}
+.picker_text{
+  width:73.975vw;
+text-align:right;
+
+}
+.choose_city{
+  text-align: right;
+}
+.content_pic{
+  width: 3.875vw;
+  height: 3.4375vw;
+  margin: 15px 15px 15px 10px;
+}
+.photo{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.style{
+    width: 100vw;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid #e6e6e6;
+}
+.choose{
+    display: block;
+    font-size: 4.375vw;
+    font-weight: 600;
+    margin: 15px 0;
+    text-indent: 10px;
+}
+.foot_button{
+  width: 100vw;
+  font-size: 5.625vw;
+  text-align: center;
+  background: #13b1a3;
+  color: #fff;
+  flex-grow: 0;
+  overflow: visible;
+}
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+navigator{
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+}
+page{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.dataone_container{
+  overflow: scroll;
+  flex-grow: 1;
+
+}
+.cityheader{
+  display: flex;
+ flex-flow: row nowrap;
+ justify-content: space-between;
+position:absolute;
+top:0px;
+width:100%;
+z-index:4;
+height:50px;
+line-height:50px;
+}
+wx-picker-view-column{
+ -webkit-flex:1;
+flex:1;
+position:relative;
+height:100%;
+overflow:hidden;
+}
+/*分类样式*/
+page{
+    background: #f6f5fa;
+}
+.sorting{
+    width: 93.75vw;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 3px solid #e6e6e6;
+}
+.title{
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+}
+.classify,.sort_pic{
+    float: left;
+}
+.classify{
+    color: #333;
+    font-size: 4.0625vw;
+    margin: 15px 0 15px;
+}
+.sort_pic{
+    width:4.9vw;
+    height:4.875vw;
+    margin:13px 0 18px 10px;
+
+}
+/*复选框的样式*/
+checkbox-group{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row wrap;
+
+}
+.wx-checkbox-input-checked::before{
+  color: #13b1a3;
+}
+.checkbox{
+  font-size: 3.864vw;
+  margin: 15px;
+  color:#333;
+}
