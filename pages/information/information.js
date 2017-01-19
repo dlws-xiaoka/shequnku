@@ -1,6 +1,6 @@
 // pages/information/information.js
 var app = getApp()
-var openId="";
+var openId=app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 var userTypeId = "";
 var id = "";
@@ -149,7 +149,6 @@ Page({
   },
   onLoad: function (options) {
     openId = app.getSysOpenId();
-    console.info(openId);
     var that = this;
     userTypeId = options.userTypeId;
     id = options.id;
@@ -211,7 +210,7 @@ Page({
     wx.request({
       url: remoteAddress + '/xcxIndex/updateResource.html',
       data: {
-        openId: 123,
+        openId: openId,
         userTypeId: userTypeId == undefined ? '' : userTypeId,
         spaceName: arr.spaceName != undefined ? arr.spaceName : '',
         remark: arr.remark == undefined ? '' : arr.remark,

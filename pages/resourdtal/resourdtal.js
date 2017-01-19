@@ -8,7 +8,6 @@ Page({
     userInfo: {},
     id:"",
     schoolId:"",
-    openId:"",
     userTypeId:"",
     spaceName:"",
     schoolName:"",

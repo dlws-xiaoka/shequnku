@@ -120,6 +120,9 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    this.setData({
+      datasource:[]
+    });
     GetList(that);
   },
   bindDownLoad: function () {
