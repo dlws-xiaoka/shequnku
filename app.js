@@ -10,6 +10,7 @@ App({
   },
   sysOpenId: '101',
   sysNickName:"我",
+  sysHeadImgUrl :"",
   getUserInfo: function (cb) {
     var that = this;
     var remoteAddress = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
@@ -53,6 +54,8 @@ App({
               success: function (res) {
                 var userInfo = res.userInfo;
                 that.sysNickName=res.userInfo.nickName;
+                that.sysHeadImgUrl=res.userInfo.headImgUrl;
+                
                 wx.request({
                   url: remoteAddress + "weixin/addUserInfo.html",
                   data: { openId: openId, name: res.userInfo.nickName, sex: res.userInfo.gender, province: res.userInfo.province, city: res.userInfo.city, headImgUrl: res.userInfo.avatarUrl, country: res.userInfo.country },
@@ -93,8 +96,8 @@ App({
   },
   remoteAddressdxf: function () {
     //部署环境使用
-   // return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    // return "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
     //本地环境使用
-      return "http://114.215.145.51:8888/dlws-xiaoka-shequnku/";
+     return "http://114.215.145.51:8888/dlws-xiaoka-shequnku/";
   }
 })
