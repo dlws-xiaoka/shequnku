@@ -3,45 +3,13 @@
 <view class="search_top wxSearch-section">
 			<view class="search_container wxSearch-pance">
 				<input class="inp wxSearch-input" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" type="search" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
+            <navigator class="search_navigator" url="/pages/search/search">
 				<view class="search_content wxSearch-input" bindtap="wxSearchFn" size="mini" plain="true">
-					<image class="search_img" src="/image/search_blue.png"></image>
+					<image class="search_img" bindtap="a" src="/image/search_blue.png"></image>
 				</view>
+            </navigator>
 			</view>
-            <view class="cancel" bindtap="wxSearchDeleteKey" style="display:{{wxSearchData.view.isShowSearchHistory ? 'block':'none'}}">取消</view>
+            <!--<view class="cancel"  bindtap="hiden">取消</view>-->
+            
 		</view>
 <template is="wxSearch" data="{{wxSearchData}}"/>
-<!--import src="/wxSearch/wxSearch.wxml"/>-->
-
-<!--<view class="wxSearch-section">
-  <view class="wxSearch-pancel">
-    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
-    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
-  </view>
-</view>
-<template is="wxSearch" data="{{wxSearchData}}"/>-->
-
-
-
-
-
-
-
-<!--搜索框结束-->
-<!--<view class="important_search">
-        <view class="item">
-            <text>搜索校咖计划社团</text>
-            <image class="important_pic" src="/image/jia.png"></image>
-        </view>
-		 <view class="item">
-            <text>搜索校咖计划社团</text>
-            <image class="important_pic" src="/image/jia.png"></image>
-        </view>
-         <view class="item">
-            <text>搜索校咖计划社团</text>
-            <image class="important_pic" src="/image/jia.png"></image>
-        </view>
-         <view class="item">
-            <text>搜索校咖计划社团</text>
-            <image class="important_pic" src="/image/jia.png"></image>
-        </view>		
-</view>-->

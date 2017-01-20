@@ -5,6 +5,10 @@
     overflow: hidden;
     clear: both;
 }
+.search_navigator{
+    overflow: hidden;
+    line-height: 0;
+}
 .item{
     overflow: hidden;
      border-bottom: 1px solid #ccc;

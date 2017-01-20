@@ -32,7 +32,7 @@
 </view>
 <!--内容列表-->
 
-<scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" style="height:500px;"
+<scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" scroll-x="true" style="height:500px;"
             class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
     <view class="navigator_content" wx:for="{{datasource}}">
         <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">

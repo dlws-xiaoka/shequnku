@@ -4,6 +4,7 @@ var app = getApp()
 var openId=app.getSysOpenId();
 Page({
   data: {
+  
   },
   onLoad: function () {
     console.log('onLoad')
@@ -12,6 +13,22 @@ Page({
     WxSearch.init(that,43,['社团','微信群','公众号','QQ号','wxNotification']);
     WxSearch.initMindKeys(['校咖社团','河南大学微信公众号','美丽社团','微信小程序','安徽大学微信公众号']);
   },
+  // a:function(e){
+  //  console.log(this.data.inputValue)
+  //   let data;
+  //   let localStorageValue = [];
+  //   if(this.data.inputValue != ''){
+  //     //调用API从本地缓存中获取数据
+     
+  //     wx.navigateTo({
+  //         url: '/pages/search/search'
+  //     })
+  //     // console.log('马上就要跳转了！')
+  //   }else{
+  //     console.log('空白的')
+  //   }
+  //   // this.onLoad();
+  // },
   wxSearchFn: function(e){
     var that = this
     WxSearch.wxSearchAddHisKey(that);

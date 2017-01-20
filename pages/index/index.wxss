@@ -100,9 +100,11 @@ align-items:stretch;
 
 }
 .flex-wrp {
+width: 100vw;
 display:flex;
 border-bottom: 1px solid #e6e6e6;
 background:#fafafa;
+box-sizing: border-box;
 }
 
 .flex-item {
@@ -124,6 +126,7 @@ width:50vw;
     float:left;
     text-align: center;
     border-right: 1px solid #bebebe;
+    box-sizing: border-box;
 }
 .toptab.active{
     border-bottom: 2px solid #13b1a3;
