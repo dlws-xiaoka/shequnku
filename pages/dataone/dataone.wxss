@@ -92,10 +92,11 @@ text-align:right;
 }
 
 .content_nameJ{
-  width: 45.5vw;
+  width: 76.5vw;
   border: 1px solid #e6e6e6;
   color:#999;
-  margin: 15px 0 15px 31.625%;
+  /*margin: 15px 0 15px 31.625%;*/
+  margin: 15px 0 15px 0;
   text-align: right;
 }
 .content_pic{
