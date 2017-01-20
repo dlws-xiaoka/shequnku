@@ -2,7 +2,6 @@
 //获取应用实例
 var tcity = require("../../utils/city.js");
 var app = getApp()
-var openId=app.getSysOpenId();
 
 var remoteAddress = app.remoteAddressdxf();
 var TypeIdArray = "";//所有一级分类 不可以改变这个值
@@ -63,7 +62,7 @@ Page({
     wx.request({
       url: remoteAddress + 'xcxIndex/addResource.html',
       data: {
-        openId: openId,
+        openId: app.getSysOpenId(),
         userTypeId: arr.userType,
         schoolId: arr.schoolId != undefined ? arr.schoolId : 0,
         schoolName: schName,
@@ -91,7 +90,6 @@ Page({
         typeIndex: e.detail.value,
         TypeIdArray: TypeIdArray[typeIndex]
       });
-     // TypeIdArray = TypeIdArray[typeIndex];
     }
     wx.request({
       url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
@@ -207,7 +205,7 @@ Page({
 
   onLoad: function () {
     var that = this;
-    openId = app.getSysOpenId();
+    var openId = app.getSysOpenId();
     wx.request({
       url: remoteAddress + "xcxIndex/getUserType.html",
       data: { openId: openId },
