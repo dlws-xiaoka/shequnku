@@ -51,6 +51,7 @@ Page({
       })
      // return;
     }*/
+    console.log('图片地址是=================='+uploadPics)
     wx.request({
       url: sysurl + 'xcxIndex/addCase.html',
       data: {
@@ -58,7 +59,7 @@ Page({
         title: msgtitle,
         caseContent: msgcontant,
         browseNum: browseNum,
-        openId: openId,
+        openId: $vm.getSysOpenId(),
         imgStr: uploadPics
 
       },
@@ -187,7 +188,7 @@ Page({
         if (idx < tempFilePaths.length) {
           that.uploadCaseImg(idx, that);
         }
-        console.log('woshinidada'+uploadPics);
+        console.log('服务器返回地址----------------'+uploadPics);
       }
     })
   }

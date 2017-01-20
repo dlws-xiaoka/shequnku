@@ -6,13 +6,15 @@
    <textarea placeholder="请输入内容(至少5个字符)"  bindinput='bindcontant'/>
 </view>
 <view class="add_photo">
-   <image class="camera" src="/image/camera.png"></image>
-   <image src="/image/add_pic.png"  bindtap='bindimg'></image>
-   <!--单张图片使用-->
-   <view wx:for="{{allimg}}" wx:for-item="itimg" >
-        <image style="margin-left:10rpx;height:108px;width:80prx;" src="{{itimg}}"></image>
-    </view>
+   <image class="image camera" src="/image/camera.png"></image>
+   <image class="image" src="/image/add_pic.png"  bindtap='bindimg'></image>
 </view>
+   <!--单张图片使用-->
+   <view class="add_container">
+    <view class="add_picture" wx:for="{{allimg}}" wx:for-item="itimg" >
+            <image class="search_img" src="{{itimg}}"></image>
+        </view>
+   </view>
 <!-- 多张使用
 <view  class="add_photo" wx:for="{{allimg}}" wx:for-item="itimg" >
   <image style="height:100rpx;width:80prx;" src="{{itimg}}"></image>

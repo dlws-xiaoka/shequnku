@@ -134,7 +134,7 @@
   
       <view class="content_detail">
         <text class="content_name1">手机号</text>
-        <input name="phone" value="" class="content_nameT" placeholder="请输入手机号" />
+        <input name="phone" bindtap="phone_number" value="" class="content_nameT" placeholder="请输入手机号" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>

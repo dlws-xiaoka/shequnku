@@ -115,6 +115,9 @@ margin-right:10rpx;
   clear:both;
   font-size:4.0625vw;
  border-bottom: 1px solid #e6e6e6;
+ display: flex;
+ flex-flow: nowrap row;
+ justify-content: space-between;
 }
 .content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT{
   float: left;
@@ -159,7 +162,7 @@ text-align:right;
   width: 3.875vw;
   height: 3.4375vw;
 
-  margin: 15px 15px 15px 10px;
+  margin: 15px 20px 15px 10px;
 }
 .photo{
   width: 100%;

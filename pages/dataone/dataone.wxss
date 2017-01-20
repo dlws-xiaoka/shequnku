@@ -29,10 +29,10 @@ view,text,image{
   overflow:hidden;
   clear:both;
   font-size:4.0625vw;
- border-bottom: 1px solid #e6e6e6;
-}
-.content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT,.content_W,.content_G,.content_Q{
-  float: left;
+  border-bottom: 1px solid #e6e6e6;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
 }
 .content_name1{
    color:#333;
@@ -47,8 +47,8 @@ view,text,image{
   
 }
 .content_W,.content_G{
-  width: 65.925vw;
-  text-align:right;
+  width: 68vw;
+   text-align:right;
   color:#999;
   margin: 15px 0 15px 0;
 }
@@ -93,7 +93,7 @@ text-align:right;
 
 .content_nameJ{
   width: 45.5vw;
-  height: 
+  border: 1px solid #e6e6e6;
   color:#999;
   margin: 15px 0 15px 31.625%;
   text-align: right;
@@ -101,7 +101,7 @@ text-align:right;
 .content_pic{
   width: 3.875vw;
   height: 3.4375vw;
-  margin: 15px 15px 15px 10px;
+  margin: 15px 20px 15px 10px;
 }
 .photo{
   width: 100%;
