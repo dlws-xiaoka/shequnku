@@ -2,7 +2,7 @@
  <view class="user-top">
 
         <view class="head">
-            <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
+            <image  class="headimg" src="{{headImgUrl}}"></image>       
         </view>
         <view class="headname">
             社群名称:{{spaceName}}

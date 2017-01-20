@@ -97,7 +97,8 @@ Page({
     remark: '',
     provinceName: '',//回显省
     chidCaId: '',//用户分类下的子分类
-    chidCatIndex:0
+    chidCatIndex:0,
+    headImgUrl:''
   },
   changeProven(e) {
     var that = this;
@@ -164,6 +165,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+        console.log(res)
         var proArr = res.data.data.provinceList;
         var resproArr = new Array();
         for (var i = 0; i < proArr.length; i++) {
@@ -182,7 +184,8 @@ Page({
           phone: res.data.data.resourceMap.phone,
           typeName: res.data.data.resourceMap.typeName,
           provinceList: resproArr, //全部省
-          childCategoryList: res.data.data.resourceMap.childCategoryList
+          childCategoryList: res.data.data.resourceMap.childCategoryList,
+          headImgUrl:res.data.data.resourceMap.headImgUrl
         })
 
         var provinceName = res.data.data.resourceMap.provinceName;//回显省的值
