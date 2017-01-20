@@ -1,5 +1,5 @@
 var $vm = getApp()
-var openId=$vm.getSysOpenId();
+var openId = $vm.getSysOpenId();
 
 var sysurl = $vm.remoteAddressdxf();
 var msgtitle = "";
@@ -10,19 +10,21 @@ var tempFilePaths = "";
 var imgUrl = "";
 var idx = 0;
 var uploadPics = "";
+
+
 Page({
   data: {
     text: "Page user",
     userInfo: {},
     allimg: {},
-    spaceId:{}
+    spaceId: {}
   },
   //弹出确认框  
   modalTap: function (e) {
     var that = this
-    spaceId=e.currentTarget.dataset.spaceid;
+    spaceId = e.currentTarget.dataset.spaceid;
     console.log(e)
-   // var imgStr = imgUrl;
+    // var imgStr = imgUrl;
     var browseNum = 0;
     //表单校验-标题
     if (msgtitle.length < 5) {
@@ -43,35 +45,27 @@ Page({
       return;
     }
     //表单校验-图片
-   /* if (uploadPics.length < 1) {
-      wx.showToast({
-        title: '图片不能为空',
-        icon: 'fail',
-        duration: 2000
-      })
-     // return;
-    }*/
-    console.log('图片地址是=================='+uploadPics)
+    /* if (patharr.length == 0) {
+       wx.showToast({
+         title: '图片不能为',
+         icon: 'fail',
+         duration: 2000
+       })
+       return;
+     }*/
 
-
-
-    that.uploadCaseImg(idx,that);
-   
-    console.log('idx是这么多======'+idx)
-    
-    
-
-   
+    that.uploadCaseImg(idx, that);
+    console.log('idx是这么多======' + idx)
   },
 
   onLoad: function (e) {
     console.log('onLoad')
     openId = $vm.getSysOpenId();
-    spaceId =e.spaceId
+    spaceId = e.spaceId
     var that = this
     that.setData({
-        spaceId: spaceId
-      })
+      spaceId: spaceId
+    })
     //调用应用实例的方法获取全局数据
     $vm.getUserInfo(function (userInfo) {
       //更新数据
@@ -116,9 +110,9 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
 
-        var patharr = new Array();
-        console.log(res)
 
+        console.log(res)
+        var patharr = new Array();
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         tempFilePaths = res.tempFilePaths;
         //回显
@@ -136,11 +130,19 @@ Page({
     })
 
   },
-  uploadCaseImg: function (idx,that) {
+  uploadCaseImg: function (idx, that) {
+    if (tempFilePaths.length == 0) {
+      wx.showToast({
+        title: '图片不能为',
+        icon: 'fail',
+        duration: 2000
+      })
+      return;
+    }
     console.log(sysurl + 'xcxIndex/uploadImg.html');
     wx.uploadFile({
       contentType: "multipart/form-data",
-      url: sysurl+'xcxIndex/uploadImg.html', 
+      url: sysurl + 'xcxIndex/uploadImg.html',
       filePath: tempFilePaths[idx],//要上传文件资源的路径
       name: 'pic',
       success: function (res) {
@@ -151,35 +153,37 @@ Page({
         //imgAll.push(imgUrl[i]);
         idx++;
         if (idx < tempFilePaths.length) {
-          that.uploadCaseImg(idx,that);
-        }else{
-          if(idx==tempFilePaths.length){
-              wx.request({
-                url: sysurl + 'xcxIndex/addCase.html',
-                data: {
-                  spaceId: spaceId,
-                  title: msgtitle,
-                  caseContent: msgcontant,
-                  browseNum: 0,
-                  openId: $vm.getSysOpenId(),
-                  imgStr: uploadPics
+          that.uploadCaseImg(idx, that);
+        } else {
+          if (idx == tempFilePaths.length) {
 
-                },
-                method: 'GET',
-                success: function (res) {
-                  console.info(res);
-                  wx.redirectTo({
-                    url: '../myCase/myCase?spaceId='+spaceId
-                  })
-                }
-              })  
-            }
-             //重置变量
-            uploadPics = "";
-            msgtitle="";
-            msgcontant="";
+            wx.request({
+              url: sysurl + 'xcxIndex/addCase.html',
+              data: {
+                spaceId: spaceId,
+                title: msgtitle,
+                caseContent: msgcontant,
+                browseNum: 0,
+                openId: $vm.getSysOpenId(),
+                imgStr: uploadPics
+
+              },
+              method: 'GET',
+              success: function (res) {
+                console.info(res);
+                wx.redirectTo({
+                  url: '../myCase/myCase?spaceId=' + spaceId
+                })
+
+              }
+            })
+          }
+          //重置变量
+          uploadPics = "";
+          msgtitle = "";
+          msgcontant = "";
         }
-        console.log('服务器返回地址----------------'+uploadPics);
+        console.log('服务器返回地址----------------' + uploadPics);
       }
     })
   }
