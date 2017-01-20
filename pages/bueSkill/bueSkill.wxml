@@ -8,8 +8,13 @@
         </view>
       </view>
       <checkbox-group bindchange="checkboxChange" name="cbxgroup_{{idx}}">
-        <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items">
-          <checkbox value="{{items.id}}" /> {{items.categoryName}}
+        <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items" >
+           <block wx:if="{{items.isFlag!='1'}}">
+              <checkbox value="{{items.id}}" /> {{items.categoryName}}
+           </block>
+           <block wx:if="{{items.isFlag=='1'}}">
+              <checkbox value="{{items.id}}" checked="true" /> {{items.categoryName}}
+           </block>
         </label>
       </checkbox-group>
     </view>
