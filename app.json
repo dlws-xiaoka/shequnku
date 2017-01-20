@@ -1,16 +1,16 @@
 {
     "pages": [
     "pages/searchList/searchList",
-     "pages/search/search",
-     "pages/dataone/dataone", 
-     "pages/schoolTree/schoolTree",
      "pages/index/index",
+     "pages/dataone/dataone", 
+     "pages/search/search",
+     "pages/schoolTree/schoolTree",
     "pages/filter/filter",
     "pages/bueSkill/bueSkill",
      "pages/information/information",   
-     "pages/index/index",
+    
      "pages/resoude/resoude",
-     "pages/dataone/dataone",
+    
      "pages/myCase/myCase",
     "pages/resourdtal/resourdtal",
     "pages/myCaseAdd/myCaseAdd",
