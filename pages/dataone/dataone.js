@@ -10,19 +10,19 @@ var provinceSin = "";//传后台的省
 var cityIdArr = "";
 var cityId = "";
 var schName = ""//学校名称
-var reschollArr = "";//学校名称
+var reschollArr = "";//学校名称数组
 var schooIdArr = "";//全部的学校Id
 var bussiLength = ""//二级分类长度
 var childcategoryId = 0;
 var wxNumber = "";//微信号
 var chidCaIdArr = "";//所有的微信号子分类Id
 var chidCaId = "";//传后台的子分类Id
-
-
+var schArrId = ""//学校Id 校验用
+var typeIndex = 0;//用户所属类型(微信,QQ群...)
 Page({
   data: {
     userTypeArray: "",
-    typeIndex: 0,
+    typeIndex: 0,//用户类型
     TypeIdArray: "",
     provinceList: '',
     ProvenIndex: 0,
@@ -38,6 +38,8 @@ Page({
     chidCaId: '',
 
   },
+
+
   //表单提交按钮
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
@@ -57,8 +59,17 @@ Page({
 
     }
     cbxgroupArr = cbxgroupArr.substr(0, cbxgroupArr.length - 1);
-
-
+    if (typeIndex == 0) {
+      //是否选择学校验证
+      if (schArrId.length < 1) {
+        wx.showToast({
+          title: '请选择学校',
+          icon: 'fail',
+          duration: 2000
+        })
+        return;
+      }
+    }
     wx.request({
       url: remoteAddress + 'xcxIndex/addResource.html',
       data: {
@@ -67,12 +78,12 @@ Page({
         schoolId: arr.schoolId != undefined ? arr.schoolId : 0,
         schoolName: schName,
         provinceName: provinceSin,
-        phone:arr.phone!= undefined ? arr.phone : '',
+        phone: arr.phone != undefined ? arr.phone : '',
         remark: arr.remark,
-        spaceName: arr.spaceName!= undefined ? arr.spaceName : '',
+        spaceName: arr.spaceName != undefined ? arr.spaceName : '',
         businessId: cbxgroupArr,
         childcategoryId: childcategoryId != undefined ? childcategoryId : 0,
-        wxNumber: arr.wxNumber!= undefined ? arr.wxNumber : ''
+        wxNumber: arr.wxNumber != undefined ? arr.wxNumber : ''
       },
       method: 'GET',
       success: function (res) {
@@ -81,11 +92,15 @@ Page({
         })
       }
     })
+
+  schArrId="";//重置验证学校Id;
+  typeIndex=0;//重置类型index
   },
   changeUserType(e) {
     var that = this;
+    schArrId="";
     if (this.data.typeIndex || e.detail.value) {
-      var typeIndex = e.detail.value
+       typeIndex = e.detail.value
       this.setData({
         typeIndex: e.detail.value,
         TypeIdArray: TypeIdArray[typeIndex]
@@ -186,6 +201,7 @@ Page({
           schArrId: schooIdArr[0],//学校Id
           schName: reschollArr[0]//学校名称
         })
+        schArrId = schooIdArr[0];
       }
     })
   },
@@ -199,7 +215,7 @@ Page({
         schArrId: schooIdArr[schIndex]
       });
       schName = reschollArr[schIndex];
-
+      schArrId = schooIdArr[schIndex];//学校Id 校验用的
     }
   },
 
