@@ -82,10 +82,5 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
-  },
-  addsource(event) {
-    wx.navigateTo({
-      url: '../choosetype/choosetype'
-    })
   }
 })
