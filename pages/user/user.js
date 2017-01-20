@@ -57,6 +57,7 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
+    openId = app.getSysOpenId();
   },
   onReady: function () {
     // 页面渲染完成
