@@ -43,7 +43,7 @@
   border-bottom: 1px solid #eee;
   display: flex;
   font-size: 14px;
-  color: cornflowerblue;
+  color: #333;
 }
 
 .wxSearchKeyList{
@@ -53,7 +53,7 @@
 }
 
 .wxSearchKeyItem{
-  flex: 0 0 20%;
+  /*flex: 0 0 20%;*/
   font-size: 14px;
   text-align: center;
   border: 1px solid #eee;
@@ -71,12 +71,15 @@
   font-size: 14px;
 }
 .wxSearchHistoryItemDel{
-  flex: 1;
-  font-size: 12px;
-  text-align: center;
-  padding: 3px 5px;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  flex:1;
+font-size:12px;
+text-align:right;
+padding:3px 5px;
+/*border:1px solid #eee;*/
+border-radius:5px;
+line-height:16.25vw;
+margin:0;
+
 }
 .wxSearchHistoryEmpty{
   text-align: center;
@@ -89,4 +92,11 @@
   line-height: 50px;
   text-align: center;
   font-size: 12px;
+}
+navigator{
+  line-height: 16.25vw;
+}
+.hot{
+  line-height: 6.25vw;
+  flex: 0 0 25%;
 }
