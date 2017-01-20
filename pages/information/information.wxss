@@ -76,13 +76,13 @@
   margin: 15px 0 15px 0;
   
 }
-.content_W,.content_G{
+.content_nameW,.content_nameG{
   width: 65.925vw;
   text-align:right;
   color:#999;
   margin: 15px 0 15px 0;
 }
-.content_Q{
+.content_nameQ{
   width: 67.625vw;
   text-align:right;
   color:#999;
