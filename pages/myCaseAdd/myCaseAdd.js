@@ -22,7 +22,7 @@ Page({
     var that = this
     spaceId=e.currentTarget.dataset.spaceid;
     console.log(e)
-    var imgStr = imgUrl;
+   // var imgStr = imgUrl;
     var browseNum = 0;
     //表单校验-标题
     if (msgtitle.length < 5) {
@@ -52,30 +52,16 @@ Page({
      // return;
     }*/
     console.log('图片地址是=================='+uploadPics)
-    wx.request({
-      url: sysurl + 'xcxIndex/addCase.html',
-      data: {
-        spaceId: spaceId,
-        title: msgtitle,
-        caseContent: msgcontant,
-        browseNum: browseNum,
-        openId: $vm.getSysOpenId(),
-        imgStr: uploadPics
 
-      },
-      method: 'GET',
-      success: function (res) {
-        console.info(res);
-        wx.redirectTo({
-          url: '../myCase/myCase?spaceId='+spaceId
-        })
-      }
-    })
 
-    //重置变量
-     uploadPics = "";
-     msgtitle="";
-     msgcontant=""
+
+    that.uploadCaseImg(idx,that);
+   
+    console.log('idx是这么多======'+idx)
+    
+    
+
+   
   },
 
   onLoad: function (e) {
@@ -120,28 +106,7 @@ Page({
     var that = this
 
   },
-  myTest: function () {
 
-    wx.chooseImage({
-      success: function (res) {
-        var tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: sysurl+'xcxIndex/uploadImg.html', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'user': 'test'
-          },
-          success: function (res) {
-            var data = res.data
-            //do something
-          }
-        })
-      }
-    })
-
-
-  },
   bindimg: function (e) {
     var that = this;
     console.log(e)
@@ -166,12 +131,12 @@ Page({
         //获取路径
         //var imgAll = new Array();
         //for (var i = 0; i < tempFilePaths.length; i++) {
-        that.uploadCaseImg(idx, that);
+        //that.uploadCaseImg(idx, that);
       }
     })
 
   },
-  uploadCaseImg: function (idx, that) {
+  uploadCaseImg: function (idx,that) {
     console.log(sysurl + 'xcxIndex/uploadImg.html');
     wx.uploadFile({
       contentType: "multipart/form-data",
@@ -186,7 +151,33 @@ Page({
         //imgAll.push(imgUrl[i]);
         idx++;
         if (idx < tempFilePaths.length) {
-          that.uploadCaseImg(idx, that);
+          that.uploadCaseImg(idx,that);
+        }else{
+          if(idx==tempFilePaths.length){
+              wx.request({
+                url: sysurl + 'xcxIndex/addCase.html',
+                data: {
+                  spaceId: spaceId,
+                  title: msgtitle,
+                  caseContent: msgcontant,
+                  browseNum: 0,
+                  openId: $vm.getSysOpenId(),
+                  imgStr: uploadPics
+
+                },
+                method: 'GET',
+                success: function (res) {
+                  console.info(res);
+                  wx.redirectTo({
+                    url: '../myCase/myCase?spaceId='+spaceId
+                  })
+                }
+              })  
+            }
+             //重置变量
+            uploadPics = "";
+            msgtitle="";
+            msgcontant="";
         }
         console.log('服务器返回地址----------------'+uploadPics);
       }
