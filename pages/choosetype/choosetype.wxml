@@ -1,18 +1,2 @@
-
-<view class="ctt_choose">
-
- <block  wx:for="{{userTypeList}}">
-  <view class="flex-wrp1p">
-            <view class="flex-item61" bindtap="changeBack" data-index="0" id="{{item.id}}">
-            {{item.typeName}}             
-            </view>
-  </view>
-</block>
-</view>
- <navigator url="/pages/dataone/dataone?usertypeId={{id}}">
-    <view class="ctt_bottom">
-      <view class="bottom_font">下一步</view>
-    </view>
- </navigator>
- 
-
+<!--pages/choosetype/choosetype.wxml-->
+<text>pages/choosetype/choosetype.wxml</text>

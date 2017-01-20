@@ -19,7 +19,10 @@
       <view class="content_detail">
         <block wx:if="{{resourceMap.typeName=='社团'}}">
           <text class="content_name1">社团名称</text>
-          <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入社团名称" />
+          <input name="spaceName" value="{{spaceName}}" class="content_name2" placeholder="请输入社团名称" />
+          <view class="content_pic">
+             <image src="/image/more.png" class="photo"></image>
+          </view>
         </block>
         <block wx:if="{{typeName=='公众号'}}">
         <view class="content_detail">
@@ -109,7 +112,7 @@
       </block>
       <view class="content_detail">
         <text class="content_name1">手机号</text>
-        <input name="phone" value="{{phone}}" class="content_nameP" placeholder="请输入手机号" />
+        <input name="phone" value="{{phone}}" class="content_nameT" placeholder="请输入手机号" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>
