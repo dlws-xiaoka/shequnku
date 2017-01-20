@@ -20,8 +20,7 @@ var GetList = function (that) {
       console.log(res)    
       that.setData({
         leaveCount: res.data.data.leaveCount,
-        wxname: res.data.data.wxname,
-        headImgUrl: res.data.data.headImgUrl
+        wxname: res.data.data.wxname
       })
       wx.request({
         url: remoteAddress + "xcxIndex/getMyResource.html",
@@ -57,12 +56,11 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
+    openId = app.getSysOpenId();
   },
   onReady: function () {
     // 页面渲染完成
     console.log('onReady')
-
-
   },
   onShow: function () {
     //  在页面展示之后先获取一次数据

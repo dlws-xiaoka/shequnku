@@ -13,13 +13,15 @@ Page({
     schoolName:"",
     remark:"",
     spaceId:"",
-    resouId:""
+    resouId:"",
+    headImgUrl:""
   },
   
    onLoad: function (option) {
      spaceId=option.id;
      console.log('spaceId========'+spaceId)
-    openId = $vm.getSysOpenId();
+     openId = $vm.getSysOpenId();
+    //headImgUrl=option.headImgUrl;
     
     var remoteAddress = $vm.remoteAddressdxf();
     var that = this
@@ -49,10 +51,12 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+        console.log(res)
         that.setData({
           spaceName: res.data.data.spaceName,
           schoolName: res.data.data.schoolName,
-          remark: res.data.data.remark
+          remark: res.data.data.remark,
+          headImgUrl:res.data.data.headImgUrl
         })
       }
     })

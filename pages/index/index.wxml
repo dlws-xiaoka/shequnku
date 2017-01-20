@@ -26,7 +26,7 @@
   <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchAll">
    <text>全部</text>
   </view>
-  <view id="1" class="screenk {{currentShai==1? 'active' : ''}}" bindtap="switchSha">
+  <view id="1" class="screenk {{currentShai==1? 'active' : ''}}">
     <text>筛选</text>
   </view>
 </view>
@@ -51,43 +51,6 @@
         </navigator>
     </view>
 </scroll-view>
-<!--
-<scroll-view>
-<navigator class="navigator_content" url="/pages/resoude/resoude">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://01.imgmini.eastday.com/mobile/20161124/20161124193413_e4233fb5205fa00d4711b05555a4ab3e_2_mwpm_03200403.jpeg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">社团名称</view>
-            <view class="article__desc">
-                <text class="article__time">学校名称</text>
-            </view>
-            <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-</navigator>
-
-<navigator class="navigator_content" url="/pages/news/detail">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" src="http://01.imgmini.eastday.com/mobile/20161124/20161124193413_e4233fb5205fa00d4711b05555a4ab3e_2_mwpm_03200403.jpeg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">社团名称</view>
-            <view class="article__desc">
-                <text class="article__time">学校名称</text>
-            </view>
-            <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-</navigator>
-</scroll-view>-->
-
 <view class="body-view">
     <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
