@@ -1,18 +1,18 @@
 <!--pages/myroom/myroom.wxml-->
 <view class="user-top">
-<navigator url="/pages/example/example">
+<view >
         <view class="head">
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
         <view class="headname">
-           社团名称
+           {{userInfo.spaceName}}
         </view>
         <view class="headcity">
-         城市名称  学校名称
+         {{userInfo.cityName}}|{{userInfo.schoolName}}
         </view>
-        <text class="information">简介：</text>
-</navigator>
-<navigator url="/pages/wordinfo/wordinfo">
+        <text class="information">简介:{{userInfo.remark}}</text>
+</view>
+<navigator url="/pages/wordinfo/wordinfo?spaceId={{userInfo.id}}&openId={{userInfo.openId}}">
         <view class="word">
           <text class="liu">给我留言</text>
         </view>
@@ -20,24 +20,36 @@
     </view>
 <view class="ability">业务技能</view>
 <view class="line"></view>
-<view class="service">
+<view class="service" wx:for="{{businessList}}" wx:for-index="idx">
    <view class="service_content">
-     <text class="num">1.</text>
-     <text class="name">我是校咖</text>
-   </view>
-    <view class="service_content">
-     <text class="num">2.</text>
-     <text class="name">我是校咖</text>
-   </view>
-    <view class="service_content">
-     <text class="num">3.</text>
-     <text class="name">我是校咖</text>
+     <text class="num">{{idx+1}}.</text>
+     <text class="name">{{item.categoryName}}</text>
    </view>
 </view>
 <view class="bian"></view>
 <view class="ability">案例</view>
 <view class="line"></view>
 <!--案例部分-->
+<view class="case" wx:for="{{caseList}}" wx:for-item="items">
+  <navigator  url="/pages/example/example?id={{items.id}}">
+    <view class="title">
+      <view class="left">{{items.title}}</view>
+      <view class="content_right" >
+          <image src="/image/more.png" class="photo"></image>
+      </view>
+    </view>
+    <view class="production">{{items.caseContent}}</view>
+    <view class="pic_box" wx:for="{{items.imgList}}" wx:for-item="itemName">
+        <view class="photo_box">
+          <image src="{{itemName.imgUrl}}" class="photo"></image>
+        </view>
+    </view>
+   </navigator>
+</view>
+
+
+
+<!--
 <view class="case">
    <view class="title">
      <view class="left">我想发到空间</view>
@@ -57,24 +69,4 @@
          <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
       </view>
    </view>
-</view>
-<view class="case">
-   <view class="title">
-     <view class="left">我想发到空间</view>
-     <view class="content_right">
-              <image src="/image/more.png" class="photo"></image>
-     </view>
-   </view>
-   <view class="production">改法束带结发河水不犯井水给皮肤对就点开复苏发不了后付费客来福</view>
-   <view class="pic_box">
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-      <view class="photo_box">
-         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-      </view>
-   </view>
-</view>
+</view>-->

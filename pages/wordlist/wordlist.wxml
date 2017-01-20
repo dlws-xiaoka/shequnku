@@ -1,135 +1,16 @@
 <!--pages/wordlist/wordlist.wxml-->
-<scroll-view scroll-y="true">
-  <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
+<scroll-view scroll-y="true" wx:for="{{leaveMessList}}">
+  <navigator class="article_list" url="/pages/wordinfo/wordinfo?spaceId={{item.spaceId}}&pId={{item.id}}&cusOpenId={{item.openId}}">
+    <view class="pic_box">
         <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
     </view>
     <view class="message">
        <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
+         <!-- <view class="person">{{item.spaceId}}</view>-->
+          <view class="time">{{item.messageTime}}</view>
        </view>
        <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
-          <view class="info_pic">
-            <image class="picture" src="/image/message.png"></image>
-          </view>
-       </view>
-    </view>
-  </navigator>
-   <navigator class="article_list" url="/pages/wordinfo/wordinfo">
-      <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">
-          <view class="info_content">太棒了</view>
+          <view class="info_content">{{item.message}}</view>
           <view class="info_pic">
             <image class="picture" src="/image/message.png"></image>
           </view>
@@ -137,3 +18,4 @@
     </view>
   </navigator>
 </scroll-view>
+

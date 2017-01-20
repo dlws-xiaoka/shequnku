@@ -1,33 +1,48 @@
 var $vm = getApp()
+var openId=$vm.getSysOpenId();
+var spaceId=''
+
 Page({
   data:{
     text:"Page user",
     userInfo: {},
     id:"",
     schoolId:"",
-    openId:"",
     userTypeId:"",
     spaceName:"",
     schoolName:"",
-    remark:""
+    remark:"",
+    spaceId:"",
+    resouId:""
   },
   
    onLoad: function (option) {
-
+     spaceId=option.id;
+     console.log('spaceId========'+spaceId)
+    openId = $vm.getSysOpenId();
+    
     var remoteAddress = $vm.remoteAddressdxf();
     var that = this
+    //传递spaceId
+    that.setData({
+        spaceId:spaceId,
+        userTypeId:option.userTypeId,
+        id: option.id
+      })
+
+
     //调用应用实例的方法获取全局数据
     $vm.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        userInfo:userInfo,
+        userInfo:userInfo
       })
     }),
 
     wx.request({
       url: remoteAddress + "xcxIndex/getResourceDetail.html", //仅为示例，并非真实的接口地址
       data: {
-        openId: 123,
+        openId: openId,
         id: option.id
       },
       header: {

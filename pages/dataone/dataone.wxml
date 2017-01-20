@@ -1,157 +1,177 @@
+
 <!--pages/dataone/dataone.wxml-->
-
+<form class="page__bd" bindsubmit="formSubmit">
 <view class="dataone_container">
-<!--社团名称以及省市部分-->
-<view class="top"></view>
-<view class="content_wrapper">
-    <view class="content">
-        <view class="content_detail">
-            <text class="content_name1">类别选择</text>
-            <picker class="content_nameP" bindchange="changeChoose" value="{{locationIndex3}}" range="{{locationArray3}}">
-             <view class="picker_choose">
-                55555 {{locationArray3[locationIndex3]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-        <view class="content_detail">
-            <text class="content_name1">社团名称</text>
-            <input class="input content_name2" name="userName" placeholder="请输入社团名称"
-             bindinput="userNameInput"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-        <view class="content_detail">
-            <text class="content_name1">微信群名称</text>
-            <input class="input content_W" name="userName" placeholder="请输入微信群名称"
-             bindinput="userNameInput"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">微信群分类</text>
-             <picker class="content_nameP" bindchange="wxChoose" value="{{locationIndex5}}" range="{{locationArray5}}">
-             <view class="picker_wx">
-                55555 {{locationArray5[locationIndex5]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">QQ群名称</text>
-            <input class="input content_Q" name="userName" placeholder="请输入QQ群名称"
-             bindinput="userNameInput"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">公众号名称</text>
-            <input class="input content_G" name="userName" placeholder="请输入公众号名称"
-             bindinput="userNameInput"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">院校名称</text>
-            <!--<input class="content_nameCity" placeholder="北京清华大学"/>-->
-            <picker class="content_nameCity" bindchange="chooseSchool" value="{{locationIndex4}}" range="{{locationArray4}}">
-             <view class="picker_choose">
-                55555 {{locationArray4[locationIndex4]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">选择省</text>
-            <picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
-             <view class="picker_text">
-                55555 {{locationArray[locationIndex]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-        <view class="content_detail">
-            <text class="content_name1">选择市</text>
-            <picker class="content_nameP" bindchange="handleLocationPickerChange2" value="{{locationIndex2}}" range="{{locationArray2}}">
-             <view class="picker_text">
-                55555 {{locationArray2[locationIndex2]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-            </view>
-         <view class="content_detail">
-            <text class="content_name1">手机号</text>
-            <input class="content_nameT" placeholder="15036685623"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-         <view class="content_detail">
-            <text class="content_name1">简介</text>
-            <textarea class="content_nameJ" placeholder="请输入简介"/>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>
-    </view>
-</view>
-<view class="sorting">
-    <view class="title">
-        <text>一级分类</text>
-        <view class="sort_pic">
-        <image class="photo" src="/image/down.png" ></image>
-        </view>
-    </view>
-         <checkbox-group bindchange="checkboxChange">
-                <label class="checkbox" wx:for="{{items}}">
-                    <checkbox checked="{{item.checked}}" />{{item.value}}
-                </label>
-         </checkbox-group>
-</view>
-<view class="sorting">
-    <view class="title">
-        <text>一级分类</text>
-        <view class="sort_pic">
-        <image class="photo" src="/image/down.png" ></image>
-        </view>
-    </view>
-        <checkbox-group bindchange="checkboxChange">
-                <label class="checkbox" wx:for="{{items}}">
-                    <checkbox checked="{{item.checked}}" />{{item.value}}
-                </label>
-         </checkbox-group>
-</view>
-<view class="sorting">
-    <view class="title">
-        <text>一级分类</text>
-        <view class="sort_pic">
-        <image class="photo" src="/image/down.png" ></image>
-        </view>
-    </view>
-        <checkbox-group bindchange="checkboxChange">
-                <label class="checkbox" wx:for="{{items}}">
-                    <checkbox checked="{{item.checked}}" />{{item.value}}
-                </label>
-         </checkbox-group>
-</view>
-</view>
-     <navigator url="/pages/user/user">
-       <button class="foot_button" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover">完成    </button>
-       </navigator>
-    
 
+  <!--社团名称以及省市部分-->
+  <view class="top"></view>
+  <view class="content_wrapper">
+    <view class="content">
+      <view class="content_detail">
+        <text class="content_name1">类别选择</text>
+        <picker  name="userType" class="content_nameP" bindchange="changeUserType" value="{{TypeIdArray}}" range="{{userTypeArray}}">
+          <view class="picker_choose" id="{{TypeIdArray}}">
+            {{userTypeArray[typeIndex]}}
+          </view>
+        </picker>
+        <view class="content_pic">
+          <image src="/image/more.png" class="photo"></image>
+        </view>
+      </view>
+      <block wx:if="{{typeIndex==0}}">
+        <view class="content_detail">
+          <text class="content_name1">社团名称</text>
+          <input class="input content_name2" name="spaceName" value="" placeholder="请输入社团名称" bindinput="userNameInput" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">选择省</text>
+          <picker name="provinceName" class="content_nameP"  bindchange="changeProven" value="{{provinceSin}}" range="{{provinceList}}">
+            <view class="picker_text">
+            {{provinceList[ProvenIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">选择市</text>
+          <picker name="city" class="content_nameP" bindchange="changeCity" value="{{cityId}}" range="{{cityList}}">
+            <view class="picker_text">
+               {{cityList[cityIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">院校名称</text>
+          <picker name="schoolId" class="content_nameCity" bindchange="changeSchool" value="{{schArrId}}" range="{{schoolList}}">
+            <view class="picker_choose">
+              {{schoolList[schIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+      </block>
+
+      <block wx:if="{{typeIndex==1}}">
+        <view class="content_detail">
+          <text class="content_name1">微信号</text>
+          <input class="input content_W" name="wxNumber" placeholder="请输入微信号" bindinput="userNameInput" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">微信名称</text>
+          <input class="input content_W" name="spaceName" placeholder="请输入微信名称" bindinput="userNameInput" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">微信类别</text>
+          <picker  name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+            <view class="picker_wx">
+            {{childCategoryList[chidCatIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+      </block>
+
+
+      <block wx:if="{{typeIndex==2}}">
+        <view class="content_detail">
+          <text class="content_name1">微信群名称</text>
+          <input class="input content_W" name="spaceName" placeholder="请输入微信群名称" bindinput="userNameInput" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">微信群类别</text>
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+            <view class="picker_wx">
+              {{childCategoryList[chidCatIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{typeIndex==3}}">
+        <view class="content_detail">
+          <text class="content_name1">QQ群名称</text>
+          <input class="input content_Q" name="spaceName" placeholder="请输入QQ群名称" bindinput="userNameInput" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+        <view class="content_detail">
+          <text class="content_name1">QQ群类别</text>
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+            <view class="picker_wx">
+              {{childCategoryList[chidCatIndex]}}
+            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
+      </block>
+
+  
+      <view class="content_detail">
+        <text class="content_name1">手机号</text>
+        <input name="phone" value="" class="content_nameT" placeholder="请输入手机号" />
+        <view class="content_pic">
+          <image src="/image/more.png" class="photo"></image>
+        </view>
+      </view>
+      <view class="content_detail">
+        <text class="content_name1">简介</text>
+        <textarea name="remark" value="" class="content_nameJ" placeholder="请输入简介" />
+        <view class="content_pic">
+          <image src="/image/more.png" class="photo"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+<block wx:for="{{businessCategoryList}}" wx:for-index="idx">
+  <view class="sorting">
+    <view class="title">
+        <text>{{item.categoryName}}</text>
+        <view class="sort_pic">
+        <image class="photo" src="/image/down.png" ></image>
+        </view>
+    </view>
+        <checkbox-group   bindchange="checkboxChange" name="cbxgroup_{{idx}}">
+                <label class="checkbox" wx:for="{{item.twoCategoryList}}" wx:for-item="items">
+                    <checkbox value="{{items.id}}"/>{{items.categoryName}}
+                </label>
+         </checkbox-group>
+  </view>
+</block>
+
+</view>
+ <button  class="foot_button" form-type="submit">提交</button>
+     <!--<navigator url="/pages/user/user">
+       <button class="foot_button" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}"  hover-class="other-button-hover" >完成             </button>
+     </navigator>-->
+</form>
+    

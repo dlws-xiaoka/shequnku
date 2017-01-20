@@ -1,22 +1,23 @@
-var page=0;
-var page_size=5;
+var page = 0;
+var page_size = 5;
 
 var app = getApp()
+var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 
-var GetList = function(that){
+var GetList = function (that) {
   that.setData({
-    hidden:false
+    hidden: false
   });
-  
-  
+  console.log('GetList' + openId)
   wx.request({
     url: remoteAddress + "xcxIndex/getLeaveCountUserInfo.html",
-    data: { openId: 123 },
+    data: { openId: openId },
     header: {
       'content-type': 'application/json'
     },
     success: function (res) {
+      console.log(res)    
       that.setData({
         leaveCount: res.data.data.leaveCount,
         wxname: res.data.data.wxname,
@@ -24,15 +25,16 @@ var GetList = function(that){
       })
       wx.request({
         url: remoteAddress + "xcxIndex/getMyResource.html",
-        data: {page:page,page_size:page_size},
+        data: { openId: openId },
         success: function (res) {
+          console.log(res)
           that.setData({
             resourceList: res.data.data.resourceList
           })
 
           page++;
           that.setData({
-            hidden:true
+            hidden: true
           });
         },
       })
@@ -41,52 +43,60 @@ var GetList = function(that){
 }
 
 Page({
-  data:{
-    text:"Page user",
+  data: {
+    text: "Page user",
     userInfo: {},
-    userListInfo: [ ],
-    leaveCount:"",
-    wxname:"",
-    headImgUrl:"",
-    resourceList:"",
-    hidden:true,
-    scrollTop : 0,
-    scrollHeight:0,
+    userListInfo: [],
+    leaveCount: "",
+    wxname: "",
+    resourceList: "",
+    hidden: true,
+    scrollTop: 0,
+    scrollHeight: 0,
+    sysNickName: ""
   },
-   onLoad: function () {
-  var that = this;
-   wx.getSystemInfo({
-     success:function(res){
-       console.info(res.windowHeight);
-       that.setData({
-         scrollHeight:res.windowHeight
-       });
-     }
-   });
+  onLoad: function () {
+    console.log('onLoad')
   },
-   onReady: function () {
-     // 页面渲染完成
-   },
-   onShow: function () {
-     //  在页面展示之后先获取一次数据
-     var that = this;
-     GetList(that);
-   },
-   bindDownLoad: function () {
-     //  该方法绑定了页面滑动到底部的事件
-     var that = this;
-     GetList(that);
-   },
-   scroll: function (event) {
-     //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
-     this.setData({
-       scrollTop: event.detail.scrollTop
-     });
-   },
-  onHide:function(){
+  onReady: function () {
+    // 页面渲染完成
+    console.log('onReady')
+
+
+  },
+  onShow: function () {
+    //  在页面展示之后先获取一次数据
+     console.log('onShow')
+    var that = this;
+    that.setData({
+      sysNickName: app.sysNickName
+    })
+
+     app.getUserInfo(function(userInfo){
+      //更新数据
+      that.setData({
+        userInfo:userInfo
+      })
+    })
+
+    openId = app.getSysOpenId();
+    GetList(that);
+  },
+  bindDownLoad: function () {
+    //  该方法绑定了页面滑动到底部的事件
+    var that = this;
+    GetList(that);
+  },
+  scroll: function (event) {
+    //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+    this.setData({
+      scrollTop: event.detail.scrollTop
+    });
+  },
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })

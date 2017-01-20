@@ -1,6 +1,7 @@
 // pages/searchList/searchList.js
 var WxSearch = require('../wxSearch/wxSearch.js')
 var app = getApp()
+var openId=app.getSysOpenId();
 Page({
   data: {
   

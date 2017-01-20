@@ -1,90 +1,34 @@
 <!--pages/wordinfo/wordinfo.wxml-->
 <view class="infolist">
 <view class="scrollwechat">
-<scroll-view scroll-y="true" class="wordslist">
-  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
+<scroll-view scroll-y="true" class="wordslist" >
+  <navigator  url="" class="article_txt" wx:for="{{leaveList}}">
     <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
+        <image src="{{item.headImgUrl}}" class="photo"></image>
     </view>
     <view class="message">
        <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
+          <view class="person">{{item.wxname}}</view>
+          <view class="time">{{item.messageTime}}</view>
        </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
+       <view class="info">{{item.message}}</view>
     </view>
   </navigator>
- <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
-    <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
-    </view>
-  </navigator>
-  <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
-    <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
-    </view>
-  </navigator>
- <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
-    <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
-    </view>
-  </navigator>
-   <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
-    <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
-    </view>
-  </navigator>
-   <navigator  url="/pages/wordinfo/wordinfo" class="article_txt">
-    <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg" class="photo"></image>
-    </view>
-    <view class="message">
-       <view class="items">
-          <view class="person">用户名称</view>
-          <view class="time">2017-01-10 12:30</view>
-       </view>
-       <view class="info">货到付款到十月份分红杜老师高素质司法机关返回及开发开放辅导书</view>
-    </view>
-  </navigator>
-</scroll-view>
+  </scroll-view>
 </view>
 
+
+
  <!--提交框-->
-  <view  class="footer">
-      <view  class="footinput">
-        <view class="input"><input class="input_font" bindfocus="bindfocus" bindblur='bindblur' placeholder="请输入文字" type="text" /></view>
-      </view>
-      <view  class="foodsend">
-        <view class="send">发送</view>
-      </view>
-  </view>
+    <view  class="footer">
+        <view  class="footinput">
+          <view class="input">
+          <input class="input_font" bindfocus="bindfocus" bindinput='bindblur' value="{{emptyMessage}}" placeholder="请输入留言" type="text" /></view>
+        </view>
+       <view  class="">
+          <button bindtap='send' data-spaceId="{{item.id}}" data-openId="{{item.id}}">发送</button>
+          <!--<view class="send" bindtap='send' data-spaceId="{{item.id}}" data-openId="{{item.id}}">发送</view>-->
+        </view>
+    </view>
 
 </view>

@@ -5,6 +5,8 @@ var page_size=5;
 var userType=""
 //获取应用实例
 var app = getApp()
+var openId=app.getSysOpenId();
+
 var sysurl = app.remoteAddressdxf();
 var GetList = function(that){
   that.setData({
@@ -33,6 +35,7 @@ var GetList = function(that){
         },
         method: 'GET',
         success: function (res) {
+          console.log(res)
           var datasourceL = that.data.datasource;
           if(page<res.data.data.po.absolutePage){
             for(var i=0;i<res.data.data.po.datasource.length;i++){
@@ -117,6 +120,9 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    this.setData({
+      datasource:[]
+    });
     GetList(that);
   },
   bindDownLoad: function () {

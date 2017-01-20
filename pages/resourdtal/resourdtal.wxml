@@ -5,14 +5,14 @@
             <image  class="headimg" src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"></image>       
         </view>
         <view class="headname">
-           {{spaceName}}
+            社群名称:{{spaceName}}
         </view>
         <view class="headcity">
-         城市名称  {{schoolName}}
+         城市名称:{{schoolName}}
         </view>
-        <text class="information">{{remark}}</text>
+        <text class="information">简介:{{remark}}</text>
 </view>
-<navigator url="/pages/bueSkill/bueSkill">
+<navigator url="/pages/bueSkill/bueSkill?id={{id}}&userTypeId={{userTypeId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/ablity.png"></image>
@@ -25,7 +25,7 @@
     </view>
 </navigator>
 
-<navigator url="/pages/myCase/myCase">
+<navigator url="/pages/myCase/myCase?spaceId={{spaceId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/anli.png"></image>
@@ -36,7 +36,7 @@
         </view>         
     </view>
 </navigator>
-<navigator url="/pages/information/information">
+<navigator url="/pages/information/information?id={{id}}&userTypeId={{userTypeId}}">
     <view class="resourdtal_content">
         <view class="resourdtal_left">
             <image class="photo" src="/image/person.png"></image>
