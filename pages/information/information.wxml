@@ -41,7 +41,6 @@
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
-          
         </block>
         <block wx:if="{{typeName=='微信群'}}">
           <text class="content_name1">微信群名称</text>
@@ -73,7 +72,6 @@
             </view>
           </view>
         </block>
-        
       </view>
       <block wx:if="{{resourceMap.typeName=='社团'}}">
         <view class="content_detail">
