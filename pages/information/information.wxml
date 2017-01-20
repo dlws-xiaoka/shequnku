@@ -3,7 +3,7 @@
 <form class="page__bd" bindsubmit="formSubmit">
   <view class="user-top">
     <view class="head">
-      <image class="headimg" src="{{headImgUrl}}"></image>
+      <image class="headimg" src="{{userInfo.avatarUrl}}"></image>
     </view>
 
     <!--<view class="headname">

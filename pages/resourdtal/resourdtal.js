@@ -20,7 +20,7 @@ Page({
    onLoad: function (option) {
      spaceId=option.id;
      console.log('spaceId========'+spaceId)
-    openId = $vm.getSysOpenId();
+     openId = $vm.getSysOpenId();
     //headImgUrl=option.headImgUrl;
     
     var remoteAddress = $vm.remoteAddressdxf();

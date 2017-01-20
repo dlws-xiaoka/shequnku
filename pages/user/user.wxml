@@ -11,7 +11,7 @@
       <text class="resource_add">添加资源</text>
     </view>
     <view class="head">
-      <image class="headimg" src="{{headImgUrl}}"></image>
+      <image class="headimg" src="{{userInfo.avatarUrl}}"></image>
     </view>
     <view class="re">
       <navigator url="/pages/wordlist/wordlist">
@@ -29,7 +29,7 @@
     <navigator class="navigator_content" url="/pages/resourdtal/resourdtal?id={{item.id}}&userTypeId={{item.userTypeId}}">
       <view class="article__item">
         <view class="article__thumb">
-          <image class="article__image" src="{{headImgUrl}}"></image>
+          <image class="article__image" src="{{userInfo.avatarUrl}}"></image>
         </view>
         <view class="article__info">
           <view class="article__title">{{item.spaceName}}</view>
