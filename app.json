@@ -1,8 +1,9 @@
 {
     "pages": [
+        "pages/index/index",
+        "pages/resoude/resoude",
         "pages/user/user",
         "pages/dataone/dataone",
-        "pages/index/index",
         "pages/information/information",
         "pages/myCaseAdd/myCaseAdd",
         "pages/searchList/searchList",
@@ -12,7 +13,6 @@
         "pages/schoolTree/schoolTree",
         "pages/filter/filter",
         "pages/myCase/myCase",
-        "pages/resoude/resoude",
         "pages/search/search",
         "pages/example/example",
         "pages/wordinfo/wordinfo",
