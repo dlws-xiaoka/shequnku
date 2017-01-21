@@ -1,10 +1,21 @@
 <template name="wxSearch">
   <view class="wxSearch" bindtap="wxSearchTap" style="display:{{wxSearchData.view.isShow ? 'block':'none'}};height:{{wxSearchData.view.seachHeight}}px;top:{{wxSearchData.view.barHeight}}px;">
     <view class="wxSearchInner">
+
+    
       <view class="wxSearchMindKey">
         <view class="wxSearchMindKeyList">
+          <block wx:for="{{wxSearchData.mindKeys}}">
+            <navigator url="pages/search/search">
+              <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
 
-          <view class="navigator_content" wx:for="{{wxSearchData.mindKeys}}">
+      <!--     <view class="wxSearchMindKey">
+        <view class="wxSearchMindKeyList">
+       <view class="navigator_content" wx:for="{{wxSearchData.mindKeys}}">
             <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
               <view class="article__thumb">
                 <image class="article__image" src="{{item.headImgUrl}}"></image>
@@ -20,15 +31,13 @@
               </view>
             </navigator>
           </view>
-          <!--  <block wx:for="{{wxSearchData.mindKeys}}">
+          <block wx:for="{{wxSearchData.mindKeys}}">
                     <navigator url="/pages/resoude/resoude">
                     <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
                     </navigator>
                 </block>-->
 
-          <!--加参数-->
-        </view>
-      </view>
+      <!--加参数-->
       <view class="wxSearchKey" style="display:{{wxSearchData.view.isShowSearchKey ? 'block':'none'}}">
         <text class="wxSearchTitle">热门搜索</text>
         <view class="wxSearchKeyList">

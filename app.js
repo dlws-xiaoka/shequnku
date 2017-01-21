@@ -54,7 +54,7 @@ App({
               success: function (res) {
                 var userInfo = res.userInfo;
                 that.sysNickName=res.userInfo.nickName;
-                that.sysHeadImgUrl=res.userInfo.headImgUrl;
+                that.sysHeadImgUrl=res.userInfo.avatarUrl;
 
                 wx.request({
                   url: remoteAddress + "weixin/addUserInfo.html",

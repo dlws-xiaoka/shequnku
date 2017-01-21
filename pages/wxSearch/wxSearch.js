@@ -66,12 +66,34 @@ function init(that, barHeight, keys, isShowKey, isShowHis, callBack) {
     getHisKeys(that);
 }
 
+
+function wxSearchInput(e, that, callBack){
+    var temData = that.data.wxSearchData;
+    var text = e.detail.value;
+    var mindKeys = [];
+    if(typeof(text) == "undefined" || text.length == 0){
+        
+    }else{
+        for(var i = 0; i < __mindKeys.length; i++){
+            var mindKey = __mindKeys[i];
+            if(mindKey.indexOf(text) > -1){
+                mindKeys.push(mindKey);
+            }
+        }
+    }
+    temData.value = text;
+    temData.mindKeys = mindKeys;
+    that.setData({
+        wxSearchData: temData
+    });
+}
+/*
 function wxSearchInput(e, that, callBack) {
     var temData = that.data.wxSearchData;
     var text = e.detail.value;
     var mindKeys = [];
     var sysurl = app.remoteAddressdxf();
-    var thatthat = this
+
     //请求后台数据
     wx.request({
         url: sysurl + 'xcxIndex/selectResourceByName.html',
@@ -84,7 +106,12 @@ function wxSearchInput(e, that, callBack) {
             console.log(res);
             initMindKeys(res.data.data.resourceList);
 
-            if (typeof (text) == "undefined" || text.length == 0) {
+            
+
+        }
+    })
+
+    if (typeof (text) == "undefined" || text.length == 0) {
 
             } else {
                 for (var i = 0; i < __mindKeys.length; i++) {
@@ -103,11 +130,7 @@ function wxSearchInput(e, that, callBack) {
             that.setData({
                 wxSearchData:temData
             });
-
-        }
-    })
-
-}
+}*/
 /*
  var temData = that.data.wxSearchData;
     var text = content;
