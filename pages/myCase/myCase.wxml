@@ -4,7 +4,7 @@
     <view class="num num_border">{{caseNumber.caseCount}}</view>
     <!--<view class="num">2</view>-->
     <view class="myCase_font">个案例</view>
-    <navigator class="img-search" url="/pages/myCaseAdd/myCaseAdd?spaceId={{spaceId}}">         
+    <navigator class="img-search" url="/pages/myCaseAdd/myCaseAdd?spaceId={{spaceId}}" redirect>         
        <image class="photo" src="/image/add.png"></image>
     </navigator>
 </view>

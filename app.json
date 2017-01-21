@@ -43,6 +43,8 @@
                 "selectedIconPath": "image/spaces.png",
                 "text": "我的空间"
             }
+            
+            
         ]
     },
     "debug": true
