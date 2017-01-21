@@ -115,6 +115,7 @@ Page({
         var patharr = new Array();
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         tempFilePaths = res.tempFilePaths;
+
         //回显
         for (var i = 0; i < tempFilePaths.length; i++) {
           patharr.push(tempFilePaths[i]);
@@ -134,7 +135,7 @@ Page({
     if (tempFilePaths.length == 0) {
       wx.showToast({
         title: '图片不能为',
-        icon: 'fail',
+        icon: '',
         duration: 2000
       })
       return;
@@ -174,7 +175,6 @@ Page({
                 wx.redirectTo({
                   url: '../myCase/myCase?spaceId=' + spaceId
                 })
-
               }
             })
           }
