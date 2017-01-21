@@ -13,7 +13,7 @@ App({
   sysHeadImgUrl :"",
   getUserInfo: function (cb) {
     var that = this;
-    var remoteAddress = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    var remoteAddress = that.remoteAddressdxf();
     var openId = "";
     if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
@@ -96,8 +96,8 @@ App({
   },
   remoteAddressdxf: function () {
     //部署环境使用
-    // return "https://maven.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    return "https://xcx.xiaoka360.com/dlws-xiaoka-shequnku/";
     //本地环境使用
-     return "http://114.215.145.51:8888/dlws-xiaoka-shequnku/";
+    //  return "http://114.215.145.51:8888/dlws-xiaoka-shequnku/";
   }
 })
