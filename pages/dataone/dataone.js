@@ -42,10 +42,12 @@ Page({
 
   //表单提交按钮
   formSubmit: function (e) { 
+    var that = this;
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
 
     this.setData({
-      allValue: e.detail.value
+      allValue: e.detail.value,
+      hidden:false
     })
     var arr = e.detail.value;
     var cbxgroupArr = "";
@@ -87,10 +89,12 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-
+        that.setData({
+              hidden:true
+        });
         wx.navigateBack({
           delta: 1
-        })
+        });
 
       /*  wx.navigateTo({
           url: '../user/user'
@@ -304,6 +308,10 @@ Page({
   },
   onShow: function () {
     // 页面显示
+    this.setData({
+      hidden:true
+    });
+
   },
   onHide: function () {
     // 页面隐藏
