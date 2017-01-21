@@ -1,6 +1,6 @@
 // pages/information/information.js
 var app = getApp()
-var openId=app.getSysOpenId();
+var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 var userTypeId = "";
 var id = "";
@@ -14,7 +14,7 @@ var schName = ""//学校名称
 var reschollArr = "";//学校名称
 var schooIdArr = "";//全部的学校Id
 var childcategoryId = "";//用户分类下的子分类(第一个)
-var chidCaIdArr=""//用户分类下的子分类(全部)
+var chidCaIdArr = ""//用户分类下的子分类(全部)
 //根据省选择市
 function choseCity(provinceb, that) {
   wx.request({
@@ -97,8 +97,8 @@ Page({
     remark: '',
     provinceName: '',//回显省
     chidCaId: '',//用户分类下的子分类
-    chidCatIndex:0,
-    headImgUrl:''
+    chidCatIndex: 0,
+    headImgUrl: ''
   },
   changeProven(e) {
     var that = this;
@@ -143,9 +143,9 @@ Page({
       var chidCatIndex = e.detail.value
       this.setData({
         chidCatIndex: e.detail.value,
-         chidCaId : chidCaIdArr[chidCatIndex]
+        chidCaId: chidCaIdArr[chidCatIndex]
       });
-      childcategoryId=chidCaIdArr[chidCatIndex];
+      childcategoryId = chidCaIdArr[chidCatIndex];
     }
   },
   onLoad: function (options) {
@@ -155,61 +155,61 @@ Page({
     id = options.id;
 
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
+    app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
-        userInfo:userInfo
+        userInfo: userInfo
       })
     }),
 
-    // 页面初始化 options为页面跳转所带来的参数
-    wx.request({
-      url: remoteAddress + "xcxIndex/toUpdateResourceData.html", //仅为示例，并非真实的接口地址
-      data: {
-        openId: openId,
-        pId:  options.userTypeId,  
-        id: options.id
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res)
-        var proArr = res.data.data.provinceList;
-        var resproArr = new Array();
-        for (var i = 0; i < proArr.length; i++) {
-          resproArr.push(proArr[i].province);
-        }
-        provincedan = resproArr;//省名称
-        that.setData({
-          resourceMap: res.data.data.resourceMap,
-          provinceName: res.data.data.resourceMap.provinceName,
-          cityName: res.data.data.resourceMap.cityName,
-          cityId: res.data.data.resourceMap.cityId,
-          schoolName: res.data.data.schoolName,
-          remark: res.data.data.resourceMap.remark,
-          spaceName: res.data.data.resourceMap.spaceName,
-          wxNumber: res.data.data.resourceMap.wxNumber,
-          phone: res.data.data.resourceMap.phone,
-          typeName: res.data.data.resourceMap.typeName,
-          provinceList: resproArr, //全部省
-          childCategoryList: res.data.data.resourceMap.childCategoryList,
-          headImgUrl:res.data.data.resourceMap.headImgUrl
-        })
-
-        var provinceName = res.data.data.resourceMap.provinceName;//回显省的值
-        var cityName = res.data.data.resourceMap.cityName;//回显市的值
-        var cityId = res.data.data.resourceMap.cityId;//回显市的值
-        for (var i = 0; i < resproArr.length; i++) {//遍历省从而给页面回显省
-          if (provinceName == resproArr[i]) {
-            that.setData({ ProvenIndex: i })
+      // 页面初始化 options为页面跳转所带来的参数
+      wx.request({
+        url: remoteAddress + "xcxIndex/toUpdateResourceData.html", //仅为示例，并非真实的接口地址
+        data: {
+          openId: openId,
+          pId: options.userTypeId,
+          id: options.id
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          console.log(res)
+          var proArr = res.data.data.provinceList;
+          var resproArr = new Array();
+          for (var i = 0; i < proArr.length; i++) {
+            resproArr.push(proArr[i].province);
           }
+          provincedan = resproArr;//省名称
+          that.setData({
+            resourceMap: res.data.data.resourceMap,
+            provinceName: res.data.data.resourceMap.provinceName,
+            cityName: res.data.data.resourceMap.cityName,
+            cityId: res.data.data.resourceMap.cityId,
+            schoolName: res.data.data.schoolName,
+            remark: res.data.data.resourceMap.remark,
+            spaceName: res.data.data.resourceMap.spaceName,
+            wxNumber: res.data.data.resourceMap.wxNumber,
+            phone: res.data.data.resourceMap.phone,
+            typeName: res.data.data.resourceMap.typeName,
+            provinceList: resproArr, //全部省
+            childCategoryList: res.data.data.resourceMap.childCategoryList,
+            headImgUrl: res.data.data.resourceMap.headImgUrl
+          })
+
+          var provinceName = res.data.data.resourceMap.provinceName;//回显省的值
+          var cityName = res.data.data.resourceMap.cityName;//回显市的值
+          var cityId = res.data.data.resourceMap.cityId;//回显市的值
+          for (var i = 0; i < resproArr.length; i++) {//遍历省从而给页面回显省
+            if (provinceName == resproArr[i]) {
+              that.setData({ ProvenIndex: i })
+            }
+          }
+          choseCity(provinceName, that)//根据省查出城市
+          choseSchol(cityId, that) //根据城市查出学校
+          choseChild(res.data.data.childCategoryList, that)//根据用户类别查出子分类
         }
-        choseCity(provinceName, that)//根据省查出城市
-        choseSchol(cityId, that) //根据城市查出学校
-        choseChild(res.data.data.childCategoryList, that)//根据用户类别查出子分类
-      }
-    })
+      })
   },
   //表单提交按钮
   formSubmit: function (e) {
@@ -232,14 +232,20 @@ Page({
         provinceName: arr.provinceName == undefined ? '' : arr.provinceName,
         schoolName: schName == undefined ? '' : schName,
         schoolId: arr.schoolId != undefined ? arr.schoolId : 0,
-        childcategoryId:childcategoryId==undefined ? 0:childcategoryId
+        childcategoryId: childcategoryId == undefined ? 0 : childcategoryId
       },
       method: 'GET',
-      success: function (res) {
-        wx.switchTab({
+
+     success: function (res) {
+         /*wx.switchTab({
           url: '../user/user'
-        })
+        })*/
+      wx.navigateBack({
+        delta: 1
+      })
       }
+
+
     })
   },
   onReady: function () {

@@ -13,7 +13,7 @@ App({
   sysHeadImgUrl :"",
   getUserInfo: function (cb) {
     var that = this;
-    var remoteAddress = "https://xcx.beichenhuayu.com/dlws-xiaoka-shequnku/";
+    var remoteAddress = that.remoteAddressdxf();
     var openId = "";
     if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)

@@ -23,7 +23,7 @@ var GetList = function(that){
         peopleNum: res.data.data.peopleNumMap,
         movies: res.data.data.bannerList,
       })
-      if(userType==""){
+      if(userType==""&&userType!='all'){
       userType=res.data.data.categoryList[0].id;
       }else if(userType=='all'){
         userType="";
