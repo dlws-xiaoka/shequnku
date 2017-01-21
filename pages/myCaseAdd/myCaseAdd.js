@@ -171,6 +171,10 @@ Page({
               },
               method: 'GET',
               success: function (res) {
+                //重置变量
+                uploadPics = "";
+                msgtitle = "";
+                msgcontant = "";
                 console.info(res);
                 wx.redirectTo({
                   url: '../myCase/myCase?spaceId=' + spaceId
@@ -178,10 +182,7 @@ Page({
               }
             })
           }
-          //重置变量
-          uploadPics = "";
-          msgtitle = "";
-          msgcontant = "";
+
         }
         console.log('服务器返回地址----------------' + uploadPics);
       }
