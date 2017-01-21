@@ -3,6 +3,11 @@ page{
     width: 100%;
     background: #f2f2f2;
 }
+form{
+  width: 100vw;
+  overflow: hidden;
+  clear: both;
+}
 .title,.content{
     width: 100%;
     min-height: 100%;
@@ -50,7 +55,18 @@ textarea{
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  background: #f2f2f2;
+  background: #13b1a3;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+button{
+  line-height:1.5555555600000004;
+  background: #13b1a3;
+  color:#fff;
+}
+button::after{
+  border: 0;
 }
 .input {
   width: 100%;
@@ -162,8 +178,8 @@ textarea{
   justify-content: space-around;
 }
 .add_picture{
-  width:29.0625vw;
-  height:29.0625vw;
+  width:22.0625vw;
+  height:22.0625vw;
   border: 1px solid #e6e6e6;
   flex-grow: 0;
   background: #fff;

@@ -17,10 +17,14 @@ Page({
     text: "Page user",
     userInfo: {},
     allimg: {},
-    spaceId: {}
+    spaceId: {},
+    hidden:true
   },
   //弹出确认框  
   modalTap: function (e) {
+    this.setData({
+            hidden: !this.data.hidden
+        });
     var that = this
     spaceId = e.currentTarget.dataset.spaceid;
     console.log(e)
