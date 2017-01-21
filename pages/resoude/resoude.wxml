@@ -39,8 +39,8 @@
       </view>
     </view>
     <view class="production">{{items.caseContent}}</view>
-    <view class="pic_box" wx:for="{{items.imgList}}" wx:for-item="itemName">
-        <view class="photo_box">
+    <view class="pic_box">
+        <view class="photo_box" wx:for="{{items.imgList}}" wx:for-item="itemName">
           <image src="{{itemName.imgUrl}}" class="photo"></image>
         </view>
     </view>
