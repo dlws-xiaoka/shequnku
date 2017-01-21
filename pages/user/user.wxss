@@ -17,7 +17,7 @@
 .resource {
     width: 8.125vw;
     height: 8.125vw;
-    margin: 0 0 5px 17px;
+    margin: 0 0 5px 15px;
 
 }
 .resource image{
@@ -27,16 +27,16 @@
 
 }
 .resource_add{
-    font-size: 4.0625vw;
+    font-size: 3.75vw;
     font-weight: 600;
     color: #fff;
-    /*margin: 10px 0 0 11.875%;*/
+ 
 }
 .word{
-    margin-left: 10px;
+    margin-left: 7px;
 }
 .head{
-    /*text-align:center;*/
+ 
     margin-top: 30px;
     margin-left: 38px;
     width: 25vw;
@@ -65,7 +65,7 @@
     color:#fff;
     font-weight: 600;
     text-align:center;
-    margin: 5px 0 15px 0;
+    margin: 5px 0 15p 0;
 }
 .headinfo{
     margin: 20rpx 20rpx ;
@@ -96,6 +96,7 @@
  overflow: hidden; 
  background: #13b1a3;
 }
+
 .na_word{
     overflow: hidden;
     clear: both;

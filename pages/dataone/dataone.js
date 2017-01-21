@@ -87,7 +87,7 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        wx.switchTab({
+        wx.redirectTo({
           url: '../user/user'
         })
       }

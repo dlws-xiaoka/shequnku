@@ -16,65 +16,75 @@
   <view class="top"></view>
   <view class="content_wrapper">
     <view class="content">
-      <view class="content_detail">
-        <block wx:if="{{resourceMap.typeName=='社团'}}">
+      <block wx:if="{{resourceMap.typeName=='社团'}}">
+        <view class="content_detail">
           <text class="content_name1">社团名称</text>
           <input name="spaceName" value="{{spaceName}}" class="content_name2" placeholder="请输入社团名称" />
           <view class="content_pic">
-             <image src="/image/more.png" class="photo"></image>
+            <image src="/image/more.png" class="photo"></image>
           </view>
-        </block>
-        <block wx:if="{{typeName=='公众号'}}">
-        <view class="content_detail">
-          <text class="content_name1">公众号名称</text>
-          <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入公众号名称" />
+
+        </view>
+      </block>
+      <block wx:if="{{typeName=='公众号'}}">
+          <view class="content_detail">
+            <text class="content_name1">公众号名称</text>
+            <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入公众号名称" />
+            <view class="content_pic">
+              <image src="/image/more.png" class="photo"></image>
+            </view>
+          </view>
+          <text class="content_name1">微信号类别</text>
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+            <view class="picker_wx">
+              {{childCategoryList[chidCatIndex]}}
+            </view>
+          </picker>
           <view class="content_pic">
-             <image src="/image/more.png" class="photo"></image>
+            <image src="/image/more.png" class="photo"></image>
           </view>
-         </view>
-            <text class="content_name1">微信号类别</text>
-            <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
-              <view class="picker_wx">
-                {{childCategoryList[chidCatIndex]}}
-              </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
+
+     
+      </block>
+   
+      <block wx:if="{{resourceMap.typeName=='微信群 '}}">
+        <text class="content_name1">微信群名称</text>
+        <input name="spaceName" value="{{spaceName}}" class="content_nameW" placeholder="请输入微信群名称" />
+        <view class="content_detail">
+          <text class="content_name1">微信群类别</text>
+          <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+            <view class="picker_wx">
+              {{childCategoryList[chidCatIndex]}}
             </view>
-          
-        </block>
-        <block wx:if="{{typeName=='微信群'}}">
-          <text class="content_name1">微信群名称</text>
-          <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入微信群名称" />
-          <view class="content_detail">
-            <text class="content_name1">微信群类别</text>
-            <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
-              <view class="picker_wx">
-                {{childCategoryList[chidCatIndex]}}
-              </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
+          </picker>
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
           </view>
-        </block>
-        <block wx:if="{{typeName=='QQ群'}}">
+        </view>
+      </block>
+
+      <block wx:if="{{resourceMap.typeName=='QQ群'}}">
+        <view class="content_detail">
           <text class="content_name1">QQ群名称</text>
-          <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入QQ群名称" />
-          <view class="content_detail">
-            <text class="content_name1">QQ群类别</text>
-            <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
-              <view class="picker_wx">
-                {{childCategoryList[chidCatIndex]}}
-              </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
+          <input name="spaceName" value="{{spaceName}}" class="content_nameQ" placeholder="请输入QQ群名称" />
+          <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
           </view>
-        </block>
-        
-      </view>
+        </view>
+        <view class="content_detail">
+        <text class="content_name1">QQ群类别</text>
+        <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
+          <view class="picker_wx">
+            {{childCategoryList[chidCatIndex]}}
+          </view>
+        </picker>
+        <view class="content_pic">
+          <image src="/image/more.png" class="photo"></image>
+        </view>
+        </view>
+      </block>
+
+      
       <block wx:if="{{resourceMap.typeName=='社团'}}">
         <view class="content_detail">
           <text class="content_name1">选择省</text>
