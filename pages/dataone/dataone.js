@@ -41,7 +41,7 @@ Page({
 
 
   //表单提交按钮
-  formSubmit: function (e) {
+  formSubmit: function (e) { 
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
 
     this.setData({
@@ -87,20 +87,25 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        wx.redirectTo({
-          url: '../user/user'
+
+        wx.navigateBack({
+          delta: 1
         })
+
+      /*  wx.navigateTo({
+          url: '../user/user'
+        })*/
       }
     })
 
-  schArrId="";//重置验证学校Id;
-  typeIndex=0;//重置类型index
+    schArrId = "";//重置验证学校Id;
+    typeIndex = 0;//重置类型index
   },
   changeUserType(e) {
     var that = this;
-    schArrId="";
+    schArrId = "";
     if (this.data.typeIndex || e.detail.value) {
-       typeIndex = e.detail.value
+      typeIndex = e.detail.value
       this.setData({
         typeIndex: e.detail.value,
         TypeIdArray: TypeIdArray[typeIndex]

@@ -2,8 +2,8 @@ var app = getApp()
 var openId = app.getSysOpenId();
 var remoteAddress = app.remoteAddressdxf();
 var bussiLength = 0;
-var id=0;
-var userTypeId=0;
+var id = 0;
+var userTypeId = 0;
 Page({
   data: {
     changeColor: function (e) {
@@ -12,22 +12,22 @@ Page({
       })
     },
     businessAllCategoryList: '',
-    businessSelectList:''
+    businessSelectList: ''
   },
 
   onLoad: function (e) {
     var that = this
     openId = app.getSysOpenId();
-    id=e.id;
+    id = e.id;
     //一级分类
     wx.request({
       url: remoteAddress + '/xcxIndex/toBusinessSkill.html',
-      data: {id:id},
+      data: { id: id },
       method: 'GET',
       success: function (res) {
         that.setData({
           businessAllCategoryList: res.data.data.businessAllCategoryList,
-          businessSelectList:res.data.data.businessSelectList
+          businessSelectList: res.data.data.businessSelectList
         })
         bussiLength = res.data.data.businessAllCategoryList.length;
       }
@@ -35,7 +35,7 @@ Page({
 
 
   },
-   //表单提交按钮
+  //表单提交按钮
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
 
@@ -59,14 +59,19 @@ Page({
     wx.request({
       url: remoteAddress + '/xcxIndex/updateBusinCategoryById.html',
       data: {
-        openId: 123, 
-        resourceId:id,
-        businessId:cbxgroupArr
+        openId: 123,
+        resourceId: id,
+        businessId: cbxgroupArr
       },
       method: 'GET',
       success: function (res) {
-        wx.redirectTo({
-          url: "../resourdtal/resourdtal?id="+id+"&userTypeId="+userTypeId
+
+        /*wx.redirectTo({
+          url: "../resourdtal/resourdtal?id=" + id + "&userTypeId=" + userTypeId
+        })*/
+
+        wx.navigateBack({
+          delta: 1
         })
       }
     })
