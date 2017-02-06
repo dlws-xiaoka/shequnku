@@ -5,7 +5,7 @@ var openId = app.getSysOpenId();
 var content = "";
 Page({
   data: {
-
+    hide:"true"
   },
   onLoad: function () {
     console.log('onLoad')
@@ -30,9 +30,10 @@ Page({
   //   }
   //   // this.onLoad();
   // },
-  wxSearchFn: function (e) {
-    // var that = this
-    // WxSearch.wxSearchAddHisKey(that);
+  wxSearchFn: function () {
+    this.setData({
+      hide:!this.data.hide
+    })
 
   },
   mySearch: function (e) {
