@@ -12,7 +12,7 @@ Page({
     var that = this
     //初始化的时候渲染wxSearchdata   '社团','微信群','公众号','QQ号','wxNotification'
     WxSearch.init(that, 43, []);
-    WxSearch.initMindKeys(['校咖社团', '河南大学微信公众号', '美丽社团', '微信小程序', '安徽大学微信公众号']);
+    WxSearch.initMindKeys(['校咖社团', '河南大学微信公众号', '美丽社团', '微信小程序']);
   },
   // a:function(e){
   //  console.log(this.data.inputValue)
@@ -37,7 +37,10 @@ Page({
   },
   mySearch: function (e) {
     var that = this;
-    WxSearch.wxSearchInput(content, that);
+    //var myContent = e.detail.value.myContent;
+    console.log(e)
+    //e.detail.value.myContent;
+   // WxSearch.wxSearchInput(e, that);
   },
     wxSearchInput: function(e){
     var that = this
