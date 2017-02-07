@@ -5,7 +5,9 @@ var openId = app.getSysOpenId();
 var content = "";
 Page({
   data: {
-    hide:"true"
+   hide:"true",
+   inp:"",
+   inP:""
   },
   onLoad: function () {
     console.log('onLoad')
@@ -30,18 +32,27 @@ Page({
   //   }
   //   // this.onLoad();
   // },
-  wxSearchFn: function () {
-    this.setData({
-      hide:!this.data.hide
+  wxSearchFn: function (e) {
+  
+    if(this.data.inP.length==0){
+        this.setData({
+        hide:this.data.hide
+      })
+    }else{
+      this.setData({
+        hide:!this.data.hide
     })
-
+   }
   },
   mySearch: function (e) {
     var that = this;
     WxSearch.wxSearchInput(content, that);
   },
     wxSearchInput: function(e){
-    var that = this
+      this.setData({
+        inP:e.detail.value
+      });
+    var that = this;
     WxSearch.wxSearchInput(e,that);
   },
   //输入内容出发wxSearchInput事件
