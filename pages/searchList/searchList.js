@@ -5,8 +5,7 @@ var openId = app.getSysOpenId();
 var content = "";
 Page({
   data: {
-   hide:"true",
-   inp:"",
+   hide:true,
    inP:""
   },
   onLoad: function () {
@@ -32,17 +31,18 @@ Page({
   //   }
   //   // this.onLoad();
   // },
-  wxSearchFn: function (e) {
-  
+  wxSearchFn: function (e) { 
     if(this.data.inP.length==0){
+     
         this.setData({
         hide:this.data.hide
-      })
+      });
+     
     }else{
       this.setData({
         hide:!this.data.hide
     })
-   }
+   }     
   },
   mySearch: function (e) {
     var that = this;
