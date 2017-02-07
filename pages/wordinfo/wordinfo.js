@@ -33,7 +33,7 @@ function addMesage(that) {
       var list = that.data.leaveList;
       // var data=[{id:'12312',message:'999'}];
       var data = res.data.data.messageMap;
-      data.name = app.sysNickName,
+      data.wxname = app.sysNickName,
       data.headImgUrl = app.sysHeadImgUrl,
       list.push(data);
       message="";

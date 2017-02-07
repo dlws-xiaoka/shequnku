@@ -6,9 +6,25 @@
       <view class="wxSearchMindKey">
         <view class="wxSearchMindKeyList">
           <block wx:for="{{wxSearchData.mindKeys}}">
+            <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
+              <view class="article__thumb">
+                <image class="article__image" src="{{item.headImgUrl}}"></image>
+              </view>
+              <view class="article__info">
+                <view class="article__title">{{item.spaceName}}</view>
+                <view class="article__desc">
+                  <text class="article__time">{{item.schoolName}}</text>
+                </view>
+                <view class="article__descs">
+                  <text class="article__schol">{{item.remark}}</text>
+                </view>
+              </view>
+            </navigator>
+          <!--
             <navigator url="pages/search/search">
               <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
             </navigator>
+            -->
           </block>
         </view>
       </view>

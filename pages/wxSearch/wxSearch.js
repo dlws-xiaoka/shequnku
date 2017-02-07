@@ -66,7 +66,7 @@ function init(that, barHeight, keys, isShowKey, isShowHis, callBack) {
     getHisKeys(that);
 }
 
-
+/*   备份
 function wxSearchInput(e, that, callBack){
     var temData = that.data.wxSearchData;
     var text = e.detail.value;
@@ -86,9 +86,13 @@ function wxSearchInput(e, that, callBack){
     that.setData({
         wxSearchData: temData
     });
-}
-/*
-function wxSearchInput(e, that, callBack) {
+}*/
+
+
+
+
+
+function wxSearchInput(e, that, callBack){
     var temData = that.data.wxSearchData;
     var text = e.detail.value;
     var mindKeys = [];
@@ -104,12 +108,33 @@ function wxSearchInput(e, that, callBack) {
         success: function (res) {
             // success
             console.log(res);
-            initMindKeys(res.data.data.resourceList);
-
-            
-
+            initMindKeys(res.data.data.resourceList);           
+            if(typeof(text) == "undefined" || text.length == 0){              
+            }else{
+                for(var i = 0; i < __mindKeys.length; i++){
+                    var mindKey = __mindKeys[i];
+                    if(mindKey.spaceName.indexOf(text) > -1){
+                        mindKeys.push(mindKey);
+                    }
+                }
+            }
+            temData.value = text;
+            temData.mindKeys = mindKeys;
+            that.setData({
+                wxSearchData: temData
+            });
         }
     })
+
+}
+/*
+function wxSearchInput(e, that, callBack) {
+    var temData = that.data.wxSearchData;
+    var text = e.detail.value;
+    var mindKeys = [];
+    var sysurl = app.remoteAddressdxf();
+
+    
 
     if (typeof (text) == "undefined" || text.length == 0) {
 
