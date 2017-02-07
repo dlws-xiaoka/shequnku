@@ -1,3 +1,4 @@
+
 <form bindsubmit="formBindsubmit">
     <view class="search_top wxSearch-section"> 
         <view class="search_container wxSearch-pance">
@@ -28,6 +29,6 @@
         </view>
     </view>
    </navigator>
-   </view>
+</view>
 </view>
 
