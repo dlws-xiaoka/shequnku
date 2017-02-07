@@ -6,7 +6,8 @@ var content = "";
 Page({
   data: {
     hide:"true",
-    wxSData:[]
+    wxSData:[],
+   inp:""
   },
   onLoad: function () {
     console.log('onLoad')
@@ -42,6 +43,11 @@ Page({
       this.setData({
         hide:true
       })
+      wx.showToast({
+        title: '搜索内容不为空',
+        icon: 'loading',
+        duration: 2000
+      })
     }else{
       //显示
       this.setData({
@@ -72,10 +78,18 @@ Page({
    
   },
     wxSearchInput: function(e){
+
     var that = this
     content = e.detail.value
     console.log(content)
    // WxSearch.wxSearchInput(e,that);
+
+      this.setData({
+        inP:e.detail.value
+      });
+    var that = this;
+    WxSearch.wxSearchInput(e,that);
+
   },
   //输入内容出发wxSearchInput事件
   /*wxSearchInput: function (e) {

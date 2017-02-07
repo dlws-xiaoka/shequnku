@@ -32,3 +32,37 @@
     height: 4.6875vw;
     line-height: 4.6875vw;
 }
+
+/*取消button默认样式*/
+button[size="mini"] {
+display:inline-block;
+line-height:0;
+font-size:0;
+padding:0;
+
+}
+button[plain] {
+color:#fff;
+border:0;
+background-color:#fff;
+}
+button {
+position:static;
+display:block;
+margin-left:0;
+margin-right:0;
+padding-left:0;
+padding-right:0;
+box-sizing:border-box;
+font-size:0;
+text-align:center;
+text-decoration:none;
+line-height:0;
+border-radius:0;
+-webkit-tap-highlight-color:#fff;
+overflow:hidden;
+color:#fff;
+background-color:#fff;
+
+}
+
