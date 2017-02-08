@@ -6,7 +6,7 @@
              <view class="watch">
                <image class="pic" src="/image/time.png"></image>
              </view>
-             <text class="time">{{caseInfo.createTime}}</text>
+             <text class="time">{{caseInfo.messageTimeStr}}</text>
              <view class="eye">
                 <image class="pic" src="/image/eye.png"></image>
              </view> 

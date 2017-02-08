@@ -7,8 +7,8 @@
       <textarea placeholder="请输入内容(至少5个字符,最多140个字符)" bindinput='bindcontant' />
     </view>
     <view class="add_photo">
-      <image class="image camera" src="/image/camera.png"></image>
-      <image class="image" src="/image/add_pic.png" bindtap='bindimg'></image>
+      <!--<image class="image camera" src="/image/camera.png"></image>-->
+      <image class="image camera" src="/image/add_pic.png" bindtap='bindimg'></image>
     </view>
 
     <!--多张图片使用-->
