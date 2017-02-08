@@ -128,13 +128,16 @@
     font-size:3.75vw;
     
 }
-.pic_box{
+/*2017-2-08修改图片排列美观问题*/
+/*.pic_box{
     display: flex;
     flex-flow: nowrap row;
     justify-content: space-between;
-}
+}*/
 .photo_box{
     width: 25.9375vw;
     height: 25.9375vw;
-    flex-grow: 0;
+    /*flex-grow: 0;*/
+    float: left;
+    margin-right: 2vw;
 }
