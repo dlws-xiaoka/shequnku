@@ -2,8 +2,8 @@
   <view class="search_top wxSearch-section">
     <view class="search_container wxSearch-pance">
       <input class="inp wxSearch-input" name="myText" value="{{wxSearchData.value}}" type="text" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
-      <view class="search_content wxSearch-input" bindtap="wxSearchFn" plain="true">
-        <button class="search_img1" src="/image/search_blue.png" formType="submit">
+      <view class="search_content wxSearch-input" bindtap="wxSearchFn" size="mini" plain="true">
+        <button class="search_img" src="/image/search_blue.png" formType="submit">
           <image class="search_img" src="/image/search_blue.png"></image>
         </button>
       </view>

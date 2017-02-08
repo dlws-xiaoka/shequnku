@@ -227,6 +227,25 @@ Page({
       allValue: e.detail.value
     })
     var arr = e.detail.value;
+    //手机验证
+    var reg=/^0?(13|15|18|17)[0-9]{9}$/; 
+    if (reg.test(arr.phone)==false) {
+      wx.showToast({
+        title: '请填写正确的手机号',
+        icon: 'loading',
+        duration: 2000
+      })
+      return;
+    }
+    //简介验证
+    if (arr.remark.length < 5) {
+      wx.showToast({
+        title: '简介长度不得小于5个单位',
+        icon: 'loading',
+        duration: 2000
+      })
+      return;
+    }
     wx.request({
       url: remoteAddress + '/xcxIndex/updateResource.html',
       data: {

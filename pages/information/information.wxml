@@ -131,7 +131,7 @@
       </view>
       <view class="content_detail">
         <text class="content_name1">简介</text>
-        <textarea name="remark" value="{{remark}}" class="content_nameJ" placeholder="请输入简介" />
+        <textarea name="remark" value="{{remark}}" class="content_nameJ" placeholder="请输入简介(至少5个字符)" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>

@@ -1,29 +1,28 @@
 <form>
-<scroll-view style="margin-bottom:20px;">
-  <view class="title">
-    <input placeholder="请输入标题(至少5个字符)" bindinput='bindtitle' />
-  </view>
-  <view class="content">
-    <textarea placeholder="请输入内容(至少5个字符)" bindinput='bindcontant' />
-  </view>
-  <view class="add_photo">
-    <image class="image camera" src="/image/camera.png"></image>
-    <image class="image" src="/image/add_pic.png" bindtap='bindimg'></image>
-  </view>
-
-  <!--多张图片使用-->
-  <view class="add_container">
-    <view class="add_picture" wx:for="{{allimg}}" wx:for-item="itimg">
-      <image class="search_img" src="{{itimg}}"></image>
+  <scroll-view style="margin-bottom:20px;">
+    <view class="title">
+      <input placeholder="请输入标题(至少5个字符)" bindinput='bindtitle' />
     </view>
-  </view>
-</scroll-view>  
-  <view class="foot">
-    <loading hidden="{{hidden}}">
-          加载中...
-      </loading>
-       <button class="foot_button" bindtap="modalTap" data-spaceId="{{spaceId}}">确定</button>
+    <view class="content">
+      <textarea placeholder="请输入内容(至少5个字符,最多140个字符)" bindinput='bindcontant' />
+    </view>
+    <view class="add_photo">
+      <image class="image camera" src="/image/camera.png"></image>
+      <image class="image" src="/image/add_pic.png" bindtap='bindimg'></image>
+    </view>
+
+    <!--多张图片使用-->
+    <view class="add_container">
+      <view class="add_picture" wx:for="{{allimg}}" wx:for-item="itimg">
+        <image class="search_img" src="{{itimg}}"></image>
+      </view>
+    </view>
     
+  </scroll-view>
+  <view class="foot">
+    <!--<loading hidden="{{hidden}}">
+      加载中...
+    </loading>-->
+    <button class="foot_button" bindtap="modalTap" data-spaceId="{{spaceId}}">确定</button>
   </view>
-  
 </form>

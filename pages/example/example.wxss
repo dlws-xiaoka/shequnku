@@ -79,4 +79,5 @@
 .new_detail{
 	color: #000;
 	font-size: 3.125vw;
+	word-break:break-all;
 }

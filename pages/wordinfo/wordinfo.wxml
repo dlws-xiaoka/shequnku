@@ -16,10 +16,7 @@
   </navigator>
   </scroll-view>
 </view>
-
-
-
- <!--提交框-->
+<!--提交框-->
     <view  class="footer">
         <view  class="footinput">
           <view class="input">
@@ -27,7 +24,6 @@
         </view>
        <view  class="">
           <button bindtap='send' data-spaceId="{{item.id}}" data-openId="{{item.id}}">发送</button>
-          <!--<view class="send" bindtap='send' data-spaceId="{{item.id}}" data-openId="{{item.id}}">发送</view>-->
         </view>
     </view>
 

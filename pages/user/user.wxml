@@ -7,8 +7,8 @@
         <view class="resource">
           <image src="/image/ziyuan.png" />
         </view>
-      </navigator>
       <text class="resource_add">添加资源</text>
+      </navigator>
     </view>
     <view class="head">
       <image class="headimg" src="{{userInfo.avatarUrl}}"></image>
@@ -18,8 +18,8 @@
         <view class="resource word">
           <image src="/image/word.png" />
         </view>
-      </navigator>
       <text class="resource_add">留言板</text>
+      </navigator>
     </view>
     <view class="headname">
       {{wxname}}

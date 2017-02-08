@@ -32,18 +32,20 @@ Page({
     var browseNum = 0;
     //表单校验-标题
     if (msgtitle.length < 5) {
+      
       wx.showToast({
         title: '标题长度不得少于5个字符',
-        icon: 'fail',
+        icon: 'loading',
         duration: 2000
       })
       return;
     }
     //表单校验-内容
     if (msgcontant.length < 5) {
+      
       wx.showToast({
         title: '内容长度不得少于5个字符',
-        icon: 'fail',
+        icon: 'loading',
         duration: 2000
       })
       return;
@@ -137,9 +139,10 @@ Page({
   },
   uploadCaseImg: function (idx, that) {
     if (tempFilePaths.length == 0) {
+    
       wx.showToast({
-        title: '图片不能为',
-        icon: 'fail',
+        title: '图片不能为空',
+        icon: 'loading',
         duration: 2000
       })
       return;

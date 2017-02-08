@@ -66,7 +66,7 @@ page{
     overflow: hidden;
     color:#b4b4b4;
     font-size:3.75vw;
-    
+    word-break:break-all;
 }
 /*02-08解决图片排列美观问题*/
 /*.pic_box{

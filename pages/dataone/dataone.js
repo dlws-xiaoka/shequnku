@@ -61,16 +61,102 @@ Page({
 
     }
     cbxgroupArr = cbxgroupArr.substr(0, cbxgroupArr.length - 1);
+    //社团表单校验
     if (typeIndex == 0) {
-      //是否选择学校验证
-      if (schArrId.length < 1) {
+      //社团名称验证
+      if (arr.spaceName.length < 1) {
         wx.showToast({
-          title: '请选择学校',
-          icon: 'fail',
+          title: '请填写社团名称',
+          icon: 'loading',
           duration: 2000
         })
         return;
       }
+      //省验证
+      if (provinceSin.length < 1) {
+        wx.showToast({
+          title: '请选择省名',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+      //市验证
+      if (cityId.length < 1) {
+        wx.showToast({
+          title: '请选择市名',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+      //学校验证
+      if (schArrId.length < 1) {
+        wx.showToast({
+          title: '请选择学校',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+    }else if(typeIndex == 1){
+      //微信号验证
+      if (arr.wxNumber.length < 1) {
+        wx.showToast({
+          title: '请输入微信号',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+      //微信名称验证
+      if (arr.spaceName.length < 1) {
+        wx.showToast({
+          title: '请输入微信名称',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+    }else if(typeIndex == 2){
+      //微信群名称验证
+      if (arr.spaceName.length < 1) {
+        wx.showToast({
+          title: '请输入微信群名称',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+    }else if(typeIndex == 3){
+      //QQ名称验证
+      if (arr.spaceName.length < 1) {
+        wx.showToast({
+          title: '请输入QQ名称',
+          icon: 'loading',
+          duration: 2000
+        })
+        return;
+      }
+    }
+    //手机验证
+    var reg=/^0?(13|15|18|17)[0-9]{9}$/; 
+    if (reg.test(arr.phone)==false) {
+      wx.showToast({
+        title: '请填写正确的手机号',
+        icon: 'loading',
+        duration: 2000
+      })
+      return;
+    }
+    //简介验证
+    if (arr.remark.length < 5) {
+      wx.showToast({
+        title: '简介长度不得小于5个单位',
+        icon: 'loading',
+        duration: 2000
+      })
+      return;
     }
     wx.request({
       url: remoteAddress + 'xcxIndex/addResource.html',

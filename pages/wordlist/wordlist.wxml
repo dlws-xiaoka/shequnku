@@ -6,7 +6,7 @@
     </view>
     <view class="message">
        <view class="items">
-         <!-- <view class="person">{{item.spaceId}}</view>-->
+          <view class="person">{{item.wxname}}</view>
           <view class="time">{{item.messageTime}}</view>
        </view>
        <view class="info">
@@ -18,4 +18,3 @@
     </view>
   </navigator>
 </scroll-view>
-<!---->

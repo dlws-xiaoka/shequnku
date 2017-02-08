@@ -48,6 +48,7 @@
 .info_content{
   width: 60vw;
   float: left;
+  word-break:break-all;
 }
 .info_pic{
   width: 7.03125vw;
