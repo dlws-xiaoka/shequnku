@@ -59,6 +59,7 @@ textarea{
   position: absolute;
   left: 0;
   bottom: 0;
+  border-radius: 5px;
 }
 button{
   line-height:1.5555555600000004;

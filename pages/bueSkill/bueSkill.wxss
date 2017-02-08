@@ -56,3 +56,13 @@ checkbox-group{
     margin: 15px 45.9375vw;
     color: #fff;
 }
+/*02-08修改button样式*/
+.foot_button{
+    position:absolute;
+    left:40.625vw;
+    bottom:0;
+    margin-left: -40.5%;
+    width: 100vw;
+    background: #13b1a3;
+    color: #fff;
+}

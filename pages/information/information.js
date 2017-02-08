@@ -62,7 +62,7 @@ function choseSchol(cityId, that) {
   })
 }
 //用户分类下的子分类
-function choseChild(childCategoryList, that) {
+function choseChild(childCategoryList, childcategoryId, that) {
   var chidList = childCategoryList;
   var chidCaArr = new Array();//子分类名称
   chidCaIdArr = new Array();//子分类Id
@@ -70,15 +70,22 @@ function choseChild(childCategoryList, that) {
     for (var i = 0; i < chidList.length; i++) {
       chidCaArr.push(chidList[i].childCategoryName);
       chidCaIdArr.push(chidList[i].id);
+      
+      if (chidList[i].id == childcategoryId) {
+       
+        that.setData({
+          chidCatIndex : i
+        })
+      }
+
     }
   }
 
   that.setData({
     childCategoryList: chidCaArr,
-    chidCaId: chidCaIdArr[0]
+    chidCaId: childcategoryId
   })
-  childcategoryId = chidCaIdArr[0];
-
+  childcategoryId = childcategoryId;
 
 }
 Page({
@@ -193,9 +200,10 @@ Page({
             phone: res.data.data.resourceMap.phone,
             typeName: res.data.data.resourceMap.typeName,
             provinceList: resproArr, //全部省
-            childCategoryList: res.data.data.resourceMap.childCategoryList,
+            //childCategoryList: res.data.data.resourceMap.childCategoryList,//二级分类
             headImgUrl: res.data.data.resourceMap.headImgUrl
           })
+          childcategoryId = res.data.data.resourceMap.childcategoryId;//二级分类
 
           var provinceName = res.data.data.resourceMap.provinceName;//回显省的值
           var cityName = res.data.data.resourceMap.cityName;//回显市的值
@@ -207,7 +215,7 @@ Page({
           }
           choseCity(provinceName, that)//根据省查出城市
           choseSchol(cityId, that) //根据城市查出学校
-          choseChild(res.data.data.childCategoryList, that)//根据用户类别查出子分类
+          choseChild(res.data.data.childCategoryList, childcategoryId, that)//根据用户类别查出子分类
         }
       })
   },
@@ -255,13 +263,13 @@ Page({
       },
       method: 'GET',
 
-     success: function (res) {
-         /*wx.switchTab({
-          url: '../user/user'
-        })*/
-      wx.navigateBack({
-        delta: 1
-      })
+      success: function (res) {
+        /*wx.switchTab({
+         url: '../user/user'
+       })*/
+        wx.navigateBack({
+          delta: 1
+        })
       }
 
 

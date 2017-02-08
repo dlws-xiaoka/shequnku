@@ -34,6 +34,7 @@
               <image src="/image/more.png" class="photo"></image>
             </view>
           </view>
+        <view class="content_detail">
           <text class="content_name1">微信号类别</text>
           <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
             <view class="picker_wx">
@@ -43,7 +44,7 @@
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
-
+        </view>
      
       </block>
    

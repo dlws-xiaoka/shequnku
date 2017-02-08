@@ -35,12 +35,22 @@
     text-align:center;
     margin: 5px 0 15px 0;
 }
-.information{
-    margin: 0 15px 15px 15px;
+.information_content{
+    margin: 0 15px;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+}
+.information_name{
+    width: 30vw;
     color:#fff;
     font-size: 4.0625vw;
-    float: left;
-    word-break:break-all;
+    
+}
+.information{
+    word-break: break-all;
+    color:#fff;
+    font-size: 4.0625vw;
 }
 .word{
    margin: 15px 34.375vw;
@@ -127,16 +137,18 @@
     overflow: hidden;
     color:#b4b4b4;
     font-size:3.75vw;
-    word-break:break-all;
     
 }
-.pic_box{
+/*2017-2-08修改图片排列美观问题*/
+/*.pic_box{
     display: flex;
     flex-flow: nowrap row;
     justify-content: space-between;
-}
+}*/
 .photo_box{
     width: 25.9375vw;
     height: 25.9375vw;
-    flex-grow: 0;
+    /*flex-grow: 0;*/
+    float: left;
+    margin-right: 2vw;
 }

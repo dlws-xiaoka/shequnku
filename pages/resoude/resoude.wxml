@@ -10,7 +10,11 @@
         <view class="headcity">
          {{userInfo.cityName}}|{{userInfo.schoolName}}
         </view>
-        <text class="information">简介:{{userInfo.remark}}</text>
+        <view class="information_content">
+          <view class="information_name">简介:</view>
+          <text class="information">{{userInfo.remark}}</text>
+        </view>
+        
 </view>
 <navigator url="/pages/wordinfo/wordinfo?spaceId={{userInfo.id}}&openId={{userInfo.openId}}">
         <view class="word">
