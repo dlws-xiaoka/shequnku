@@ -35,11 +35,22 @@
     text-align:center;
     margin: 5px 0 15px 0;
 }
-.information{
+.information_content{
     margin: 0 15px;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+}
+.information_name{
+    width: 30vw;
     color:#fff;
     font-size: 4.0625vw;
-    /*float: left;*/
+    
+}
+.information{
+    word-break: break-all;
+    color:#fff;
+    font-size: 4.0625vw;
 }
 .word{
    margin: 15px 34.375vw;
