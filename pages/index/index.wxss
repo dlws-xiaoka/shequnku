@@ -137,5 +137,8 @@ width:50vw;
 .bg_active{
     background: #e76049;
 }
-
+/*02-08修改样式*/
+.delete_border{
+    border: 0 !important;
+}
 
