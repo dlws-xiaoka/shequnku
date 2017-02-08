@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/searchList/searchList",
         "pages/index/index",
         "pages/searchList/searchList",
         "pages/search/search",

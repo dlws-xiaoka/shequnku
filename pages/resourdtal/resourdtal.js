@@ -1,7 +1,7 @@
 var $vm = getApp()
 var openId=$vm.getSysOpenId();
 var spaceId=''
-
+var option='' 
 Page({
   data:{
     text:"Page user",
@@ -17,8 +17,15 @@ Page({
     headImgUrl:""
   },
   
-   onLoad: function (option) {
-     spaceId=option.id;
+   onLoad: function (options) {
+    option=options;
+  },
+  onReady:function(){
+    // 页面渲染完成
+  },
+  onShow:function(){
+    // 页面显示
+ spaceId=option.id;
      console.log('spaceId========'+spaceId)
      openId = $vm.getSysOpenId();
     //headImgUrl=option.headImgUrl;
@@ -61,12 +68,6 @@ Page({
       }
     })
 
-  },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
   },
   onHide:function(){
     // 页面隐藏
