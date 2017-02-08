@@ -1,87 +1,34 @@
 
-
-<view class="search_top wxSearch-section">
-	
-	<view class="search_container wxSearch-pance">
-		<input class="inp wxSearch-input" bindinput="wxSearchInput"  value="{{wxSearchData.value}}"  type="text" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
-		<!--<navigator class="search_navigator" url="/pages/search/search">	-->
-		     <button class="search_content wxSearch-input" bindtap="wxSearchFn" size="mini" plain="true">
-				<image class="search_img" bindtap="mySearch" src="/image/search_blue.png"></image>
-			</button>	
-		<!--</navigator>	-->
-	</view>
-</view>
+<form bindsubmit="formBindsubmit">
+    <view class="search_top wxSearch-section"> 
+        <view class="search_container wxSearch-pance">
+            <input class="inp wxSearch-input" name="myText"   value="{{wxSearchData.value}}"  type="text" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
+            <view class="search_content wxSearch-input" bindtap="wxSearchFn" size="mini" plain="true">
+                <button class="search_img"   src="/image/search_blue.png" formType="submit">
+                    <image class="search_img" src="/image/search_blue.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+</form>
 <view hidden="{{hide}}">
-   <navigator class="navigator_content" url="/pages/resoude/resoude">
+<view wx:for="{{wxSData}}">
+   <navigator class="navigator_content" url="/pages/resoude/resoude?id={{item.id}}">
     <view class="article__item">
         <view class="article__thumb">
-            <image class="article__image" 
-
-src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
+            <image class="article__image" src="{{item.headImgUrl}}"></image>
         </view>
         <view class="article__info">
-            <view class="article__title">社团名称</view>
+            <view class="article__title">{{item.spaceName}}</view>
             <view class="article__desc">
-                <text class="article__time">学校名称</text>
+                <text class="article__time">{{item.schoolName}}</text>
             </view>
             <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-   </navigator>
-   <navigator class="navigator_content" url="/pages/resoude/resoude">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" 
-
-src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">社团名称</view>
-            <view class="article__desc">
-                <text class="article__time">学校名称</text>
-            </view>
-            <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-   </navigator>
-   <navigator class="navigator_content" url="/pages/resoude/resoude">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" 
-
-src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">社团名称</view>
-            <view class="article__desc">
-                <text class="article__time">学校名称</text>
-            </view>
-            <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
-            </view>
-        </view>
-    </view>
-   </navigator>
-   <navigator class="navigator_content" url="/pages/resoude/resoude">
-    <view class="article__item">
-        <view class="article__thumb">
-            <image class="article__image" 
-
-src="http://img2.imgtn.bdimg.com/it/u=2335862085,307954931&fm=21&gp=0.jpg"></image>
-        </view>
-        <view class="article__info">
-            <view class="article__title">社团名称</view>
-            <view class="article__desc">
-                <text class="article__time">学校名称</text>
-            </view>
-            <view class="article__descs">
-                <text class="article__schol">学校简介学校简介学校简介学校简介学校简介学校简介学校简介</text>
+                <text class="article__schol">{{item.remark}}</text>
             </view>
         </view>
     </view>
    </navigator>
 </view>
+</view>
+

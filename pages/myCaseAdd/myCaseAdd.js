@@ -139,7 +139,7 @@ Page({
     if (tempFilePaths.length == 0) {
       wx.showToast({
         title: '图片不能为',
-        icon: '',
+        icon: 'fail',
         duration: 2000
       })
       return;

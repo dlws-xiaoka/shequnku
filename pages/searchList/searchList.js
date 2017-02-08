@@ -5,8 +5,10 @@ var openId = app.getSysOpenId();
 var content = "";
 Page({
   data: {
-   hide:true,
-   inP:""
+    wxSData: [],
+    hide: true,
+    inP: ""
+
   },
   onLoad: function () {
     console.log('onLoad')
@@ -15,55 +17,80 @@ Page({
     WxSearch.init(that, 43, []);
     WxSearch.initMindKeys(['校咖社团', '河南大学微信公众号', '美丽社团', '微信小程序']);
   },
-  // a:function(e){
-  //  console.log(this.data.inputValue)
-  //   let data;
-  //   let localStorageValue = [];
-  //   if(this.data.inputValue != ''){
-  //     //调用API从本地缓存中获取数据
 
-  //     wx.navigateTo({
-  //         url: '/pages/search/search'
-  //     })
-  //     // console.log('马上就要跳转了！')
-  //   }else{
-  //     console.log('空白的')
-  //   }
-  //   // this.onLoad();
-  // },
-  wxSearchFn: function (e) { 
-    if(this.data.inP.length==0){
-     
-        this.setData({
-        hide:this.data.hide
-      });
-     
-    }else{
-      this.setData({
-        hide:!this.data.hide
+  formBindsubmit: function (e) {
+    var that = this;
+    var sysurl = app.remoteAddressdxf();
+    content = e.detail.value.myText;
+    wx.request({
+      url: sysurl + 'xcxIndex/selectResourceByName.html',
+      data: {
+        spaceName: content
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          wxSData: res.data.data.resourceList
+        });
+        // content=""
+        // console.log(content);
+      }
     })
-   }     
   },
-  mySearch: function (e) {
+  wxSearchFn: function () {
+
+    if (content == '') {
+      //隐藏
+      this.setData({
+        hide: true
+      })
+      wx.showToast({
+        title: '搜索内容不为空',
+        icon: 'loading',
+        duration: 2000
+      })
+    } else {
+      //显示
+      this.setData({
+        hide: false
+      })
+    }
+  },
+  mySearchs: function (e) {
+    var sysurl = app.remoteAddressdxf();
     var that = this;
     //var myContent = e.detail.value.myContent;
-    console.log(e)
-    //e.detail.value.myContent;
-   // WxSearch.wxSearchInput(e, that);
+    console.log(content)
+    wx.request({
+      url: sysurl + 'xcxIndex/selectResourceByName.html',
+      data: {
+        spaceName: content
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          wxSData: res.data.data.resourceList
+        });
+        content = ""
+        console.log(content);
+      }
+    })
   },
-    wxSearchInput: function(e){
-      this.setData({
-        inP:e.detail.value
-      });
+  wxSearchInput: function (e) {
+    var that = this
+    content = e.detail.value
+    console.log(content)
+    // WxSearch.wxSearchInput(e,that);
+
+    this.setData({
+      inP: e.detail.value
+    });
     var that = this;
-    WxSearch.wxSearchInput(e,that);
+    WxSearch.wxSearchInput(e, that);
+
   },
-  //输入内容出发wxSearchInput事件
-  /*wxSearchInput: function (e) {
-    var that = this;
-    content = e.detail.value;//页面输入的内容 
-    WxSearch.wxSearchInput(e,that);
-  },*/
   //点击输入框触发wxSerchFocus事件，
   wxSerchFocus: function (e) {
     var that = this
