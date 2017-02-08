@@ -40,6 +40,7 @@
     color:#fff;
     font-size: 4.0625vw;
     float: left;
+    word-break:break-all;
 }
 .resourdtal_content{
     width: 100vw;

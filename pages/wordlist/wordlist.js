@@ -1,9 +1,23 @@
 // pages/wordlist/wordlist.js
 var app = getApp()
-var openId=app.getSysOpenId();
+var openId = app.getSysOpenId();
+
+function formatTime(date) {
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
 Page({
   data: {
     leaveMessList: {}
+
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -12,7 +26,7 @@ Page({
     var sysurl = app.remoteAddressdxf();
     console.log(options)
 
-    console.log('我的还是我的'+openId)
+    console.log('我的还是我的' + openId)
     if (null != openId && undefined != openId) {
       wx.request({
         url: sysurl + 'xcxIndex/getLeaveMessageList.html',
@@ -23,11 +37,11 @@ Page({
         success: function (res) {
           console.info(res);
           that.setData({
-            leaveMessList: res.data.data.leaveMessList,
+            leaveMessList: res.data.data.leaveMessList,      
           })
         }
       })
-    }else{
+    } else {
       console.log("open is not find");
     }
 

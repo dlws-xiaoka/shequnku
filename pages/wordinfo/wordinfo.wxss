@@ -75,6 +75,7 @@ width:100%;
  color: #333;
  margin-bottom: 15px;
  padding-top: 15px;
+ word-break:break-all;
 }
 .footer {
   width: 77.34375%;

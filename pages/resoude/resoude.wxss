@@ -36,10 +36,11 @@
     margin: 5px 0 15px 0;
 }
 .information{
-    margin: 0 15px;
+    margin: 0 15px 15px 15px;
     color:#fff;
     font-size: 4.0625vw;
-    /*float: left;*/
+    float: left;
+    word-break:break-all;
 }
 .word{
    margin: 15px 34.375vw;
@@ -126,6 +127,7 @@
     overflow: hidden;
     color:#b4b4b4;
     font-size:3.75vw;
+    word-break:break-all;
     
 }
 .pic_box{

@@ -141,7 +141,7 @@
       </view>
       <view class="content_detail">
         <text class="content_name1">简介</text>
-        <textarea name="remark" value="" class="content_nameJ" placeholder="请输入简介" />
+        <textarea name="remark" value="" class="content_nameJ" placeholder="请输入简介(至少5个单位长度)" />
         <view class="content_pic">
           <image src="/image/more.png" class="photo"></image>
         </view>
@@ -175,9 +175,4 @@
         disabled="{{disabled}}"  hover-class="other-button-hover" >完成             </button>
      </navigator>-->
 </form>
-<view class="body-view">
-    <loading hidden="{{hidden}}" bindchange="loadingChange">
-    加载中...
-    </loading>
-</view>
-    
+
