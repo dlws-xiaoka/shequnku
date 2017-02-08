@@ -169,9 +169,15 @@
 
 </view>
  <button  class="foot_button" form-type="submit">提交</button>
+
      <!--<navigator url="/pages/user/user">
        <button class="foot_button" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}"  hover-class="other-button-hover" >完成             </button>
      </navigator>-->
 </form>
+<view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+    </loading>
+</view>
     

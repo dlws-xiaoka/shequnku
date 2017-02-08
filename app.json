@@ -2,6 +2,8 @@
     "pages": [
         "pages/searchList/searchList",
         "pages/index/index",
+        "pages/searchList/searchList",
+        "pages/search/search",
         "pages/resoude/resoude",
         "pages/user/user",
         "pages/dataone/dataone",
@@ -11,12 +13,11 @@
         "pages/bueSkill/bueSkill",
         "pages/choosetype/choosetype",
         "pages/schoolTree/schoolTree",
-        "pages/filter/filter",
         "pages/myCase/myCase",
-        "pages/search/search",
         "pages/example/example",
         "pages/wordinfo/wordinfo",
         "pages/login/login",
+        "pages/filter/filter",
         "pages/wordlist/wordlist"
     ],
     "window": {

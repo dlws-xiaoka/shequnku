@@ -17,10 +17,14 @@ Page({
     text: "Page user",
     userInfo: {},
     allimg: {},
-    spaceId: {}
+    spaceId: {},
+    hidden:true
   },
   //弹出确认框  
   modalTap: function (e) {
+    this.setData({
+            hidden: !this.data.hidden
+        });
     var that = this
     spaceId = e.currentTarget.dataset.spaceid;
     console.log(e)
@@ -135,7 +139,7 @@ Page({
     if (tempFilePaths.length == 0) {
       wx.showToast({
         title: '图片不能为',
-        icon: '',
+        icon: 'fail',
         duration: 2000
       })
       return;
@@ -171,6 +175,10 @@ Page({
               },
               method: 'GET',
               success: function (res) {
+                //重置变量
+                uploadPics = "";
+                msgtitle = "";
+                msgcontant = "";
                 console.info(res);
                 wx.redirectTo({
                   url: '../myCase/myCase?spaceId=' + spaceId
@@ -178,10 +186,7 @@ Page({
               }
             })
           }
-          //重置变量
-          uploadPics = "";
-          msgtitle = "";
-          msgcontant = "";
+
         }
         console.log('服务器返回地址----------------' + uploadPics);
       }

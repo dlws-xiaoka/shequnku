@@ -1,77 +1,131 @@
 // pages/searchList/searchList.js
 var WxSearch = require('../wxSearch/wxSearch.js')
 var app = getApp()
-var openId=app.getSysOpenId();
+var openId = app.getSysOpenId();
+var content = "";
 Page({
   data: {
-  
+    wxSData: [],
+    hide: true,
+    inP: ""
+
   },
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    //初始化的时候渲染wxSearchdata
-    WxSearch.init(that,43,['社团','微信群','公众号','QQ号','wxNotification']);
-    WxSearch.initMindKeys(['校咖社团','河南大学微信公众号','美丽社团','微信小程序','安徽大学微信公众号']);
+    //初始化的时候渲染wxSearchdata   '社团','微信群','公众号','QQ号','wxNotification'
+    WxSearch.init(that, 43, []);
+    WxSearch.initMindKeys(['校咖社团', '河南大学微信公众号', '美丽社团', '微信小程序']);
   },
-  // a:function(e){
-  //  console.log(this.data.inputValue)
-  //   let data;
-  //   let localStorageValue = [];
-  //   if(this.data.inputValue != ''){
-  //     //调用API从本地缓存中获取数据
-     
-  //     wx.navigateTo({
-  //         url: '/pages/search/search'
-  //     })
-  //     // console.log('马上就要跳转了！')
-  //   }else{
-  //     console.log('空白的')
-  //   }
-  //   // this.onLoad();
-  // },
-  wxSearchFn: function(e){
+
+  formBindsubmit: function (e) {
+    var that = this;
+    var sysurl = app.remoteAddressdxf();
+    content = e.detail.value.myText;
+    wx.request({
+      url: sysurl + 'xcxIndex/selectResourceByName.html',
+      data: {
+        spaceName: content
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          wxSData: res.data.data.resourceList
+        });
+        // content=""
+        // console.log(content);
+      }
+    })
+  },
+  wxSearchFn: function () {
+
+    if (content == '') {
+      //隐藏
+      this.setData({
+        hide: true
+      })
+      wx.showToast({
+        title: '搜索内容不为空',
+        icon: 'loading',
+        duration: 2000
+      })
+    } else {
+      //显示
+      this.setData({
+        hide: false
+      })
+    }
+  },
+  mySearchs: function (e) {
+    var sysurl = app.remoteAddressdxf();
+    var that = this;
+    //var myContent = e.detail.value.myContent;
+    console.log(content)
+    wx.request({
+      url: sysurl + 'xcxIndex/selectResourceByName.html',
+      data: {
+        spaceName: content
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          wxSData: res.data.data.resourceList
+        });
+        content = ""
+        console.log(content);
+      }
+    })
+  },
+  wxSearchInput: function (e) {
     var that = this
-    WxSearch.wxSearchAddHisKey(that);
-    
+    content = e.detail.value
+    console.log(content)
+    // WxSearch.wxSearchInput(e,that);
+
+    this.setData({
+      inP: e.detail.value
+    });
+    var that = this;
+    WxSearch.wxSearchInput(e, that);
+
   },
-  wxSearchInput: function(e){
+  //点击输入框触发wxSerchFocus事件，
+  wxSerchFocus: function (e) {
     var that = this
-    WxSearch.wxSearchInput(e,that);
+    WxSearch.wxSearchFocus(e, that);
   },
-  wxSerchFocus: function(e){
+  wxSearchBlur: function (e) {
     var that = this
-    WxSearch.wxSearchFocus(e,that);
+    WxSearch.wxSearchBlur(e, that);
   },
-  wxSearchBlur: function(e){
+  wxSearchKeyTap: function (e) {
     var that = this
-    WxSearch.wxSearchBlur(e,that);
+    WxSearch.wxSearchKeyTap(e, that);
   },
-  wxSearchKeyTap:function(e){
+  wxSearchDeleteKey: function (e) {
     var that = this
-    WxSearch.wxSearchKeyTap(e,that);
+    WxSearch.wxSearchDeleteKey(e, that);
   },
-  wxSearchDeleteKey: function(e){
-    var that = this
-    WxSearch.wxSearchDeleteKey(e,that);
-  },
-  wxSearchDeleteAll: function(e){
+  wxSearchDeleteAll: function (e) {
     var that = this;
     WxSearch.wxSearchDeleteAll(that);
   },
-  wxSearchTap: function(e){
+  wxSearchTap: function (e) {
     var that = this
     WxSearch.wxSearchHiddenPancel(that);
   },
-   onReady:function(){
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })

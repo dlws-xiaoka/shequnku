@@ -9,6 +9,21 @@
             <view class="cancel">取消</view>
 		</view>-->
 <!--搜索框结束-->
+<view class="search_top wxSearch-section">
+	<!--<view class="search_container wxSearch-pance">
+				<input class="inp wxSearch-input" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" type="text" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />-->
+	<view class="search_container wxSearch-pance">
+		<input class="inp wxSearch-input" bindinput="wxSearchInput"  value="{{wxSearchData.value}}"  type="text" placeholder="搜索社团/技能达人/微信群/Q群/公众号" />
+		<navigator class="search_navigator" url="/pages/search/search">	
+		     <view class="search_content wxSearch-input" bindtap="wxSearchFn" size="mini" plain="true">
+				<image class="search_img" bindtap="mySearch" src="/image/search_blue.png"></image>
+			</view>	
+		</navigator>	
+	</view>
+            
+	<!--</view>-->
+	<!--<view class="cancel"  bindtap="hiden">取消</view>-->
+</view>
 <navigator class="navigator_content" url="/pages/resoude/resoude">
     <view class="article__item">
         <view class="article__thumb">

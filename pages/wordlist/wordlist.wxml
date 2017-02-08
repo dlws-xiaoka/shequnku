@@ -2,7 +2,7 @@
 <scroll-view scroll-y="true" wx:for="{{leaveMessList}}">
   <navigator class="article_list" url="/pages/wordinfo/wordinfo?spaceId={{item.spaceId}}&pId={{item.id}}&cusOpenId={{item.openId}}">
     <view class="pic_box">
-        <image src="http://img0.imgtn.bdimg.com/it/u=554458137,4275470053&fm=21&gp=0.jpg"               class="photo"></image>
+        <image src="{{item.headImgUrl}}"               class="photo"></image>
     </view>
     <view class="message">
        <view class="items">
@@ -18,4 +18,4 @@
     </view>
   </navigator>
 </scroll-view>
-
+<!---->

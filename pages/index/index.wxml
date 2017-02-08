@@ -4,9 +4,9 @@
     <view class="search-font">已入驻</view>
     <view class="num num_border">{{peopleNum.peopleNum}}</view>
     <view class="search_font">资源数</view>
-   <!-- <navigator class="img-search" url="/pages/search/search">         
+   <navigator class="img-search" url="/pages/searchList/searchList">         
        <image class="img-size" src="/image/search.png"></image>
-    </navigator>-->
+    </navigator>
 </view>
 <swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
    <block wx:for="{{movies}}" wx:for-index="index">  
@@ -26,9 +26,9 @@
   <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchAll">
    <text>全部</text>
   </view>
-  <view id="1" class="screenk {{currentShai==1? 'active' : ''}}">
+  <navigator url="/pages/searchList/searchList" id="1" class="screenk {{currentShai==1? 'active' : ''}}">
     <text>筛选</text>
-  </view>
+  </navigator>
 </view>
 <!--内容列表-->
 

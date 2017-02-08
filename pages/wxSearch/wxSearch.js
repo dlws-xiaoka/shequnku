@@ -1,5 +1,5 @@
 // 定义数据格式
-
+var app = getApp()
 /***
  * 
  * "wxSearchData":{
@@ -21,11 +21,11 @@ var __keysColor = [];
 
 var __mindKeys = [];
 
-function initColors(colors){
+function initColors(colors) {
     __keysColor = colors;
 }
 
-function initMindKeys(keys){
+function initMindKeys(keys) {
     __mindKeys = keys;
 }
 
@@ -35,37 +35,38 @@ function init(that, barHeight, keys, isShowKey, isShowHis, callBack) {
         barHeight: barHeight,
         isShow: false
     }
-    
-    if(typeof(isShowKey) == 'undefined'){
+
+    if (typeof (isShowKey) == 'undefined') {
         view.isShowSearchKey = true;
-    }else{
+    } else {
         view.isShowSearchKey = isShowKey;
     }
 
-    if(typeof(isShowHis) == 'undefined'){
+    if (typeof (isShowHis) == 'undefined') {
         view.isShowSearchHistory = true;
-    }else{
+    } else {
         view.isShowSearchHistory = isShowHis;
     }
     temData.keys = keys;
     wx.getSystemInfo({
-        success: function(res) {
+        success: function (res) {
             var wHeight = res.windowHeight;
-            view.seachHeight = wHeight-barHeight;
+            view.seachHeight = wHeight - barHeight;
             temData.view = view;
             that.setData({
                 wxSearchData: temData
             });
         }
     })
-    
+
     if (typeof (callBack) == "function") {
         callBack();
     }
-    
+
     getHisKeys(that);
 }
 
+/*   备份
 function wxSearchInput(e, that, callBack){
     var temData = that.data.wxSearchData;
     var text = e.detail.value;
@@ -85,7 +86,118 @@ function wxSearchInput(e, that, callBack){
     that.setData({
         wxSearchData: temData
     });
+}*/
+
+
+
+
+
+function wxSearchInput(e, that, callBack){
+    var temData = that.data.wxSearchData;
+    var text = e.detail.value;
+    var mindKeys = [];
+    var sysurl = app.remoteAddressdxf();
+
+    //请求后台数据
+    wx.request({
+        url: sysurl + 'xcxIndex/selectResourceByName.html',
+        data: {
+            spaceName: text
+        },
+        method: 'GET',
+        success: function (res) {
+            // success
+            console.log(res);
+            initMindKeys(res.data.data.resourceList);           
+            if(typeof(text) == "undefined" || text.length == 0){              
+            }else{
+                for(var i = 0; i < __mindKeys.length; i++){
+                    var mindKey = __mindKeys[i];
+                    if(mindKey.spaceName.indexOf(text) > -1){
+                        mindKeys.push(mindKey);
+                    }
+                }
+            }
+            temData.value = text;
+            temData.mindKeys = mindKeys;
+            that.setData({
+                wxSearchData: temData
+            });
+        }
+    })
+
 }
+/*
+function wxSearchInput(e, that, callBack) {
+    var temData = that.data.wxSearchData;
+    var text = e.detail.value;
+    var mindKeys = [];
+    var sysurl = app.remoteAddressdxf();
+
+    
+
+    if (typeof (text) == "undefined" || text.length == 0) {
+
+            } else {
+                for (var i = 0; i < __mindKeys.length; i++) {
+                    // var mindKey = __mindKeys[i].spaceName;
+                    var mindKey = __mindKeys[i]
+                    if (mindKey.spaceName.indexOf(text) > -1) {
+                        mindKeys.push(mindKey);
+                    }
+                }
+            }
+            temData.value = text;
+            temData.mindKeys = mindKeys;
+
+            console.log(temData.mindKeys);
+
+            that.setData({
+                wxSearchData:temData
+            });
+}*/
+/*
+ var temData = that.data.wxSearchData;
+    var text = content;
+    var mindKeys = [];
+    var sysurl = app.remoteAddressdxf();
+    var thatthat = this
+    //请求后台数据
+    wx.request({
+        url: sysurl + 'xcxIndex/selectResourceByName.html',
+        data: {
+            spaceName: text
+        },
+        method: 'GET',
+        success: function (res) {
+            // success
+            console.log('-*-*---*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*')
+            console.log(res);
+            initMindKeys(res.data.data.resourceList);
+
+            if (typeof (text) == "undefined" || text.length == 0) {
+
+            } else {
+                for (var i = 0; i < __mindKeys.length; i++) {
+                    // var mindKey = __mindKeys[i].spaceName;
+                    var mindKey = __mindKeys[i]
+                    if (mindKey.spaceName.indexOf(text) > -1) {
+                        mindKeys.push(mindKey);
+                    }
+                }
+            }
+            temData.value = text;
+            temData.mindKeys = mindKeys;
+            that.setData({
+                wxSearchData:temData
+            });
+
+        }
+    })
+ */
+
+
+
 
 function wxSearchFocus(e, that, callBack) {
     var temData = that.data.wxSearchData;
@@ -109,7 +221,7 @@ function wxSearchBlur(e, that, callBack) {
     }
 }
 
-function wxSearchHiddenPancel(that){
+function wxSearchHiddenPancel(that) {
     var temData = that.data.wxSearchData;
     temData.view.isShow = false;
     that.setData({
@@ -143,61 +255,61 @@ function getHisKeys(that) {
     } catch (e) {
         // Do something when catch error
     }
-    
+
 }
 function wxSearchAddHisKey(that) {
     wxSearchHiddenPancel(that);
     var text = that.data.wxSearchData.value;
-    if(typeof(text) == "undefined" || text.length == 0){return;}
+    if (typeof (text) == "undefined" || text.length == 0) { return; }
     var value = wx.getStorageSync('wxSearchHisKeys');
-    if(value){
-        if(value.indexOf(text) < 0){
+    if (value) {
+        if (value.indexOf(text) < 0) {
             value.unshift(text);
         }
         wx.setStorage({
-            key:"wxSearchHisKeys",
-            data:value,
-            success: function(){
+            key: "wxSearchHisKeys",
+            data: value,
+            success: function () {
                 getHisKeys(that);
             }
         })
-    }else{
+    } else {
         value = [];
         value.push(text);
         wx.setStorage({
-            key:"wxSearchHisKeys",
-            data:value,
-            success: function(){
+            key: "wxSearchHisKeys",
+            data: value,
+            success: function () {
                 getHisKeys(that);
             }
         })
     }
-    
-    
+
+
 }
-function wxSearchDeleteKey(e,that) {
+function wxSearchDeleteKey(e, that) {
     var text = e.target.dataset.key;
     var value = wx.getStorageSync('wxSearchHisKeys');
-    value.splice(value.indexOf(text),1);
+    value.splice(value.indexOf(text), 1);
     wx.setStorage({
-        key:"wxSearchHisKeys",
-        data:value,
-        success: function(){
+        key: "wxSearchHisKeys",
+        data: value,
+        success: function () {
             getHisKeys(that);
         }
     })
 }
-function wxSearchDeleteAll(that){
+function wxSearchDeleteAll(that) {
     wx.removeStorage({
         key: 'wxSearchHisKeys',
-        success: function(res) {
+        success: function (res) {
             var value = [];
             var temData = that.data.wxSearchData;
             temData.his = value;
             that.setData({
                 wxSearchData: temData
             });
-        } 
+        }
     })
 }
 
@@ -211,8 +323,8 @@ module.exports = {
     wxSearchFocus: wxSearchFocus,
     wxSearchBlur: wxSearchBlur,
     wxSearchKeyTap: wxSearchKeyTap,
-    wxSearchAddHisKey:wxSearchAddHisKey,
-    wxSearchDeleteKey:wxSearchDeleteKey,
-    wxSearchDeleteAll:wxSearchDeleteAll,
-    wxSearchHiddenPancel:wxSearchHiddenPancel
+    wxSearchAddHisKey: wxSearchAddHisKey,
+    wxSearchDeleteKey: wxSearchDeleteKey,
+    wxSearchDeleteAll: wxSearchDeleteAll,
+    wxSearchHiddenPancel: wxSearchHiddenPancel
 }
