@@ -18,10 +18,12 @@
     </view>
   </view>
 </scroll-view>  
-<view class="footer">
-<loading hidden="{{hidden}}">
-        加载中...
-    </loading>
-    <button bindtap="modalTap" data-spaceId="{{spaceId}}">确定</button>
+  <view class="foot">
+    <loading hidden="{{hidden}}">
+          加载中...
+      </loading>
+       <button class="foot_button" bindtap="modalTap" data-spaceId="{{spaceId}}">确定</button>
+    
   </view>
+  
 </form>

@@ -46,26 +46,6 @@ textarea{
 .camera{
     margin: 15px 5px 15px 10px;
 }
-.footer {
-  width: 77.34375%;
-  height: 100rpx;
-  padding:2% 11.328%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  background: #13b1a3;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 5px;
-}
-button{
-  line-height:1.5555555600000004;
-  background: #13b1a3;
-  color:#fff;
-}
 button::after{
   border: 0;
 }
@@ -184,4 +164,23 @@ button::after{
   border: 1px solid #e6e6e6;
   flex-grow: 0;
   background: #fff;
+}
+/*02-08修改button样式*/
+.foot_button{
+    position:absolute;
+    left:40.625vw;
+    bottom:0;
+    margin-left: -40.5%;
+    width: 100vw;
+    background: #13b1a3;
+    color: #fff;
+}
+.foot{
+  width: 100vw;
+  height: 46px;
+  background: #13b1a3;
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  border-radius:5px;
 }

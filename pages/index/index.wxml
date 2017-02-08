@@ -27,7 +27,7 @@
    <text>全部</text>
   </view>
   <navigator url="/pages/searchList/searchList" id="1" class="screenk {{currentShai==1? 'active' : ''}}">
-    <text>筛选</text>
+    <text class="delete_border">筛选</text>
   </navigator>
 </view>
 <!--内容列表-->
