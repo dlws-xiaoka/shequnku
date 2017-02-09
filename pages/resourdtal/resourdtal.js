@@ -10,7 +10,7 @@ Page({
     schoolId:"",
     userTypeId:"",
     spaceName:"",
-    schoolName:"",
+    cityName:"",
     remark:"",
     spaceId:"",
     resouId:"",
@@ -61,7 +61,7 @@ Page({
         console.log(res)
         that.setData({
           spaceName: res.data.data.spaceName,
-          schoolName: res.data.data.schoolName,
+          cityName: res.data.data.cityName,
           remark: res.data.data.remark,
           headImgUrl:res.data.data.headImgUrl
         })
@@ -74,6 +74,13 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onShareAppMessage: function () {
+    return {
+      title: app.shareshareTitle,
+      desc: '',
+      path: '/page/index/index'
+    }
   },
    addsource(event){
      wx.navigateTo({

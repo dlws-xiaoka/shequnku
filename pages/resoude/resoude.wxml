@@ -1,57 +1,56 @@
+
 <!--pages/myroom/myroom.wxml-->
 <view class="user-top">
-<view >
-        <view class="head">
-            <image  class="headimg" src="{{userInfo.headImgUrl}}"></image>       
-        </view>
-        <view class="headname">
-           {{userInfo.spaceName}}
-        </view>
-        <view class="headcity">
-         {{userInfo.cityName}}|{{userInfo.schoolName}}
-        </view>
-        <view class="information_content">
-          <view class="information_name">简介:</view>
-          <text class="information">{{userInfo.remark}}</text>
-        </view>
-        
-</view>
-<navigator url="/pages/wordinfo/wordinfo?spaceId={{userInfo.id}}&openId={{userInfo.openId}}">
-        <view class="word">
-          <text class="liu">给我留言</text>
-        </view>
-</navigator>
+  <view>
+    <view class="head">
+      <image class="headimg" src="{{userInfo.headImgUrl}}"></image>
     </view>
+    <view class="headname">
+      {{userInfo.spaceName}}
+    </view>
+    <view class="headcity">
+      {{userInfo.cityName}}|{{userInfo.schoolName}}
+    </view>
+    <view class="information_content">
+      <view class="information_name">简介:</view>
+      <text class="information">{{userInfo.remark}}</text>
+    </view>
+  </view>
+  <view class="word">
+    <navigator url="/pages/wordinfo/wordinfo?spaceId={{userInfo.id}}&openId={{userInfo.openId}}">
+      <text class="liu">给我留言</text>
+    </navigator>
+  </view>
+</view>
 <view class="ability">业务技能</view>
 <view class="line"></view>
 <view class="service" wx:for="{{businessList}}" wx:for-index="idx">
-   <view class="service_content">
-     <text class="num">{{idx+1}}.</text>
-     <text class="name">{{item.categoryName}}</text>
-   </view>
+  <view class="service_content">
+    <text class="num">{{idx+1}}.</text>
+    <text class="name">{{item.categoryName}}</text>
+  </view>
 </view>
 <view class="bian"></view>
 <view class="ability">案例</view>
 <view class="line"></view>
+
 <!--案例部分-->
 <view class="case" wx:for="{{caseList}}" wx:for-item="items">
-  <navigator  url="/pages/example/example?id={{items.id}}">
+  <navigator url="/pages/example/example?id={{items.id}}">
     <view class="title">
       <view class="left">{{items.title}}</view>
-      <view class="content_right" >
-          <image src="/image/more.png" class="photo"></image>
+      <view class="content_right">
+        <image src="/image/more.png" class="photo"></image>
       </view>
     </view>
     <view class="production">{{items.caseContent}}</view>
     <view class="pic_box">
-        <view class="photo_box" wx:for="{{items.imgList}}" wx:for-item="itemName">
-          <image src="{{itemName.imgUrl}}" class="photo"></image>
-        </view>
+      <view class="photo_box" wx:for="{{items.imgList}}" wx:for-item="itemName">
+        <image src="{{itemName.imgUrl}}" class="photo"></image>
+      </view>
     </view>
-   </navigator>
+  </navigator>
 </view>
-
-
 
 <!--
 <view class="case">
