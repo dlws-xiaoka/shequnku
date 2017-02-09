@@ -54,6 +54,7 @@ Page({
     scrollHeight: 0,
     sysNickName: ""
   },
+
   onLoad: function () {
     console.log('onLoad')
     openId = app.getSysOpenId();
@@ -96,5 +97,12 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
+  },
+  onShareAppMessage: function () {
+    return {
+      title: app.shareshareTitle,
+      desc: '',
+      path: '/page/index/index'
+    }
   }
 })

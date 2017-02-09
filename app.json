@@ -14,7 +14,7 @@
         "pages/schoolTree/schoolTree",
         "pages/myCase/myCase",
         "pages/example/example",
-        
+        "pages/wordinfo/wordinfo",
         "pages/login/login",
         "pages/filter/filter",
         "pages/wordlist/wordlist"

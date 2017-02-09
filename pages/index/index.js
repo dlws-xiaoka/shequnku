@@ -77,7 +77,6 @@ Page({
     hidden:true,
         list:[],
         scrollTop : 0,
-        scrollHeight:0,
         userTypeId:""
   },
    onShareAppMessage: function () {
@@ -87,15 +86,12 @@ Page({
       path: '/page/index/index'
     }
   },
-
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
      success:function(res){
-       console.info(res.windowHeight);
-       that.setData({
-         scrollHeight:res.windowHeight
-       });
+       console.info("windowHeight="+res.windowHeight);
+       
      }
    });
 

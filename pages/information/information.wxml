@@ -16,7 +16,7 @@
   <view class="top"></view>
   <view class="content_wrapper">
     <view class="content">
-      <block wx:if="{{resourceMap.typeName=='社团'}}">
+      <block wx:if="{{resourceMap.typeFlag=='st'}}">
         <view class="content_detail">
           <text class="content_name1">社团名称</text>
           <input name="spaceName" value="{{spaceName}}" class="content_name2" placeholder="请输入社团名称" />
@@ -26,7 +26,7 @@
 
         </view>
       </block>
-      <block wx:if="{{typeName=='微信公众号'}}">
+      <block wx:if="{{resourceMap.typeFlag=='gzh'}}">
           <view class="content_detail">
             <text class="content_name1">公众号名称</text>
             <input name="spaceName" value="{{spaceName}}" class="content_nameW" placeholder="请输入公众号名称" />
@@ -49,7 +49,7 @@
       </block>
    
 
-      <block wx:if="{{resourceMap.typeName=='微信群'}}">
+      <block wx:if="{{resourceMap.typeFlag=='wxq'}}">
        <view class="content_detail">
         <text class="content_name1">微信群名称</text>
         <input name="spaceName" value="{{spaceName}}" class="content_nameW" placeholder="请输入微信群名称" />
@@ -70,7 +70,7 @@
         </view>
       </block>
 
-      <block wx:if="{{resourceMap.typeName=='QQ群'}}">
+      <block wx:if="{{resourceMap.typeFlag=='qqq'}}">
         <view class="content_detail">
           <text class="content_name1">QQ群名称</text>
           <input name="spaceName" value="{{spaceName}}" class="content_nameQ" placeholder="请输入QQ群名称" />
@@ -92,7 +92,7 @@
       </block>
 
       
-      <block wx:if="{{resourceMap.typeName=='社团'}}">
+      <block wx:if="{{resourceMap.typeFlag=='st'}}">
         <view class="content_detail">
           <text class="content_name1">选择省</text>
           <picker name="provinceName" class="content_nameP" bindchange="changeProven" value="{{provinceName}}" range="{{provinceList}}">

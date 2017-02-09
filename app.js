@@ -11,7 +11,7 @@ App({
   sysOpenId: '101',
   sysNickName:"我",
   aaisysHeadImgUrl :"",
-  shareshareTitle:'校咖社群部落',
+  shareshareTitle:'校咖社群部落',//分享标题
   getUserInfo: function (cb) {
     var that = this;
     var remoteAddress = that.remoteAddressdxf();
