@@ -127,6 +127,5 @@ Page({
       desc: '',
       path: '/page/index/index'
     }
-  },
-  
+  }
 })
