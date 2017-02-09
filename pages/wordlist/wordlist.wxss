@@ -27,12 +27,15 @@
   }
 }
 .items{
-  margin: 17px 0;
+  margin: 17px 0 0;
   color: #999;
   font-size: 3.75vw;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
 }
 .person,.time{
-  float: left;
+   flex-grow: 0;
 }
 .time{
   margin-left:30.25%;
