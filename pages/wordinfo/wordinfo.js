@@ -1,6 +1,7 @@
 // pages/wordinfo/wordinfo.js
 var app = getApp();
 var openId = app.getSysOpenId();
+console.log(openId)
 var cusOpenId = "";
 
 var sysurl = app.remoteAddressdxf();

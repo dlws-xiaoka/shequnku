@@ -1,11 +1,11 @@
 
 <!--pages/information/information.wxml-->
 <form class="page__bd" bindsubmit="formSubmit">
+<scroll-view style="overflow:hidden;">
   <view class="user-top">
     <view class="head">
       <image class="headimg" src="{{userInfo.avatarUrl}}"></image>
     </view>
-
     <!--<view class="headname">
              <input placeholder="社团名称" value="" /> 
         </view>
@@ -23,7 +23,6 @@
           <view class="content_pic">
             <image src="/image/more.png" class="photo"></image>
           </view>
-
         </view>
       </block>
       <block wx:if="{{typeName=='微信公众号'}}">
@@ -45,10 +44,7 @@
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
-     
       </block>
-   
-
       <block wx:if="{{resourceMap.typeName=='微信群'}}">
        <view class="content_detail">
         <text class="content_name1">微信群名称</text>
@@ -90,8 +86,6 @@
         </view>
         </view>
       </block>
-
-      
       <block wx:if="{{resourceMap.typeName=='社团'}}">
         <view class="content_detail">
           <text class="content_name1">选择省</text>
@@ -143,5 +137,6 @@
       </view>
     </view>
   </view>
+</scroll-view>
   <button class="foot_button" form-type="submit">提交</button>
 </form>

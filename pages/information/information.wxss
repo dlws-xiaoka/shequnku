@@ -146,3 +146,9 @@ button{
     margin-left: -40.5%;
     width: 100vw;
 }
+/*02-09解决iphone4下乱样式问题*/
+@media only screen and (min-height: 300px) and (max-height: 567px) {
+			button{
+        position: relative;
+      }
+		}
