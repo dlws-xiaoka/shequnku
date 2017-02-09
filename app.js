@@ -98,6 +98,6 @@ App({
     //部署环境使用
     return "https://xcx.xiaoka360.com/dlws-xiaoka-shequnku/";
     //本地环境使用
-   // return "http://localhost:8080/dlws-xiaoka-shequnku/";
+  //  return "http://localhost:8080/dlws-xiaoka-shequnku/";
   }
 })
