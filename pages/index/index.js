@@ -80,14 +80,6 @@ Page({
         scrollHeight:0,
         userTypeId:""
   },
-   onShareAppMessage: function () {
-    return {
-      title: app.shareshareTitle,
-      desc: '',
-      path: '/page/index/index'
-    }
-  },
-
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
