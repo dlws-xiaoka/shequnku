@@ -77,28 +77,27 @@ Page({
     hidden:true,
         list:[],
         scrollTop : 0,
-        scrollHeight:0,
         userTypeId:""
   },
+   onShareAppMessage: function () {
+    return {
+      title: app.shareshareTitle,
+      desc: '',
+      path: '/page/index/index'
+    }
+  },
+
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
      success:function(res){
-       console.info(res.windowHeight);
-       that.setData({
-         scrollHeight:res.windowHeight
-       });
+       console.info("windowHeight="+res.windowHeight);
+       
      }
    });
 
   },
-  onShareAppMessage: function () {
-    return {
-      title: '',
-      desc: '校咖社群部落',
-      path: '/page/index/index'
-    }
-  },
+
    switchTab: function(e){
      console.info(e); 
     this.setData({

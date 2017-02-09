@@ -56,6 +56,13 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  onShareAppMessage: function () {
+    return {
+      title: $vm.shareshareTitle,
+      desc: '',
+      path: '/page/index/index'
+    }
+  },
   addsource(event) {
     wx.navigateTo({
       url: '../choosetype/choosetype'

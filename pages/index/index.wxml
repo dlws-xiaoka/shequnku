@@ -52,7 +52,7 @@
     </view>
 </scroll-view>
 <view class="body-view">
-    <loading hidden="{{hidden}}" bindchange="loadingChange">
+    <loading hidden="{{hidden}}">
     加载中...
     </loading>
 </view>
