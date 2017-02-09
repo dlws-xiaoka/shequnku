@@ -80,12 +80,14 @@ Page({
         scrollHeight:0,
         userTypeId:""
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+   onShareAppMessage: function () {
+    return {
+      title: '社群库',
+      desc: '快来看看我的部落',
+      path: '/page/index/index'
+    }
   },
+
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
