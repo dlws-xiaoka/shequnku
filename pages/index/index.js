@@ -82,8 +82,8 @@ Page({
   },
    onShareAppMessage: function () {
     return {
-      title: '社群库',
-      desc: '快来看看我的部落',
+      title: app.shareshareTitle,
+      desc: '',
       path: '/page/index/index'
     }
   },

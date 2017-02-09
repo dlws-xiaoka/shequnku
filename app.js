@@ -10,7 +10,8 @@ App({
   },
   sysOpenId: '101',
   sysNickName:"我",
-  sysHeadImgUrl :"",
+  aaisysHeadImgUrl :"",
+  shareshareTitle:'校咖社群部落',
   getUserInfo: function (cb) {
     var that = this;
     var remoteAddress = that.remoteAddressdxf();
