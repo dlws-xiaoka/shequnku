@@ -45,10 +45,8 @@
             <image src="/image/more.png" class="photo"></image>
           </view>
         </view>
-     
       </block>
    
-
       <block wx:if="{{resourceMap.typeFlag=='wxq'}}">
        <view class="content_detail">
         <text class="content_name1">微信群名称</text>
