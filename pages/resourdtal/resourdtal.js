@@ -10,7 +10,7 @@ Page({
     schoolId:"",
     userTypeId:"",
     spaceName:"",
-    schoolName:"",
+    cityName:"",
     remark:"",
     spaceId:"",
     resouId:"",
@@ -61,7 +61,7 @@ Page({
         console.log(res)
         that.setData({
           spaceName: res.data.data.spaceName,
-          schoolName: res.data.data.schoolName,
+          cityName: res.data.data.cityName,
           remark: res.data.data.remark,
           headImgUrl:res.data.data.headImgUrl
         })

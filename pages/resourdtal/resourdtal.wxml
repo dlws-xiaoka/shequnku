@@ -8,7 +8,7 @@
             社群名称:{{spaceName}}
         </view>
         <view class="headcity">
-         城市名称:{{schoolName}}
+         城市名称:{{cityName}}
         </view>
         <text class="information">简介:{{remark}}</text>
 </view>
