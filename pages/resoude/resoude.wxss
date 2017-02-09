@@ -39,7 +39,7 @@
     margin: 0 15px;
     display: flex;
     flex-flow: nowrap row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 .information_name{
     width: 30vw;

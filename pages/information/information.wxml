@@ -29,7 +29,7 @@
       <block wx:if="{{typeName=='微信公众号'}}">
           <view class="content_detail">
             <text class="content_name1">公众号名称</text>
-            <input name="spaceName" value="{{spaceName}}" class="content_nameP" placeholder="请输入公众号名称" />
+            <input name="spaceName" value="{{spaceName}}" class="content_nameW" placeholder="请输入公众号名称" />
             <view class="content_pic">
               <image src="/image/more.png" class="photo"></image>
             </view>
@@ -50,8 +50,13 @@
    
 
       <block wx:if="{{resourceMap.typeName=='微信群'}}">
+       <view class="content_detail">
         <text class="content_name1">微信群名称</text>
         <input name="spaceName" value="{{spaceName}}" class="content_nameW" placeholder="请输入微信群名称" />
+         <view class="content_pic">
+            <image src="/image/more.png" class="photo"></image>
+          </view>
+        </view>
         <view class="content_detail">
           <text class="content_name1">微信群类别</text>
           <picker name="childcategoryId" class="content_nameP" bindchange="wxType" value="{{chidCaId}}" range="{{childCategoryList}}">
