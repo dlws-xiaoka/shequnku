@@ -39,15 +39,16 @@
     margin: 0 15px;
     display: flex;
     flex-flow: nowrap row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 .information_name{
-    width: 30vw;
+    width: 10vw;
     color:#fff;
     font-size: 4.0625vw;
     
 }
 .information{
+    width: 81.25vw;
     word-break: break-all;
     color:#fff;
     font-size: 4.0625vw;

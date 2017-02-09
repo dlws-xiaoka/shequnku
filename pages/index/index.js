@@ -80,12 +80,14 @@ Page({
         scrollHeight:0,
         userTypeId:""
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+   onShareAppMessage: function () {
+    return {
+      title: app.shareshareTitle,
+      desc: '',
+      path: '/page/index/index'
+    }
   },
+
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
