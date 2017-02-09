@@ -37,9 +37,9 @@
 .person,.time{
    flex-grow: 0;
 }
-.time{
+/*.time{
   margin-left:30.25%;
-}
+}*/
 .info{
   width: 72.6875vw;
  overflow: hidden;
