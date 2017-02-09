@@ -86,6 +86,7 @@ Page({
       path: '/page/index/index'
     }
   },
+
   onLoad: function () {
     var that = this;
      wx.getSystemInfo({
@@ -96,6 +97,7 @@ Page({
    });
 
   },
+
    switchTab: function(e){
      console.info(e); 
     this.setData({
