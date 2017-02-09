@@ -22,7 +22,7 @@
           <view class="input">
           <input class="input_font" bindfocus="bindfocus" bindinput='bindblur' value="{{emptyMessage}}" placeholder="请输入留言" type="text" /></view>
         </view>
-       <view  class="">
+       <view>
           <button bindtap='send' data-spaceId="{{item.id}}" data-openId="{{item.id}}">发送</button>
         </view>
     </view>
