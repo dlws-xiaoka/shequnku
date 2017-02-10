@@ -99,6 +99,7 @@ Page({
   },
 
    switchTab: function(e){
+
      console.info(e); 
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx,
