@@ -58,7 +58,7 @@ checkbox-group{
 }
 /*02-08修改button样式*/
 .foot_button{
-    position:absolute;
+    /*position:absolute;*/
     left:40.625vw;
     bottom:0;
     margin-left: -40.5%;
