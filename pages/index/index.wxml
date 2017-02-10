@@ -8,6 +8,10 @@
        <image class="img-size" src="/image/search.png"></image>
     </navigator>
 </view>
+
+
+<scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" scroll-x="true" style="height:500px;"
+            class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
 <swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
    <block wx:for="{{movies}}" wx:for-index="index">  
     <swiper-item>  
@@ -32,8 +36,6 @@
 </view>
 <!--内容列表-->
 
-<scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" scroll-x="true" style="height:500px;"
-            class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
     <view class="navigator_content" wx:for="{{datasource}}">
         <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
             <view class="article__thumb">
