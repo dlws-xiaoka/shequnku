@@ -227,6 +227,14 @@ Page({
       allValue: e.detail.value
     })
     var arr = e.detail.value;
+    if(arr.spaceName.length<1){
+      wx.showToast({
+        title: '名称不为空',
+        icon: 'loading',
+        duration: 2000
+      })
+      return;
+    }
     //手机验证
     var reg=/^0?(13|15|18|17)[0-9]{9}$/; 
     if (reg.test(arr.phone)==false) {
