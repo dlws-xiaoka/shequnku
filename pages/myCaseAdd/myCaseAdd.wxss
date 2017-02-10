@@ -150,20 +150,24 @@ button::after{
   line-height: 50rpx;
   border: 1px solid #efeff4;
 }
-/*新增样式*/
+/*新增样式 02-1修改图片排列问题*/
 .add_container{
-  width: 100%;
+  width: 90.625vw;
+  margin: 0 auto;
   overflow: hidden;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
+  /*justify-content: space-around;*/
+
 }
 .add_picture{
   width:22.0625vw;
   height:22.0625vw;
   border: 1px solid #e6e6e6;
-  flex-grow: 0;
+  /*flex-grow: 0;*/
   background: #fff;
+  float: left;
+  margin-right:15px;
 }
 /*02-08修改button样式*/
 .foot_button{
@@ -179,17 +183,14 @@ button::after{
   width: 100vw;
   height: 46px;
   background: #13b1a3;
-  position:absolute;
+  position:fixed;
   left: 0;
   bottom: 0;
   border-radius:5px;
 }
 /*02-09解决iphone4下乱样式问题*/
 @media only screen and (min-height: 300px) and (max-height: 567px) {
-			.foot_button{
-        position:relative;
-      }
-      .foot{
-        position: static;
+			.add_container{
+        margin-bottom: 35px;
       }
 		}

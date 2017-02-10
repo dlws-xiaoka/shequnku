@@ -13,20 +13,26 @@
 <view hidden="{{hide}}">
   <view wx:for="{{wxSData}}">
     <navigator class="navigator_content" url="/pages/resoude/resoude?id={{item.id}}">
-      <view class="article__item">
-        <view class="article__thumb">
-          <image class="article__image" src="{{item.headImgUrl}}"></image>
-        </view>
-        <view class="article__info">
-          <view class="article__title">{{item.spaceName}}</view>
-          <view class="article__desc">
-            <text class="article__time">{{item.schoolName}}</text>
+      <view style="width:60vw;float:left;">
+        <view class="article__item">
+          <view class="article__thumb">
+            <image class="article__image" src="{{item.headImgUrl}}"></image>
           </view>
-          <view class="article__descs">
-            <text class="article__schol">{{item.remark}}</text>
+          <view class="article__info">
+            <view class="article__title">{{item.spaceName}}</view>
+            <view class="article__desc">
+              <text class="article__time">{{item.schoolName}}</text>
+            </view>
+            <view class="article__descs">
+              <text class="article__schol">{{item.remark}}</text>
+            </view>
           </view>
         </view>
-      </view>
+    </view>  
+   <view style="width:30vw;float:left; text-align:right;padding:85rpx 0 0;">
+      <text style="font-size:4.0625vw;">类别：</text>
+      <text style="font-size:4.0625vw;">公众号</text>
+   </view> 
     </navigator>
   </view>
 </view>
