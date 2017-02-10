@@ -1,4 +1,5 @@
 <form class="page__bd" bindsubmit="formSubmit">
+<scroll-view>
   <block wx:for="{{businessAllCategoryList}}" wx:for-index="idx">
     <view class="sorting">
       <view class="title">
@@ -19,5 +20,6 @@
       </checkbox-group>
     </view>
   </block>
+</scroll-view>
   <button class="foot_button" form-type="submit">提交</button>
 </form>
