@@ -182,6 +182,7 @@ Page({
                 uploadPics = "";
                 msgtitle = "";
                 msgcontant = "";
+                tempFilePaths="";
                 console.info(res);
                 wx.redirectTo({
                   url: '../myCase/myCase?spaceId=' + spaceId
