@@ -1,6 +1,7 @@
 //index.js
 
 var page=0;
+var pageNum=0;
 var page_size=5;
 var userType=""
 //获取应用实例
@@ -37,7 +38,7 @@ var GetList = function(that){
         success: function (res) {
           console.log(res)
           var datasourceL = that.data.datasource;
-          if(page<res.data.data.po.absolutePage){
+          if(pageNum<res.data.data.po.absolutePage){
             for(var i=0;i<res.data.data.po.datasource.length;i++){
             datasourceL.push(res.data.data.po.datasource[i]);
             }
@@ -115,6 +116,7 @@ Page({
     var id = e.currentTarget.dataset.id
     userType=id;
     page=0;
+    pageNum=0;
     GetList(that);
   },
  
@@ -129,7 +131,8 @@ Page({
   bindDownLoad: function () {
     //  该方法绑定了页面滑动到底部的事件
     var that = this;
-    page++;
+    page+=10;
+    pageNum++;
     GetList(that);
   },
   scroll: function (event) {
@@ -141,6 +144,7 @@ Page({
   switchAll:function(e){
     var that=this;
     page=0;
+    pageNum=0;
     userType="all"
     this.setData({
       datasource:[]

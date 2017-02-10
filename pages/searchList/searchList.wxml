@@ -30,8 +30,8 @@
         </view>
     </view>  
    <view style="width:30vw;float:left; text-align:right;padding:85rpx 0 0;">
-      <text style="font-size:4.0625vw;">类别：</text>
-      <text style="font-size:4.0625vw;">公众号</text>
+      <text style="font-size:4.0625vw;"></text>
+      <text style="font-size:4.0625vw;">{{item.typeName}}</text>
    </view> 
     </navigator>
   </view>
