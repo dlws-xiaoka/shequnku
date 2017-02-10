@@ -71,3 +71,9 @@ background-color:#fff;
 button::after{
     border: 0;
 }
+/*02-10新增样式*/
+.navigator_content{
+     display: flex;
+     flex-flow: row nowrap;
+     justify-content: space-between;
+}
