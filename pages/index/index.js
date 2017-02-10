@@ -123,6 +123,8 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    page=0;
+    pageNum=0;
     this.setData({
       datasource:[]
     });
