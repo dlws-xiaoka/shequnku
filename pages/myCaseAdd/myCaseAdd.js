@@ -195,13 +195,6 @@ Page({
         console.log('服务器返回地址----------------' + uploadPics);
       }
     })
-  },
-  onShareAppMessage: function () {
-    return {
-      title: $vm.shareshareTitle,
-      desc: '',
-      path: '/page/index/index'
-    }
   }
 
 
