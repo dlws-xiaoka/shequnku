@@ -35,8 +35,8 @@ Page({
     businessCategoryList: '',
     childCategoryList: '',
     chidCatIndex: 0,
-    chidCaId: '',
-
+    chidCaId: ''
+   
   },
 
 
