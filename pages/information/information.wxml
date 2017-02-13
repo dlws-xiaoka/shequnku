@@ -1,7 +1,7 @@
 
 <!--pages/information/information.wxml-->
 <form class="page__bd" bindsubmit="formSubmit">
-  <scroll-view style="overflow:hidden;">
+  <scroll-view scroll--y="true" style="height:84.5vw;">
     <view class="user-top">
       <view class="head">
         <image class="headimg" src="{{userInfo.avatarUrl}}"></image>

@@ -21,7 +21,7 @@
   </swiper>
 <!--tab按钮-->
 <view class="top-tab flex-wrp flex-tab " >
-  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" data-id="{{itemName.id}}" bindtap="switchTab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" data-id="{{itemName.id}}" data-typeFlag='{{itemName.typeFlag}}' bindtap="switchTab">
    <view>{{itemName.typeName}}</view>
   </view>
 </view>
@@ -29,8 +29,8 @@
 <view class="flex-wrp vi-screnk">
   <view id="0" class="screenk {{currentShai==0? 'active' : ''}}" bindtap="switchAll">
    <text>全部</text>
-  </view>
-  <navigator url="/pages/searchList/searchList" id="1" class="screenk {{currentShai==1? 'active' : ''}}">
+  </view><!--"pages/filter/filter",-->
+  <navigator url="/pages/filter/filter?pid={{pid}}&typeFlag={{typeFlag}}" id="1" class="screenk {{currentShai==1? 'active' : ''}}">
     <text class="delete_border">筛选</text>
   </navigator>
 </view>

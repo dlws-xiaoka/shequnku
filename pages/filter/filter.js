@@ -1,99 +1,54 @@
 // pages/filter/filter.js
-// Page({
-//   data:{
-//      setDisabled: function(e) {
-//     this.setData({
-//       disabled: !this.data.disabled
-//     })
-//   },
-//     locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
-//       locationArray2:['信阳市','保定市','合肥市','南阳市'],
-  
-//   locationIndex: 2,
-//   locationIndex2: 1,
-//   handleLocationPickerChange(e) {
-//     if (this.data.locationIndex || e.detail.value) {
 
-//       this.setData({
-//         locationIndex: e.detail.value
-//       });
-//     }
-//   },
-//   handleLocationPickerChange2(e) {
-//     if (this.data.locationIndex2 || e.detail.value) {
-
-//       this.setData({
-//         locationIndex2: e.detail.value
-//       });
-//     }
-//   },
- 
-//   onLoad:function(options){
-//     // 页面初始化 options为页面跳转所带来的参数
-//   },
-//   onReady:function(){
-//     // 页面渲染完成
-//   },
-//   onShow:function(){
-//     // 页面显示
-//   },
-//   onHide:function(){
-//     // 页面隐藏
-//   },
-//   onUnload:function(){
-//     // 页面关闭
-//   }
-//  }
-  
-// })
 var tcity = require("../../utils/city.js");
 
 var app = getApp()
-var openId=app.getSysOpenId();
-
+var remoteAddress = app.remoteAddressdxf();
+var openId = app.getSysOpenId();
+var pid = "";
+var chidCaIdArr = "";
+var childcategoryId = 0;
+var provincedan = "";//所有省
+var provinceSin = "";//传后台的省
+var cityIdArr = "";
+var cityId = "";
 Page({
-  data:{
-     setDisabled: function(e) {
-    this.setData({
-      disabled: !this.data.disabled
-    })
-  },
-  // provinces: [],
-  //   province: "",
-  //   citys: [],
-  //   city: "",
-  //   countys: [],
-  //   county: '',
-  //   value: [0, 0, 0],
-  //   values: [0, 0, 0],
-  //   condition: false,
-  // setPlain: function(e) {
-  //   this.setData({
-  //     plain: !this.data.plain
-  //   })
-  // },
-  // setLoading: function(e) {
-  //   this.setData({
-  //     loading: !this.data.loading
-  //   })
-  // },
-     locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
-      locationArray2:['信阳市','保定市','合肥市','南阳市'],
-      locationArray3:['清华大学','北京大学','安徽大学','暨南大学'],
-      items: [
-      {value: '一级分类'},
-      {value: '二级分类', checked: 'true'},
-      {value: '二三级分类'},
-      {value: '分类'},
-      {value: '英国'},
-      {value: '法国'},
-    ]
+  data: {
+    setDisabled: function (e) {
+      this.setData({
+        disabled: !this.data.disabled
+      })
+    },
+
+    businessCategoryList: '',
+    locationArray: ['河北', '河南', '安徽', '云南', '贵州', '江西', '广州', '广西', '福建', '山东'],
+    locationArray2: ['信阳市', '保定市', '合肥市', '南阳市'],
+    typeFlag: "",
+    childCategoryList: '',
+    chidCatIndex: 0,
+    chidCaId: '',
+    provinceList: '',
+    ProvenIndex: 0,
+    
+    provinceSin: '',//传后台的省
+    cityList: '',
+    cityIndex: 0,
+
+    locationArray3: ['清华大学', '北京大学', '安徽大学', '暨南大学'],
+    items: [
+      { value: '一级分类' },
+      { value: '二级分类', checked: 'true' },
+      { value: '二三级分类' },
+      { value: '分类' },
+      { value: '英国' },
+      { value: '法国' },
+    ],
   },
   locationIndex: 2,
   locationIndex2: 1,
   locationIndex2: 1,
-  chooseSchool(e){
-    if (this.data.locationIndex3|| e.detail.value) {
+  chooseSchool(e) {
+    if (this.data.locationIndex3 || e.detail.value) {
 
       this.setData({
         locationIndex3: e.detail.value
@@ -116,54 +71,54 @@ Page({
       });
     }
   },
- bindChange: function(e) {
+  bindChange: function (e) {
     //console.log(e);
     var val = e.detail.value
     var t = this.data.values;
     var cityData = this.data.cityData;
-    
-    if(val[0] != t[0]){
+
+    if (val[0] != t[0]) {
       console.log('province no ');
       const citys = [];
       const countys = [];
 
-      for (let i = 0 ; i < cityData[val[0]].sub.length; i++) {
+      for (let i = 0; i < cityData[val[0]].sub.length; i++) {
         citys.push(cityData[val[0]].sub[i].name)
       }
-      for (let i = 0 ; i < cityData[val[0]].sub[0].sub.length; i++) {
+      for (let i = 0; i < cityData[val[0]].sub[0].sub.length; i++) {
         countys.push(cityData[val[0]].sub[0].sub[i].name)
       }
 
       this.setData({
         province: this.data.provinces[val[0]],
         city: cityData[val[0]].sub[0].name,
-        citys:citys,
+        citys: citys,
         county: cityData[val[0]].sub[0].sub[0].name,
-        countys:countys,
+        countys: countys,
         values: val,
-        value:[val[0],0,0]
+        value: [val[0], 0, 0]
       })
-      
+
       return;
     }
-    if(val[1] != t[1]){
+    if (val[1] != t[1]) {
       console.log('city no');
       const countys = [];
 
-      for (let i = 0 ; i < cityData[val[0]].sub[val[1]].sub.length; i++) {
+      for (let i = 0; i < cityData[val[0]].sub[val[1]].sub.length; i++) {
         countys.push(cityData[val[0]].sub[val[1]].sub[i].name)
       }
-      
+
       this.setData({
         city: this.data.citys[val[1]],
         county: cityData[val[0]].sub[val[1]].sub[0].name,
-        countys:countys,
+        countys: countys,
         values: val,
-        value:[val[0],val[1],0]
+        value: [val[0], val[1], 0]
       })
       return;
     }
-    if(val[2] != t[2]){
+    if (val[2] != t[2]) {
       console.log('county no');
       this.setData({
         county: this.data.countys[val[2]],
@@ -171,64 +126,235 @@ Page({
       })
       return;
     }
-    
+
 
   },
-   open:function(){
+  open: function () {
     this.setData({
-      condition:!this.data.condition
+      condition: !this.data.condition
     })
   },
-  onLoad: function () {
+  onLoad: function (e) {
     console.log("onLoad");
     var that = this;
-    
+    pid = e.pid;
+    //获取筛选类型
+    that.setData({
+      typeFlag: e.typeFlag
+    })
     tcity.init(that);
+
+
+
+
+
+
+    //一级分类
+    wx.request({
+      url: remoteAddress + 'xcxIndex/getBusinessList.html',
+      data: {},
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          businessCategoryList: res.data.data.businessCategoryList,
+        })
+        console.log(pid)
+        wx.request({
+          url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
+          data: { pId: pid },
+          method: 'GET',
+          success: function (res) {
+            var chidList = res.data.data.childCategoryList;
+            var chidCaArr = new Array();//子分类名称
+            chidCaIdArr = new Array();//子分类Id
+            if (chidList) {
+              for (var i = 0; i < chidList.length; i++) {
+                chidCaArr.push(chidList[i].childCategoryName);
+                chidCaIdArr.push(chidList[i].id);
+              }
+            }
+
+            that.setData({
+              childCategoryList: chidCaArr,
+              chidCaId: chidCaIdArr[0]
+            })
+            childcategoryId = chidCaIdArr[0];
+            //获取省市
+            wx.request({
+              url: remoteAddress + 'xcxIndex/getProvince.html',
+              data: {},
+              method: 'GET',
+              success: function (res) {
+                console.info(res);
+                var proArr = res.data.data.provinceList;
+                var resproArr = new Array();
+                for (var i = 0; i < proArr.length; i++) {
+                  resproArr.push(proArr[i].province);
+                }
+
+                that.setData({
+                  provinceList: resproArr
+                })
+                provincedan = resproArr;//省名称
+              }
+            })
+          }
+        })
+
+        // bussiLength = res.data.data.businessCategoryList.length;
+      }
+    })
 
     var cityData = that.data.cityData;
 
-    
+
     const provinces = [];
     const citys = [];
     const countys = [];
 
-    for(let i=0;i<cityData.length;i++){
+    for (let i = 0; i < cityData.length; i++) {
       provinces.push(cityData[i].name);
     }
     console.log('省份完成');
-    for (let i = 0 ; i < cityData[0].sub.length; i++) {
+    for (let i = 0; i < cityData[0].sub.length; i++) {
       citys.push(cityData[0].sub[i].name)
     }
     console.log('city完成');
-    for (let i = 0 ; i < cityData[0].sub[0].sub.length; i++) {
+    for (let i = 0; i < cityData[0].sub[0].sub.length; i++) {
       countys.push(cityData[0].sub[0].sub[i].name)
     }
 
     that.setData({
       'provinces': provinces,
-      'citys':citys,
-      'countys':countys,
-      'province':cityData[0].name,
-      'city':cityData[0].sub[0].name,
-      'county':cityData[0].sub[0].sub[0].name
+      'citys': citys,
+      'countys': countys,
+      'province': cityData[0].name,
+      'city': cityData[0].sub[0].name,
+      'county': cityData[0].sub[0].sub[0].name
     })
     console.log('初始化完成');
 
-
   },
 
+  changeUserType(e) {
+    var that = this;
+    schArrId = "";
+    if (this.data.typeIndex || e.detail.value) {
+      typeIndex = e.detail.value
+      this.setData({
+        typeIndex: e.detail.value,
+        TypeIdArray: TypeIdArray[typeIndex]
+      });
+    }
+    wx.request({
+      url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
+      data: { pId: TypeIdArray[typeIndex] },
+      method: 'GET',
+      success: function (res) {
+        var chidList = res.data.data.childCategoryList;
+        var chidCaArr = new Array();//子分类名称
+        chidCaIdArr = new Array();//子分类Id
+        if (chidList) {
+          for (var i = 0; i < chidList.length; i++) {
+            chidCaArr.push(chidList[i].childCategoryName);
+            chidCaIdArr.push(chidList[i].id);
+          }
+        }
 
+        that.setData({
+          childCategoryList: chidCaArr,
+          chidCaId: chidCaIdArr[0]
+        })
+        childcategoryId = chidCaIdArr[0];
+      }
+    })
 
-  onReady:function(){
+  },
+  wxType(e) {
+    var that = this;
+    if (this.data.chidCatIndex || e.detail.value) {
+      var chidCatIndex = e.detail.value
+      this.setData({
+        chidCatIndex: e.detail.value
+      });
+      childcategoryId = chidCaIdArr[chidCatIndex]
+    }
+  },
+changeProven(e) {
+    var that = this;
+    if (this.data.ProvenIndex || e.detail.value) {
+      var ProvenIndex = e.detail.value
+      this.setData({
+        ProvenIndex: e.detail.value,
+        provinceSin: provincedan[ProvenIndex]
+      });
+      var provinceb = provincedan[ProvenIndex];
+      provinceSin = provinceb;
+      //根据省选择市
+      wx.request({
+        url: remoteAddress + 'xcxIndex/getCityListByprovince.html',
+        data: { province: provinceb },
+        method: 'GET',
+        success: function (res) {
+          var cityArr = res.data.data.cityList;
+          var rescityArr = new Array();
+          var cityArrId = new Array();
+          for (var i = 0; i < cityArr.length; i++) {
+            rescityArr.push(cityArr[i].cityName);
+            cityArrId.push(cityArr[i].id);
+          }
+          cityIdArr = cityArrId;
+          that.setData({
+            cityList: rescityArr
+          })
+        }
+      })
+
+    }
+  },
+  changeCity(e) {
+    var that = this;
+    if (this.data.cityIndex || e.detail.value) {
+      var cityIndex = e.detail.value
+      this.setData({
+        cityIndex: e.detail.value
+      });
+    }
+    cityId = cityIdArr[cityIndex];
+    //根据市选择学校
+    wx.request({
+      url: remoteAddress + 'xcxIndex/getSchoolListByCityId.html',
+      data: { cityId: cityId },
+      method: 'GET',
+      success: function (res) {
+        var schooArr = res.data.data.schoolList;
+        reschollArr = new Array();//学校名称
+        var schollArrId = new Array();//学校Id
+        for (var i = 0; i < schooArr.length; i++) {
+          reschollArr.push(schooArr[i].schoolName);
+          schollArrId.push(schooArr[i].id);
+        }
+        schooIdArr = schollArrId;
+        schName = reschollArr[0];
+        that.setData({
+          schoolList: reschollArr,
+          schArrId: schooIdArr[0],//学校Id
+          schName: reschollArr[0]//学校名称
+        })
+        schArrId = schooIdArr[0];
+      }
+    })
+  },
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })
