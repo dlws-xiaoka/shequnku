@@ -121,12 +121,5 @@ Page({
     message = message;
     addMesage(that);
 
-  },
-  onShareAppMessage: function () {
-    return {
-      title: app.shareshareTitle,
-      desc: '',
-      path: '/page/index/index'
-    }
   }
 })

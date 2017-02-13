@@ -82,7 +82,7 @@ Page({
     return {
       title: app.shareshareTitle,
       desc: '',
-      path: '/page/index/index'
+      path: '/pages/index/index'
     }
   },
 
