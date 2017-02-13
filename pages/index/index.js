@@ -10,9 +10,7 @@ var openId=app.getSysOpenId();
 
 var sysurl = app.remoteAddressdxf();
 var GetList = function(that){
-  that.setData({
-    hidden:false
-  });
+  
   wx.request({
     url: sysurl + 'xcxIndex/indexData.html',
     data: {},
@@ -135,7 +133,11 @@ Page({
     var that = this;
     page+=10;
     pageNum++;
+    that.setData({
+    hidden:false
+  });
     GetList(that);
+
   },
   scroll: function (event) {
     //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
