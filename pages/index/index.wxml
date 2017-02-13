@@ -13,7 +13,7 @@
 <scroll-view  scroll-top="{{scrollTop}}" scroll-y="true" scroll-x="true" style="height:500px;"
             class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
 <swiper class="swiper__container" indicator-dots="true" autoplay="true" interval="1000" duration="500">  
-   <block wx:for="{{movies}}" wx:for-index="index" >  
+   <block wx:for="{{movies}}" wx:for-index="y" >  
     <swiper-item >  
      <image src="{{item.imgUrl}}" class="slide-image" mode="aspectFill"/>  
     </swiper-item>  
@@ -35,7 +35,6 @@
   </navigator>
 </view>
 <!--内容列表-->
-
     <view class="navigator_content" wx:for="{{datasource}}">
         <navigator class="article__item" url="/pages/resoude/resoude?id={{item.id}}">
             <view class="article__thumb">
