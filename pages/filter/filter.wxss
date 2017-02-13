@@ -18,20 +18,23 @@
   background:#fff;
 }
 .content_detail{
-  width: 100vw;
+  width: 95.3125vw;
   overflow:hidden;
   clear:both;
   font-size:4.0625vw;
  border-bottom: 1px solid #e6e6e6;
 }
 .content_detailSchool{
-  width: 100vw;
+  width: 95.3125vw;
   overflow:hidden;
   clear:both;
   font-size:4.0625vw;
 }
-.content_name1,.content_name2,.content_pic,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT,.content_W,.content_G,.content_Q{
+.content_name1,.content_name2,.content_nameCity,.content_nameJ,.content_nameP,.content_nameT,.content_W,.content_G,.content_Q{
   float: left;
+}
+.content_pic{
+  float: right;
 }
 .content_name1{
    color:#333;
@@ -45,7 +48,7 @@
   margin: 15px 0 15px 0;
 }
 .content_nameCity{
-  width: 69.6vw;
+  width: 67.3vw;
   color:#999;
   margin: 15px 0 15px 0;
   text-align: right;
@@ -55,7 +58,7 @@
   margin: 15px 0 15px 0;
 }
 .picker_text{
-  width:73.975vw;
+  width:70.975vw;
 text-align:right;
 
 }
