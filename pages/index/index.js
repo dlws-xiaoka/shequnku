@@ -1,16 +1,16 @@
 //index.js
 
-var page=0;
-var pageNum=0;
-var page_size=5;
-var userType="";
+var page = 0;
+var pageNum = 0;
+var page_size = 5;
+var userType = "";
 //获取应用实例
 var app = getApp()
-var openId=app.getSysOpenId();
+var openId = app.getSysOpenId();
 
 var sysurl = app.remoteAddressdxf();
-var GetList = function(that){
-  
+var GetList = function (that) {
+
   wx.request({
     url: sysurl + 'xcxIndex/indexData.html',
     data: {},
@@ -20,33 +20,37 @@ var GetList = function(that){
       that.setData({
         navTab: res.data.data.categoryList,
         peopleNum: res.data.data.peopleNumMap,
-        movies: res.data.data.bannerList,
+        movies: res.data.data.bannerList
       })
-      if(userType==""&&userType!='all'){
-      userType=res.data.data.categoryList[0].id;
-      }else if(userType=='all'){
-        userType="";
+      if (userType == "" && userType != 'all') {
+        userType = res.data.data.categoryList[0].id;
+        that.setData({
+          pid: userType
+        })
+      } else if (userType == 'all') {
+        userType = "";
       }
       wx.request({
         url: sysurl + 'xcxIndex/querySpaceInfoByCategory.html',
-        data: { userTypeId: userType,
-        start:page
+        data: {
+          userTypeId: userType,
+          start: page
         },
         method: 'GET',
         success: function (res) {
           console.log(res)
           var datasourceL = that.data.datasource;
-          if(pageNum<res.data.data.po.absolutePage){
-            for(var i=0;i<res.data.data.po.datasource.length;i++){
-            datasourceL.push(res.data.data.po.datasource[i]);
+          if (pageNum < res.data.data.po.absolutePage) {
+            for (var i = 0; i < res.data.data.po.datasource.length; i++) {
+              datasourceL.push(res.data.data.po.datasource[i]);
             }
             that.setData({
               datasource: datasourceL,
             })
           }
-            that.setData({
-              hidden:true
-            })
+          that.setData({
+            hidden: true
+          })
 
         }
       })
@@ -62,25 +66,25 @@ Page({
     userInfo: {},
     navTab: [],
     currentNavtab: "0",
-    currentShai:"0",
+    currentShai: "0",
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
     duration: 1000,
     feed: [],
-    flag:false,
+    flag: false,
     feed_length: 0,
-    movies:[],
-    peopleNum:{},//入驻人数，页面需要改
-    datasource:[],
-    typeFlag:"gzh",
-    pid:"",
-    hidden:true,
-        list:[],
-        scrollTop : 0,
-        userTypeId:""
+    movies: [],
+    peopleNum: {},//入驻人数，页面需要改
+    datasource: [],
+    typeFlag: "gzh",
+    pid: "",
+    hidden: true,
+    list: [],
+    scrollTop: 0,
+    userTypeId: ""
   },
-   onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return {
       title: app.shareshareTitle,
       desc: '',
@@ -90,59 +94,58 @@ Page({
 
   onLoad: function () {
     var that = this;
-     wx.getSystemInfo({
-     success:function(res){
-       console.info("windowHeight="+res.windowHeight);
-       
-     }
-   });
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info("windowHeight=" + res.windowHeight);
+      }
+    });
 
   },
 
-   switchTab: function(e){
+  switchTab: function (e) {
 
-     console.log(e); 
+    console.log(e);
     //typeFlag=e.currentTarget.dataset.typeFlag,
     console.log(e.currentTarget.dataset.typeflag)
 
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx,
-      typeFlag:e.currentTarget.dataset.typeflag,
-      pid:e.currentTarget.dataset.id,
-      datasource:[],
+      typeFlag: e.currentTarget.dataset.typeflag,
+      pid: e.currentTarget.dataset.id,
+      datasource: [],
     });
     this.reswitch(e)
   },
-   reswitch: function(e){
+  reswitch: function (e) {
     //var feed = util.getDiscovery();
     //通过分类id
     console.log(e)
-    var that=this
+    var that = this
     var id = e.currentTarget.dataset.id
-    userType=id;
-    page=0;
-    pageNum=0;
+    userType = id;
+    page = 0;
+    pageNum = 0;
     GetList(that);
   },
- 
+
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
-    page=0;
-    pageNum=0;
+    page = 0;
+    pageNum = 0;
     this.setData({
-      datasource:[]
+      datasource: []
     });
     GetList(that);
   },
   bindDownLoad: function () {
     //  该方法绑定了页面滑动到底部的事件
     var that = this;
-    page+=10;
+    page += 10;
     pageNum++;
     that.setData({
-    hidden:false
-  });
+      hidden: false
+    });
     GetList(that);
 
   },
@@ -152,25 +155,25 @@ Page({
       scrollTop: event.detail.scrollTop
     });
   },
-  switchAll:function(e){
-    var that=this;
-    page=0;
-    pageNum=0;
-    userType="all"
+  switchAll: function (e) {
+    var that = this;
+    page = 0;
+    pageNum = 0;
+    userType = "all"
     this.setData({
-      datasource:[]
+      datasource: []
     });
     GetList(that);
   },
-   switchSha:function(e){
+  switchSha: function (e) {
     this.setData({
       currentShai: e.currentTarget.id
     });
-    if(e.currentTarget.id==1){
+    if (e.currentTarget.id == 1) {
       console.log('e.currentTarget.id==1')
-     wx.navigateTo({
-            url:'/pages/screen/screen'
-        })
+      wx.navigateTo({
+        url: '/pages/screen/screen'
+      })
     }
   }
 })
