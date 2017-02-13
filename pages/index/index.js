@@ -3,7 +3,7 @@
 var page=0;
 var pageNum=0;
 var page_size=5;
-var userType=""
+var userType="";
 //获取应用实例
 var app = getApp()
 var openId=app.getSysOpenId();
@@ -75,6 +75,8 @@ Page({
     movies:[],
     peopleNum:{},//入驻人数，页面需要改
     datasource:[],
+    typeFlag:"gzh",
+    pid:"",
     hidden:true,
         list:[],
         scrollTop : 0,
@@ -101,10 +103,15 @@ Page({
 
    switchTab: function(e){
 
-     console.info(e); 
+     console.log(e); 
+    //typeFlag=e.currentTarget.dataset.typeFlag,
+    console.log(e.currentTarget.dataset.typeflag)
+
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx,
-      datasource:[]
+      typeFlag:e.currentTarget.dataset.typeflag,
+      pid:e.currentTarget.dataset.id,
+      datasource:[],
     });
     this.reswitch(e)
   },
