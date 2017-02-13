@@ -127,13 +127,6 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
-  },
-  onShareAppMessage: function () {
-    return {
-      title: app.shareshareTitle,
-      desc: '',
-      path: '/page/index/index'
-    }
   }
 })
 

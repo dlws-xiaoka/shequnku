@@ -18,13 +18,13 @@ Page({
     userInfo: {},
     allimg: {},
     spaceId: {},
-    hidden:true
+    hidden: true
   },
   //弹出确认框  
   modalTap: function (e) {
     this.setData({
-            hidden: !this.data.hidden
-        });
+      hidden: !this.data.hidden
+    });
     var that = this
     spaceId = e.currentTarget.dataset.spaceid;
     console.log(e)
@@ -32,7 +32,7 @@ Page({
     var browseNum = 0;
     //表单校验-标题
     if (msgtitle.length < 5) {
-      
+
       wx.showToast({
         title: '标题长度不得少于5个字符',
         icon: 'loading',
@@ -42,7 +42,7 @@ Page({
     }
     //表单校验-内容
     if (msgcontant.length < 5) {
-      
+
       wx.showToast({
         title: '内容长度不得少于5个字符',
         icon: 'loading',
@@ -139,7 +139,7 @@ Page({
   },
   uploadCaseImg: function (idx, that) {
     if (tempFilePaths.length == 0) {
-    
+
       wx.showToast({
         title: '图片不能为空',
         icon: 'loading',
@@ -182,6 +182,7 @@ Page({
                 uploadPics = "";
                 msgtitle = "";
                 msgcontant = "";
+                tempFilePaths="";
                 console.info(res);
                 wx.redirectTo({
                   url: '../myCase/myCase?spaceId=' + spaceId
@@ -194,13 +195,6 @@ Page({
         console.log('服务器返回地址----------------' + uploadPics);
       }
     })
-  },
-  onShareAppMessage: function () {
-    return {
-      title: $vm.shareshareTitle,
-      desc: '',
-      path: '/page/index/index'
-    }
   }
 
 

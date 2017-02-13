@@ -3,16 +3,14 @@
 var page=0;
 var pageNum=0;
 var page_size=5;
-var userType=""
+var userType="";
 //获取应用实例
 var app = getApp()
 var openId=app.getSysOpenId();
 
 var sysurl = app.remoteAddressdxf();
 var GetList = function(that){
-  that.setData({
-    hidden:false
-  });
+  
   wx.request({
     url: sysurl + 'xcxIndex/indexData.html',
     data: {},
@@ -75,6 +73,8 @@ Page({
     movies:[],
     peopleNum:{},//入驻人数，页面需要改
     datasource:[],
+    typeFlag:"gzh",
+    pid:"",
     hidden:true,
         list:[],
         scrollTop : 0,
@@ -84,7 +84,7 @@ Page({
     return {
       title: app.shareshareTitle,
       desc: '',
-      path: '/page/index/index'
+      path: '/pages/index/index'
     }
   },
 
@@ -101,10 +101,15 @@ Page({
 
    switchTab: function(e){
 
-     console.info(e); 
+     console.log(e); 
+    //typeFlag=e.currentTarget.dataset.typeFlag,
+    console.log(e.currentTarget.dataset.typeflag)
+
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx,
-      datasource:[]
+      typeFlag:e.currentTarget.dataset.typeflag,
+      pid:e.currentTarget.dataset.id,
+      datasource:[],
     });
     this.reswitch(e)
   },
@@ -123,6 +128,8 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    page=0;
+    pageNum=0;
     this.setData({
       datasource:[]
     });
@@ -133,7 +140,11 @@ Page({
     var that = this;
     page+=10;
     pageNum++;
+    that.setData({
+    hidden:false
+  });
     GetList(that);
+
   },
   scroll: function (event) {
     //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
