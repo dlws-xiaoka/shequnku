@@ -6,12 +6,19 @@ var app = getApp()
 var remoteAddress = app.remoteAddressdxf();
 var openId = app.getSysOpenId();
 var pid = "";
-var chidCaIdArr = "";
-var childcategoryId = 0;
+var chidCaIdArr = "";//所有的微信号子分类Id
+var chidCaId = "";//传后台的子分类Id
+var childcategoryId = "";
 var provincedan = "";//所有省
 var provinceSin = "";//传后台的省
 var cityIdArr = "";
 var cityId = "";
+var schName = ""//学校名称
+var reschollArr = "";//学校名称数组
+var schooIdArr = "";//全部的学校Id
+var schArrId = ""//学校Id 校验用
+var typeIndex = 0;//用户所属类型(微信,QQ群...)
+var bussiLength = ""//二级分类长度
 Page({
   data: {
     setDisabled: function (e) {
@@ -29,11 +36,15 @@ Page({
     chidCaId: '',
     provinceList: '',
     ProvenIndex: 0,
-    
+    schIndex: 0,
+    schArrId: '',
+    schArrId: '',
     provinceSin: '',//传后台的省
     cityList: '',
     cityIndex: 0,
-
+    hides: false,
+    hide: true,
+    wxSData: '',
     locationArray3: ['清华大学', '北京大学', '安徽大学', '暨南大学'],
     items: [
       { value: '一级分类' },
@@ -201,7 +212,7 @@ Page({
           }
         })
 
-        // bussiLength = res.data.data.businessCategoryList.length;
+        bussiLength = res.data.data.businessCategoryList.length;
       }
     })
 
@@ -236,51 +247,19 @@ Page({
 
   },
 
-  changeUserType(e) {
-    var that = this;
-    schArrId = "";
-    if (this.data.typeIndex || e.detail.value) {
-      typeIndex = e.detail.value
-      this.setData({
-        typeIndex: e.detail.value,
-        TypeIdArray: TypeIdArray[typeIndex]
-      });
-    }
-    wx.request({
-      url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
-      data: { pId: TypeIdArray[typeIndex] },
-      method: 'GET',
-      success: function (res) {
-        var chidList = res.data.data.childCategoryList;
-        var chidCaArr = new Array();//子分类名称
-        chidCaIdArr = new Array();//子分类Id
-        if (chidList) {
-          for (var i = 0; i < chidList.length; i++) {
-            chidCaArr.push(chidList[i].childCategoryName);
-            chidCaIdArr.push(chidList[i].id);
-          }
-        }
 
-        that.setData({
-          childCategoryList: chidCaArr,
-          chidCaId: chidCaIdArr[0]
-        })
-        childcategoryId = chidCaIdArr[0];
-      }
-    })
-
-  },
   wxType(e) {
     var that = this;
     if (this.data.chidCatIndex || e.detail.value) {
       var chidCatIndex = e.detail.value
       this.setData({
-        chidCatIndex: e.detail.value
+        chidCatIndex: e.detail.value,
+        chidCaId:chidCaIdArr[chidCatIndex]
       });
       childcategoryId = chidCaIdArr[chidCatIndex]
     }
   },
-changeProven(e) {
+  changeProven(e) {
     var that = this;
     if (this.data.ProvenIndex || e.detail.value) {
       var ProvenIndex = e.detail.value
@@ -342,6 +321,84 @@ changeProven(e) {
           schName: reschollArr[0]//学校名称
         })
         schArrId = schooIdArr[0];
+      }
+    })
+  },
+  changeSchool(e) {
+    var that = this;
+    if (this.data.schIndex || e.detail.value) {
+      var cityId = "";
+      var schIndex = e.detail.value
+      this.setData({
+        schIndex: e.detail.value,
+        schArrId: schooIdArr[schIndex]
+      });
+      schName = reschollArr[schIndex];
+      schArrId = schooIdArr[schIndex];//学校Id 校验用的
+    }
+  },
+  selectResource: function (e) {
+
+    var that = this;
+    console.log(e)
+    var arr = e.detail.value;
+    var cbxgroupArr = "";
+
+    for (var i = 0; i < bussiLength; i++) {
+      var temId = "cbxgroup_" + i;
+      console.log(temId)
+
+      if (arr[temId].length > 0) {
+        cbxgroupArr += arr[temId] + ",";
+      }
+
+    }
+    cbxgroupArr = cbxgroupArr.substr(0, cbxgroupArr.length - 1);
+
+    var spaceName = e.detail.value.spaceName
+    var schoolId = e.detail.value.schoolId;
+    var chidId = e.detail.value.childcategoryId;
+    var businessId = cbxgroupArr;
+    console.log('cityId' + cityId)
+    console.log('schoolId' + schoolId)
+    console.log('chidId' + chidId)
+    console.log('businessId' + businessId)
+    console.log('spaceName' + spaceName)
+
+    wx.request({
+      url: remoteAddress + 'xcxIndex/selectResource.html',
+      data: {
+        cityId: cityId != undefined ? cityId : '',//城市id
+        schoolId: schoolId != undefined ? schoolId : '',//学校id
+        businessId: cbxgroupArr != undefined ? cbxgroupArr : '',//分类
+        chidId: chidId != undefined ? chidId : '',//业务分类
+        spaceName: spaceName != undefined ? spaceName : ''//空间名称
+      },
+      method: 'GET', // 
+      success: function (res) {
+        // success
+        console.log('+++++++++++++++++++++++')
+        console.log(res)
+        if (res.data.data.resourceList.length == 0) {
+          wx.showToast({
+            title: '搜索内容为空',
+            icon: 'loading',
+            duration: 2000
+          })
+          return;
+        } else {
+          that.setData({
+            wxSData: res.data.data.resourceList,
+            hides: true,
+            hide: false
+          })
+        }
+        cityId = '',
+          schoolId = '',
+          chidId = '',
+          businessId = '',
+          spaceName = '',
+          cbxgroupArr = ''
       }
     })
   },

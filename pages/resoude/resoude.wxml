@@ -8,9 +8,26 @@
     <view class="headname">
       {{userInfo.spaceName}}
     </view>
-    <view class="headcity">
-      {{userInfo.cityName}}|{{userInfo.schoolName}}
-    </view>
+    <block wx:if="{{typeFlag=='st'}}">
+        <view class="headcity">
+         城市:{{cityName}}|学校:{{schoolName}}
+        </view>
+      </block>
+      <block wx:if="{{typeFlag=='gzh'}}">
+        <view class="headcity">
+          微信号:{{wxNumber}}|公众号类别:{{childCategoryName}}
+        </view>
+      </block>
+      <block wx:if="{{typeFlag=='wxq'}}">
+        <view class="headcity">
+          微信群类别:{{childCategoryName}}
+        </view>
+      </block>
+      <block wx:if="{{typeFlag=='qqq'}}">
+        <view class="headcity">
+          QQ群类别:{{childCategoryName}}
+        </view>
+      </block>
     <view class="information_content">
       <view class="information_name">简介:</view>
       <text class="information">{{userInfo.remark}}</text>

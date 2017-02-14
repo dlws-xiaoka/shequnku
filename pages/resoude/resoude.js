@@ -7,7 +7,12 @@ Page({
     userInfo: {},
     businessList:{},
     caseList:{},
-    userListInfo: []
+    userListInfo: [],
+    childCategoryName:"",
+    wxNumber:"",
+    typeFlag:"",
+    cityName:"",
+    schoolName:""
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -25,7 +30,12 @@ Page({
             method: 'GET',   
             success: function(res){   
             console.info(res); 
-                that.setData({                
+                that.setData({
+                  typeFlag:res.data.data.spaceInfoMap.typeFlag,
+                  childCategoryName:res.data.data.spaceInfoMap.childCategoryName,
+                  wxNumber:res.data.data.spaceInfoMap.wxNumber,
+                  cityName:res.data.data.spaceInfoMap.cityName,
+                  schoolName:res.data.data.spaceInfoMap.schoolName,
                   userInfo: res.data.data.spaceInfoMap,  
                   businessList: res.data.data.businessList, 
                   caseList: res.data.data.caseList, 
