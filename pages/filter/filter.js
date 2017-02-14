@@ -393,7 +393,7 @@ Page({
             hide: false
           })
         }
-        cityId = '',
+          cityId = '',
           schoolId = '',
           chidId = '',
           businessId = '',
