@@ -14,7 +14,12 @@ Page({
     remark:"",
     spaceId:"",
     resouId:"",
-    headImgUrl:""
+    headImgUrl:"",
+    childCategoryName:"",
+    wxNumber:"",
+    typeFlag:"",
+    schoolName:""
+
   },
   
    onLoad: function (options) {
@@ -60,10 +65,14 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
+          schoolName:res.data.data.schoolName,
+          typeFlag:res.data.data.typeFlag,
           spaceName: res.data.data.spaceName,
           cityName: res.data.data.cityName,
           remark: res.data.data.remark,
-          headImgUrl:res.data.data.headImgUrl
+          headImgUrl:res.data.data.headImgUrl,
+          wxNumber:res.data.data.wxNumber,
+          childCategoryName:res.data.data.childCategoryName,
         })
       }
     })

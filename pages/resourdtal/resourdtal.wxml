@@ -5,11 +5,28 @@
             <image  class="headimg" src="{{userInfo.avatarUrl}}"></image>       
         </view>
         <view class="headname">
-            社群名称:{{spaceName}}
+            {{spaceName}}
         </view>
+        <block wx:if="{{typeFlag=='st'}}">
         <view class="headcity">
-         城市名称:{{cityName}}
+         {{cityName}}|{{schoolName}}
         </view>
+        </block>
+        <block wx:if="{{typeFlag=='gzh'}}">
+        <view class="headcity">
+         微信号:{{wxNumber}}|{{childCategoryName}}
+        </view>
+        </block>
+        <block wx:if="{{typeFlag=='wxq'}}">
+        <view class="headcity">
+         {{childCategoryName}}
+        </view>
+        </block>
+        <block wx:if="{{typeFlag=='qqq'}}">
+        <view class="headcity">
+         {{childCategoryName}}
+        </view>
+        </block>
         <text class="information">简介:{{remark}}</text>
 </view>
 <navigator url="/pages/bueSkill/bueSkill?id={{id}}&userTypeId={{userTypeId}}">

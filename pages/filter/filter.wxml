@@ -87,41 +87,7 @@
               </view>
             </view>
           </block>
-
-          <!--
-       <view class="content_detail">
-            <text class="content_name1">选择省</text>
-            <picker class="content_nameP" bindchange="handleLocationPickerChange" value="{{locationIndex}}" range="{{locationArray}}">
-             <view class="picker_text">
-               222 {{locationArray[locationIndex]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>           
-        </view>
-        <view class="content_detail">
-            <text class="content_name1">选择市</text>
-            <picker class="content_nameP" bindchange="handleLocationPickerChange2" value="{{locationIndex2}}" range="{{locationArray2}}">
-             <view class="picker_text">
-                222{{locationArray2[locationIndex2]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-            </view>
-         <view class="content_detailSchool">
-            <text class="content_name1">院校名称</text>
-            <picker class="content_nameCity" bindchange="chooseSchool" value="{{locationIndex3}}" range="{{locationArray3}}">
-             <view class="picker_Stext">
-                222{{locationArray3[locationIndex3]}}
-             </view>
-            </picker>
-            <view class="content_pic">
-              <image src="/image/more.png" class="photo"></image>
-            </view>
-        </view>-->
+          
         </view>
       </view>
       <view class="top"></view>
