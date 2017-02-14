@@ -8,7 +8,7 @@ var openId = app.getSysOpenId();
 var pid = "";
 var chidCaIdArr = "";//所有的微信号子分类Id
 var chidCaId = "";//传后台的子分类Id
-var childcategoryId = 0;
+var childcategoryId = "";
 var provincedan = "";//所有省
 var provinceSin = "";//传后台的省
 var cityIdArr = "";
@@ -247,46 +247,14 @@ Page({
 
   },
 
-  changeUserType(e) {
-    var that = this;
-    schArrId = "";
-    if (this.data.typeIndex || e.detail.value) {
-      typeIndex = e.detail.value
-      this.setData({
-        typeIndex: e.detail.value,
-        TypeIdArray: TypeIdArray[typeIndex]
-      });
-    }
-    wx.request({
-      url: remoteAddress + 'xcxIndex/getChildCategoryList.html',
-      data: { pId: TypeIdArray[typeIndex] },
-      method: 'GET',
-      success: function (res) {
-        var chidList = res.data.data.childCategoryList;
-        var chidCaArr = new Array();//子分类名称
-        chidCaIdArr = new Array();//子分类Id
-        if (chidList) {
-          for (var i = 0; i < chidList.length; i++) {
-            chidCaArr.push(chidList[i].childCategoryName);
-            chidCaIdArr.push(chidList[i].id);
-          }
-        }
 
-        that.setData({
-          childCategoryList: chidCaArr,
-          chidCaId: chidCaIdArr[0]
-        })
-        childcategoryId = chidCaIdArr[0];
-      }
-    })
-
-  },
   wxType(e) {
     var that = this;
     if (this.data.chidCatIndex || e.detail.value) {
       var chidCatIndex = e.detail.value
       this.setData({
-        chidCatIndex: e.detail.value
+        chidCatIndex: e.detail.value,
+        chidCaId:chidCaIdArr[chidCatIndex]
       });
       childcategoryId = chidCaIdArr[chidCatIndex]
     }
@@ -409,26 +377,29 @@ Page({
       method: 'GET', // 
       success: function (res) {
         // success
-        that.setData({
-          wxSData: res.data.data.resourceList,
-          hides: true,
-          hide: false
-        })
-
-        cityId = '',
+        console.log('+++++++++++++++++++++++')
+        console.log(res)
+        if (res.data.data.resourceList.length == 0) {
+          wx.showToast({
+            title: '搜索内容为空',
+            icon: 'loading',
+            duration: 2000
+          })
+          return;
+        } else {
+          that.setData({
+            wxSData: res.data.data.resourceList,
+            hides: true,
+            hide: false
+          })
+        }
+          cityId = '',
           schoolId = '',
           chidId = '',
           businessId = '',
           spaceName = '',
           cbxgroupArr = ''
       }
-    })
-  },
-  resetHide: function () {
-    var that=this;
-    that.setData({
-      hides: false,
-      hide: true,
     })
   },
   onReady: function () {
