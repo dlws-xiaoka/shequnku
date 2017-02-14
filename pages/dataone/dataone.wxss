@@ -47,10 +47,11 @@ view,text,image{
   
 }
 .content_W,.content_G{
-  width: 68vw;
+  /*width: 68vw;*/
    text-align:right;
   color:#999;
   margin: 15px 0 15px 0;
+  flex-grow: 1;
 }
 .content_Q{
   width: 67.625vw;
