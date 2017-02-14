@@ -113,6 +113,7 @@
     <button class="foot_button" form-type="submit">完成</button>
   </form>
 </view>
+
 <view hidden="{{hide}}">
   <view wx:for="{{wxSData}}">
     <navigator class="navigator_content" url="/pages/resoude/resoude?id={{item.id}}">
@@ -138,4 +139,5 @@
       </view>
     </navigator>
   </view>
+  <button class="foot_button" bindtap="resetHide">重置</button>
 </view>
