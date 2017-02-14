@@ -114,7 +114,8 @@
   </form>
 </view>
 
-<view hidden="{{hide}}">
+<view hidden="{{hide}}" style="display:flex;flex-flow:column nowrap;justify-content:space-between;">
+<view class="reset_container" style="height:92vh;overflow:scroll;flex-grow:1;">
   <view wx:for="{{wxSData}}">
     <navigator class="navigator_content" url="/pages/resoude/resoude?id={{item.id}}">
       <view style="width:60vw;float:left;">
@@ -139,5 +140,6 @@
       </view>
     </navigator>
   </view>
-  <button class="foot_button" bindtap="resetHide">重置</button>
+  </view>
+  <button class="foot_button1" bindtap="resetHide" style="width:100vw;font-size:5.625vw;text-align:center;background:#13b1a3;color:#fff;flex-grow:0;">重置</button>
 </view>
